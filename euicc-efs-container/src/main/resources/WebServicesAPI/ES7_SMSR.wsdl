@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wsdl:definitions targetNamespace="http://namespaces.gsma.org/esim-messaging/3"
+	xmlns:rps="http://namespaces.gsma.org/esim-messaging/3" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+	xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+
+	<!-- WSDL TYPES -->
+	<wsdl:types>
+		<xs:schema targetNamespace="http://namespaces.gsma.org/esim-messaging/3"
+			elementFormDefault="qualified">
+			<xs:include schemaLocation="xsd/euicc.request.ES7.xsd" />
+		</xs:schema>
+		<xs:schema targetNamespace="http://www.w3.org/2005/08/addressing"
+			elementFormDefault="qualified">
+			<xs:include schemaLocation="xsd/import/ws-addr.xsd" />
+		</xs:schema>
+	</wsdl:types>
+
+	<!-- WSA MESSAGES -->
+	<wsdl:message name="SoapHeader">
+		<!-- WSA MANDATORY -->
+		<wsdl:part name="From" element="wsa:From" />
+		<wsdl:part name="To" element="wsa:To" />
+		<wsdl:part name="Action" element="wsa:Action" />
+		<wsdl:part name="MessageID" element="wsa:MessageID" />
+		<wsdl:part name="RelatesTo" element="wsa:RelatesTo" />
+		<!-- WSA OPTIONAL -->
+		<wsdl:part name="ReplyTo" element="wsa:ReplyTo" />
+	</wsdl:message>
+
+	<!-- ES7 Resquest MESSAGES -->
+	<wsdl:message name="ES7-CreateAdditionalKeySetRequestMessage">
+		<wsdl:part name="parameters" element="rps:ES7-CreateAdditionalKeySetRequest" />
+	</wsdl:message>
+	<wsdl:message name="ES7-HandoverEUICCRequestMessage">
+		<wsdl:part name="parameters" element="rps:ES7-HandoverEUICCRequest" />
+	</wsdl:message>
+	<wsdl:message name="ES7-AuthenticateSMSRRequestMessage">
+		<wsdl:part name="parameters" element="rps:ES7-AuthenticateSMSRRequest" />
+	</wsdl:message>
+
+	<!-- ES7 ResponseMessage -->
+	<wsdl:message name="ES7-CreateAdditionalKeySetResponseMessage">
+		<wsdl:part name="parameters" element="rps:ES7-CreateAdditionalKeySetResponse" />
+	</wsdl:message>
+	<wsdl:message name="ES7-HandoverEUICCResponseMessage">
+		<wsdl:part name="parameters" element="rps:ES7-HandoverEUICCResponse" />
+	</wsdl:message>
+	<wsdl:message name="ES7-AuthenticateSMSRResponseMessage">
+		<wsdl:part name="parameters" element="rps:ES7-AuthenticateSMSRResponse" />
+	</wsdl:message>
+	
+	
+	<!-- ES7 Notification -->
+	<wsdl:message name="ES7-HandleSMSRChangeNotificationRequestMessage">
+        <wsdl:part name="parameters" element="rps:ES7-HandleSMSRChangeNotification"/>
+    </wsdl:message>
+    
+	<!-- SOAP PORT OPERATIONS -->
+	<wsdl:portType name="ES7SmSr">
+		<wsdl:operation name="ES7-CreateAdditionalKeySet">
+			<wsdl:input message="rps:ES7-CreateAdditionalKeySetRequestMessage"
+				wsa:Action="http://gsma.com/ES7/eUICCManagement/ES7-CreateAdditionalKeySetRequest"
+				wsam:Action="http://gsma.com/ES7/eUICCManagement/ES7-CreateAdditionalKeySetRequest" />
+			<wsdl:output message="rps:ES7-CreateAdditionalKeySetResponseMessage"
+				wsa:Action="http://gsma.com/ES7/eUICCManagement/ES7-CreateAdditionalKeySetResponse"
+				wsam:Action="http://gsma.com/ES7/eUICCManagement/ES7-CreateAdditionalKeySetResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ES7-HandoverEUICC">
+			<wsdl:input message="rps:ES7-HandoverEUICCRequestMessage"
+				wsa:Action="http://gsma.com/ES7/eUICCManagement/ES7-HandoverEUICCRequest"
+				wsam:Action="http://gsma.com/ES7/eUICCManagement/ES7-HandoverEUICCRequest" />
+			<wsdl:output message="rps:ES7-HandoverEUICCResponseMessage"
+				wsa:Action="http://gsma.com/ES7/eUICCManagement/ES7-HandoverEUICCResponse"
+				wsam:Action="http://gsma.com/ES7/eUICCManagement/ES7-HandoverEUICCResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ES7-AuthenticateSMSR">
+			<wsdl:input message="rps:ES7-AuthenticateSMSRRequestMessage"
+				wsa:Action="http://gsma.com/ES7/eUICCManagement/ES7-AuthenticateSMSRRequest"
+				wsam:Action="http://gsma.com/ES7/eUICCManagement/ES7-AuthenticateSMSRRequest" />
+			<wsdl:output message="rps:ES7-AuthenticateSMSRResponseMessage"
+				wsa:Action="http://gsma.com/ES7/eUICCManagement/ES7-AuthenticateSMSRResponse"
+				wsam:Action="http://gsma.com/ES7/eUICCManagement/ES7-AuthenticateSMSRResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ES7-HandleSMSRChangeNotification">
+            <wsdl:input message="rps:ES7-HandleSMSRChangeNotificationRequestMessage"
+                wsa:Action="http://gsma.com/ES7/eUICCManagement/ES7-HandleSMSRChangeNotification"
+                wsam:Action="http://gsma.com/ES7/eUICCManagement/ES7-HandleSMSRChangeNotification"/>
+        </wsdl:operation>
+	</wsdl:portType>
+
+	<!-- SOAP BINDING -->
+	<wsdl:binding name="ES7SmSrServiceBinding" type="rps:ES7SmSr">
+		<wsoap12:binding transport="http://www.w3.org/2003/05/soap/bindings/HTTP/"
+			style="document" />
+		<wsdl:operation name="ES7-CreateAdditionalKeySet">
+			<wsoap12:operation style="document" />
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+             <wsdl:output>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="RelatesTo" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:output>
+        </wsdl:operation>
+		<wsdl:operation name="ES7-HandoverEUICC">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+            <wsdl:output>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="RelatesTo" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:output>
+        </wsdl:operation>
+		<wsdl:operation name="ES7-AuthenticateSMSR">
+			<wsoap12:operation style="document" />
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+             <wsdl:output>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="RelatesTo" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ES7-HandleSMSRChangeNotification">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+        </wsdl:operation>
+	</wsdl:binding>
+
+	<!-- SOAP SERVICE -->
+	<wsdl:service name="ES7SmSrService">
+		<wsdl:port binding="rps:ES7SmSrServiceBinding" name="ES7SmSrPort">
+			<wsoap12:address location="http://gsma.org/esim-messaging/3/ES7/ES7SmSr" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

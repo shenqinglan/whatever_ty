@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.euicc.data.dao.TerminalDeviceInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.euicc.data.pojo.TerminalDeviceInfo" >
+    <id column="sn" property="sn" jdbcType="VARCHAR" />
+    <result column="hardware_id" property="hardwareId" jdbcType="VARCHAR" />
+    <result column="device_type" property="deviceType" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+    <result column="lock_state" property="lockState" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="lock_count" property="lockCount" jdbcType="INTEGER" />
+    <result column="lock_time" property="lockTime" jdbcType="VARCHAR" />
+    <result column="root_key_id" property="rootKeyId" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="RootKeyResultMap" type="com.whty.euicc.data.pojo.RootKeyInfo" >
+    <id column="root_key_id" property="rootKeyId" jdbcType="VARCHAR" />
+    <result column="company_name" property="companyName" jdbcType="VARCHAR" />
+    <result column="root_key" property="rootKey" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    sn, hardware_id, device_type, create_date, update_date, lock_state, user_id, lock_count, 
+    lock_time, root_key_id
+  </sql>
+  <sql id="RootKey_Column_List" >
+    b.root_key_id as root_key_id, company_name, root_key
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.whty.euicc.data.pojo.TerminalDeviceInfoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from terminal_device_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectRootKey" resultMap="RootKeyResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="RootKey_Column_List" />
+    from terminal_device_info a
+    left join root_key_info b on a.root_key_id = b.root_key_id
+    where sn = #{sn,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from terminal_device_info
+    where sn = #{sn,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from terminal_device_info
+    where sn = #{sn,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whty.euicc.data.pojo.TerminalDeviceInfoExample" >
+    delete from terminal_device_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whty.euicc.data.pojo.TerminalDeviceInfo" >
+    insert into terminal_device_info (sn, hardware_id, device_type, 
+      create_date, update_date, lock_state, 
+      user_id, lock_count, lock_time, 
+      root_key_id)
+    values (#{sn,jdbcType=VARCHAR}, #{hardwareId,jdbcType=VARCHAR}, #{deviceType,jdbcType=VARCHAR}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{updateDate,jdbcType=TIMESTAMP}, #{lockState,jdbcType=VARCHAR}, 
+      #{userId,jdbcType=VARCHAR}, #{lockCount,jdbcType=INTEGER}, #{lockTime,jdbcType=VARCHAR}, 
+      #{rootKeyId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.euicc.data.pojo.TerminalDeviceInfo" >
+    insert into terminal_device_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="sn != null" >
+        sn,
+      </if>
+      <if test="hardwareId != null" >
+        hardware_id,
+      </if>
+      <if test="deviceType != null" >
+        device_type,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="updateDate != null" >
+        update_date,
+      </if>
+      <if test="lockState != null" >
+        lock_state,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="lockCount != null" >
+        lock_count,
+      </if>
+      <if test="lockTime != null" >
+        lock_time,
+      </if>
+      <if test="rootKeyId != null" >
+        root_key_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="sn != null" >
+        #{sn,jdbcType=VARCHAR},
+      </if>
+      <if test="hardwareId != null" >
+        #{hardwareId,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceType != null" >
+        #{deviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lockState != null" >
+        #{lockState,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="lockCount != null" >
+        #{lockCount,jdbcType=INTEGER},
+      </if>
+      <if test="lockTime != null" >
+        #{lockTime,jdbcType=VARCHAR},
+      </if>
+      <if test="rootKeyId != null" >
+        #{rootKeyId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whty.euicc.data.pojo.TerminalDeviceInfoExample" resultType="java.lang.Integer" >
+    select count(*) from terminal_device_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update terminal_device_info
+    <set >
+      <if test="record.sn != null" >
+        sn = #{record.sn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hardwareId != null" >
+        hardware_id = #{record.hardwareId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.deviceType != null" >
+        device_type = #{record.deviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createDate != null" >
+        create_date = #{record.createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateDate != null" >
+        update_date = #{record.updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.lockState != null" >
+        lock_state = #{record.lockState,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lockCount != null" >
+        lock_count = #{record.lockCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.lockTime != null" >
+        lock_time = #{record.lockTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rootKeyId != null" >
+        root_key_id = #{record.rootKeyId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update terminal_device_info
+    set sn = #{record.sn,jdbcType=VARCHAR},
+      hardware_id = #{record.hardwareId,jdbcType=VARCHAR},
+      device_type = #{record.deviceType,jdbcType=VARCHAR},
+      create_date = #{record.createDate,jdbcType=TIMESTAMP},
+      update_date = #{record.updateDate,jdbcType=TIMESTAMP},
+      lock_state = #{record.lockState,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=VARCHAR},
+      lock_count = #{record.lockCount,jdbcType=INTEGER},
+      lock_time = #{record.lockTime,jdbcType=VARCHAR},
+      root_key_id = #{record.rootKeyId,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.euicc.data.pojo.TerminalDeviceInfo" >
+    update terminal_device_info
+    <set >
+      <if test="hardwareId != null" >
+        hardware_id = #{hardwareId,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceType != null" >
+        device_type = #{deviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null" >
+        update_date = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lockState != null" >
+        lock_state = #{lockState,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="lockCount != null" >
+        lock_count = #{lockCount,jdbcType=INTEGER},
+      </if>
+      <if test="lockTime != null" >
+        lock_time = #{lockTime,jdbcType=VARCHAR},
+      </if>
+      <if test="rootKeyId != null" >
+        root_key_id = #{rootKeyId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where sn = #{sn,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.euicc.data.pojo.TerminalDeviceInfo" >
+    update terminal_device_info
+    set hardware_id = #{hardwareId,jdbcType=VARCHAR},
+      device_type = #{deviceType,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      update_date = #{updateDate,jdbcType=TIMESTAMP},
+      lock_state = #{lockState,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=VARCHAR},
+      lock_count = #{lockCount,jdbcType=INTEGER},
+      lock_time = #{lockTime,jdbcType=VARCHAR},
+      root_key_id = #{rootKeyId,jdbcType=VARCHAR}
+    where sn = #{sn,jdbcType=VARCHAR}
+  </update>
+</mapper>

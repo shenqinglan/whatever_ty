@@ -1,0 +1,64 @@
+package com.wh.controller;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.junit.Test;
+
+import com.alibaba.fastjson.JSONObject;
+import com.whty.framework.http.HTTPWeb;
+
+public class TestGa {
+
+	@Test
+	public void saveInfo() {
+		
+		for (int tag = 1;tag<=9;tag++) {
+			String url = "http://localhost:8080/ga-issue-card/v1/ga/upload/saveInfo";
+			JSONObject json2_1 = new JSONObject();
+			json2_1.put("idCardNo", "4202xxxxxxxx"+tag);
+			json2_1.put("birthday", "19910101");
+			json2_1.put("face", "010101010101010101");
+			json2_1.put("ethnic", "  汉  ");
+			json2_1.put("mobil", "18021457841");
+			json2_1.put("educationDegree", "  2   ");
+			json2_1.put("maritalStatus", "0");
+			json2_1.put("expiryTime", "20200101");
+			json2_1.put("name", "   王尼玛"+tag+"    ");
+			json2_1.put("company", "武汉市酱油有限公司"+tag);
+			json2_1.put("issueOrgan", "武汉市洪山区公安局");
+			json2_1.put("sex", "男");
+			json2_1.put("politicalStatus", "1");
+			json2_1.put("hukouAddress", "湖北省荆州市沙市区江津路151号");
+			
+			JSONObject json2_2 = new JSONObject();
+			json2_2.put("cardNo","1234563133120"+tag);
+			json2_2.put("expiryTime","20171212");
+			json2_2.put("cardTypeCode","1");
+			json2_2.put("inLimitCount","100");
+			json2_2.put("relation","4");
+			json2_2.put("blackListFlag","0");
+			json2_2.put("remarks","   永久使用，没有过期时间   ");
+			json2_2.put("outLimitCount","100");
+			
+			JSONObject json2_3 = new JSONObject();
+			json2_3.put("areaName", "  南湖花园  ");
+			json2_3.put("buildingNo", "88");
+			json2_3.put("unitNo", "01");
+			json2_3.put("roomNo", " 120"+tag);
+			json2_3.put("standardAddress", "  武汉市洪山区南湖大道180号 ");
+			
+			JSONObject json1 = new JSONObject();
+			json1.put("person", json2_1);
+			json1.put("card", json2_2);
+			json1.put("house", json2_3);
+			
+			System.out.println(json1);
+			
+			Map<String, Object> json = new HashMap<String, Object>();
+			json.put("params", json1.toJSONString());
+			String data = HTTPWeb.post(url, json);
+			System.out.println("data >>> "+data);
+		}
+	}
+}

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:rps="http://namespaces.gsma.org/esim-messaging/3"
+    targetNamespace="http://namespaces.gsma.org/esim-messaging/3" elementFormDefault="qualified"
+    attributeFormDefault="unqualified" version="1.0.0">
+
+    <xs:include schemaLocation="euicc.common.types.xsd"/>
+    <xs:include schemaLocation="euicc.request.ES1.xsd"/>
+    <xs:include schemaLocation="euicc.request.ES2.xsd"/>
+    <xs:include schemaLocation="euicc.request.ES3.xsd"/>
+    <xs:include schemaLocation="euicc.request.ES4.xsd"/>
+    <xs:include schemaLocation="euicc.request.ES7.xsd"/>
+    
+    <!--============================================================================================================================-->
+    <xs:element name="RPSMessage">
+        <xs:annotation>
+            <xs:documentation>Root element of any GSMA Embedded SIM Remote Provisioning and Subscription Management message
+            Any RRPS message is composed of a mandatory header and a mandatory body</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="rps:RPSHeader">
+                    <xs:annotation>
+                        <xs:documentation>Header of the message. Contains mainly information for the transport of the message</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element ref="rps:RPSBody">
+                    <xs:annotation>
+                        <xs:documentation>Body of the message. Contains either a unique function execution request or a unique function executioon response.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="MessageVersion" type="rps:ThreeDigitVersion" use="required">
+                <xs:annotation>
+                    <xs:documentation>Indicates the version of schema used to generate this message.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+    <!--============================================================================================================================-->
+    <xs:element name="RPSHeader">
+        <xs:annotation>
+            <xs:documentation>The header of the RPS message</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="SenderEntity" type="rps:EntityType">
+                    <xs:annotation>
+                        <xs:documentation>Provides information about the sending entity</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="SenderName" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation>Provides the name of the sender.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="ReceiverEntity" type="rps:EntityType">
+                    <xs:annotation>
+                        <xs:documentation>Provides information about the receiving entity</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="ResponseEndpoint" type="xs:anyURI" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Allow the message sender to Provides an URI where the response, if any, to this message shall be returned. 
+                        This is optional; if missing the receiver entity shall consider the originating endpoint of the message as the response endpoint.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="ContextId" type="xs:string" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>This identifier may be used to provide end-to-end logging management between the different web services.
+						This is optional. If present, this parameter shall be included if the function provider entity generates a new request to another function provider entity.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="TransactionId" type="xs:string" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>This is information to correlate several messages within a single transaction. 
+                        This is optional. In case of function execution response, it shall contain the transactionId value of the corresponding message for function execution request </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="MessageId" type="xs:anyURI">
+                    <xs:annotation>
+                        <xs:documentation>This element (of type xs:anyURI) conveys the value of the message identifier. 
+                        The value is generated by the message producer and must be UNIQUE. To make the MessageID unique between different senders it MUST be prefixed with the domain portion of the sender.
+                        Then the suffix part of the message id is freely chosen by the sender, it could a simple integer value, a date; nothing is mandated except the uniqueness.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="MessageType" type="rps:MessageType">
+                    <xs:annotation>
+                        <xs:documentation>Indicates the type the message, meaning the identification of the function execution request or function execution response.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="RelatesTo" type="xs:anyURI" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>This element (of type xs:anyURI) conveys the value of the message identifier of the initial message request. This element shall be present only in case of response.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="MessageDate" type="xs:dateTime">
+                    <xs:annotation>
+                        <xs:documentation>Timestamp of the message.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--============================================================================================================================-->
+    <xs:complexType name="EntityType">
+        <xs:sequence>
+            <xs:element name="EntityId" type="rps:ObjectIdentifierType">
+                <xs:annotation>
+                    <xs:documentation>The OID of the entity</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="EntityName" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The explicit name of the entity. This is optional and provided for information.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!--============================================================================================================================-->
+    <xs:element name="RPSBody">
+        <xs:annotation>
+            <xs:documentation>TBC</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:choice minOccurs="1" maxOccurs="1">
+                <xs:group ref="rps:ES1"/>
+                <xs:group ref="rps:ES2"/>
+                <xs:group ref="rps:ES3"/>
+                <xs:group ref="rps:ES4"/>
+                <xs:group ref="rps:ES7"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+
+    <!--============================================================================================================================-->
+    <xs:simpleType name="MessageType">
+        <xs:annotation>
+            <xs:documentation>List of all possible message type. A type shall exist for each supported function.</xs:documentation>
+        </xs:annotation>
+        <xs:union memberTypes="rps:ES1-MessageType rps:ES2-MessageType rps:ES3-MessageType rps:ES4-MessageType rps:ES7-MessageType "/>
+    </xs:simpleType>
+
+</xs:schema>

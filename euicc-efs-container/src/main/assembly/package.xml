@@ -1,0 +1,47 @@
+<assembly>
+	<id>${project.artifactId}-assembly-${project.version}</id>
+	<!-- 默认为 TRUE, 设为 FALSE, 防止将 ${project.finalName} 作为根目录打进 WAR 包 -->
+	<!-- TRUE 结构: ${project.finalName}.war/${project.finalName}/WEB-INF -->
+	<!-- FALSE 结构: ${project.finalName}.war/WEB-INF -->
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<!-- 设置为 WAR 包格式 -->
+	<formats>
+		<format>war</format>
+	</formats>
+	<fileSets>
+		<!-- 将 target/classes 下的文件输出到 WEB-INF/classes, 同时排除 target/classes/conf/*.properties -->
+		<fileSet>
+			<directory>${project.build.outputDirectory}</directory> <!-- target/classes -->
+			<outputDirectory>WEB-INF/classes</outputDirectory>
+			<excludes>
+				<exclude>**/environments/**</exclude>
+				<exclude>properties/cache.properties</exclude>  
+				<exclude>properties/jdbc.properties</exclude>  
+				<exclude>properties/redis.properties</exclude>  
+				<exclude>properties/euicc.properties</exclude>  
+			</excludes>
+		</fileSet>
+		
+		<!-- 将 env/${env}/conf 下的文件输出到 WEB-INF/classes/conf, 实现 -P 不同的参数打包出不同的配置 -->
+		<!-- ${env} 的值由 -P 的参数传递进来, 如：-PTEST, 那么, ${env} 的值就是 TEST -->
+		<fileSet>
+			<directory>src/main/environments/${env}/properties</directory>
+			<outputDirectory>WEB-INF/classes/properties</outputDirectory>
+			<filtered>true</filtered>
+		</fileSet>
+		<!-- 将 webapp 下的文件输出到 WAR 包 -->
+		<fileSet>
+			<directory>${project.basedir}/src/main/webapp</directory>
+			<outputDirectory>/</outputDirectory>
+		</fileSet>
+	</fileSets>
+	<!-- 将项目依赖的JAR包输出到 WEB-INF/lib -->
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>WEB-INF/lib</outputDirectory>
+			<excludes>
+				<exclude>${project.groupId}:${project.artifactId}:war</exclude>
+			</excludes>
+		</dependencySet>
+	</dependencySets>
+</assembly>  

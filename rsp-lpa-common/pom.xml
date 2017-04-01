@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>rsp-cs-parent</artifactId>
+		<groupId>com.whty</groupId>
+		<version>0.1.0</version>
+	</parent>
+	<artifactId>rsp-lpa-common</artifactId>
+	<name>rsp-lpa-common</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<platform.version>4.1.1.4</platform.version>
+		<android.plugin.version>3.8.2</android.plugin.version>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.google.android</groupId>
+			<artifactId>android</artifactId>
+			<version>${platform.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.simalliance</groupId>
+			<artifactId>openmobileapi</artifactId>
+			<version>0.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+		<dependency>
+	 		<groupId>com.whty</groupId>
+  			<artifactId>rsp-tls-client</artifactId>
+	 		<version>0.0.1</version>
+	 	</dependency>
+	 	<dependency>
+	 		<groupId>com.whty</groupId>
+	 		<artifactId>rsp-packet</artifactId>
+	 		<version>0.1.0</version>
+		</dependency>
+	</dependencies>
+</project>

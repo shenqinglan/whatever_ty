@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.efs.data.dao.EuiccPol2Mapper" >
+  <resultMap id="BaseResultMap" type="com.whty.efs.data.pojo.EuiccPol2" >
+    <id column="pol2_id" property="pol2Id" jdbcType="VARCHAR" />
+    <result column="subject" property="subject" jdbcType="VARCHAR" />
+    <result column="action" property="action" jdbcType="VARCHAR" />
+    <result column="qualification" property="qualification" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    pol2_id, subject, action, qualification
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.whty.efs.data.pojo.EuiccPol2Example" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from euicc_pol2
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from euicc_pol2
+    where pol2_id = #{pol2Id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from euicc_pol2
+    where pol2_id = #{pol2Id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whty.efs.data.pojo.EuiccPol2Example" >
+    delete from euicc_pol2
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whty.efs.data.pojo.EuiccPol2" >
+    insert into euicc_pol2 (pol2_id, subject, action, 
+      qualification)
+    values (#{pol2Id,jdbcType=VARCHAR}, #{subject,jdbcType=VARCHAR}, #{action,jdbcType=VARCHAR}, 
+      #{qualification,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.efs.data.pojo.EuiccPol2" >
+    insert into euicc_pol2
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pol2Id != null" >
+        pol2_id,
+      </if>
+      <if test="subject != null" >
+        subject,
+      </if>
+      <if test="action != null" >
+        action,
+      </if>
+      <if test="qualification != null" >
+        qualification,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pol2Id != null" >
+        #{pol2Id,jdbcType=VARCHAR},
+      </if>
+      <if test="subject != null" >
+        #{subject,jdbcType=VARCHAR},
+      </if>
+      <if test="action != null" >
+        #{action,jdbcType=VARCHAR},
+      </if>
+      <if test="qualification != null" >
+        #{qualification,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whty.efs.data.pojo.EuiccPol2Example" resultType="java.lang.Integer" >
+    select count(*) from euicc_pol2
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update euicc_pol2
+    <set >
+      <if test="record.pol2Id != null" >
+        pol2_id = #{record.pol2Id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.subject != null" >
+        subject = #{record.subject,jdbcType=VARCHAR},
+      </if>
+      <if test="record.action != null" >
+        action = #{record.action,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qualification != null" >
+        qualification = #{record.qualification,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update euicc_pol2
+    set pol2_id = #{record.pol2Id,jdbcType=VARCHAR},
+      subject = #{record.subject,jdbcType=VARCHAR},
+      action = #{record.action,jdbcType=VARCHAR},
+      qualification = #{record.qualification,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.efs.data.pojo.EuiccPol2" >
+    update euicc_pol2
+    <set >
+      <if test="subject != null" >
+        subject = #{subject,jdbcType=VARCHAR},
+      </if>
+      <if test="action != null" >
+        action = #{action,jdbcType=VARCHAR},
+      </if>
+      <if test="qualification != null" >
+        qualification = #{qualification,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where pol2_id = #{pol2Id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.efs.data.pojo.EuiccPol2" >
+    update euicc_pol2
+    set subject = #{subject,jdbcType=VARCHAR},
+      action = #{action,jdbcType=VARCHAR},
+      qualification = #{qualification,jdbcType=VARCHAR}
+    where pol2_id = #{pol2Id,jdbcType=VARCHAR}
+  </update>
+</mapper>

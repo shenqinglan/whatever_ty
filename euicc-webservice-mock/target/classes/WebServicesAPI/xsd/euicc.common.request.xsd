@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xs:annotation>
+        <xs:documentation>
+            This schema is not carrying any version on its own, as it is not a stand alone schema (it is designed to be included in another one).
+            This schema is explicitly having no name space in order to enable the possibility to apply the "chameleon" approach 
+            (the name space will be the one of the including schema)
+        </xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="euicc.common.types.xsd"/>
+    
+
+    <!--============================================================================================================================-->
+    <xs:complexType name="BaseNotificationType">
+        <xs:annotation>
+            <xs:documentation>The base type for a Notification types.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:annotation>
+                <xs:documentation>No specific data</xs:documentation>
+            </xs:annotation>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!--============================================================================================================================-->
+    <xs:complexType name="BaseRequestType">
+        <xs:annotation>
+            <xs:documentation>The base type for a Request types.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="FunctionCallIdentifier" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Identification of the function call. This identifier enables to manage function call retry policies.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ValidityPeriod" type="xs:positiveInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Defines the length of the period (provided as a number of seconds) during which the request is valid. The period starts at the time the function call was received by the function provider and ends a number of seconds later.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!--============================================================================================================================-->
+    <xs:complexType name="BaseResponseType">
+        <xs:annotation>
+            <xs:documentation>The base type for a Response types.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="ProcessingStart" type="xs:dateTime" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The start time and date of the real processing of the function by the function provider (and not the time and date of reception of the request).</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ProcessingEnd" type="xs:dateTime" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The function processing end time and date.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AcceptableValidityPeriod" type="xs:positiveInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>In case the validity period provided as input parameter is not acceptable, then the function provider SHALL return an acceptable value to the function caller.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="FunctionExecutionStatus" type="ExecutionStatusType">
+                <xs:annotation>
+                    <xs:documentation>Indicates whether the function has been processed correctly or not. If required, provides information to give details on the processing result (status code, status data, status message)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+
+</xs:schema>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+  version="2.0">
+    
+  <description>JSTL 1.2 functions library</description>
+  <display-name>JSTL functions sys</display-name>
+  <tlib-version>1.2</tlib-version>
+  <short-name>fns</short-name>
+  <uri>http://java.sun.com/jsp/jstl/functionss</uri>
+
+  <function>
+    <description>获取管理路径</description>
+    <name>getCtxPath</name>
+    <function-class>com.whty.euicc.container.common.config</function-class>
+    <function-signature>java.lang.String getCtxPath()</function-signature>
+    <example>${fns:getCtxPath()}</example>
+  </function>
+  
+</taglib>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" version="2.0"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<globalBindings>
+		<javaType name="java.util.Date" xmlType="xsd:date"
+			parseMethod="com.whty.efs.webservice.jaxb.XSDDateCustomBinder.parseDate"
+			printMethod="com.whty.efs.webservice.jaxb.XSDDateCustomBinder.printDate" />
+		<javaType name="java.util.Date" xmlType="xsd:dateTime"
+			parseMethod="com.whty.efs.webservice.jaxb.XSDDateTimeCustomBinder.parseDateTime"
+			printMethod="com.whty.efs.webservice.jaxb.XSDDateTimeCustomBinder.printDateTime" />
+	
+	</globalBindings>
+</bindings>

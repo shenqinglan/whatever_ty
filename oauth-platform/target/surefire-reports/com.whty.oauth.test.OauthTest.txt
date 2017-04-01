@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.whty.oauth.test.OauthTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.362 sec - in com.whty.oauth.test.OauthTest

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.euicc.data.dao.base.BusinessLogMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.euicc.data.pojo.BusinessLog" >
+    <id column="ID" property="id" jdbcType="DECIMAL" />
+    <result column="BUSINESS_ID" property="businessId" jdbcType="DECIMAL" />
+    <result column="XML_ID" property="xmlId" jdbcType="DECIMAL" />
+    <result column="STEP" property="step" jdbcType="DECIMAL" />
+    <result column="RESULT" property="result" jdbcType="VARCHAR" />
+    <result column="MESSAGE" property="message" jdbcType="VARCHAR" />
+    <result column="EXCUTE_DATE" property="excuteDate" jdbcType="TIMESTAMP" />
+    <result column="APDU" property="apdu" jdbcType="VARCHAR" />
+    <result column="STEP_DESC" property="stepDesc" jdbcType="VARCHAR" />
+  </resultMap>
+
+   <sql id="Example_Where_Clause">
+    <trim prefix="where" prefixOverrides="and|or" >
+      <if test="condition.businessId != null" >
+         and BUSINESS_ID = #{condition.businessId}
+      </if>
+      <if test="condition.xmlId != null" >
+         and XML_ID = #{condition.xmlId}
+      </if>
+      <if test="condition.step != null" >
+         and STEP = #{condition.step}
+      </if>
+      <if test="condition.result != null" >
+         and RESULT = #{condition.result}
+      </if>
+      <if test="condition.message != null" >
+         and MESSAGE = #{condition.message}
+      </if>
+      <if test="condition.excuteDate != null" >
+         and EXCUTE_DATE = #{condition.excuteDate}
+      </if>
+      <if test="condition.param != null" >
+         and PARAM = #{condition.param}
+      </if>
+      <if test="condition.apdu != null" >
+         and APDU = #{condition.apdu}
+      </if>
+      <if test="condition.stepDesc != null" >
+         and STEP_DESC = #{condition.stepDesc}
+      </if>
+    </trim>
+  </sql>
+
+  <sql id="Base_Column_List" >
+    ID, BUSINESS_ID, XML_ID, STEP, RESULT, MESSAGE, EXCUTE_DATE,APDU,STEP_DESC
+  </sql>
+  <sql id="Blob_Column_List" >
+    PARAM
+  </sql>
+ 
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.whty.euicc.data.dto.Criteria" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from BUSINESS_LOG
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+
+  <insert id="insertSelective" parameterType="com.whty.euicc.data.pojo.BusinessLog" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      select LAST_INSERT_ID() AS id
+    </selectKey>
+    insert into BUSINESS_LOG
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      ID,
+      <if test="businessId != null" >
+        BUSINESS_ID,
+      </if>
+      <if test="xmlId != null" >
+        XML_ID,
+      </if>
+      <if test="step != null" >
+        STEP,
+      </if>
+      <if test="result != null" >
+        RESULT,
+      </if>
+      <if test="message != null" >
+        MESSAGE,
+      </if>
+      <if test="excuteDate != null" >
+        EXCUTE_DATE,
+      </if>
+      <if test="param != null" >
+        PARAM,
+      </if>
+      <if test="apdu != null" >
+        APDU,
+      </if>
+      <if test="stepDesc != null" >
+        STEP_DESC,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      #{id},
+      <if test="businessId != null" >
+        #{businessId},
+      </if>
+      <if test="xmlId != null" >
+        #{xmlId},
+      </if>
+      <if test="step != null" >
+        #{step},
+      </if>
+      <if test="result != null" >
+        #{result},
+      </if>
+      <if test="message != null" >
+        #{message},
+      </if>
+      <if test="excuteDate != null" >
+        #{excuteDate},
+      </if>
+      <if test="param != null" >
+        #{param},
+      </if>
+      <if test="apdu != null" >
+        #{apdu},
+      </if>
+      <if test="stepDesc != null" >
+        #{stepDesc},
+      </if>
+    </trim>
+  </insert>
+
+</mapper>

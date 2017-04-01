@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.euicc.data.dao.EuiccSmSrMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.euicc.data.pojo.EuiccSmSr" >
+    <id column="smsr_id" property="smsrId" jdbcType="VARCHAR" />
+    <result column="smsr_name" property="smsrName" jdbcType="VARCHAR" />
+    <result column="smsr_url" property="smsrUrl" jdbcType="VARCHAR" />
+    <result column="private_key" property="privateKey" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.whty.euicc.data.pojo.EuiccSmSr" extends="BaseResultMap" >
+    <result column="cert" property="cert" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    smsr_id, smsr_name, smsr_url, private_key
+  </sql>
+  <sql id="Blob_Column_List" >
+    cert
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from euicc_sm_sr
+    where smsr_id = #{smsrId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from euicc_sm_sr
+    where smsr_id = #{smsrId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.whty.euicc.data.pojo.EuiccSmSr" >
+    insert into euicc_sm_sr (smsr_id, smsr_name, smsr_url, 
+      private_key, cert)
+    values (#{smsrId,jdbcType=VARCHAR}, #{smsrName,jdbcType=VARCHAR}, #{smsrUrl,jdbcType=VARCHAR}, 
+      #{privateKey,jdbcType=VARCHAR}, #{cert,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.euicc.data.pojo.EuiccSmSr" >
+    insert into euicc_sm_sr
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="smsrId != null" >
+        smsr_id,
+      </if>
+      <if test="smsrName != null" >
+        smsr_name,
+      </if>
+      <if test="smsrUrl != null" >
+        smsr_url,
+      </if>
+      <if test="privateKey != null" >
+        private_key,
+      </if>
+      <if test="cert != null" >
+        cert,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="smsrId != null" >
+        #{smsrId,jdbcType=VARCHAR},
+      </if>
+      <if test="smsrName != null" >
+        #{smsrName,jdbcType=VARCHAR},
+      </if>
+      <if test="smsrUrl != null" >
+        #{smsrUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="privateKey != null" >
+        #{privateKey,jdbcType=VARCHAR},
+      </if>
+      <if test="cert != null" >
+        #{cert,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.euicc.data.pojo.EuiccSmSr" >
+    update euicc_sm_sr
+    <set >
+      <if test="smsrName != null" >
+        smsr_name = #{smsrName,jdbcType=VARCHAR},
+      </if>
+      <if test="smsrUrl != null" >
+        smsr_url = #{smsrUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="privateKey != null" >
+        private_key = #{privateKey,jdbcType=VARCHAR},
+      </if>
+      <if test="cert != null" >
+        cert = #{cert,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where smsr_id = #{smsrId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.whty.euicc.data.pojo.EuiccSmSr" >
+    update euicc_sm_sr
+    set smsr_name = #{smsrName,jdbcType=VARCHAR},
+      smsr_url = #{smsrUrl,jdbcType=VARCHAR},
+      private_key = #{privateKey,jdbcType=VARCHAR},
+      cert = #{cert,jdbcType=LONGVARCHAR}
+    where smsr_id = #{smsrId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.euicc.data.pojo.EuiccSmSr" >
+    update euicc_sm_sr
+    set smsr_name = #{smsrName,jdbcType=VARCHAR},
+      smsr_url = #{smsrUrl,jdbcType=VARCHAR},
+      private_key = #{privateKey,jdbcType=VARCHAR}
+    where smsr_id = #{smsrId,jdbcType=VARCHAR}
+  </update>
+</mapper>

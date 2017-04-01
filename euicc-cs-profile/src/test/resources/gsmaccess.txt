@@ -1,0 +1,45 @@
+pe-GSM-ACCESS ProfileElement ::= genericFileManagement : { 
+gsm-access-header { 
+mandated NULL, 
+identification 6 
+}, 
+fileManagementCMD { 
+ {
+ filePath : '7ff0'H,
+   createFCP : {
+      fileDescriptor '7821'H,  
+      fileID '5F3b'H,    
+      securityAttributesReferenced '0c'H,
+      pinStatusTemplateDO '01810A'H
+    },
+  createFCP : {
+      fileDescriptor '4121'H,
+      fileID '4f20'H,    
+      securityAttributesReferenced '05'H,
+      efFileSize '09'H,  
+      shortEFID '08'H
+    },
+    fillFileContent : 'FFFFFFFFFFFFFFFF07'H,
+ createFCP : {
+      fileDescriptor '4121'H,
+      fileID '4f52'H, 
+      securityAttributesReferenced '05'H,
+      efFileSize '09'H,  
+      shortEFID '10'H
+    },
+    fillFileContent : 'FFFFFFFFFFFFFFFF07'H,
+  createFCP : {
+      fileDescriptor '4121'H,     
+      fileID '4f63'H, 
+      securityAttributesReferenced '05'H,
+      efFileSize '0a'H
+    },
+ createFCP : {
+      fileDescriptor '4121'H
+      fileID '4f64'H, 
+      securityAttributesReferenced '06'H,
+      efFileSize '01'H      
+    },
+    fillFileContent : '00'H 
+  }
+}  

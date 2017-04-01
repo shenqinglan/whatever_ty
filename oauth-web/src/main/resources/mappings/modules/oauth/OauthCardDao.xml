@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.jeesite.modules.oauth.dao.OauthCardDao">
+    
+	<sql id="oauthCardColumns">
+		a.id AS "id",
+		a.imsi AS "imsi",
+		a.msisdn AS "msisdn",
+		a.count AS "count",
+		a.cardmanufacturerid AS "cardmanufacturerid",
+		a.eid AS "eid",
+		a.card_state AS "cardState",
+		a.iccid as "iccid" 
+	</sql>
+	
+	<sql id="oauthCardJoins">
+	</sql>
+    
+	<select id="get" resultType="OauthCard">
+		SELECT 
+			<include refid="oauthCardColumns"/>
+		FROM oauth_card a
+		<include refid="oauthCardJoins"/>
+		WHERE a.id = #{id} 
+	</select>
+	
+	<select id="findList" resultType="OauthCard">
+		SELECT 
+			<include refid="oauthCardColumns"/>
+		FROM oauth_card a
+		<include refid="oauthCardJoins"/>
+		<where>
+			a.cardmanufacturerid in 
+            <foreach collection="currentUser.roleList" index="index" item="role" open="(" separator="," close=")">
+                #{role.name}
+            </foreach>
+			
+			<if test="imsi != null and imsi != ''">
+				AND a.imsi = #{imsi}
+			</if>
+			<if test="msisdn != null and msisdn != ''">
+				AND a.msisdn = #{msisdn}
+			</if>
+			<if test="iccid != null and iccid != ''">
+                AND a.iccid = #{iccid}
+            </if>
+			<if test="eid != null and eid != ''">
+				AND a.eid = #{eid}
+			</if>
+		</where>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findAllList" resultType="OauthCard">
+		SELECT 
+			<include refid="oauthCardColumns"/>
+		FROM oauth_card a
+		<include refid="oauthCardJoins"/>
+		<where>
+			a.cardmanufacturerid in 
+            <foreach collection="currentUser.roleList" index="index" item="role" open="(" separator="," close=")">
+                #{role.name}
+            </foreach>
+		</where>		
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO oauth_card(
+			id,
+			imsi,
+			msisdn,
+			count,
+			cardmanufacturerid,
+			eid,
+			card_state,
+			iccid 
+		) VALUES (
+			#{id},
+			#{imsi},
+			#{msisdn},
+			#{count},
+			#{cardmanufacturerid},
+			#{eid},
+			#{cardState},
+			#{iccid} 
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE oauth_card SET 	
+			imsi = #{imsi},
+			msisdn = #{msisdn},
+			count = #{count},
+			cardmanufacturerid = #{cardmanufacturerid},
+			eid = #{eid},
+			card_state = #{cardState},
+			iccid = #{iccid} 
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		DELETE FROM oauth_card
+		WHERE id = #{id} 
+	</update>
+	
+</mapper>

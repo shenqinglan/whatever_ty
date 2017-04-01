@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.euicc.base.dao.ApprovalInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.euicc.base.pojo.ApprovalInfo" >
+    <id column="approval_user_id" property="approvalUserId" jdbcType="VARCHAR" />
+    <result column="total_approval_amount" property="totalApprovalAmount" jdbcType="INTEGER" />
+    <result column="approval_amount" property="approvalAmount" jdbcType="INTEGER" />
+    <result column="real_amount" property="realAmount" jdbcType="INTEGER" />
+    <result column="approval_state" property="approvalState" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="UserResultMap" type="com.whty.euicc.base.pojo.ApprovalUserInfo" >
+    <id column="approval_user_id" property="approvalUserId" jdbcType="VARCHAR" />
+    <result column="total_approval_amount" property="totalApprovalAmount" jdbcType="INTEGER" />
+    <result column="approval_amount" property="approvalAmount" jdbcType="INTEGER" />
+    <result column="real_amount" property="realAmount" jdbcType="INTEGER" />
+    <result column="approval_state" property="approvalState" jdbcType="VARCHAR" />
+    <result column="user_account" property="userAccount" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    approval_user_id, total_approval_amount, approval_amount, real_amount, approval_state
+  </sql>
+  <sql id="User_Column_List" >
+    approval_user_id, total_approval_amount, approval_amount, real_amount, approval_state, user_account
+  </sql>
+  <select id="selectByExample" resultMap="UserResultMap" parameterType="com.whty.euicc.base.pojo.ApprovalInfoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="User_Column_List" />
+    from base_users left join approval_info on user_id = approval_user_id
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from approval_info
+    where approval_user_id = #{approvalUserId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectUserInfoByPrimaryKey" resultMap="UserResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="User_Column_List" />
+    from base_users left join approval_info on user_id = approval_user_id
+    where approval_user_id = #{approvalUserId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from approval_info
+    where approval_user_id = #{approvalUserId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whty.euicc.base.pojo.ApprovalInfoExample" >
+    delete from approval_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whty.euicc.base.pojo.ApprovalInfo" >
+    insert into approval_info (approval_user_id, total_approval_amount, 
+      approval_amount, real_amount, approval_state
+      )
+    values (#{approvalUserId,jdbcType=VARCHAR}, #{totalApprovalAmount,jdbcType=INTEGER}, 
+      #{approvalAmount,jdbcType=INTEGER}, #{realAmount,jdbcType=INTEGER}, #{approvalState,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.euicc.base.pojo.ApprovalInfo" >
+    insert into approval_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="approvalUserId != null" >
+        approval_user_id,
+      </if>
+      <if test="totalApprovalAmount != null" >
+        total_approval_amount,
+      </if>
+      <if test="approvalAmount != null" >
+        approval_amount,
+      </if>
+      <if test="realAmount != null" >
+        real_amount,
+      </if>
+      <if test="approvalState != null" >
+        approval_state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="approvalUserId != null" >
+        #{approvalUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="totalApprovalAmount != null" >
+        #{totalApprovalAmount,jdbcType=INTEGER},
+      </if>
+      <if test="approvalAmount != null" >
+        #{approvalAmount,jdbcType=INTEGER},
+      </if>
+      <if test="realAmount != null" >
+        #{realAmount,jdbcType=INTEGER},
+      </if>
+      <if test="approvalState != null" >
+        #{approvalState,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whty.euicc.base.pojo.ApprovalInfoExample" resultType="java.lang.Integer" >
+    select count(*) from approval_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update approval_info
+    <set >
+      <if test="record.approvalUserId != null" >
+        approval_user_id = #{record.approvalUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.totalApprovalAmount != null" >
+        total_approval_amount = #{record.totalApprovalAmount,jdbcType=INTEGER},
+      </if>
+      <if test="record.approvalAmount != null" >
+        approval_amount = #{record.approvalAmount,jdbcType=INTEGER},
+      </if>
+      <if test="record.realAmount != null" >
+        real_amount = #{record.realAmount,jdbcType=INTEGER},
+      </if>
+      <if test="record.approvalState != null" >
+        approval_state = #{record.approvalState,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update approval_info
+    set approval_user_id = #{record.approvalUserId,jdbcType=VARCHAR},
+      total_approval_amount = #{record.totalApprovalAmount,jdbcType=INTEGER},
+      approval_amount = #{record.approvalAmount,jdbcType=INTEGER},
+      real_amount = #{record.realAmount,jdbcType=INTEGER},
+      approval_state = #{record.approvalState,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.euicc.base.pojo.ApprovalInfo" >
+    update approval_info
+    <set >
+      <if test="totalApprovalAmount != null" >
+        total_approval_amount = #{totalApprovalAmount,jdbcType=INTEGER},
+      </if>
+      <if test="approvalAmount != null" >
+        approval_amount = #{approvalAmount,jdbcType=INTEGER},
+      </if>
+      <if test="realAmount != null" >
+        real_amount = #{realAmount,jdbcType=INTEGER},
+      </if>
+      <if test="approvalState != null" >
+        approval_state = #{approvalState,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where approval_user_id = #{approvalUserId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.euicc.base.pojo.ApprovalInfo" >
+    update approval_info
+    set total_approval_amount = #{totalApprovalAmount,jdbcType=INTEGER},
+      approval_amount = #{approvalAmount,jdbcType=INTEGER},
+      real_amount = #{realAmount,jdbcType=INTEGER},
+      approval_state = #{approvalState,jdbcType=VARCHAR}
+    where approval_user_id = #{approvalUserId,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.euicc.data.dao.EuiccPol1Mapper" >
+  <resultMap id="BaseResultMap" type="com.whty.euicc.data.pojo.EuiccPol1" >
+    <id column="pol1_id" property="pol1Id" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from euicc_pol1
+    where pol1_id = #{pol1Id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.whty.euicc.data.pojo.EuiccPol1" >
+    insert into euicc_pol1 (pol1_id)
+    values (#{pol1Id,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.euicc.data.pojo.EuiccPol1" >
+    insert into euicc_pol1
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pol1Id != null" >
+        pol1_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pol1Id != null" >
+        #{pol1Id,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

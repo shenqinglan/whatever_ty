@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.jeesite.modules.oauth.dao.OauthKeyDao">
+    
+	<sql id="oauthKeyColumns">
+		a.id AS "id",
+		a.key_index AS "index",
+		a.version AS "version",
+		a.mac_key AS "macKey",
+		a.eid AS "eid",
+		a.msisdn AS "msisdn",
+		a.iccid as "iccid" 
+	</sql>
+	
+	<sql id="oauthKeyJoins">
+		inner join oauth_card b on a.eid = b.eid and a.msisdn = b.msisdn and a.iccid = b.iccid 
+	</sql>
+    
+	<select id="get" resultType="OauthKey">
+		SELECT 
+			<include refid="oauthKeyColumns"/>
+		FROM oauth_key a
+		<include refid="oauthKeyJoins"/>
+		WHERE a.id = #{id} 
+	</select>
+	
+	<select id="findList" resultType="OauthKey">
+		SELECT 
+			<include refid="oauthKeyColumns"/>
+		FROM oauth_key a
+		<include refid="oauthKeyJoins"/>
+		<where>
+			b.cardmanufacturerid in 
+            <foreach collection="currentUser.roleList" index="index" item="role" open="(" separator="," close=")">
+                #{role.name}
+            </foreach>
+			<if test="eid != null and eid != ''">
+				AND a.eid = #{eid}
+			</if>
+			<if test="msisdn != null and msisdn != ''">
+				AND a.msisdn = #{msisdn}
+			</if>
+			<if test="iccid != null and iccid != ''">
+                AND a.iccid = #{iccid}
+            </if>
+            <if test="index != null and index != ''">
+                AND a.key_index = #{index}
+            </if>
+            <if test="version != null and version != ''">
+                AND a.version = #{version}
+            </if>
+		</where>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findAllList" resultType="OauthKey">
+		SELECT 
+			<include refid="oauthKeyColumns"/>
+		FROM oauth_key a
+		<include refid="oauthKeyJoins"/>
+		<where>
+			b.cardmanufacturerid in 
+            <foreach collection="currentUser.roleList" index="index" item="role" open="(" separator="," close=")">
+                #{role.name}
+            </foreach>
+		</where>		
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO oauth_key(
+			id,
+			key_index,
+			version,
+			mac_key,
+			eid,
+			msisdn,
+			iccid 
+		) VALUES (
+			#{id},
+			#{index},
+			#{version},
+			#{macKey},
+			#{eid},
+			#{msisdn},
+			#{iccid} 
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE oauth_key SET 	
+			key_index = #{index},
+			version = #{version},
+			mac_key = #{macKey},
+			eid = #{eid},
+			msisdn = #{msisdn},
+			iccid = #{iccid} 
+		WHERE id = #{id} 
+	</update>
+	
+	<update id="delete">
+		DELETE FROM oauth_key
+		WHERE id = #{id} 
+	</update>
+	
+</mapper>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+  <xs:annotation>
+    <xs:documentation>This schema is not carrying any version on its own, as it is not a stand alone schema (it is designed to be included in another one). This schema is explicitly having no name space in order to enable the possibility to apply the "chameleon" approach. (the name space will be the one of the including schema).</xs:documentation>
+  </xs:annotation>
+  <xs:include schemaLocation="euicc.common.request.xsd"/>
+  <xs:include schemaLocation="euicc.common.types.xsd"/>
+  <xs:group name="ES7">
+    <xs:annotation>
+      <xs:documentation>Provides the list of all function execution requests and function execution responses defined in ES1 interface</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:element ref="ES7-CreateAdditionalKeySetRequest"/>
+      <xs:element ref="ES7-CreateAdditionalKeySetResponse"/>
+      <xs:element ref="ES7-AuthenticateSMSRRequest"/>
+      <xs:element ref="ES7-AuthenticateSMSRResponse"/>
+      <xs:element ref="ES7-HandoverEUICCRequest"/>
+      <xs:element ref="ES7-HandoverEUICCResponse"/>
+      <xs:element ref="ES7-HandleSMSRChangeNotification"/>
+    </xs:choice>
+  </xs:group>
+  <xs:simpleType name="ES7-MessageType">
+    <xs:annotation>
+      <xs:documentation>List of all possible message type. A type shall exist for each supported function of the interface.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ES7-CreateAdditionalKeySetRequest"/>
+      <xs:enumeration value="ES7-CreateAdditionalKeySetResponse"/>
+      <xs:enumeration value="ES7-AuthenticateSMSRRequest"/>
+      <xs:enumeration value="ES7-AuthenticateSMSRResponse"/>
+      <xs:enumeration value="ES7-HandoverEUICCRequest"/>
+      <xs:enumeration value="ES7-HandoverEUICCResponse"/>
+      <xs:enumeration value="ES7-HandleSMSRChangeNotification"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--============================================================================================================================-->
+  <xs:element name="ES7-CreateAdditionalKeySetRequest">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseRequestType">
+          <xs:sequence>
+            <xs:element name="Eid" type="EIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the targeted eUICC.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="KeyVersionNumber" type="KeysetVersionType">
+              <xs:annotation>
+                <xs:documentation>The Key Version Number of the to-be-created keyset.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="InitialSequenceCounter" type="xs:integer">
+              <xs:annotation>
+                <xs:documentation>The initial value of the Sequence Counter of the keyset.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="ECCKeyLength" type="ECCKeyLengthType">
+              <xs:annotation>
+                <xs:documentation>The length of the Elliptic Curve Cryptography keys.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="ScenarioParameter" type="xs:byte">
+              <xs:annotation>
+                <xs:documentation>Scenario parameter as defined in Table 4-17 of the Amendment E of GP 2.2 Card Specification [15].</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="HostId" type="xs:hexBinary">
+              <xs:annotation>
+                <xs:documentation>Host ID as defined in Table 4-15 of the Amendment E of GP 2.2 Card Specification [15].</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="EphemeralPublicKey" type="xs:hexBinary">
+              <xs:annotation>
+                <xs:documentation>The ephemeral public key calculated by new SM-SR.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Signature" type="xs:hexBinary">
+              <xs:annotation>
+                <xs:documentation>The signature associated to the authenticate SM-SR function.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ES7-CreateAdditionalKeySetResponse">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseResponseType">
+          <xs:sequence>
+            <xs:element name="DerivationRandom" type="xs:hexBinary">
+              <xs:annotation>
+                <xs:documentation>A random number generated in the SE for additional entropy in the key derivation process.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Receipt" type="xs:hexBinary">
+              <xs:annotation>
+                <xs:documentation>A Message Authentication Code (MAC) </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!--============================================================================================================================-->
+  <xs:element name="ES7-AuthenticateSMSRRequest">
+    <xs:annotation>
+      <xs:documentation>Maps the execution request of the ES7-AuthenticateSMSR function.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseRequestType">
+          <xs:sequence>
+            <xs:element name="Eis" type="EISType">
+              <xs:annotation>
+                <xs:documentation>Identification of the targeted eUICC.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="SmsrCertificate" type="xs:hexBinary">
+              <xs:annotation>
+                <xs:documentation>The format of this field is a byte array which content corresponds to the full content of tag '7F21' (including the two '7F21' bytes).</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ES7-AuthenticateSMSRResponse">
+    <xs:annotation>
+      <xs:documentation>Maps the execution response of the ES7-AuthenticateSMSR function.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseResponseType">
+          <xs:sequence>
+            <xs:element name="RandomChallenge" type="xs:hexBinary">
+              <xs:annotation>
+                <xs:documentation>The random challenge retruned by the eUICC.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!--============================================================================================================================-->
+  <xs:element name="ES7-HandoverEUICCRequest">
+    <xs:annotation>
+      <xs:documentation>Maps the execution request of the ES7-HandoverEUICC function.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseRequestType">
+          <xs:sequence>
+            <xs:element name="Eis" type="EISType">
+              <xs:annotation>
+                <xs:documentation>Identification of the targeted eUICC.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ES7-HandoverEUICCResponse">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseResponseType">
+          <xs:sequence>
+            <xs:annotation>
+              <xs:documentation>No specific output</xs:documentation>
+            </xs:annotation>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!--============================================================================================================================-->
+  <xs:element name="ES7-HandleSMSRChangeNotification">
+    <xs:annotation>
+      <xs:documentation>Maps an execution of the ES3-HandleSMSRChange notification.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseNotificationType">
+          <xs:sequence>
+            <xs:element name="Eis" type="EISType">
+              <xs:annotation>
+                <xs:documentation>The relevant part of the eUICC Information Set linked with the MNO owning the Profile hosted in the eUICC.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="CompletionTimestamp" type="xs:dateTime">
+              <xs:annotation>
+                <xs:documentation>Indication of the date/time when the operation has been performed.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

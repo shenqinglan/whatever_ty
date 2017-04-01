@@ -1,0 +1,43 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:add="http://www.w3.org/2005/08/addressing" xmlns:ns="http://namespaces.gsma.org/esim-messaging/3">
+   <soap:Header>
+      <add:ReplyTo>
+         <add:Address>1</add:Address>
+         <!--Optional:-->
+         <add:ReferenceParameters>
+            <!--You may enter ANY elements at this point-->
+         </add:ReferenceParameters>
+         <!--Optional:-->
+         <add:Metadata>
+            <!--You may enter ANY elements at this point-->
+         </add:Metadata>
+         <!--You may enter ANY elements at this point-->
+      </add:ReplyTo>
+      <add:Action>1</add:Action>
+      <add:MessageID>1</add:MessageID>
+      <add:To>1</add:To>
+      <add:From>
+         <add:Address>1</add:Address>
+         <!--Optional:-->
+         <add:ReferenceParameters>
+            <!--You may enter ANY elements at this point-->
+         </add:ReferenceParameters>
+         <!--Optional:-->
+         <add:Metadata>
+            <!--You may enter ANY elements at this point-->
+         </add:Metadata>
+         <!--You may enter ANY elements at this point-->
+      </add:From>
+   </soap:Header>
+   <soap:Body>
+      <ns:ES3-SendDataRequest>
+         <ns:FunctionCallIdentifier>01</ns:FunctionCallIdentifier>
+         <!--Optional:-->
+         <ns:ValidityPeriod>1</ns:ValidityPeriod>
+         <ns:Eid>3839303031303132303132333431323334303132333435363738393031323234</ns:Eid>
+         <ns:Sd-aid>A0000005591010FFFFFFFF8900001300</ns:Sd-aid>
+         <ns:Data>2281B180E20900AC3A01A97F2181A59301024201025F2001029501885F2404214501017303C801017f4946B041046466E042804FAAC48F839EA53E85D0B8B93F2F015028A472F07F3227AF408170ACFB39D198BA7D0DCFF3DE5032A6CC8F6ACC84EF556BFE530DEC0FF75F2AF59AF001005F3740F7BA7DE1E625D5721A5756F9B9D8D1A25D1667300801BE063AE1FED8CA9E0107B12F00500EEE49D82A5065542E0A38FDD86E276A804BF859CB5528C0457CC830</ns:Data>
+         <!--Optional:-->
+         <ns:MoreToDo>true</ns:MoreToDo>
+      </ns:ES3-SendDataRequest>
+   </soap:Body>
+</soap:Envelope>

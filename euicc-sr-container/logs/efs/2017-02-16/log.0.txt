@@ -1,0 +1,2 @@
+14:20:12.300 INFO  com.whty.euicc.init.InitLoad - EUICC_HOME:	D:\euicc\euicc-sr-container
+14:30:46.264 INFO  com.whty.euicc.init.InitLoad - EUICC_HOME:	D:\euicc\euicc-sr-container

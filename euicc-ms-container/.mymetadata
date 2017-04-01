@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="euicc-ms-container"
+  id="myeclipse.1464258588918"
+  context-root="/euicc-ms-container"
+  j2ee-spec="6.0"
+  archive="euicc-ms-container.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+

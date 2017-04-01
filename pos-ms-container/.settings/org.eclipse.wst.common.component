@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="pos-ms-container">
+        <wb-resource deploy-path="/WEB-INF/web.xml" source-path="/src/main/webapp/WEB-INF/web.xml"/>
+        <wb-resource deploy-path="/WEB-INF/web.xml" source-path="/src/main/webapp/WEB-INF/web.xml"/>
+        <wb-resource deploy-path="/WEB-INF/web.xml" source-path="/src/main/webapp/WEB-INF/web.xml"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
+        <dependent-module archiveName="pos-ms-data-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/pos-ms-data/pos-ms-data">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="pos-ms-base-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/pos-ms-base/pos-ms-base">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="pos-ms-util-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/pos-ms-util/pos-ms-util">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="/pos-ms-container"/>
+        <property name="java-output-path" value="/pos-ms-container/src/main/webapp/WEB-INF/classes"/>
+    </wb-module>
+</project-modules>

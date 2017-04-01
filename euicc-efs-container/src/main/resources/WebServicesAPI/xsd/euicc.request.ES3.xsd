@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+  <xs:annotation>
+    <xs:documentation>This schema is not carrying any version on its own, as it is not a stand alone schema (it is designed to be included in another one). This schema is explicitly having no name space in order to enable the possibility to apply the "chameleon" approach. (the name space will be the one of the including schema).</xs:documentation>
+  </xs:annotation>
+  <xs:include schemaLocation="euicc.common.request.xsd"/>
+  <xs:include schemaLocation="euicc.common.types.xsd"/>
+  <xs:group name="ES3">
+    <xs:annotation>
+      <xs:documentation>Provides the list of all function execution requests and function execution responses defined in ES3 interface</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:element ref="ES3-GetEISRequest"/>
+      <xs:element ref="ES3-GetEISResponse"/>
+      <xs:element ref="ES3-AuditEISRequest"/>
+      <xs:element ref="ES3-AuditEISResponse"/>
+      <xs:element ref="ES3-CreateISDPRequest"/>
+      <xs:element ref="ES3-CreateISDPResponse"/>
+      <xs:element ref="ES3-SendDataRequest"/>
+      <xs:element ref="ES3-SendDataResponse"/>
+      <xs:element ref="ES3-ProfileDownloadCompletedRequest"/>
+      <xs:element ref="ES3-ProfileDownloadCompletedResponse"/>
+      <xs:element ref="ES3-UpdatePolicyRulesRequest"/>
+      <xs:element ref="ES3-UpdatePolicyRulesResponse"/>
+      <xs:element ref="ES3-UpdateSubscriptionAddressRequest"/>
+      <xs:element ref="ES3-UpdateSubscriptionAddressResponse"/>
+      <xs:element ref="ES3-EnableProfileRequest"/>
+      <xs:element ref="ES3-EnableProfileResponse"/>
+      <xs:element ref="ES3-DisableProfileRequest"/>
+      <xs:element ref="ES3-DisableProfileResponse"/>
+      <xs:element ref="ES3-DeleteISDPRequest"/>
+      <xs:element ref="ES3-DeleteISDPResponse"/>
+      <xs:element ref="ES3-HandleProfileDisabledNotification"/>
+      <xs:element ref="ES3-HandleProfileEnabledNotification"/>
+      <xs:element ref="ES3-HandleProfileDeletedNotification"/>
+      <xs:element ref="ES3-HandleSMSRChangeNotification"/>
+    </xs:choice>
+  </xs:group>
+  <!--============================================================================================================================-->
+  <xs:simpleType name="ES3-MessageType">
+    <xs:annotation>
+      <xs:documentation>List of all possible message type. A type shall exist for each supported function of the interface.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ES3-GetEISRequest"/>
+      <xs:enumeration value="ES3-GetEISResponse"/>
+      <xs:enumeration value="ES3-AuditEISRequest"/>
+      <xs:enumeration value="ES3-AuditEISResponse"/>
+      <xs:enumeration value="ES3-CreateISDPRequest"/>
+      <xs:enumeration value="ES3-CreateISDPResponse"/>
+      <xs:enumeration value="ES3-SendDataRequest"/>
+      <xs:enumeration value="ES3-SendDataResponse"/>
+      <xs:enumeration value="ES3-ProfileDownloadCompletedRequest"/>
+      <xs:enumeration value="ES3-ProfileDownloadCompletedResponse"/>
+      <xs:enumeration value="ES3-UpdatePolicyRulesRequest"/>
+      <xs:enumeration value="ES3-UpdatePolicyRulesResponse"/>
+      <xs:enumeration value="ES3-UpdateSubscriptionAddressRequest"/>
+      <xs:enumeration value="ES3-UpdateSubscriptionAddressResponse"/>
+      <xs:enumeration value="ES3-EnableProfileRequest"/>
+      <xs:enumeration value="ES3-EnableProfileResponse"/>
+      <xs:enumeration value="ES3-DisableProfileRequest"/>
+      <xs:enumeration value="ES3-DisableProfileResponse"/>
+      <xs:enumeration value="ES3-DeleteISDPRequest"/>
+      <xs:enumeration value="ES3-DeleteISDPResponse"/>
+      <xs:enumeration value="ES3-HandleProfileDisabledNotification"/>
+      <xs:enumeration value="ES3-HandleProfileEnabledNotification"/>
+      <xs:enumeration value="ES3-HandleProfileDeletedNotification"/>
+      <xs:enumeration value="ES3-HandleSMSRChangeNotification"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--============================================================================================================================-->
+  <xs:element name="ES3-GetEISRequest">
+    <xs:annotation>
+      <xs:documentation>Maps an execution request of the ES3-GetEIS function.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseRequestType">
+          <xs:sequence>
+            <xs:element name="Eid" type="EIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the targeted eUICC.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ES3-GetEISResponse">
+    <xs:annotation>
+      <xs:documentation>Maps an execution response of the ES3-GetEIS function.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseResponseType">
+          <xs:sequence>
+            <xs:element name="Eis" type="EISType" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>This is the eUICC Information Set of the eUICC</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!--============================================================================================================================-->
+  <xs:element name="ES3-CreateISDPRequest">
+    <xs:annotation>
+      <xs:documentation>Maps an execution request of the ES3-CreateISDP function.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseRequestType">
+          <xs:sequence>
+            <xs:element name="Eid" type="EIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the targeted eUICC.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Iccid" type="ICCIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the target Profile.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Mno-id" type="ObjectIdentifierType"/>
+            <xs:element name="RequiredMemory" type="xs:integer"/>
+            <xs:element name="MoreToDo" type="xs:boolean" minOccurs="0"/>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ES3-CreateISDPResponse">
+    <xs:annotation>
+      <xs:documentation>Maps an execution response of the ES3-CreateISDP function.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseResponseType">
+          <xs:sequence>
+            <xs:element name="Isd-p-aid" type="AIDType">
+              <xs:annotation>
+                <xs:documentation>The ISD-P-AID of the ISD-P containing the Profile. Empty in case it is not applicable for given operation type</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="EuiccResponseData" type="xs:hexBinary" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>Contains the detailed error returned by the eUICC in case the function execution failed on eUICC. The response data is defined in ES8 depending of the requested function.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!--============================================================================================================================-->
+  <xs:element name="ES3-AuditEISRequest">
+    <xs:annotation>
+      <xs:documentation>Maps an execution request of the ES3-AuditEIS function.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseRequestType">
+          <xs:sequence>
+            <xs:element name="Eid" type="EIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the targeted eUICC.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Iccid" type="ICCIDType" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ES3-AuditEISResponse">
+    <xs:annotation>
+      <xs:documentation>Maps an execution response of the ES3-AuditEIS function.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseResponseType">
+          <xs:sequence>
+            <xs:element name="Eis" type="EISType" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>This is the eUICC Information Set of the eUICC</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!--============================================================================================================================-->
+  <xs:element name="ES3-SendDataRequest">
+    <xs:annotation>
+      <xs:documentation>Maps an execution request of the ES3-SendData function.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseRequestType">
+          <xs:sequence>
+            <xs:element name="Eid" type="EIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the targeted eUICC.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Sd-aid" type="AIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the target Security Domain.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Data" type="xs:hexBinary"/>
+            <xs:element name="MoreToDo" type="xs:boolean" minOccurs="0"/>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ES3-SendDataResponse">
+    <xs:annotation>
+      <xs:documentation>Maps an execution response of the ES3-SendData function.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseResponseType">
+          <xs:sequence>
+            <xs:element name="EuiccResponseData" type="xs:hexBinary" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>Contains the detailed error returned by the eUICC in case the function execution failed on eUICC. The response data is defined in ES8 depending of the requested function.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!--============================================================================================================================-->
+  <xs:element name="ES3-ProfileDownloadCompletedRequest">
+    <xs:annotation>
+      <xs:documentation>Maps the execution request of the ES3-ProfileDownloadCompleted function.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseRequestType">
+          <xs:sequence>
+            <xs:element name="Eid" type="EIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the targeted eUICC.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Iccid" type="ICCIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the target Profile.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="ProfileType" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>Indicates, through an SM-DP reference, the type of Profile generated by the SM-DP</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="SubscriptionAddress" type="SubscriptionAddressType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The Subscription Address related to the identified Profile</xs:documentation>
+            </xs:annotation>
+            </xs:element>
+            <xs:element name="pol2" type="POL2Type" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>The POL2 to associate with the identified Profile</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ES3-ProfileDownloadCompletedResponse">
+    <xs:annotation>
+      <xs:documentation>Maps an execution response of the ES3-ProfileDownloadCompleted function.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseResponseType">
+          <xs:sequence>
+            <xs:annotation>
+              <xs:documentation>No specific output</xs:documentation>
+            </xs:annotation>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!--============================================================================================================================-->
+  <xs:element name="ES3-UpdatePolicyRulesRequest">
+    <xs:annotation>
+      <xs:documentation>Maps an execution request of the ES3-UpdatePolicyRules function.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseRequestType">
+          <xs:sequence>
+            <xs:annotation>
+              <xs:documentation/>
+            </xs:annotation>
+            <xs:element name="Eid" type="EIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the targeted eUICC.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Iccid" type="ICCIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the target Profile.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="pol2" type="POL2Type" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>The POL2 to associate with the identified Profile</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ES3-UpdatePolicyRulesResponse">
+    <xs:annotation>
+      <xs:documentation>Maps an execution response of the ES3-UpdatePolicyRules function.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseResponseType">
+          <xs:sequence>
+            <xs:annotation>
+              <xs:documentation>No specific output</xs:documentation>
+            </xs:annotation>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!--============================================================================================================================-->
+  <xs:element name="ES3-UpdateSubscriptionAddressRequest">
+    <xs:annotation>
+      <xs:documentation>Maps an execution request of the ES3-UpdateSubscriptionAddress function.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseRequestType">
+          <xs:sequence>
+            <xs:element name="Eid" type="EIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the targeted eUICC.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Iccid" type="ICCIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the target Profile.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="newSubscriptionAddress" type="SubscriptionAddressType">
+              <xs:annotation>
+                <xs:documentation>The new Subscription Address</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ES3-UpdateSubscriptionAddressResponse">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseResponseType">
+          <xs:sequence>
+            <xs:annotation>
+              <xs:documentation>No specific output</xs:documentation>
+            </xs:annotation>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!--============================================================================================================================-->
+  <xs:element name="ES3-EnableProfileRequest">
+    <xs:annotation>
+      <xs:documentation>Maps an execution request of the ES3-EnableProfile function.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseRequestType">
+          <xs:sequence>
+            <xs:annotation>
+              <xs:documentation/>
+            </xs:annotation>
+            <xs:element name="Eid" type="EIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the targeted eUICC.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Iccid" type="ICCIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the target Profile.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ES3-EnableProfileResponse">
+    <xs:annotation>
+      <xs:documentation>Maps an execution response of the ES3-EnableProfile function.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseResponseType">
+          <xs:sequence>
+            <xs:annotation>
+              <xs:documentation/>
+            </xs:annotation>
+            <xs:element name="EuiccResponseData" type="xs:hexBinary" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>Contains the detailed error returned by the eUICC in case the function execution failed on eUICC.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!--============================================================================================================================-->
+  <xs:element name="ES3-DisableProfileRequest">
+    <xs:annotation>
+      <xs:documentation>Maps an execution request of the ES3-DisableProfile function.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseRequestType">
+          <xs:sequence>
+            <xs:annotation>
+              <xs:documentation/>
+            </xs:annotation>
+            <xs:element name="Eid" type="EIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the targeted eUICC.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Iccid" type="ICCIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the target Profile.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ES3-DisableProfileResponse">
+    <xs:annotation>
+      <xs:documentation>Maps an execution response of the ES3-DisableProfile function.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseResponseType">
+          <xs:sequence>
+            <xs:annotation>
+              <xs:documentation/>
+            </xs:annotation>
+            <xs:element name="EuiccResponseData" type="xs:hexBinary" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>Contains the detailed error returned by the eUICC in case the function execution failed on eUICC.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!--============================================================================================================================-->
+  <xs:element name="ES3-DeleteISDPRequest">
+    <xs:annotation>
+      <xs:documentation>Maps an execution request of the ES3-DeleteISDP function.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseRequestType">
+          <xs:sequence>
+            <xs:element name="Eid" type="EIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the targeted eUICC.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Iccid" type="ICCIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the target Profile.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ES3-DeleteISDPResponse">
+    <xs:annotation>
+      <xs:documentation>Maps an execution response of the ES3-deleteISDP function.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseResponseType">
+          <xs:sequence>
+            <xs:annotation>
+              <xs:documentation/>
+            </xs:annotation>
+            <xs:element name="EuiccResponseData" type="xs:hexBinary" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>Contains the detailed error returned by the eUICC in case the function execution failed on eUICC.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!--============================================================================================================================-->
+  <xs:element name="ES3-HandleProfileDisabledNotification">
+    <xs:annotation>
+      <xs:documentation>Maps an execution of the ES3-HandleProfileDisabled notification.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseNotificationType">
+          <xs:sequence>
+            <xs:annotation>
+              <xs:documentation/>
+            </xs:annotation>
+            <xs:element name="Eid" type="EIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the targeted eUICC.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Iccid" type="ICCIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the target Profile.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Mno-id" type="ObjectIdentifierType">
+              <xs:annotation>
+                <xs:documentation>Identification of the MNO owner of the profile.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="CompletionTimestamp" type="xs:dateTime">
+              <xs:annotation>
+                <xs:documentation>Indication of the date/time when the operation has been performed</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!--============================================================================================================================-->
+  <xs:element name="ES3-HandleProfileEnabledNotification">
+    <xs:annotation>
+      <xs:documentation>Maps an execution of the ES3-HandleProfileEnabled notification.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseNotificationType">
+          <xs:sequence>
+            <xs:annotation>
+              <xs:documentation/>
+            </xs:annotation>
+            <xs:element name="Eid" type="EIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the targeted eUICC.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Iccid" type="ICCIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the target Profile.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Mno-id" type="ObjectIdentifierType">
+              <xs:annotation>
+                <xs:documentation>Identification of the MNO owner of the profile.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="CompletionTimestamp" type="xs:dateTime">
+              <xs:annotation>
+                <xs:documentation>Indication of the date/time when the operation has been performed</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!--============================================================================================================================-->
+  <xs:element name="ES3-HandleProfileDeletedNotification">
+    <xs:annotation>
+      <xs:documentation>Maps an execution of the ES3-HandleProfileDeleted notification.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseNotificationType">
+          <xs:sequence>
+            <xs:annotation>
+              <xs:documentation/>
+            </xs:annotation>
+            <xs:element name="Eid" type="EIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the targeted eUICC.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Iccid" type="ICCIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the target Profile.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Mno-id" type="ObjectIdentifierType">
+              <xs:annotation>
+                <xs:documentation>Identification of the MNO owner of the profile.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="CompletionTimestamp" type="xs:dateTime">
+              <xs:annotation>
+                <xs:documentation>Indication of the date/time when the operation has been performed</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!--============================================================================================================================-->
+  <xs:element name="ES3-HandleSMSRChangeNotification">
+    <xs:annotation>
+      <xs:documentation>Maps an execution of the ES3-HandleSMSRChange notification.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseNotificationType">
+          <xs:sequence>
+            <xs:element name="Eis" type="EISType">
+              <xs:annotation>
+                <xs:documentation>The relevant part of the eUICC Information Set linked with the MNO owning the Profile hosted in the eUICC.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+             <xs:element name="Mno-id" type="ObjectIdentifierType">
+              <xs:annotation>
+                <xs:documentation>Identification of the MNO owner of the profile.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="completionTimestamp" type="xs:dateTime">
+              <xs:annotation>
+                <xs:documentation>Indication of the date/time when the operation has been performed.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!--============================================================================================================================-->
+  <xs:element name="ES3-UpdateConnectivityParametersRequest">
+    <xs:annotation>
+      <xs:documentation>Maps an execution request of the ES3-UpdateConnectivityParameters function.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseRequestType">
+          <xs:sequence>
+            <xs:annotation>
+              <xs:documentation/>
+            </xs:annotation>
+            <xs:element name="Eid" type="EIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the targeted eUICC.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Iccid" type="ICCIDType">
+              <xs:annotation>
+                <xs:documentation>Identification of the target Profile.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="ConnectivityParameters" type="xs:hexBinary"/>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ES3-UpdateConnectivityParametersResponse">
+    <xs:annotation>
+      <xs:documentation>Maps an execution response of the ES3-UpdateConnectivityParameters function.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BaseResponseType">
+          <xs:sequence>
+            <xs:annotation>
+              <xs:documentation/>
+            </xs:annotation>
+            <xs:element name="EuiccResponseData" type="xs:hexBinary" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>Contains the detailed error returned by the eUICC in case the function execution failed on eUICC. The response data is defined in ES8 depending of the requested function.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

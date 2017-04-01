@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.efs.data.dao.EuiccRetrievalTransformTypeMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.efs.data.pojo.EuiccRetrievalTransformType" >
+    <id column="transform_id" property="transformId" jdbcType="VARCHAR" />
+    <result column="retrieval_id" property="retrievalId" jdbcType="VARCHAR" />
+    <result column="xPath" property="xpath" jdbcType="VARCHAR" />
+    <result column="algorithm" property="algorithm" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    transform_id, retrieval_id, xPath, algorithm
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.whty.efs.data.pojo.EuiccRetrievalTransformTypeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from euicc_retrieval_transform_type
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from euicc_retrieval_transform_type
+    where transform_id = #{transformId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from euicc_retrieval_transform_type
+    where transform_id = #{transformId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByRetrievalId" parameterType="java.lang.String" >
+    delete from euicc_retrieval_transform_type
+    where retrieval_id = #{retrievalId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whty.efs.data.pojo.EuiccRetrievalTransformTypeExample" >
+    delete from euicc_retrieval_transform_type
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whty.efs.data.pojo.EuiccRetrievalTransformType" >
+    insert into euicc_retrieval_transform_type (transform_id, retrieval_id, xPath, 
+      algorithm)
+    values (#{transformId,jdbcType=VARCHAR}, #{retrievalId,jdbcType=VARCHAR}, #{xpath,jdbcType=VARCHAR}, 
+      #{algorithm,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.efs.data.pojo.EuiccRetrievalTransformType" >
+    insert into euicc_retrieval_transform_type
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="transformId != null" >
+        transform_id,
+      </if>
+      <if test="retrievalId != null" >
+        retrieval_id,
+      </if>
+      <if test="xpath != null" >
+        xPath,
+      </if>
+      <if test="algorithm != null" >
+        algorithm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="transformId != null" >
+        #{transformId,jdbcType=VARCHAR},
+      </if>
+      <if test="retrievalId != null" >
+        #{retrievalId,jdbcType=VARCHAR},
+      </if>
+      <if test="xpath != null" >
+        #{xpath,jdbcType=VARCHAR},
+      </if>
+      <if test="algorithm != null" >
+        #{algorithm,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whty.efs.data.pojo.EuiccRetrievalTransformTypeExample" resultType="java.lang.Integer" >
+    select count(*) from euicc_retrieval_transform_type
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update euicc_retrieval_transform_type
+    <set >
+      <if test="record.transformId != null" >
+        transform_id = #{record.transformId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.retrievalId != null" >
+        retrieval_id = #{record.retrievalId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.xpath != null" >
+        xPath = #{record.xpath,jdbcType=VARCHAR},
+      </if>
+      <if test="record.algorithm != null" >
+        algorithm = #{record.algorithm,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update euicc_retrieval_transform_type
+    set transform_id = #{record.transformId,jdbcType=VARCHAR},
+      retrieval_id = #{record.retrievalId,jdbcType=VARCHAR},
+      xPath = #{record.xpath,jdbcType=VARCHAR},
+      algorithm = #{record.algorithm,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.efs.data.pojo.EuiccRetrievalTransformType" >
+    update euicc_retrieval_transform_type
+    <set >
+      <if test="retrievalId != null" >
+        retrieval_id = #{retrievalId,jdbcType=VARCHAR},
+      </if>
+      <if test="xpath != null" >
+        xPath = #{xpath,jdbcType=VARCHAR},
+      </if>
+      <if test="algorithm != null" >
+        algorithm = #{algorithm,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where transform_id = #{transformId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.efs.data.pojo.EuiccRetrievalTransformType" >
+    update euicc_retrieval_transform_type
+    set retrieval_id = #{retrievalId,jdbcType=VARCHAR},
+      xPath = #{xpath,jdbcType=VARCHAR},
+      algorithm = #{algorithm,jdbcType=VARCHAR}
+    where transform_id = #{transformId,jdbcType=VARCHAR}
+  </update>
+</mapper>

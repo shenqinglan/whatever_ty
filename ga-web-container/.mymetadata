@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="ga-web-container"
+  id="myeclipse.1489025729389"
+  context-root="/ga-web-container"
+  j2ee-spec="6.0"
+  archive="ga-web-container.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+

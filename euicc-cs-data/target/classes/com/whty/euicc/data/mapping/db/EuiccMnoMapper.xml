@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.euicc.data.dao.EuiccMnoMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.euicc.data.pojo.EuiccMno" >
+    <id column="mno_id" property="mnoId" jdbcType="VARCHAR" />
+    <result column="mno_name" property="mnoName" jdbcType="VARCHAR" />
+    <result column="mno_code" property="mnoCode" jdbcType="VARCHAR" />
+    <result column="cert" property="cert" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    mno_id, mno_name, mno_code, cert
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from euicc_mno
+    where mno_id = #{mnoId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from euicc_mno
+    where mno_id = #{mnoId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.whty.euicc.data.pojo.EuiccMno" >
+    insert into euicc_mno (mno_id, mno_name, mno_code, 
+      cert)
+    values (#{mnoId,jdbcType=VARCHAR}, #{mnoName,jdbcType=VARCHAR}, #{mnoCode,jdbcType=VARCHAR}, 
+      #{cert,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.euicc.data.pojo.EuiccMno" >
+    insert into euicc_mno
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="mnoId != null" >
+        mno_id,
+      </if>
+      <if test="mnoName != null" >
+        mno_name,
+      </if>
+      <if test="mnoCode != null" >
+        mno_code,
+      </if>
+      <if test="cert != null" >
+        cert,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="mnoId != null" >
+        #{mnoId,jdbcType=VARCHAR},
+      </if>
+      <if test="mnoName != null" >
+        #{mnoName,jdbcType=VARCHAR},
+      </if>
+      <if test="mnoCode != null" >
+        #{mnoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cert != null" >
+        #{cert,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.euicc.data.pojo.EuiccMno" >
+    update euicc_mno
+    <set >
+      <if test="mnoName != null" >
+        mno_name = #{mnoName,jdbcType=VARCHAR},
+      </if>
+      <if test="mnoCode != null" >
+        mno_code = #{mnoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cert != null" >
+        cert = #{cert,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where mno_id = #{mnoId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.euicc.data.pojo.EuiccMno" >
+    update euicc_mno
+    set mno_name = #{mnoName,jdbcType=VARCHAR},
+      mno_code = #{mnoCode,jdbcType=VARCHAR},
+      cert = #{cert,jdbcType=VARCHAR}
+    where mno_id = #{mnoId,jdbcType=VARCHAR}
+  </update>
+</mapper>

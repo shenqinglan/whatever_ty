@@ -1,0 +1,16 @@
+13:22:58.134 INFO  com.whty.euicc.init.InitLoad - EUICC_HOME:	D:\euicc\euicc-sr-container
+13:25:25.316 INFO  com.whty.euicc.init.InitLoad - EUICC_HOME:	D:\euicc\euicc-sr-container
+13:25:43.220 INFO  com.whty.euicc.init.InitLoad - EUICC_HOME:	D:\euicc\euicc-sr-container
+13:27:59.804 INFO  com.whty.euicc.init.InitLoad - EUICC_HOME:	D:\euicc\euicc-sr-container
+13:50:02.569 INFO  com.whty.euicc.init.InitLoad - EUICC_HOME:	D:\euicc\euicc-sr-container
+15:03:16.831 INFO  com.whty.euicc.init.InitLoad - EUICC_HOME:	D:\euicc\euicc-sr-container
+15:14:40.764 INFO  com.whty.euicc.init.InitLoad - EUICC_HOME:	D:\euicc\euicc-sr-container
+16:27:10.619 INFO  com.whty.euicc.init.InitLoad - EUICC_HOME:	D:\euicc\euicc-sr-container
+17:05:59.127 INFO  com.whty.euicc.init.InitLoad - EUICC_HOME:	D:\euicc\euicc-sr-container
+17:09:43.425 INFO  com.whty.euicc.init.InitLoad - EUICC_HOME:	D:\euicc\euicc-sr-container
+17:09:55.243 INFO  com.whty.euicc.init.InitLoad - EUICC_HOME:	D:\euicc\euicc-sr-container
+17:10:06.188 INFO  com.whty.euicc.init.InitLoad - EUICC_HOME:	D:\euicc\euicc-sr-container
+17:10:21.444 INFO  com.whty.euicc.init.InitLoad - EUICC_HOME:	D:\euicc\euicc-sr-container
+17:11:32.884 INFO  com.whty.euicc.init.InitLoad - EUICC_HOME:	D:\euicc\euicc-sr-container
+17:13:09.816 INFO  com.whty.euicc.init.InitLoad - EUICC_HOME:	D:\euicc\euicc-sr-container
+17:16:15.195 INFO  com.whty.euicc.init.InitLoad - EUICC_HOME:	D:\euicc\euicc-sr-container

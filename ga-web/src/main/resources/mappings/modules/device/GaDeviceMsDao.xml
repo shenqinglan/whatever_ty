@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.jeesite.modules.device.dao.GaDeviceMsDao">
+    
+	<sql id="gaDeviceMsColumns">
+		a.id AS "id",
+		a.mote_id AS "moteId",
+		a.ap_id AS "apId",
+		b.device_id as "moteNo",
+		c.device_id as "apNo",
+		a.device_id AS "deviceId",
+		a.longitude AS "longitude",
+		a.latitude AS "latitude",
+		a.address AS "address",
+		a.remarks AS "remarks",
+		case when TIMESTAMPDIFF(HOUR,a.last_update_time,now()) &lt;= 1 then '1' 
+             when TIMESTAMPDIFF(HOUR,a.last_update_time,now()) > 1 then '2' end as "status" 
+	</sql>
+	
+	<sql id="gaDeviceMsJoins">
+	</sql>
+    
+	<select id="get" resultType="GaDeviceMs">
+		SELECT 
+			<include refid="gaDeviceMsColumns"/>
+		FROM ga_device_ms a 
+		left join ga_device_mote b on a.mote_id = b.id 
+		left join ga_device_ap c on a.ap_id = c.id 
+		<include refid="gaDeviceMsJoins"/>
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="GaDeviceMs">
+		SELECT 
+			<include refid="gaDeviceMsColumns"/>
+		FROM ga_device_ms a 
+		left join ga_device_mote b on a.mote_id = b.id 
+        left join ga_device_ap c on a.ap_id = c.id 
+		<include refid="gaDeviceMsJoins"/>
+		<where>
+			
+			<if test="moteNo != null and moteNo != ''">
+				AND b.device_id = #{moteNo}
+			</if>
+			<if test="apNo != null and apNo != ''">
+				AND c.device_id = #{apNo}
+			</if>
+			<if test="deviceId != null and deviceId != ''">
+				AND a.device_id = #{deviceId}
+			</if>
+			<if test="status != null and status != '' and status == 1">
+                AND TIMESTAMPDIFF(HOUR,a.last_update_time,now()) &lt;= 1
+            </if>
+            <if test="status != null and status != '' and status == 2">
+                AND TIMESTAMPDIFF(HOUR,a.last_update_time,now()) > 1
+            </if>
+		</where>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findAllList" resultType="GaDeviceMs">
+		SELECT 
+			<include refid="gaDeviceMsColumns"/>
+		FROM ga_device_ms a
+		<include refid="gaDeviceMsJoins"/>
+		<where>
+			
+		</where>		
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO ga_device_ms(
+			id,
+			mote_id,
+			ap_id,
+			device_id,
+			longitude,
+			latitude,
+			address,
+			remarks
+		) VALUES (
+			#{id},
+			#{moteId},
+			#{apId},
+			#{deviceId},
+			#{longitude},
+			#{latitude},
+			#{address},
+			#{remarks}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE ga_device_ms SET 	
+			mote_id = #{moteId},
+			ap_id = #{apId},
+			device_id = #{deviceId},
+			longitude = #{longitude},
+			latitude = #{latitude},
+			address = #{address},
+			remarks = #{remarks}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		DELETE FROM ga_device_ms
+		WHERE id = #{id}
+	</update>
+	
+</mapper>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    targetNamespace="http://www.tathing.com"
+    xmlns:tsm="http://www.tathing.com" 
+    elementFormDefault="qualified">
+    
+    <xsd:include schemaLocation="AppQueryRequest.xsd" />
+    <xsd:include schemaLocation="AppQueryResponse.xsd" />
+   
+	<xsd:include schemaLocation="AppPersonialRequest.xsd" />
+    <xsd:include schemaLocation="AppPersonialResponse.xsd" />
+    
+    
+    <!-- 16. AppQuery start -->
+    <xsd:element name="AppQueryRequest" type="tsm:AppQueryRequest"/>
+    <xsd:element name="AppQueryResponse" type="tsm:AppQueryResponse"/>
+    <!-- 16. AppQuery end -->
+    
+    <!-- 8. AppPersonial start-->
+    <xsd:element name="AppPersonialRequest" type="tsm:AppPersonialRequest"/>
+    <xsd:element name="AppPersonialResponse" type="tsm:AppPersonialResponse"/>
+    <!-- 8. AppPersonial end -->
+    
+    <!-- 消息头 -->
+    <xsd:element name="version" type="xsd:int"/>    
+    <xsd:element name="sender" type="xsd:string"/>
+    <xsd:element name="receiver" type="xsd:string"/>
+    <xsd:element name="sendTime" type="xsd:dateTime"/>
+    <xsd:element name="msgType" type="xsd:string"/>
+    <xsd:element name="tradeNO" type="xsd:int"/>
+    <xsd:element name="tradeRefNO" type="xsd:int"/>
+    <xsd:element name="sessionID" type="xsd:int"/>
+    <xsd:element name="deviceType" type="xsd:string"/>
+    
+</xsd:schema>
+

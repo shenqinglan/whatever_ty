@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.efs.data.dao.EuiccEcasdMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.efs.data.pojo.EuiccEcasd" >
+    <id column="ecasd_id" property="ecasdId" jdbcType="VARCHAR" />
+    <result column="aid" property="aid" jdbcType="VARCHAR" />
+    <result column="sin" property="sin" jdbcType="VARCHAR" />
+    <result column="sdin" property="sdin" jdbcType="VARCHAR" />
+    <result column="role" property="role" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.whty.efs.data.pojo.EuiccEcasd" extends="BaseResultMap" >
+    <result column="CERT_ECASD_ECKA" property="certEcasdEcka" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ecasd_id, aid, sin, sdin, role
+  </sql>
+  <sql id="Blob_Column_List" >
+    CERT_ECASD_ECKA
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.whty.efs.data.pojo.EuiccEcasdExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from euicc_ecasd
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.whty.efs.data.pojo.EuiccEcasdExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from euicc_ecasd
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from euicc_ecasd
+    where ecasd_id = #{ecasdId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from euicc_ecasd
+    where ecasd_id = #{ecasdId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whty.efs.data.pojo.EuiccEcasdExample" >
+    delete from euicc_ecasd
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whty.efs.data.pojo.EuiccEcasd" >
+    insert into euicc_ecasd (ecasd_id, aid, sin, 
+      sdin, role, CERT_ECASD_ECKA
+      )
+    values (#{ecasdId,jdbcType=VARCHAR}, #{aid,jdbcType=VARCHAR}, #{sin,jdbcType=VARCHAR}, 
+      #{sdin,jdbcType=VARCHAR}, #{role,jdbcType=VARCHAR}, #{certEcasdEcka,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.efs.data.pojo.EuiccEcasd" >
+    insert into euicc_ecasd
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ecasdId != null" >
+        ecasd_id,
+      </if>
+      <if test="aid != null" >
+        aid,
+      </if>
+      <if test="sin != null" >
+        sin,
+      </if>
+      <if test="sdin != null" >
+        sdin,
+      </if>
+      <if test="role != null" >
+        role,
+      </if>
+      <if test="certEcasdEcka != null" >
+        CERT_ECASD_ECKA,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ecasdId != null" >
+        #{ecasdId,jdbcType=VARCHAR},
+      </if>
+      <if test="aid != null" >
+        #{aid,jdbcType=VARCHAR},
+      </if>
+      <if test="sin != null" >
+        #{sin,jdbcType=VARCHAR},
+      </if>
+      <if test="sdin != null" >
+        #{sdin,jdbcType=VARCHAR},
+      </if>
+      <if test="role != null" >
+        #{role,jdbcType=VARCHAR},
+      </if>
+      <if test="certEcasdEcka != null" >
+        #{certEcasdEcka,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whty.efs.data.pojo.EuiccEcasdExample" resultType="java.lang.Integer" >
+    select count(*) from euicc_ecasd
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update euicc_ecasd
+    <set >
+      <if test="record.ecasdId != null" >
+        ecasd_id = #{record.ecasdId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.aid != null" >
+        aid = #{record.aid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sin != null" >
+        sin = #{record.sin,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sdin != null" >
+        sdin = #{record.sdin,jdbcType=VARCHAR},
+      </if>
+      <if test="record.role != null" >
+        role = #{record.role,jdbcType=VARCHAR},
+      </if>
+      <if test="record.certEcasdEcka != null" >
+        CERT_ECASD_ECKA = #{record.certEcasdEcka,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update euicc_ecasd
+    set ecasd_id = #{record.ecasdId,jdbcType=VARCHAR},
+      aid = #{record.aid,jdbcType=VARCHAR},
+      sin = #{record.sin,jdbcType=VARCHAR},
+      sdin = #{record.sdin,jdbcType=VARCHAR},
+      role = #{record.role,jdbcType=VARCHAR},
+      CERT_ECASD_ECKA = #{record.certEcasdEcka,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update euicc_ecasd
+    set ecasd_id = #{record.ecasdId,jdbcType=VARCHAR},
+      aid = #{record.aid,jdbcType=VARCHAR},
+      sin = #{record.sin,jdbcType=VARCHAR},
+      sdin = #{record.sdin,jdbcType=VARCHAR},
+      role = #{record.role,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.efs.data.pojo.EuiccEcasd" >
+    update euicc_ecasd
+    <set >
+      <if test="aid != null" >
+        aid = #{aid,jdbcType=VARCHAR},
+      </if>
+      <if test="sin != null" >
+        sin = #{sin,jdbcType=VARCHAR},
+      </if>
+      <if test="sdin != null" >
+        sdin = #{sdin,jdbcType=VARCHAR},
+      </if>
+      <if test="role != null" >
+        role = #{role,jdbcType=VARCHAR},
+      </if>
+      <if test="certEcasdEcka != null" >
+        CERT_ECASD_ECKA = #{certEcasdEcka,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where ecasd_id = #{ecasdId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.whty.efs.data.pojo.EuiccEcasd" >
+    update euicc_ecasd
+    set aid = #{aid,jdbcType=VARCHAR},
+      sin = #{sin,jdbcType=VARCHAR},
+      sdin = #{sdin,jdbcType=VARCHAR},
+      role = #{role,jdbcType=VARCHAR},
+      CERT_ECASD_ECKA = #{certEcasdEcka,jdbcType=LONGVARCHAR}
+    where ecasd_id = #{ecasdId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.efs.data.pojo.EuiccEcasd" >
+    update euicc_ecasd
+    set aid = #{aid,jdbcType=VARCHAR},
+      sin = #{sin,jdbcType=VARCHAR},
+      sdin = #{sdin,jdbcType=VARCHAR},
+      role = #{role,jdbcType=VARCHAR}
+    where ecasd_id = #{ecasdId,jdbcType=VARCHAR}
+  </update>
+</mapper>

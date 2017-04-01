@@ -1,0 +1,3 @@
+16:33:39.477 INFO  com.whty.euicc.init.InitLoad - EUICC_HOME:	D:\euicc\euicc-dp-container
+16:35:12.382 INFO  com.whty.euicc.init.InitLoad - EUICC_HOME:	D:\euicc\euicc-dp-container
+17:02:26.726 INFO  com.whty.euicc.init.InitLoad - EUICC_HOME:	D:\euicc\euicc-dp-container

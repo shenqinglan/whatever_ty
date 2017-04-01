@@ -1,0 +1,1119 @@
+10:51:56.643 INFO  com.whty.euicc.init.InitLoad - initLog complete.
+10:51:56.662 DEBUG com.whty.cache.helpers.Loader - Trying to find [cache.cfg] using context classloader sun.misc.Launcher$AppClassLoader@40affc70.
+10:51:56.662 DEBUG com.whty.cache.CacheManager - Using URL [jar:file:/E:/Repository/com/whty/flow_storage/0.0.2/flow_storage-0.0.2.jar!/cache.cfg] for automatic cache configuration.
+10:51:56.799 INFO  o.s.c.s.FileSystemXmlApplicationContext - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@69e328e0: startup date [Tue Jan 03 10:51:56 CST 2017]; root of context hierarchy
+10:51:56.847 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/TlsServer.xml]
+10:51:56.921 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/spring/spring-properties.xml]
+10:51:56.950 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/spring/spring-pool.xml]
+10:51:56.996 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/spring/spring-common.xml]
+10:51:57.400 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/spring/spring-flow.xml]
+10:51:57.565 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\base\BaseFieldsMapper.class]
+10:51:57.566 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\base\BusinessLogMapper.class]
+10:51:57.566 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\base\BusinessModelMapper.class]
+10:51:57.566 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\base\BusinessObjectMapper.class]
+10:51:57.566 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccAuditTrailRecordMapper.class]
+10:51:57.567 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccCapabilitiesMapper.class]
+10:51:57.567 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccCardMapper.class]
+10:51:57.567 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccEcasdMapper.class]
+10:51:57.568 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccEumMapper.class]
+10:51:57.568 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccIsdPMapper.class]
+10:51:57.568 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccIsdRMapper.class]
+10:51:57.568 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccMnoMapper.class]
+10:51:57.568 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccPol1Mapper.class]
+10:51:57.569 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccPol2Mapper.class]
+10:51:57.569 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccProfileMapper.class]
+10:51:57.569 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccScp03Mapper.class]
+10:51:57.569 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccScp80Mapper.class]
+10:51:57.570 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccScp81Mapper.class]
+10:51:57.570 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccSmDpMapper.class]
+10:51:57.570 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccSmSrMapper.class]
+10:51:57.572 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'baseFieldsMapper' and 'com.whty.euicc.data.dao.base.BaseFieldsMapper' mapperInterface
+10:51:57.573 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'baseFieldsMapper'.
+10:51:57.573 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'businessLogMapper' and 'com.whty.euicc.data.dao.base.BusinessLogMapper' mapperInterface
+10:51:57.573 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'businessLogMapper'.
+10:51:57.573 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'businessModelMapper' and 'com.whty.euicc.data.dao.base.BusinessModelMapper' mapperInterface
+10:51:57.573 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'businessModelMapper'.
+10:51:57.573 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'businessObjectMapper' and 'com.whty.euicc.data.dao.base.BusinessObjectMapper' mapperInterface
+10:51:57.573 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'businessObjectMapper'.
+10:51:57.574 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccAuditTrailRecordMapper' and 'com.whty.euicc.data.dao.EuiccAuditTrailRecordMapper' mapperInterface
+10:51:57.574 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccAuditTrailRecordMapper'.
+10:51:57.574 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccCapabilitiesMapper' and 'com.whty.euicc.data.dao.EuiccCapabilitiesMapper' mapperInterface
+10:51:57.577 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccCapabilitiesMapper'.
+10:51:57.577 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccCardMapper' and 'com.whty.euicc.data.dao.EuiccCardMapper' mapperInterface
+10:51:57.577 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccCardMapper'.
+10:51:57.577 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccEcasdMapper' and 'com.whty.euicc.data.dao.EuiccEcasdMapper' mapperInterface
+10:51:57.577 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccEcasdMapper'.
+10:51:57.577 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccEumMapper' and 'com.whty.euicc.data.dao.EuiccEumMapper' mapperInterface
+10:51:57.577 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccEumMapper'.
+10:51:57.577 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccIsdPMapper' and 'com.whty.euicc.data.dao.EuiccIsdPMapper' mapperInterface
+10:51:57.577 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccIsdPMapper'.
+10:51:57.577 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccIsdRMapper' and 'com.whty.euicc.data.dao.EuiccIsdRMapper' mapperInterface
+10:51:57.577 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccIsdRMapper'.
+10:51:57.577 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccMnoMapper' and 'com.whty.euicc.data.dao.EuiccMnoMapper' mapperInterface
+10:51:57.577 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccMnoMapper'.
+10:51:57.578 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccPol1Mapper' and 'com.whty.euicc.data.dao.EuiccPol1Mapper' mapperInterface
+10:51:57.578 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccPol1Mapper'.
+10:51:57.578 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccPol2Mapper' and 'com.whty.euicc.data.dao.EuiccPol2Mapper' mapperInterface
+10:51:57.578 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccPol2Mapper'.
+10:51:57.578 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccProfileMapper' and 'com.whty.euicc.data.dao.EuiccProfileMapper' mapperInterface
+10:51:57.578 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccProfileMapper'.
+10:51:57.578 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccScp03Mapper' and 'com.whty.euicc.data.dao.EuiccScp03Mapper' mapperInterface
+10:51:57.578 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccScp03Mapper'.
+10:51:57.578 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccScp80Mapper' and 'com.whty.euicc.data.dao.EuiccScp80Mapper' mapperInterface
+10:51:57.578 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccScp80Mapper'.
+10:51:57.578 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccScp81Mapper' and 'com.whty.euicc.data.dao.EuiccScp81Mapper' mapperInterface
+10:51:57.578 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccScp81Mapper'.
+10:51:57.578 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccSmDpMapper' and 'com.whty.euicc.data.dao.EuiccSmDpMapper' mapperInterface
+10:51:57.578 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccSmDpMapper'.
+10:51:57.578 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccSmSrMapper' and 'com.whty.euicc.data.dao.EuiccSmSrMapper' mapperInterface
+10:51:57.578 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccSmSrMapper'.
+10:51:57.600 INFO  o.s.b.f.config.PropertiesFactoryBean - Loading properties file from file [D:\euicc\euicc-dp-container\conf\properties\config.properties]
+10:51:57.600 INFO  o.s.b.f.config.PropertiesFactoryBean - Loading properties file from file [D:\euicc\euicc-dp-container\conf\properties\euicc.properties]
+10:51:57.605 INFO  o.s.b.f.config.PropertiesFactoryBean - Loading properties file from file [D:\euicc\euicc-dp-container\conf\properties\jdbc.properties]
+10:51:57.652 INFO  o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3b926e90: defining beans [applicationProperties,propertyConfigurer,bonecp,transactionManager,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,com.whty.euicc.common.spring.SpringContextHolder#0,msgBusiTypeDp,ByNameTask,bizObjectCache,bizTemplateManager,businessControl,businessExecutor,msgBusiType01,appInit,appProcess,appQuery,appQuerySupend,tath.112.001.01,tath.016.001.01,ByNameCommand,parametersApdu,connectParaUpdateByDp,createISDPByDp,disableProfileByDp,enableProfileByDp,getEISByDp,getStatusByDp,initTagsOfIsdp1ByDp,installProfileByDp,masterDeleteByDp,personalAllISDP,profileDeletionByDp,setFallBackAttrByDp,firstStoreDataforISDPApdu,updatePolicyRulesByDP,updateSrAddressParaByDP,businessObjectServiceImpl,euiccCardServiceImpl,euiccIsdPServiceImpl,euiccIsdRServiceImpl,euiccPol2,euiccProfileServiceImpl,euiccScp03ServiceImpl,euiccScp80ServiceImpl,euiccScp81ServiceImpl,springContextHolder,sms,smsTriggerUtil,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,container,flowStorageService,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,baseFieldsMapper,businessLogMapper,businessModelMapper,businessObjectMapper,euiccAuditTrailRecordMapper,euiccCapabilitiesMapper,euiccCardMapper,euiccEcasdMapper,euiccEumMapper,euiccIsdPMapper,euiccIsdRMapper,euiccMnoMapper,euiccPol1Mapper,euiccPol2Mapper,euiccProfileMapper,euiccScp03Mapper,euiccScp80Mapper,euiccScp81Mapper,euiccSmDpMapper,euiccSmSrMapper]; root of factory hierarchy
+10:51:57.728 DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+10:51:57.737 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Property 'configLocation' not specified, using default MyBatis Configuration
+10:51:57.870 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\BaseFieldsMapper.xml]'
+10:51:57.897 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\BusinessLogMapper.xml]'
+10:51:57.914 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\BusinessModelMapper.xml]'
+10:51:57.944 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\BusinessObjectMapper.xml]'
+10:51:57.969 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccAuditTrailRecordMapper.xml]'
+10:51:57.995 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccCapabilitiesMapper.xml]'
+10:51:58.028 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccCardMapper.xml]'
+10:51:58.046 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccEcasdMapper.xml]'
+10:51:58.065 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccEumMapper.xml]'
+10:51:58.095 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccIsdPMapper.xml]'
+10:51:58.119 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccIsdRMapper.xml]'
+10:51:58.137 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccMnoMapper.xml]'
+10:51:58.153 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccPol1Mapper.xml]'
+10:51:58.170 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccPol2Mapper.xml]'
+10:51:58.209 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccProfileMapper.xml]'
+10:51:58.238 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccScp03Mapper.xml]'
+10:51:58.262 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccScp80Mapper.xml]'
+10:51:58.284 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccScp81Mapper.xml]'
+10:51:58.303 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccSmDpMapper.xml]'
+10:51:58.321 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccSmSrMapper.xml]'
+10:51:58.403 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build flows from files  [[Ljava.lang.String;@c4e21db]
+10:51:58.404 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to cache flow from file  [D:\euicc\euicc-dp-container/templateflow/basic/appQuery.xml]
+10:51:58.425 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to cache flow from file  [D:\euicc\euicc-dp-container/templateflow/basic/appApply.xml]
+10:51:58.441 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build Flow from file  [D:\euicc\euicc-dp-container/templateflow/basic/appQuery.xml]
+10:51:58.463 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - init flow id: [tath.016.001.01] name: [应用查询] state_id: [1],state_name: [应用查询]
+10:51:58.471 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse all states
+10:51:58.472 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1]
+10:51:58.472 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2]
+10:51:58.472 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3]
+10:51:58.472 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [101]
+10:51:58.473 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [finish]
+10:51:58.473 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse states handler
+10:51:58.473 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1]
+10:51:58.474 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2]
+10:51:58.474 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3]
+10:51:58.474 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [101]
+10:51:58.474 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [finish]
+10:51:58.474 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse all allTransitions
+10:51:58.474 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [0] target_state [finish]
+10:51:58.476 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [1] target_state [2]
+10:51:58.476 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [2] target_state [101]
+10:51:58.476 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [0] target_state [finish]
+10:51:58.476 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [1] target_state [3]
+10:51:58.476 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [2] target_state [101]
+10:51:58.476 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3] event [0] target_state [finish]
+10:51:58.476 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3] event [1] target_state [finish]
+10:51:58.476 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3] event [2] target_state [101]
+10:51:58.477 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [101] event [0] target_state [finish]
+10:51:58.477 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build entire flow
+10:51:58.477 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+10:51:58.477 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+10:51:58.477 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [2]
+10:51:58.477 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+10:51:58.477 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+10:51:58.477 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [3]
+10:51:58.477 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+10:51:58.477 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+10:51:58.478 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [finish]
+10:51:58.478 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+10:51:58.478 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [2] target_state: [101]
+10:51:58.478 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+10:51:58.478 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+10:51:58.478 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [2] target_state: [101]
+10:51:58.478 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+10:51:58.478 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+10:51:58.478 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [2] target_state: [101]
+10:51:58.478 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+10:51:58.479 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+10:51:58.490 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build handler
+10:51:58.490 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - build file [D:\euicc\euicc-dp-container/templateflow/basic/appQuery.xml] finished
+10:51:58.491 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build Flow from file  [D:\euicc\euicc-dp-container/templateflow/basic/appApply.xml]
+10:51:58.512 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - init flow id: [tath.112.001.01] name: [应用申请] state_id: [1],state_name: [判断应用状态]
+10:51:58.512 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse all states
+10:51:58.512 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1]
+10:51:58.512 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2]
+10:51:58.513 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [finish]
+10:51:58.513 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse states handler
+10:51:58.513 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1]
+10:51:58.513 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2]
+10:51:58.513 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [finish]
+10:51:58.513 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse all allTransitions
+10:51:58.513 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [0] target_state [finish]
+10:51:58.514 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [1] target_state [2]
+10:51:58.514 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [2] target_state [2]
+10:51:58.514 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [0] target_state [finish]
+10:51:58.514 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [1] target_state [finish]
+10:51:58.514 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build entire flow
+10:51:58.514 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+10:51:58.514 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+10:51:58.514 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [2]
+10:51:58.514 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+10:51:58.514 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+10:51:58.515 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [finish]
+10:51:58.515 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+10:51:58.515 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [2] target_state: [2]
+10:51:58.515 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+10:51:58.515 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+10:51:58.515 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [finish]
+10:51:58.515 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+10:51:58.515 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build handler
+10:51:58.515 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - build file [D:\euicc\euicc-dp-container/templateflow/basic/appApply.xml] finished
+10:51:58.515 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - build complete
+10:51:58.754 DEBUG i.n.u.i.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+10:51:58.756 DEBUG i.n.channel.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 200
+10:51:58.761 DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows
+10:51:58.761 DEBUG io.netty.util.internal.PlatformDependent - Java version: 6
+10:51:58.761 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+10:51:58.764 DEBUG i.netty.util.internal.PlatformDependent0 - java.nio.ByteBuffer.cleaner: available
+10:51:58.764 DEBUG i.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+10:51:58.764 DEBUG i.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+10:51:58.765 DEBUG i.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: unavailable
+10:51:58.765 DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: unavailable
+10:51:58.765 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+10:51:58.819 DEBUG io.netty.util.internal.PlatformDependent - Javassist: available
+10:51:58.819 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\ADMINI~1\AppData\Local\Temp (java.io.tmpdir)
+10:51:58.820 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+10:51:58.820 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: true
+10:51:58.820 INFO  io.netty.util.internal.PlatformDependent - Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system unstability.
+10:51:58.836 DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
+10:51:58.836 DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+10:51:59.733 DEBUG io.netty.util.internal.ThreadLocalRandom - -Dio.netty.initialSeedUniquifier: 0x5636ce8d3a213262
+10:51:59.742 DEBUG io.netty.channel.ChannelOutboundBuffer - -Dio.netty.threadLocalDirectBufferSize: 65536
+10:51:59.759 DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: unpooled
+10:51:59.766 DEBUG io.netty.util.NetUtil - Loopback interface: Software Loopback Interface 1
+10:51:59.767 DEBUG io.netty.util.NetUtil - Loopback address: /0:0:0:0:0:0:0:1 (primary)
+10:51:59.767 DEBUG io.netty.util.NetUtil - Loopback address: /127.0.0.1
+10:54:48.416 INFO  com.whty.euicc.init.InitLoad - initLog complete.
+10:54:48.432 DEBUG com.whty.cache.helpers.Loader - Trying to find [cache.cfg] using context classloader sun.misc.Launcher$AppClassLoader@61e63e3d.
+10:54:48.433 DEBUG com.whty.cache.CacheManager - Using URL [jar:file:/E:/Repository/com/whty/flow_storage/0.0.2/flow_storage-0.0.2.jar!/cache.cfg] for automatic cache configuration.
+10:54:48.563 INFO  o.s.c.s.FileSystemXmlApplicationContext - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@32dcb03b: startup date [Tue Jan 03 10:54:48 CST 2017]; root of context hierarchy
+10:54:48.610 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/TlsServer.xml]
+10:54:48.686 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/spring/spring-properties.xml]
+10:54:48.714 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/spring/spring-pool.xml]
+10:54:48.765 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/spring/spring-common.xml]
+10:54:49.170 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/spring/spring-flow.xml]
+10:54:49.338 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\base\BaseFieldsMapper.class]
+10:54:49.338 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\base\BusinessLogMapper.class]
+10:54:49.339 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\base\BusinessModelMapper.class]
+10:54:49.339 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\base\BusinessObjectMapper.class]
+10:54:49.339 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccAuditTrailRecordMapper.class]
+10:54:49.339 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccCapabilitiesMapper.class]
+10:54:49.339 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccCardMapper.class]
+10:54:49.340 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccEcasdMapper.class]
+10:54:49.340 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccEumMapper.class]
+10:54:49.340 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccIsdPMapper.class]
+10:54:49.340 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccIsdRMapper.class]
+10:54:49.340 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccMnoMapper.class]
+10:54:49.341 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccPol1Mapper.class]
+10:54:49.341 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccPol2Mapper.class]
+10:54:49.341 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccProfileMapper.class]
+10:54:49.341 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccScp03Mapper.class]
+10:54:49.341 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccScp80Mapper.class]
+10:54:49.342 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccScp81Mapper.class]
+10:54:49.342 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccSmDpMapper.class]
+10:54:49.342 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccSmSrMapper.class]
+10:54:49.344 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'baseFieldsMapper' and 'com.whty.euicc.data.dao.base.BaseFieldsMapper' mapperInterface
+10:54:49.345 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'baseFieldsMapper'.
+10:54:49.345 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'businessLogMapper' and 'com.whty.euicc.data.dao.base.BusinessLogMapper' mapperInterface
+10:54:49.345 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'businessLogMapper'.
+10:54:49.348 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'businessModelMapper' and 'com.whty.euicc.data.dao.base.BusinessModelMapper' mapperInterface
+10:54:49.348 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'businessModelMapper'.
+10:54:49.348 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'businessObjectMapper' and 'com.whty.euicc.data.dao.base.BusinessObjectMapper' mapperInterface
+10:54:49.348 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'businessObjectMapper'.
+10:54:49.348 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccAuditTrailRecordMapper' and 'com.whty.euicc.data.dao.EuiccAuditTrailRecordMapper' mapperInterface
+10:54:49.349 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccAuditTrailRecordMapper'.
+10:54:49.349 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccCapabilitiesMapper' and 'com.whty.euicc.data.dao.EuiccCapabilitiesMapper' mapperInterface
+10:54:49.349 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccCapabilitiesMapper'.
+10:54:49.349 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccCardMapper' and 'com.whty.euicc.data.dao.EuiccCardMapper' mapperInterface
+10:54:49.349 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccCardMapper'.
+10:54:49.349 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccEcasdMapper' and 'com.whty.euicc.data.dao.EuiccEcasdMapper' mapperInterface
+10:54:49.350 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccEcasdMapper'.
+10:54:49.350 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccEumMapper' and 'com.whty.euicc.data.dao.EuiccEumMapper' mapperInterface
+10:54:49.350 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccEumMapper'.
+10:54:49.350 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccIsdPMapper' and 'com.whty.euicc.data.dao.EuiccIsdPMapper' mapperInterface
+10:54:49.350 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccIsdPMapper'.
+10:54:49.350 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccIsdRMapper' and 'com.whty.euicc.data.dao.EuiccIsdRMapper' mapperInterface
+10:54:49.350 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccIsdRMapper'.
+10:54:49.350 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccMnoMapper' and 'com.whty.euicc.data.dao.EuiccMnoMapper' mapperInterface
+10:54:49.350 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccMnoMapper'.
+10:54:49.350 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccPol1Mapper' and 'com.whty.euicc.data.dao.EuiccPol1Mapper' mapperInterface
+10:54:49.350 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccPol1Mapper'.
+10:54:49.350 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccPol2Mapper' and 'com.whty.euicc.data.dao.EuiccPol2Mapper' mapperInterface
+10:54:49.350 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccPol2Mapper'.
+10:54:49.350 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccProfileMapper' and 'com.whty.euicc.data.dao.EuiccProfileMapper' mapperInterface
+10:54:49.350 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccProfileMapper'.
+10:54:49.350 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccScp03Mapper' and 'com.whty.euicc.data.dao.EuiccScp03Mapper' mapperInterface
+10:54:49.351 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccScp03Mapper'.
+10:54:49.351 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccScp80Mapper' and 'com.whty.euicc.data.dao.EuiccScp80Mapper' mapperInterface
+10:54:49.351 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccScp80Mapper'.
+10:54:49.351 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccScp81Mapper' and 'com.whty.euicc.data.dao.EuiccScp81Mapper' mapperInterface
+10:54:49.351 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccScp81Mapper'.
+10:54:49.351 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccSmDpMapper' and 'com.whty.euicc.data.dao.EuiccSmDpMapper' mapperInterface
+10:54:49.351 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccSmDpMapper'.
+10:54:49.351 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccSmSrMapper' and 'com.whty.euicc.data.dao.EuiccSmSrMapper' mapperInterface
+10:54:49.351 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccSmSrMapper'.
+10:54:49.371 INFO  o.s.b.f.config.PropertiesFactoryBean - Loading properties file from file [D:\euicc\euicc-dp-container\conf\properties\config.properties]
+10:54:49.371 INFO  o.s.b.f.config.PropertiesFactoryBean - Loading properties file from file [D:\euicc\euicc-dp-container\conf\properties\euicc.properties]
+10:54:49.371 INFO  o.s.b.f.config.PropertiesFactoryBean - Loading properties file from file [D:\euicc\euicc-dp-container\conf\properties\jdbc.properties]
+10:54:49.413 INFO  o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@20f8395f: defining beans [applicationProperties,propertyConfigurer,bonecp,transactionManager,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,com.whty.euicc.common.spring.SpringContextHolder#0,msgBusiTypeDp,ByNameTask,bizObjectCache,bizTemplateManager,businessControl,businessExecutor,msgBusiType01,appInit,appProcess,appQuery,appQuerySupend,tath.112.001.01,tath.016.001.01,ByNameCommand,parametersApdu,connectParaUpdateByDp,createISDPByDp,disableProfileByDp,enableProfileByDp,getEISByDp,getStatusByDp,initTagsOfIsdp1ByDp,installProfileByDp,masterDeleteByDp,personalAllISDP,profileDeletionByDp,setFallBackAttrByDp,firstStoreDataforISDPApdu,updatePolicyRulesByDP,updateSrAddressParaByDP,businessObjectServiceImpl,euiccCardServiceImpl,euiccIsdPServiceImpl,euiccIsdRServiceImpl,euiccPol2,euiccProfileServiceImpl,euiccScp03ServiceImpl,euiccScp80ServiceImpl,euiccScp81ServiceImpl,springContextHolder,sms,smsTriggerUtil,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,container,flowStorageService,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,baseFieldsMapper,businessLogMapper,businessModelMapper,businessObjectMapper,euiccAuditTrailRecordMapper,euiccCapabilitiesMapper,euiccCardMapper,euiccEcasdMapper,euiccEumMapper,euiccIsdPMapper,euiccIsdRMapper,euiccMnoMapper,euiccPol1Mapper,euiccPol2Mapper,euiccProfileMapper,euiccScp03Mapper,euiccScp80Mapper,euiccScp81Mapper,euiccSmDpMapper,euiccSmSrMapper]; root of factory hierarchy
+10:54:49.493 DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+10:54:49.501 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Property 'configLocation' not specified, using default MyBatis Configuration
+10:54:49.634 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\BaseFieldsMapper.xml]'
+10:54:49.663 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\BusinessLogMapper.xml]'
+10:54:49.679 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\BusinessModelMapper.xml]'
+10:54:49.709 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\BusinessObjectMapper.xml]'
+10:54:49.734 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccAuditTrailRecordMapper.xml]'
+10:54:49.768 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccCapabilitiesMapper.xml]'
+10:54:49.802 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccCardMapper.xml]'
+10:54:49.819 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccEcasdMapper.xml]'
+10:54:49.838 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccEumMapper.xml]'
+10:54:49.868 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccIsdPMapper.xml]'
+10:54:49.890 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccIsdRMapper.xml]'
+10:54:49.907 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccMnoMapper.xml]'
+10:54:49.920 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccPol1Mapper.xml]'
+10:54:49.939 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccPol2Mapper.xml]'
+10:54:49.985 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccProfileMapper.xml]'
+10:54:50.021 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccScp03Mapper.xml]'
+10:54:50.046 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccScp80Mapper.xml]'
+10:54:50.067 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccScp81Mapper.xml]'
+10:54:50.086 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccSmDpMapper.xml]'
+10:54:50.106 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccSmSrMapper.xml]'
+10:54:50.183 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build flows from files  [[Ljava.lang.String;@67b2b131]
+10:54:50.183 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to cache flow from file  [D:\euicc\euicc-dp-container/templateflow/basic/appQuery.xml]
+10:54:50.203 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to cache flow from file  [D:\euicc\euicc-dp-container/templateflow/basic/appApply.xml]
+10:54:50.218 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build Flow from file  [D:\euicc\euicc-dp-container/templateflow/basic/appQuery.xml]
+10:54:50.239 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - init flow id: [tath.016.001.01] name: [应用查询] state_id: [1],state_name: [应用查询]
+10:54:50.248 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse all states
+10:54:50.248 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1]
+10:54:50.248 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2]
+10:54:50.249 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3]
+10:54:50.249 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [101]
+10:54:50.249 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [finish]
+10:54:50.249 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse states handler
+10:54:50.249 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1]
+10:54:50.250 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2]
+10:54:50.250 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3]
+10:54:50.251 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [101]
+10:54:50.251 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [finish]
+10:54:50.251 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse all allTransitions
+10:54:50.251 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [0] target_state [finish]
+10:54:50.252 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [1] target_state [2]
+10:54:50.253 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [2] target_state [101]
+10:54:50.253 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [0] target_state [finish]
+10:54:50.253 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [1] target_state [3]
+10:54:50.253 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [2] target_state [101]
+10:54:50.253 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3] event [0] target_state [finish]
+10:54:50.253 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3] event [1] target_state [finish]
+10:54:50.253 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3] event [2] target_state [101]
+10:54:50.253 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [101] event [0] target_state [finish]
+10:54:50.253 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build entire flow
+10:54:50.254 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+10:54:50.254 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+10:54:50.254 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [2]
+10:54:50.254 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+10:54:50.254 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+10:54:50.254 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [3]
+10:54:50.254 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+10:54:50.254 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+10:54:50.254 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [finish]
+10:54:50.254 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+10:54:50.255 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [2] target_state: [101]
+10:54:50.255 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+10:54:50.255 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+10:54:50.255 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [2] target_state: [101]
+10:54:50.255 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+10:54:50.255 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+10:54:50.255 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [2] target_state: [101]
+10:54:50.255 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+10:54:50.255 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+10:54:50.268 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build handler
+10:54:50.268 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - build file [D:\euicc\euicc-dp-container/templateflow/basic/appQuery.xml] finished
+10:54:50.269 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build Flow from file  [D:\euicc\euicc-dp-container/templateflow/basic/appApply.xml]
+10:54:50.290 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - init flow id: [tath.112.001.01] name: [应用申请] state_id: [1],state_name: [判断应用状态]
+10:54:50.291 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse all states
+10:54:50.291 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1]
+10:54:50.291 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2]
+10:54:50.291 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [finish]
+10:54:50.291 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse states handler
+10:54:50.291 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1]
+10:54:50.291 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2]
+10:54:50.291 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [finish]
+10:54:50.292 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse all allTransitions
+10:54:50.292 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [0] target_state [finish]
+10:54:50.292 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [1] target_state [2]
+10:54:50.292 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [2] target_state [2]
+10:54:50.292 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [0] target_state [finish]
+10:54:50.292 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [1] target_state [finish]
+10:54:50.292 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build entire flow
+10:54:50.292 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+10:54:50.292 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+10:54:50.292 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [2]
+10:54:50.292 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+10:54:50.293 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+10:54:50.293 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [finish]
+10:54:50.293 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+10:54:50.293 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [2] target_state: [2]
+10:54:50.293 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+10:54:50.293 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+10:54:50.293 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [finish]
+10:54:50.293 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+10:54:50.293 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build handler
+10:54:50.293 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - build file [D:\euicc\euicc-dp-container/templateflow/basic/appApply.xml] finished
+10:54:50.293 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - build complete
+10:54:50.527 DEBUG i.n.u.i.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+10:54:50.528 DEBUG i.n.channel.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 200
+10:54:50.533 DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows
+10:54:50.534 DEBUG io.netty.util.internal.PlatformDependent - Java version: 6
+10:54:50.534 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+10:54:50.537 DEBUG i.netty.util.internal.PlatformDependent0 - java.nio.ByteBuffer.cleaner: available
+10:54:50.537 DEBUG i.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+10:54:50.537 DEBUG i.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+10:54:50.537 DEBUG i.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: unavailable
+10:54:50.537 DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: unavailable
+10:54:50.538 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+10:54:50.592 DEBUG io.netty.util.internal.PlatformDependent - Javassist: available
+10:54:50.592 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\ADMINI~1\AppData\Local\Temp (java.io.tmpdir)
+10:54:50.592 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+10:54:50.592 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: true
+10:54:50.592 INFO  io.netty.util.internal.PlatformDependent - Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system unstability.
+10:54:50.607 DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
+10:54:50.607 DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+10:54:51.477 DEBUG io.netty.util.internal.ThreadLocalRandom - -Dio.netty.initialSeedUniquifier: 0xc8fbdaad45ef585c
+10:54:51.484 DEBUG io.netty.channel.ChannelOutboundBuffer - -Dio.netty.threadLocalDirectBufferSize: 65536
+10:54:51.500 DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: unpooled
+10:54:51.508 DEBUG io.netty.util.NetUtil - Loopback interface: Software Loopback Interface 1
+10:54:51.508 DEBUG io.netty.util.NetUtil - Loopback address: /0:0:0:0:0:0:0:1 (primary)
+10:54:51.508 DEBUG io.netty.util.NetUtil - Loopback address: /127.0.0.1
+18:33:29.573 INFO  com.whty.euicc.init.InitLoad - initLog complete.
+18:33:29.590 DEBUG com.whty.cache.helpers.Loader - Trying to find [cache.cfg] using context classloader sun.misc.Launcher$AppClassLoader@40affc70.
+18:33:29.590 DEBUG com.whty.cache.CacheManager - Using URL [jar:file:/E:/Repository/com/whty/flow_storage/0.0.2/flow_storage-0.0.2.jar!/cache.cfg] for automatic cache configuration.
+18:33:29.724 INFO  o.s.c.s.FileSystemXmlApplicationContext - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@5c1fe88d: startup date [Tue Jan 03 18:33:29 CST 2017]; root of context hierarchy
+18:33:29.775 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/TlsServer.xml]
+18:33:29.851 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/spring/spring-properties.xml]
+18:33:29.879 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/spring/spring-pool.xml]
+18:33:29.924 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/spring/spring-common.xml]
+18:33:30.332 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/spring/spring-flow.xml]
+18:33:30.505 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\base\BaseFieldsMapper.class]
+18:33:30.506 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\base\BusinessLogMapper.class]
+18:33:30.506 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\base\BusinessModelMapper.class]
+18:33:30.506 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\base\BusinessObjectMapper.class]
+18:33:30.507 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccAuditTrailRecordMapper.class]
+18:33:30.507 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccCapabilitiesMapper.class]
+18:33:30.507 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccCardMapper.class]
+18:33:30.507 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccEcasdMapper.class]
+18:33:30.507 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccEumMapper.class]
+18:33:30.508 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccIsdPMapper.class]
+18:33:30.508 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccIsdRMapper.class]
+18:33:30.508 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccMnoMapper.class]
+18:33:30.508 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccPol1Mapper.class]
+18:33:30.509 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccPol2Mapper.class]
+18:33:30.509 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccProfileMapper.class]
+18:33:30.509 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccScp03Mapper.class]
+18:33:30.509 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccScp80Mapper.class]
+18:33:30.509 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccScp81Mapper.class]
+18:33:30.510 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccSmDpMapper.class]
+18:33:30.510 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccSmSrMapper.class]
+18:33:30.514 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'baseFieldsMapper' and 'com.whty.euicc.data.dao.base.BaseFieldsMapper' mapperInterface
+18:33:30.515 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'baseFieldsMapper'.
+18:33:30.515 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'businessLogMapper' and 'com.whty.euicc.data.dao.base.BusinessLogMapper' mapperInterface
+18:33:30.516 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'businessLogMapper'.
+18:33:30.516 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'businessModelMapper' and 'com.whty.euicc.data.dao.base.BusinessModelMapper' mapperInterface
+18:33:30.516 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'businessModelMapper'.
+18:33:30.516 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'businessObjectMapper' and 'com.whty.euicc.data.dao.base.BusinessObjectMapper' mapperInterface
+18:33:30.516 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'businessObjectMapper'.
+18:33:30.516 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccAuditTrailRecordMapper' and 'com.whty.euicc.data.dao.EuiccAuditTrailRecordMapper' mapperInterface
+18:33:30.516 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccAuditTrailRecordMapper'.
+18:33:30.516 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccCapabilitiesMapper' and 'com.whty.euicc.data.dao.EuiccCapabilitiesMapper' mapperInterface
+18:33:30.516 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccCapabilitiesMapper'.
+18:33:30.516 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccCardMapper' and 'com.whty.euicc.data.dao.EuiccCardMapper' mapperInterface
+18:33:30.517 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccCardMapper'.
+18:33:30.517 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccEcasdMapper' and 'com.whty.euicc.data.dao.EuiccEcasdMapper' mapperInterface
+18:33:30.517 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccEcasdMapper'.
+18:33:30.517 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccEumMapper' and 'com.whty.euicc.data.dao.EuiccEumMapper' mapperInterface
+18:33:30.517 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccEumMapper'.
+18:33:30.517 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccIsdPMapper' and 'com.whty.euicc.data.dao.EuiccIsdPMapper' mapperInterface
+18:33:30.517 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccIsdPMapper'.
+18:33:30.517 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccIsdRMapper' and 'com.whty.euicc.data.dao.EuiccIsdRMapper' mapperInterface
+18:33:30.517 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccIsdRMapper'.
+18:33:30.517 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccMnoMapper' and 'com.whty.euicc.data.dao.EuiccMnoMapper' mapperInterface
+18:33:30.517 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccMnoMapper'.
+18:33:30.517 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccPol1Mapper' and 'com.whty.euicc.data.dao.EuiccPol1Mapper' mapperInterface
+18:33:30.517 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccPol1Mapper'.
+18:33:30.517 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccPol2Mapper' and 'com.whty.euicc.data.dao.EuiccPol2Mapper' mapperInterface
+18:33:30.517 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccPol2Mapper'.
+18:33:30.518 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccProfileMapper' and 'com.whty.euicc.data.dao.EuiccProfileMapper' mapperInterface
+18:33:30.518 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccProfileMapper'.
+18:33:30.518 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccScp03Mapper' and 'com.whty.euicc.data.dao.EuiccScp03Mapper' mapperInterface
+18:33:30.518 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccScp03Mapper'.
+18:33:30.518 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccScp80Mapper' and 'com.whty.euicc.data.dao.EuiccScp80Mapper' mapperInterface
+18:33:30.518 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccScp80Mapper'.
+18:33:30.518 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccScp81Mapper' and 'com.whty.euicc.data.dao.EuiccScp81Mapper' mapperInterface
+18:33:30.518 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccScp81Mapper'.
+18:33:30.518 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccSmDpMapper' and 'com.whty.euicc.data.dao.EuiccSmDpMapper' mapperInterface
+18:33:30.518 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccSmDpMapper'.
+18:33:30.518 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccSmSrMapper' and 'com.whty.euicc.data.dao.EuiccSmSrMapper' mapperInterface
+18:33:30.518 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccSmSrMapper'.
+18:33:30.539 INFO  o.s.b.f.config.PropertiesFactoryBean - Loading properties file from file [D:\euicc\euicc-dp-container\conf\properties\config.properties]
+18:33:30.539 INFO  o.s.b.f.config.PropertiesFactoryBean - Loading properties file from file [D:\euicc\euicc-dp-container\conf\properties\euicc.properties]
+18:33:30.539 INFO  o.s.b.f.config.PropertiesFactoryBean - Loading properties file from file [D:\euicc\euicc-dp-container\conf\properties\jdbc.properties]
+18:33:30.580 INFO  o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@361cb7a1: defining beans [applicationProperties,propertyConfigurer,bonecp,transactionManager,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,com.whty.euicc.common.spring.SpringContextHolder#0,msgBusiTypeDp,ByNameTask,bizObjectCache,bizTemplateManager,businessControl,businessExecutor,msgBusiType01,appInit,appProcess,appQuery,appQuerySupend,tath.112.001.01,tath.016.001.01,ByNameCommand,parametersApdu,connectParaUpdateByDp,createISDPByDp,disableProfileByDp,enableProfileByDp,getEISByDp,getStatusByDp,initTagsOfIsdp1ByDp,installProfileByDp,masterDeleteByDp,personalAllISDP,profileDeletionByDp,setFallBackAttrByDp,firstStoreDataforISDPApdu,updatePolicyRulesByDP,updateSrAddressParaByDP,updateSubscriAddrByDp,businessObjectServiceImpl,euiccCardServiceImpl,euiccIsdPServiceImpl,euiccIsdRServiceImpl,euiccPol2,euiccProfileServiceImpl,euiccScp03ServiceImpl,euiccScp80ServiceImpl,euiccScp81ServiceImpl,springContextHolder,sms,smsTriggerUtil,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,container,flowStorageService,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,baseFieldsMapper,businessLogMapper,businessModelMapper,businessObjectMapper,euiccAuditTrailRecordMapper,euiccCapabilitiesMapper,euiccCardMapper,euiccEcasdMapper,euiccEumMapper,euiccIsdPMapper,euiccIsdRMapper,euiccMnoMapper,euiccPol1Mapper,euiccPol2Mapper,euiccProfileMapper,euiccScp03Mapper,euiccScp80Mapper,euiccScp81Mapper,euiccSmDpMapper,euiccSmSrMapper]; root of factory hierarchy
+18:33:30.659 DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+18:33:30.667 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Property 'configLocation' not specified, using default MyBatis Configuration
+18:33:30.804 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\BaseFieldsMapper.xml]'
+18:33:30.833 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\BusinessLogMapper.xml]'
+18:33:30.849 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\BusinessModelMapper.xml]'
+18:33:30.880 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\BusinessObjectMapper.xml]'
+18:33:30.904 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccAuditTrailRecordMapper.xml]'
+18:33:30.932 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccCapabilitiesMapper.xml]'
+18:33:30.966 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccCardMapper.xml]'
+18:33:30.984 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccEcasdMapper.xml]'
+18:33:31.004 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccEumMapper.xml]'
+18:33:31.040 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccIsdPMapper.xml]'
+18:33:31.064 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccIsdRMapper.xml]'
+18:33:31.083 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccMnoMapper.xml]'
+18:33:31.100 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccPol1Mapper.xml]'
+18:33:31.119 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccPol2Mapper.xml]'
+18:33:31.168 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccProfileMapper.xml]'
+18:33:31.202 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccScp03Mapper.xml]'
+18:33:31.225 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccScp80Mapper.xml]'
+18:33:31.248 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccScp81Mapper.xml]'
+18:33:31.268 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccSmDpMapper.xml]'
+18:33:31.290 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccSmSrMapper.xml]'
+18:33:31.371 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build flows from files  [[Ljava.lang.String;@5d90b72c]
+18:33:31.371 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to cache flow from file  [D:\euicc\euicc-dp-container/templateflow/basic/appQuery.xml]
+18:33:31.393 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to cache flow from file  [D:\euicc\euicc-dp-container/templateflow/basic/appApply.xml]
+18:33:31.407 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build Flow from file  [D:\euicc\euicc-dp-container/templateflow/basic/appQuery.xml]
+18:33:31.429 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - init flow id: [tath.016.001.01] name: [应用查询] state_id: [1],state_name: [应用查询]
+18:33:31.436 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse all states
+18:33:31.437 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1]
+18:33:31.437 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2]
+18:33:31.437 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3]
+18:33:31.437 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [101]
+18:33:31.438 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [finish]
+18:33:31.438 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse states handler
+18:33:31.438 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1]
+18:33:31.439 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2]
+18:33:31.439 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3]
+18:33:31.439 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [101]
+18:33:31.439 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [finish]
+18:33:31.439 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse all allTransitions
+18:33:31.439 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [0] target_state [finish]
+18:33:31.440 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [1] target_state [2]
+18:33:31.441 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [2] target_state [101]
+18:33:31.441 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [0] target_state [finish]
+18:33:31.441 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [1] target_state [3]
+18:33:31.441 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [2] target_state [101]
+18:33:31.441 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3] event [0] target_state [finish]
+18:33:31.442 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3] event [1] target_state [finish]
+18:33:31.442 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3] event [2] target_state [101]
+18:33:31.442 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [101] event [0] target_state [finish]
+18:33:31.442 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build entire flow
+18:33:31.442 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:33:31.442 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:33:31.442 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [2]
+18:33:31.442 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:33:31.442 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:33:31.442 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [3]
+18:33:31.443 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:33:31.443 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:33:31.443 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [finish]
+18:33:31.443 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:33:31.443 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [2] target_state: [101]
+18:33:31.443 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:33:31.443 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:33:31.443 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [2] target_state: [101]
+18:33:31.443 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:33:31.443 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:33:31.444 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [2] target_state: [101]
+18:33:31.444 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:33:31.444 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:33:31.454 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build handler
+18:33:31.455 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - build file [D:\euicc\euicc-dp-container/templateflow/basic/appQuery.xml] finished
+18:33:31.456 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build Flow from file  [D:\euicc\euicc-dp-container/templateflow/basic/appApply.xml]
+18:33:31.480 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - init flow id: [tath.112.001.01] name: [应用申请] state_id: [1],state_name: [判断应用状态]
+18:33:31.481 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse all states
+18:33:31.481 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1]
+18:33:31.481 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2]
+18:33:31.481 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [finish]
+18:33:31.481 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse states handler
+18:33:31.481 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1]
+18:33:31.481 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2]
+18:33:31.482 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [finish]
+18:33:31.482 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse all allTransitions
+18:33:31.482 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [0] target_state [finish]
+18:33:31.482 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [1] target_state [2]
+18:33:31.482 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [2] target_state [2]
+18:33:31.482 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [0] target_state [finish]
+18:33:31.482 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [1] target_state [finish]
+18:33:31.482 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build entire flow
+18:33:31.482 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:33:31.482 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:33:31.482 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [2]
+18:33:31.483 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:33:31.483 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:33:31.483 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [finish]
+18:33:31.483 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:33:31.483 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [2] target_state: [2]
+18:33:31.483 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:33:31.483 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:33:31.483 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [finish]
+18:33:31.483 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:33:31.483 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build handler
+18:33:31.483 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - build file [D:\euicc\euicc-dp-container/templateflow/basic/appApply.xml] finished
+18:33:31.484 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - build complete
+18:33:31.743 DEBUG i.n.u.i.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+18:33:31.744 DEBUG i.n.channel.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 200
+18:33:31.750 DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows
+18:33:31.750 DEBUG io.netty.util.internal.PlatformDependent - Java version: 6
+18:33:31.751 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+18:33:31.755 DEBUG i.netty.util.internal.PlatformDependent0 - java.nio.ByteBuffer.cleaner: available
+18:33:31.755 DEBUG i.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+18:33:31.755 DEBUG i.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+18:33:31.755 DEBUG i.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: unavailable
+18:33:31.755 DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: unavailable
+18:33:31.756 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+18:33:31.813 DEBUG io.netty.util.internal.PlatformDependent - Javassist: available
+18:33:31.813 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\ADMINI~1\AppData\Local\Temp (java.io.tmpdir)
+18:33:31.813 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+18:33:31.813 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: true
+18:33:31.813 INFO  io.netty.util.internal.PlatformDependent - Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system unstability.
+18:33:31.828 DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
+18:33:31.829 DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+18:33:32.693 DEBUG io.netty.util.internal.ThreadLocalRandom - -Dio.netty.initialSeedUniquifier: 0x420222be8899bbde
+18:33:32.701 DEBUG io.netty.channel.ChannelOutboundBuffer - -Dio.netty.threadLocalDirectBufferSize: 65536
+18:33:32.719 DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: unpooled
+18:33:32.728 DEBUG io.netty.util.NetUtil - Loopback interface: Software Loopback Interface 1
+18:33:32.728 DEBUG io.netty.util.NetUtil - Loopback address: /0:0:0:0:0:0:0:1 (primary)
+18:33:32.729 DEBUG io.netty.util.NetUtil - Loopback address: /127.0.0.1
+18:34:05.583 DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+18:34:05.694 INFO  com.whty.euicc.handler.NettyDpHandler - ==========接收来自非卡端请求路由处理消息==========
+18:34:05.694 DEBUG com.whty.euicc.handler.NettyDpHandler - 请求消息明文 : {"header":{"version":"01","sendTime":"2017-01-03 18:34:04","msgType":"updatePolicyRulesByDP","tradeNO":"20170103183404","tradeRefNO":"0"},"body":{"smSrId":"1","pol2Id":"01","eid":"89001012012341234012345678901224","iccid":"00"}}
+18:34:05.695 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2017-01-03 18:34:04","msgType":"updatePolicyRulesByDP","tradeNO":"20170103183404","tradeRefNO":"0"},"body":{"smSrId":"1","pol2Id":"01","eid":"89001012012341234012345678901224","iccid":"00"}}
+18:34:05.755 INFO  c.w.e.d.handler.UpdatePolicyRulesHandler - pol2策略更新
+18:34:05.755 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2017-01-03 18:34:04","msgType":"updatePolicyRulesByDP","tradeNO":"20170103183404","tradeRefNO":"0"},"body":{"smSrId":"1","pol2Id":"01","eid":"89001012012341234012345678901224","iccid":"00"}}
+18:34:07.107 DEBUG com.whty.euicc.handler.NettyDpHandler - 响应消息明文 : {"code":"0000","message":"success"}
+18:34:17.142 DEBUG io.netty.handler.ssl.SslHandler - Swallowing a harmless 'connection reset by peer / broken pipe' error that occurred while writing close_notify in response to the peer's close_notify
+java.io.IOException: 您的主机中的软件中止了一个已建立的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method) ~[na:1.6.0_13]
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:25) ~[na:1.6.0_13]
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:233) ~[na:1.6.0_13]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:206) ~[na:1.6.0_13]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:236) ~[na:1.6.0_13]
+	at io.netty.buffer.UnpooledHeapByteBuf.setBytes(UnpooledHeapByteBuf.java:256) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:871) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:208) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:108) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:494) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:461) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:378) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:350) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:101) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at java.lang.Thread.run(Thread.java:619) [na:1.6.0_13]
+18:34:55.195 INFO  com.whty.euicc.handler.NettyDpHandler - ==========接收来自非卡端请求路由处理消息==========
+18:34:55.196 DEBUG com.whty.euicc.handler.NettyDpHandler - 请求消息明文 : {"header":{"version":"01","sendTime":"2017-01-03 18:34:55","msgType":"getEISByDp","tradeNO":"20170103183455","tradeRefNO":"0"},"body":{"eid":"89001012012341234012345678901224"}}
+18:34:55.196 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2017-01-03 18:34:55","msgType":"getEISByDp","tradeNO":"20170103183455","tradeRefNO":"0"},"body":{"eid":"89001012012341234012345678901224"}}
+18:34:55.197 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2017-01-03 18:34:55","msgType":"getEISByDp","tradeNO":"20170103183455","tradeRefNO":"0"},"body":{"eid":"89001012012341234012345678901224"}}
+18:34:55.218 DEBUG com.whty.euicc.handler.NettyDpHandler - 响应消息明文 : {"eid":"89001012012341234012345678901224","eumId":"1","smsrId":"1","ecasdId":"1","productionDate":"Dec 30, 2016 5:04:08 PM","platformType":"1","platformVersion":"1","remainingMemory":"100000","availablememoryforprofiles":"1000","count":173,"phoneNo":"18213001300"}
+18:35:05.224 DEBUG io.netty.handler.ssl.SslHandler - Swallowing a harmless 'connection reset by peer / broken pipe' error that occurred while writing close_notify in response to the peer's close_notify
+java.io.IOException: 您的主机中的软件中止了一个已建立的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method) ~[na:1.6.0_13]
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:25) ~[na:1.6.0_13]
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:233) ~[na:1.6.0_13]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:206) ~[na:1.6.0_13]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:236) ~[na:1.6.0_13]
+	at io.netty.buffer.UnpooledHeapByteBuf.setBytes(UnpooledHeapByteBuf.java:256) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:871) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:208) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:108) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:494) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:461) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:378) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:350) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:101) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at java.lang.Thread.run(Thread.java:619) [na:1.6.0_13]
+18:35:18.824 INFO  com.whty.euicc.handler.NettyDpHandler - ==========接收来自非卡端请求路由处理消息==========
+18:35:18.824 DEBUG com.whty.euicc.handler.NettyDpHandler - 请求消息明文 : {"header":{"version":"01","sendTime":"2017-01-03 18:35:18","msgType":"enableProfileByDp","tradeNO":"20170103183518","tradeRefNO":"0"},"body":{"eid":"89001012012341234012345678901224","iccid":"00"}}
+18:35:18.825 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2017-01-03 18:35:18","msgType":"enableProfileByDp","tradeNO":"20170103183518","tradeRefNO":"0"},"body":{"eid":"89001012012341234012345678901224","iccid":"00"}}
+18:35:18.825 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2017-01-03 18:35:18","msgType":"enableProfileByDp","tradeNO":"20170103183518","tradeRefNO":"0"},"body":{"eid":"89001012012341234012345678901224","iccid":"00"}}
+18:35:20.009 DEBUG com.whty.euicc.handler.NettyDpHandler - 响应消息明文 : {"code":"9999","message":"Cannot get Jedis connection"}
+18:35:30.013 DEBUG io.netty.handler.ssl.SslHandler - Swallowing a harmless 'connection reset by peer / broken pipe' error that occurred while writing close_notify in response to the peer's close_notify
+java.io.IOException: 您的主机中的软件中止了一个已建立的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method) ~[na:1.6.0_13]
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:25) ~[na:1.6.0_13]
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:233) ~[na:1.6.0_13]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:206) ~[na:1.6.0_13]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:236) ~[na:1.6.0_13]
+	at io.netty.buffer.UnpooledHeapByteBuf.setBytes(UnpooledHeapByteBuf.java:256) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:871) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:208) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:108) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:494) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:461) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:378) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:350) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:101) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at java.lang.Thread.run(Thread.java:619) [na:1.6.0_13]
+18:35:50.202 INFO  com.whty.euicc.init.InitLoad - initLog complete.
+18:35:50.221 DEBUG com.whty.cache.helpers.Loader - Trying to find [cache.cfg] using context classloader sun.misc.Launcher$AppClassLoader@61e63e3d.
+18:35:50.221 DEBUG com.whty.cache.CacheManager - Using URL [jar:file:/E:/Repository/com/whty/flow_storage/0.0.2/flow_storage-0.0.2.jar!/cache.cfg] for automatic cache configuration.
+18:35:50.354 INFO  o.s.c.s.FileSystemXmlApplicationContext - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@5c1fe88d: startup date [Tue Jan 03 18:35:50 CST 2017]; root of context hierarchy
+18:35:50.403 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/TlsServer.xml]
+18:35:50.482 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/spring/spring-properties.xml]
+18:35:50.510 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/spring/spring-pool.xml]
+18:35:50.555 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/spring/spring-common.xml]
+18:35:50.954 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/spring/spring-flow.xml]
+18:35:51.127 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\base\BaseFieldsMapper.class]
+18:35:51.127 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\base\BusinessLogMapper.class]
+18:35:51.128 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\base\BusinessModelMapper.class]
+18:35:51.128 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\base\BusinessObjectMapper.class]
+18:35:51.128 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccAuditTrailRecordMapper.class]
+18:35:51.128 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccCapabilitiesMapper.class]
+18:35:51.128 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccCardMapper.class]
+18:35:51.129 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccEcasdMapper.class]
+18:35:51.129 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccEumMapper.class]
+18:35:51.129 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccIsdPMapper.class]
+18:35:51.130 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccIsdRMapper.class]
+18:35:51.130 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccMnoMapper.class]
+18:35:51.130 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccPol1Mapper.class]
+18:35:51.130 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccPol2Mapper.class]
+18:35:51.130 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccProfileMapper.class]
+18:35:51.131 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccScp03Mapper.class]
+18:35:51.131 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccScp80Mapper.class]
+18:35:51.131 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccScp81Mapper.class]
+18:35:51.131 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccSmDpMapper.class]
+18:35:51.131 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccSmSrMapper.class]
+18:35:51.136 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'baseFieldsMapper' and 'com.whty.euicc.data.dao.base.BaseFieldsMapper' mapperInterface
+18:35:51.137 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'baseFieldsMapper'.
+18:35:51.137 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'businessLogMapper' and 'com.whty.euicc.data.dao.base.BusinessLogMapper' mapperInterface
+18:35:51.137 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'businessLogMapper'.
+18:35:51.137 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'businessModelMapper' and 'com.whty.euicc.data.dao.base.BusinessModelMapper' mapperInterface
+18:35:51.137 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'businessModelMapper'.
+18:35:51.137 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'businessObjectMapper' and 'com.whty.euicc.data.dao.base.BusinessObjectMapper' mapperInterface
+18:35:51.138 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'businessObjectMapper'.
+18:35:51.138 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccAuditTrailRecordMapper' and 'com.whty.euicc.data.dao.EuiccAuditTrailRecordMapper' mapperInterface
+18:35:51.138 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccAuditTrailRecordMapper'.
+18:35:51.138 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccCapabilitiesMapper' and 'com.whty.euicc.data.dao.EuiccCapabilitiesMapper' mapperInterface
+18:35:51.138 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccCapabilitiesMapper'.
+18:35:51.138 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccCardMapper' and 'com.whty.euicc.data.dao.EuiccCardMapper' mapperInterface
+18:35:51.138 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccCardMapper'.
+18:35:51.138 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccEcasdMapper' and 'com.whty.euicc.data.dao.EuiccEcasdMapper' mapperInterface
+18:35:51.138 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccEcasdMapper'.
+18:35:51.138 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccEumMapper' and 'com.whty.euicc.data.dao.EuiccEumMapper' mapperInterface
+18:35:51.138 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccEumMapper'.
+18:35:51.138 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccIsdPMapper' and 'com.whty.euicc.data.dao.EuiccIsdPMapper' mapperInterface
+18:35:51.138 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccIsdPMapper'.
+18:35:51.138 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccIsdRMapper' and 'com.whty.euicc.data.dao.EuiccIsdRMapper' mapperInterface
+18:35:51.139 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccIsdRMapper'.
+18:35:51.139 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccMnoMapper' and 'com.whty.euicc.data.dao.EuiccMnoMapper' mapperInterface
+18:35:51.139 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccMnoMapper'.
+18:35:51.139 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccPol1Mapper' and 'com.whty.euicc.data.dao.EuiccPol1Mapper' mapperInterface
+18:35:51.139 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccPol1Mapper'.
+18:35:51.139 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccPol2Mapper' and 'com.whty.euicc.data.dao.EuiccPol2Mapper' mapperInterface
+18:35:51.139 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccPol2Mapper'.
+18:35:51.139 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccProfileMapper' and 'com.whty.euicc.data.dao.EuiccProfileMapper' mapperInterface
+18:35:51.139 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccProfileMapper'.
+18:35:51.139 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccScp03Mapper' and 'com.whty.euicc.data.dao.EuiccScp03Mapper' mapperInterface
+18:35:51.139 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccScp03Mapper'.
+18:35:51.139 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccScp80Mapper' and 'com.whty.euicc.data.dao.EuiccScp80Mapper' mapperInterface
+18:35:51.139 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccScp80Mapper'.
+18:35:51.139 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccScp81Mapper' and 'com.whty.euicc.data.dao.EuiccScp81Mapper' mapperInterface
+18:35:51.139 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccScp81Mapper'.
+18:35:51.139 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccSmDpMapper' and 'com.whty.euicc.data.dao.EuiccSmDpMapper' mapperInterface
+18:35:51.139 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccSmDpMapper'.
+18:35:51.140 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccSmSrMapper' and 'com.whty.euicc.data.dao.EuiccSmSrMapper' mapperInterface
+18:35:51.140 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccSmSrMapper'.
+18:35:51.161 INFO  o.s.b.f.config.PropertiesFactoryBean - Loading properties file from file [D:\euicc\euicc-dp-container\conf\properties\config.properties]
+18:35:51.161 INFO  o.s.b.f.config.PropertiesFactoryBean - Loading properties file from file [D:\euicc\euicc-dp-container\conf\properties\euicc.properties]
+18:35:51.161 INFO  o.s.b.f.config.PropertiesFactoryBean - Loading properties file from file [D:\euicc\euicc-dp-container\conf\properties\jdbc.properties]
+18:35:51.202 INFO  o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@20f8395f: defining beans [applicationProperties,propertyConfigurer,bonecp,transactionManager,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,com.whty.euicc.common.spring.SpringContextHolder#0,msgBusiTypeDp,ByNameTask,bizObjectCache,bizTemplateManager,businessControl,businessExecutor,msgBusiType01,appInit,appProcess,appQuery,appQuerySupend,tath.112.001.01,tath.016.001.01,ByNameCommand,parametersApdu,connectParaUpdateByDp,createISDPByDp,disableProfileByDp,enableProfileByDp,getEISByDp,getStatusByDp,initTagsOfIsdp1ByDp,installProfileByDp,masterDeleteByDp,personalAllISDP,profileDeletionByDp,setFallBackAttrByDp,firstStoreDataforISDPApdu,updatePolicyRulesByDP,updateSrAddressParaByDP,updateSubscriAddrByDp,businessObjectServiceImpl,euiccCardServiceImpl,euiccIsdPServiceImpl,euiccIsdRServiceImpl,euiccPol2,euiccProfileServiceImpl,euiccScp03ServiceImpl,euiccScp80ServiceImpl,euiccScp81ServiceImpl,springContextHolder,sms,smsTriggerUtil,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,container,flowStorageService,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,baseFieldsMapper,businessLogMapper,businessModelMapper,businessObjectMapper,euiccAuditTrailRecordMapper,euiccCapabilitiesMapper,euiccCardMapper,euiccEcasdMapper,euiccEumMapper,euiccIsdPMapper,euiccIsdRMapper,euiccMnoMapper,euiccPol1Mapper,euiccPol2Mapper,euiccProfileMapper,euiccScp03Mapper,euiccScp80Mapper,euiccScp81Mapper,euiccSmDpMapper,euiccSmSrMapper]; root of factory hierarchy
+18:35:51.282 DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+18:35:51.290 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Property 'configLocation' not specified, using default MyBatis Configuration
+18:35:51.422 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\BaseFieldsMapper.xml]'
+18:35:51.451 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\BusinessLogMapper.xml]'
+18:35:51.468 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\BusinessModelMapper.xml]'
+18:35:51.498 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\BusinessObjectMapper.xml]'
+18:35:51.529 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccAuditTrailRecordMapper.xml]'
+18:35:51.554 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccCapabilitiesMapper.xml]'
+18:35:51.587 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccCardMapper.xml]'
+18:35:51.605 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccEcasdMapper.xml]'
+18:35:51.625 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccEumMapper.xml]'
+18:35:51.660 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccIsdPMapper.xml]'
+18:35:51.684 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccIsdRMapper.xml]'
+18:35:51.702 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccMnoMapper.xml]'
+18:35:51.716 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccPol1Mapper.xml]'
+18:35:51.735 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccPol2Mapper.xml]'
+18:35:51.775 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccProfileMapper.xml]'
+18:35:51.806 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccScp03Mapper.xml]'
+18:35:51.832 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccScp80Mapper.xml]'
+18:35:51.854 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccScp81Mapper.xml]'
+18:35:51.872 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccSmDpMapper.xml]'
+18:35:51.890 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccSmSrMapper.xml]'
+18:35:51.975 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build flows from files  [[Ljava.lang.String;@74d402dd]
+18:35:51.975 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to cache flow from file  [D:\euicc\euicc-dp-container/templateflow/basic/appQuery.xml]
+18:35:51.995 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to cache flow from file  [D:\euicc\euicc-dp-container/templateflow/basic/appApply.xml]
+18:35:52.011 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build Flow from file  [D:\euicc\euicc-dp-container/templateflow/basic/appQuery.xml]
+18:35:52.033 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - init flow id: [tath.016.001.01] name: [应用查询] state_id: [1],state_name: [应用查询]
+18:35:52.041 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse all states
+18:35:52.042 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1]
+18:35:52.042 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2]
+18:35:52.043 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3]
+18:35:52.043 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [101]
+18:35:52.043 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [finish]
+18:35:52.044 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse states handler
+18:35:52.044 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1]
+18:35:52.045 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2]
+18:35:52.045 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3]
+18:35:52.045 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [101]
+18:35:52.045 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [finish]
+18:35:52.045 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse all allTransitions
+18:35:52.045 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [0] target_state [finish]
+18:35:52.047 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [1] target_state [2]
+18:35:52.047 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [2] target_state [101]
+18:35:52.047 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [0] target_state [finish]
+18:35:52.047 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [1] target_state [3]
+18:35:52.047 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [2] target_state [101]
+18:35:52.047 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3] event [0] target_state [finish]
+18:35:52.047 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3] event [1] target_state [finish]
+18:35:52.047 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3] event [2] target_state [101]
+18:35:52.048 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [101] event [0] target_state [finish]
+18:35:52.048 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build entire flow
+18:35:52.048 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:35:52.048 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:35:52.048 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [2]
+18:35:52.048 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:35:52.048 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:35:52.048 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [3]
+18:35:52.048 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:35:52.048 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:35:52.049 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [finish]
+18:35:52.049 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:35:52.049 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [2] target_state: [101]
+18:35:52.049 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:35:52.049 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:35:52.049 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [2] target_state: [101]
+18:35:52.049 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:35:52.049 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:35:52.049 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [2] target_state: [101]
+18:35:52.049 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:35:52.049 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:35:52.060 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build handler
+18:35:52.061 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - build file [D:\euicc\euicc-dp-container/templateflow/basic/appQuery.xml] finished
+18:35:52.061 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build Flow from file  [D:\euicc\euicc-dp-container/templateflow/basic/appApply.xml]
+18:35:52.081 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - init flow id: [tath.112.001.01] name: [应用申请] state_id: [1],state_name: [判断应用状态]
+18:35:52.081 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse all states
+18:35:52.081 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1]
+18:35:52.082 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2]
+18:35:52.082 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [finish]
+18:35:52.082 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse states handler
+18:35:52.082 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1]
+18:35:52.082 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2]
+18:35:52.082 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [finish]
+18:35:52.082 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse all allTransitions
+18:35:52.082 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [0] target_state [finish]
+18:35:52.082 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [1] target_state [2]
+18:35:52.082 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [2] target_state [2]
+18:35:52.083 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [0] target_state [finish]
+18:35:52.083 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [1] target_state [finish]
+18:35:52.083 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build entire flow
+18:35:52.083 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:35:52.083 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:35:52.083 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [2]
+18:35:52.083 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:35:52.083 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:35:52.083 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [finish]
+18:35:52.083 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:35:52.083 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [2] target_state: [2]
+18:35:52.083 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:35:52.083 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:35:52.083 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [finish]
+18:35:52.083 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:35:52.084 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build handler
+18:35:52.084 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - build file [D:\euicc\euicc-dp-container/templateflow/basic/appApply.xml] finished
+18:35:52.084 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - build complete
+18:35:52.335 DEBUG i.n.u.i.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+18:35:52.336 DEBUG i.n.channel.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 200
+18:35:52.344 DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows
+18:35:52.344 DEBUG io.netty.util.internal.PlatformDependent - Java version: 6
+18:35:52.344 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+18:35:52.347 DEBUG i.netty.util.internal.PlatformDependent0 - java.nio.ByteBuffer.cleaner: available
+18:35:52.347 DEBUG i.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+18:35:52.347 DEBUG i.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+18:35:52.348 DEBUG i.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: unavailable
+18:35:52.348 DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: unavailable
+18:35:52.348 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+18:35:52.404 DEBUG io.netty.util.internal.PlatformDependent - Javassist: available
+18:35:52.404 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\ADMINI~1\AppData\Local\Temp (java.io.tmpdir)
+18:35:52.405 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+18:35:52.405 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: true
+18:35:52.405 INFO  io.netty.util.internal.PlatformDependent - Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system unstability.
+18:35:52.419 DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
+18:35:52.420 DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+18:35:52.847 DEBUG io.netty.util.internal.ThreadLocalRandom - -Dio.netty.initialSeedUniquifier: 0x33e617a86fd043d5
+18:35:52.854 DEBUG io.netty.channel.ChannelOutboundBuffer - -Dio.netty.threadLocalDirectBufferSize: 65536
+18:35:52.871 DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: unpooled
+18:35:52.880 DEBUG io.netty.util.NetUtil - Loopback interface: Software Loopback Interface 1
+18:35:52.880 DEBUG io.netty.util.NetUtil - Loopback address: /0:0:0:0:0:0:0:1 (primary)
+18:35:52.880 DEBUG io.netty.util.NetUtil - Loopback address: /127.0.0.1
+18:36:27.918 DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+18:36:28.012 INFO  com.whty.euicc.handler.NettyDpHandler - ==========接收来自非卡端请求路由处理消息==========
+18:36:28.012 DEBUG com.whty.euicc.handler.NettyDpHandler - 请求消息明文 : {"header":{"version":"01","sendTime":"2017-01-03 18:36:27","msgType":"updateSubscriAddrByDp","tradeNO":"20170103183627","tradeRefNO":"0"},"body":{"imsi":"225555585","msisdn":"88855555","eid":"89001012012341234012345678901224"}}
+18:36:28.013 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2017-01-03 18:36:27","msgType":"updateSubscriAddrByDp","tradeNO":"20170103183627","tradeRefNO":"0"},"body":{"imsi":"225555585","msisdn":"88855555","eid":"89001012012341234012345678901224"}}
+18:36:28.074 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2017-01-03 18:36:27","msgType":"updateSubscriAddrByDp","tradeNO":"20170103183627","tradeRefNO":"0"},"body":{"imsi":"225555585","msisdn":"88855555","eid":"89001012012341234012345678901224"}}
+18:36:29.206 DEBUG com.whty.euicc.handler.NettyDpHandler - 响应消息明文 : {"code":"0001","message":"error"}
+18:36:34.237 DEBUG io.netty.handler.ssl.SslHandler - Swallowing a harmless 'connection reset by peer / broken pipe' error that occurred while writing close_notify in response to the peer's close_notify
+java.io.IOException: 您的主机中的软件中止了一个已建立的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method) ~[na:1.6.0_13]
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:25) ~[na:1.6.0_13]
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:233) ~[na:1.6.0_13]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:206) ~[na:1.6.0_13]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:236) ~[na:1.6.0_13]
+	at io.netty.buffer.UnpooledHeapByteBuf.setBytes(UnpooledHeapByteBuf.java:256) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:871) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:208) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:108) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:494) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:461) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:378) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:350) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:101) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at java.lang.Thread.run(Thread.java:619) [na:1.6.0_13]
+18:37:46.992 INFO  com.whty.euicc.init.InitLoad - initLog complete.
+18:37:47.011 DEBUG com.whty.cache.helpers.Loader - Trying to find [cache.cfg] using context classloader sun.misc.Launcher$AppClassLoader@40affc70.
+18:37:47.011 DEBUG com.whty.cache.CacheManager - Using URL [jar:file:/E:/Repository/com/whty/flow_storage/0.0.2/flow_storage-0.0.2.jar!/cache.cfg] for automatic cache configuration.
+18:37:47.150 INFO  o.s.c.s.FileSystemXmlApplicationContext - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@32dcb03b: startup date [Tue Jan 03 18:37:47 CST 2017]; root of context hierarchy
+18:37:47.199 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/TlsServer.xml]
+18:37:47.275 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/spring/spring-properties.xml]
+18:37:47.303 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/spring/spring-pool.xml]
+18:37:47.352 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/spring/spring-common.xml]
+18:37:47.752 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-dp-container/conf/spring/spring-flow.xml]
+18:37:47.923 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\base\BaseFieldsMapper.class]
+18:37:47.924 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\base\BusinessLogMapper.class]
+18:37:47.924 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\base\BusinessModelMapper.class]
+18:37:47.924 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\base\BusinessObjectMapper.class]
+18:37:47.924 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccAuditTrailRecordMapper.class]
+18:37:47.925 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccCapabilitiesMapper.class]
+18:37:47.925 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccCardMapper.class]
+18:37:47.925 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccEcasdMapper.class]
+18:37:47.925 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccEumMapper.class]
+18:37:47.925 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccIsdPMapper.class]
+18:37:47.926 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccIsdRMapper.class]
+18:37:47.926 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccMnoMapper.class]
+18:37:47.926 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccPol1Mapper.class]
+18:37:47.926 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccPol2Mapper.class]
+18:37:47.926 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccProfileMapper.class]
+18:37:47.927 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccScp03Mapper.class]
+18:37:47.927 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccScp80Mapper.class]
+18:37:47.927 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccScp81Mapper.class]
+18:37:47.927 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccSmDpMapper.class]
+18:37:47.927 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccSmSrMapper.class]
+18:37:47.932 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'baseFieldsMapper' and 'com.whty.euicc.data.dao.base.BaseFieldsMapper' mapperInterface
+18:37:47.933 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'baseFieldsMapper'.
+18:37:47.933 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'businessLogMapper' and 'com.whty.euicc.data.dao.base.BusinessLogMapper' mapperInterface
+18:37:47.933 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'businessLogMapper'.
+18:37:47.933 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'businessModelMapper' and 'com.whty.euicc.data.dao.base.BusinessModelMapper' mapperInterface
+18:37:47.933 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'businessModelMapper'.
+18:37:47.933 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'businessObjectMapper' and 'com.whty.euicc.data.dao.base.BusinessObjectMapper' mapperInterface
+18:37:47.933 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'businessObjectMapper'.
+18:37:47.934 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccAuditTrailRecordMapper' and 'com.whty.euicc.data.dao.EuiccAuditTrailRecordMapper' mapperInterface
+18:37:47.934 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccAuditTrailRecordMapper'.
+18:37:47.934 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccCapabilitiesMapper' and 'com.whty.euicc.data.dao.EuiccCapabilitiesMapper' mapperInterface
+18:37:47.934 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccCapabilitiesMapper'.
+18:37:47.934 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccCardMapper' and 'com.whty.euicc.data.dao.EuiccCardMapper' mapperInterface
+18:37:47.934 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccCardMapper'.
+18:37:47.934 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccEcasdMapper' and 'com.whty.euicc.data.dao.EuiccEcasdMapper' mapperInterface
+18:37:47.934 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccEcasdMapper'.
+18:37:47.934 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccEumMapper' and 'com.whty.euicc.data.dao.EuiccEumMapper' mapperInterface
+18:37:47.934 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccEumMapper'.
+18:37:47.934 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccIsdPMapper' and 'com.whty.euicc.data.dao.EuiccIsdPMapper' mapperInterface
+18:37:47.934 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccIsdPMapper'.
+18:37:47.934 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccIsdRMapper' and 'com.whty.euicc.data.dao.EuiccIsdRMapper' mapperInterface
+18:37:47.935 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccIsdRMapper'.
+18:37:47.935 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccMnoMapper' and 'com.whty.euicc.data.dao.EuiccMnoMapper' mapperInterface
+18:37:47.935 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccMnoMapper'.
+18:37:47.935 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccPol1Mapper' and 'com.whty.euicc.data.dao.EuiccPol1Mapper' mapperInterface
+18:37:47.935 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccPol1Mapper'.
+18:37:47.935 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccPol2Mapper' and 'com.whty.euicc.data.dao.EuiccPol2Mapper' mapperInterface
+18:37:47.935 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccPol2Mapper'.
+18:37:47.935 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccProfileMapper' and 'com.whty.euicc.data.dao.EuiccProfileMapper' mapperInterface
+18:37:47.935 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccProfileMapper'.
+18:37:47.935 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccScp03Mapper' and 'com.whty.euicc.data.dao.EuiccScp03Mapper' mapperInterface
+18:37:47.935 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccScp03Mapper'.
+18:37:47.935 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccScp80Mapper' and 'com.whty.euicc.data.dao.EuiccScp80Mapper' mapperInterface
+18:37:47.935 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccScp80Mapper'.
+18:37:47.935 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccScp81Mapper' and 'com.whty.euicc.data.dao.EuiccScp81Mapper' mapperInterface
+18:37:47.935 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccScp81Mapper'.
+18:37:47.935 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccSmDpMapper' and 'com.whty.euicc.data.dao.EuiccSmDpMapper' mapperInterface
+18:37:47.935 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccSmDpMapper'.
+18:37:47.936 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccSmSrMapper' and 'com.whty.euicc.data.dao.EuiccSmSrMapper' mapperInterface
+18:37:47.936 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccSmSrMapper'.
+18:37:47.957 INFO  o.s.b.f.config.PropertiesFactoryBean - Loading properties file from file [D:\euicc\euicc-dp-container\conf\properties\config.properties]
+18:37:47.957 INFO  o.s.b.f.config.PropertiesFactoryBean - Loading properties file from file [D:\euicc\euicc-dp-container\conf\properties\euicc.properties]
+18:37:47.958 INFO  o.s.b.f.config.PropertiesFactoryBean - Loading properties file from file [D:\euicc\euicc-dp-container\conf\properties\jdbc.properties]
+18:37:48.001 INFO  o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@175bc6c8: defining beans [applicationProperties,propertyConfigurer,bonecp,transactionManager,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,com.whty.euicc.common.spring.SpringContextHolder#0,msgBusiTypeDp,ByNameTask,bizObjectCache,bizTemplateManager,businessControl,businessExecutor,msgBusiType01,appInit,appProcess,appQuery,appQuerySupend,tath.112.001.01,tath.016.001.01,ByNameCommand,parametersApdu,connectParaUpdateByDp,createISDPByDp,disableProfileByDp,enableProfileByDp,getEISByDp,getStatusByDp,initTagsOfIsdp1ByDp,installProfileByDp,masterDeleteByDp,personalAllISDP,profileDeletionByDp,setFallBackAttrByDp,firstStoreDataforISDPApdu,updatePolicyRulesByDP,updateSrAddressParaByDP,updateSubscriAddrByDp,businessObjectServiceImpl,euiccCardServiceImpl,euiccIsdPServiceImpl,euiccIsdRServiceImpl,euiccPol2,euiccProfileServiceImpl,euiccScp03ServiceImpl,euiccScp80ServiceImpl,euiccScp81ServiceImpl,springContextHolder,sms,smsTriggerUtil,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,container,flowStorageService,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,baseFieldsMapper,businessLogMapper,businessModelMapper,businessObjectMapper,euiccAuditTrailRecordMapper,euiccCapabilitiesMapper,euiccCardMapper,euiccEcasdMapper,euiccEumMapper,euiccIsdPMapper,euiccIsdRMapper,euiccMnoMapper,euiccPol1Mapper,euiccPol2Mapper,euiccProfileMapper,euiccScp03Mapper,euiccScp80Mapper,euiccScp81Mapper,euiccSmDpMapper,euiccSmSrMapper]; root of factory hierarchy
+18:37:48.083 DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+18:37:48.092 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Property 'configLocation' not specified, using default MyBatis Configuration
+18:37:48.225 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\BaseFieldsMapper.xml]'
+18:37:48.251 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\BusinessLogMapper.xml]'
+18:37:48.268 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\BusinessModelMapper.xml]'
+18:37:48.298 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\BusinessObjectMapper.xml]'
+18:37:48.325 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccAuditTrailRecordMapper.xml]'
+18:37:48.352 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccCapabilitiesMapper.xml]'
+18:37:48.386 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccCardMapper.xml]'
+18:37:48.404 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccEcasdMapper.xml]'
+18:37:48.423 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccEumMapper.xml]'
+18:37:48.454 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccIsdPMapper.xml]'
+18:37:48.478 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccIsdRMapper.xml]'
+18:37:48.498 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccMnoMapper.xml]'
+18:37:48.512 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccPol1Mapper.xml]'
+18:37:48.535 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccPol2Mapper.xml]'
+18:37:48.578 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccProfileMapper.xml]'
+18:37:48.611 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccScp03Mapper.xml]'
+18:37:48.635 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccScp80Mapper.xml]'
+18:37:48.662 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccScp81Mapper.xml]'
+18:37:48.682 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccSmDpMapper.xml]'
+18:37:48.704 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccSmSrMapper.xml]'
+18:37:48.791 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build flows from files  [[Ljava.lang.String;@475a07bf]
+18:37:48.791 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to cache flow from file  [D:\euicc\euicc-dp-container/templateflow/basic/appQuery.xml]
+18:37:48.812 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to cache flow from file  [D:\euicc\euicc-dp-container/templateflow/basic/appApply.xml]
+18:37:48.827 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build Flow from file  [D:\euicc\euicc-dp-container/templateflow/basic/appQuery.xml]
+18:37:48.848 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - init flow id: [tath.016.001.01] name: [应用查询] state_id: [1],state_name: [应用查询]
+18:37:48.856 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse all states
+18:37:48.857 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1]
+18:37:48.857 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2]
+18:37:48.857 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3]
+18:37:48.857 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [101]
+18:37:48.857 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [finish]
+18:37:48.857 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse states handler
+18:37:48.858 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1]
+18:37:48.858 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2]
+18:37:48.859 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3]
+18:37:48.859 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [101]
+18:37:48.859 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [finish]
+18:37:48.859 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse all allTransitions
+18:37:48.859 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [0] target_state [finish]
+18:37:48.861 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [1] target_state [2]
+18:37:48.861 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [2] target_state [101]
+18:37:48.861 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [0] target_state [finish]
+18:37:48.861 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [1] target_state [3]
+18:37:48.861 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [2] target_state [101]
+18:37:48.861 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3] event [0] target_state [finish]
+18:37:48.862 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3] event [1] target_state [finish]
+18:37:48.862 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3] event [2] target_state [101]
+18:37:48.862 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [101] event [0] target_state [finish]
+18:37:48.862 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build entire flow
+18:37:48.862 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:37:48.862 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:37:48.862 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [2]
+18:37:48.862 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:37:48.862 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:37:48.862 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [3]
+18:37:48.863 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:37:48.863 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:37:48.863 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [finish]
+18:37:48.863 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:37:48.863 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [2] target_state: [101]
+18:37:48.863 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:37:48.863 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:37:48.863 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [2] target_state: [101]
+18:37:48.863 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:37:48.863 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:37:48.864 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [2] target_state: [101]
+18:37:48.864 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:37:48.864 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:37:48.875 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build handler
+18:37:48.876 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - build file [D:\euicc\euicc-dp-container/templateflow/basic/appQuery.xml] finished
+18:37:48.877 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build Flow from file  [D:\euicc\euicc-dp-container/templateflow/basic/appApply.xml]
+18:37:48.899 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - init flow id: [tath.112.001.01] name: [应用申请] state_id: [1],state_name: [判断应用状态]
+18:37:48.899 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse all states
+18:37:48.899 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1]
+18:37:48.899 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2]
+18:37:48.900 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [finish]
+18:37:48.900 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse states handler
+18:37:48.900 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1]
+18:37:48.900 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2]
+18:37:48.900 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [finish]
+18:37:48.900 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse all allTransitions
+18:37:48.900 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [0] target_state [finish]
+18:37:48.900 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [1] target_state [2]
+18:37:48.900 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [2] target_state [2]
+18:37:48.901 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [0] target_state [finish]
+18:37:48.901 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [1] target_state [finish]
+18:37:48.901 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build entire flow
+18:37:48.901 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:37:48.901 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:37:48.901 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [2]
+18:37:48.901 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:37:48.901 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:37:48.901 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [finish]
+18:37:48.901 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:37:48.901 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [2] target_state: [2]
+18:37:48.901 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+18:37:48.901 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:37:48.901 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [finish]
+18:37:48.901 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+18:37:48.902 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build handler
+18:37:48.902 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - build file [D:\euicc\euicc-dp-container/templateflow/basic/appApply.xml] finished
+18:37:48.902 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - build complete
+18:37:49.146 DEBUG i.n.u.i.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+18:37:49.148 DEBUG i.n.channel.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 200
+18:37:49.154 DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows
+18:37:49.155 DEBUG io.netty.util.internal.PlatformDependent - Java version: 6
+18:37:49.155 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+18:37:49.159 DEBUG i.netty.util.internal.PlatformDependent0 - java.nio.ByteBuffer.cleaner: available
+18:37:49.159 DEBUG i.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+18:37:49.159 DEBUG i.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+18:37:49.160 DEBUG i.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: unavailable
+18:37:49.160 DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: unavailable
+18:37:49.160 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+18:37:49.214 DEBUG io.netty.util.internal.PlatformDependent - Javassist: available
+18:37:49.214 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\ADMINI~1\AppData\Local\Temp (java.io.tmpdir)
+18:37:49.214 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+18:37:49.215 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: true
+18:37:49.215 INFO  io.netty.util.internal.PlatformDependent - Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system unstability.
+18:37:49.230 DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
+18:37:49.230 DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+18:37:50.081 DEBUG io.netty.util.internal.ThreadLocalRandom - -Dio.netty.initialSeedUniquifier: 0xff450b7e6db3ba18
+18:37:50.089 DEBUG io.netty.channel.ChannelOutboundBuffer - -Dio.netty.threadLocalDirectBufferSize: 65536
+18:37:50.105 DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: unpooled
+18:37:50.114 DEBUG io.netty.util.NetUtil - Loopback interface: Software Loopback Interface 1
+18:37:50.114 DEBUG io.netty.util.NetUtil - Loopback address: /0:0:0:0:0:0:0:1 (primary)
+18:37:50.114 DEBUG io.netty.util.NetUtil - Loopback address: /127.0.0.1
+18:38:19.340 DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+18:38:19.431 INFO  com.whty.euicc.handler.NettyDpHandler - ==========接收来自非卡端请求路由处理消息==========
+18:38:19.431 DEBUG com.whty.euicc.handler.NettyDpHandler - 请求消息明文 : {"header":{"version":"01","sendTime":"2017-01-03 18:38:18","msgType":"updateSubscriAddrByDp","tradeNO":"20170103183818","tradeRefNO":"0"},"body":{"imsi":"225555585","msisdn":"88855555","eid":"89001012012341234012345678901224","iccid":"00"}}
+18:38:19.432 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2017-01-03 18:38:18","msgType":"updateSubscriAddrByDp","tradeNO":"20170103183818","tradeRefNO":"0"},"body":{"imsi":"225555585","msisdn":"88855555","eid":"89001012012341234012345678901224","iccid":"00"}}
+18:38:19.490 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2017-01-03 18:38:18","msgType":"updateSubscriAddrByDp","tradeNO":"20170103183818","tradeRefNO":"0"},"body":{"imsi":"225555585","msisdn":"88855555","eid":"89001012012341234012345678901224","iccid":"00"}}
+18:38:20.640 DEBUG com.whty.euicc.handler.NettyDpHandler - 响应消息明文 : {"code":"0000","message":"success"}
+18:38:30.658 DEBUG io.netty.handler.ssl.SslHandler - Swallowing a harmless 'connection reset by peer / broken pipe' error that occurred while writing close_notify in response to the peer's close_notify
+java.io.IOException: 您的主机中的软件中止了一个已建立的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method) ~[na:1.6.0_13]
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:25) ~[na:1.6.0_13]
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:233) ~[na:1.6.0_13]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:206) ~[na:1.6.0_13]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:236) ~[na:1.6.0_13]
+	at io.netty.buffer.UnpooledHeapByteBuf.setBytes(UnpooledHeapByteBuf.java:256) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:871) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:208) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:108) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:494) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:461) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:378) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:350) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:101) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at java.lang.Thread.run(Thread.java:619) [na:1.6.0_13]

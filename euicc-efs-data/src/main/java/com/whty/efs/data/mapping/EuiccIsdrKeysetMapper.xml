@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.efs.data.dao.EuiccIsdrKeysetMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.efs.data.pojo.EuiccIsdrKeyset" >
+    <id column="keyset_id" property="keysetId" jdbcType="VARCHAR" />
+    <result column="r_id" property="rId" jdbcType="VARCHAR" />
+    <result column="version" property="version" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="cntr" property="cntr" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.whty.efs.data.pojo.EuiccIsdrKeyset" extends="BaseResultMap" >
+    <result column="key_or_certificate" property="keyOrCertificate" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    keyset_id, r_id, version, type, cntr
+  </sql>
+  <sql id="Blob_Column_List" >
+    key_or_certificate
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.whty.efs.data.pojo.EuiccIsdrKeysetExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from euicc_isdr_keyset
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.whty.efs.data.pojo.EuiccIsdrKeysetExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from euicc_isdr_keyset
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from euicc_isdr_keyset
+    where keyset_id = #{keysetId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from euicc_isdr_keyset
+    where keyset_id = #{keysetId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByRid" parameterType="java.lang.String" >
+    delete from euicc_isdr_keyset
+    where r_id = #{rId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whty.efs.data.pojo.EuiccIsdrKeysetExample" >
+    delete from euicc_isdr_keyset
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whty.efs.data.pojo.EuiccIsdrKeyset" >
+    insert into euicc_isdr_keyset (keyset_id, r_id, version, 
+      type, cntr, key_or_certificate
+      )
+    values (#{keysetId,jdbcType=VARCHAR}, #{rId,jdbcType=VARCHAR}, #{version,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR}, #{cntr,jdbcType=VARCHAR}, #{keyOrCertificate,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.efs.data.pojo.EuiccIsdrKeyset" >
+    insert into euicc_isdr_keyset
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="keysetId != null" >
+        keyset_id,
+      </if>
+      <if test="rId != null" >
+        r_id,
+      </if>
+      <if test="version != null" >
+        version,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="cntr != null" >
+        cntr,
+      </if>
+      <if test="keyOrCertificate != null" >
+        key_or_certificate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="keysetId != null" >
+        #{keysetId,jdbcType=VARCHAR},
+      </if>
+      <if test="rId != null" >
+        #{rId,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null" >
+        #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="cntr != null" >
+        #{cntr,jdbcType=VARCHAR},
+      </if>
+      <if test="keyOrCertificate != null" >
+        #{keyOrCertificate,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whty.efs.data.pojo.EuiccIsdrKeysetExample" resultType="java.lang.Integer" >
+    select count(*) from euicc_isdr_keyset
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update euicc_isdr_keyset
+    <set >
+      <if test="record.keysetId != null" >
+        keyset_id = #{record.keysetId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rId != null" >
+        r_id = #{record.rId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.version != null" >
+        version = #{record.version,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null" >
+        type = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cntr != null" >
+        cntr = #{record.cntr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.keyOrCertificate != null" >
+        key_or_certificate = #{record.keyOrCertificate,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update euicc_isdr_keyset
+    set keyset_id = #{record.keysetId,jdbcType=VARCHAR},
+      r_id = #{record.rId,jdbcType=VARCHAR},
+      version = #{record.version,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=VARCHAR},
+      cntr = #{record.cntr,jdbcType=VARCHAR},
+      key_or_certificate = #{record.keyOrCertificate,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update euicc_isdr_keyset
+    set keyset_id = #{record.keysetId,jdbcType=VARCHAR},
+      r_id = #{record.rId,jdbcType=VARCHAR},
+      version = #{record.version,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=VARCHAR},
+      cntr = #{record.cntr,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.efs.data.pojo.EuiccIsdrKeyset" >
+    update euicc_isdr_keyset
+    <set >
+      <if test="rId != null" >
+        r_id = #{rId,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null" >
+        version = #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="cntr != null" >
+        cntr = #{cntr,jdbcType=VARCHAR},
+      </if>
+      <if test="keyOrCertificate != null" >
+        key_or_certificate = #{keyOrCertificate,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where keyset_id = #{keysetId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.whty.efs.data.pojo.EuiccIsdrKeyset" >
+    update euicc_isdr_keyset
+    set r_id = #{rId,jdbcType=VARCHAR},
+      version = #{version,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      cntr = #{cntr,jdbcType=VARCHAR},
+      key_or_certificate = #{keyOrCertificate,jdbcType=LONGVARCHAR}
+    where keyset_id = #{keysetId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.efs.data.pojo.EuiccIsdrKeyset" >
+    update euicc_isdr_keyset
+    set r_id = #{rId,jdbcType=VARCHAR},
+      version = #{version,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      cntr = #{cntr,jdbcType=VARCHAR}
+    where keyset_id = #{keysetId,jdbcType=VARCHAR}
+  </update>
+</mapper>

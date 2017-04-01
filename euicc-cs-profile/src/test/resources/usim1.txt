@@ -1,0 +1,78 @@
+value5 ProfileElement ::= usim : {
+  usim-header {
+    mandated NULL,
+    identification 2
+  },
+  templateID { 2 23 143 1 2 4 },
+  adf-usim {
+    fileDescriptor : {
+      fileID '7FF1'H,
+      dfName 'A0000000871002FF33FF018900000100'H,
+      securityAttributesReferenced '2F0603'H
+    }
+  },
+  ef-imsi {
+    fileDescriptor : {
+      securityAttributesReferenced '6F0602'H
+    },
+    fillFileContent : '0832141049737856F6'H
+  },
+  ef-arr {
+    fileDescriptor : {
+      fileDescriptor '4221002F0F'H,
+      securityAttributesReferenced '6F060A'H
+    },
+    fillFileContent : '800102A4068301019501088001049700800118A40683010A950108'H,
+    fillFileOffset : 20,
+    fillFileContent : '800101A40683010195010880011AA40683010A9501088001049700'H,
+    fillFileOffset : 20,
+    fillFileContent : '80011BA40683010A9501088001049700'H,
+    fillFileOffset : 31,
+    fillFileContent : '800101900080011E9700'H,
+    fillFileOffset : 37,
+    fillFileContent : '800103A4068301019501088001049700800118A40683010A950108'H,
+    fillFileOffset : 20,
+    fillFileContent : '800111A406830101950108800104970080010AA40683010A950108'H,
+    fillFileOffset : 20,
+    fillFileContent : '800107A406830101950108800118A40683010A950108'H,
+    fillFileOffset : 25,
+    fillFileContent : '800101A406830101950108800102A4068301029501088001049700'H,
+    fillFileOffset : 20,
+    fillFileContent : '8001019000800104970080011AA406830101950108'H,
+    fillFileOffset : 26,
+    fillFileContent : '800101900080011AA40683010A9501088001049700'H,
+    fillFileOffset : 26,
+    fillFileContent : '8001019000800118A40683010A9501088001069700'H,
+    fillFileOffset : 26,
+    fillFileContent : '800101A40683010195010880011E9700'H
+  },
+  ef-ust {
+    fileDescriptor : {
+      securityAttributesReferenced '6F0602'H
+    },
+    fillFileContent : '0A2E178CE73204000000000000'H
+  },
+  ef-spn {
+    fileDescriptor : {
+      securityAttributesReferenced '6F060A'H
+    },
+    fillFileContent : '0247534D41206555494343FFFFFFFFFFFF'H
+  },
+  ef-est {
+    fileDescriptor : {
+      securityAttributesReferenced '6F0608'H
+    },
+    fillFileContent : '00'H
+  },
+  ef-acc {
+    fileDescriptor : {
+      securityAttributesReferenced '6F0602'H
+    },
+    fillFileContent : '0010'H
+  },
+  ef-ecc {
+    fileDescriptor : {
+      securityAttributesReferenced '6F060A'H
+    }
+  }
+}

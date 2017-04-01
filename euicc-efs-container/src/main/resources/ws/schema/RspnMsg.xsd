@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    targetNamespace="http://www.tathing.com"
+    xmlns:tsm="http://www.tathing.com" 
+    elementFormDefault="qualified">
+    
+    <xsd:complexType name="RspnMsg">
+       <xsd:sequence>
+           <xsd:element name="sts" type="xsd:string"/>    
+           <xsd:element name="rjctCd" type="xsd:string"/>
+           <xsd:element name="rjctInfo" type="xsd:string"/>
+           <xsd:element name="endFlag" type="xsd:string"/>
+       </xsd:sequence>
+    </xsd:complexType>
+    
+</xsd:schema>
+

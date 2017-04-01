@@ -1,0 +1,452 @@
+pe-sd ProfileElement ::= securityDomain : {
+  sd-Header {
+    mandated NULL,
+    identification 9
+  },
+ instance { 
+ 	  applicationLoadPackageAID 'A0000001515350'H,
+ 	  classAID 'A000000151535041'H,
+ 	  instanceAID 'A000000151000000'H, 
+ 	  applicationPrivileges '82FC80'H, 
+     lifeCycleState '0F'H, 
+     applicationSpecificParametersC9 '810203708102025581028000'H, 
+     applicationParameters { 
+     uiccToolkitApplicationSpecificParametersField '0100000100000002011203B2010000'H 
+     } 
+     }, 
+     keyList {      
+       { 
+         keyUsageQualifier '38'H, 
+         keyAccess '00'H, 
+         keyIdentifier '01'H, 
+         keyVersionNumber '01'H, 
+         keyCompontents { 
+           { 
+           keyType '80'H, 
+           keyData 'D9BE655005BEB775324D53DEA699F13A'H 
+           } 
+         } 
+       }, 
+       { 
+          keyUsageQualifier '34'H, 
+          keyAccess '00'H, 
+          keyIdentifier '02'H, 
+          keyVersionNumber '01'H, 
+          keyCompontents { 
+             { 
+             keyType '80'H, 
+             keyData '52DABF691AFD0E2B540CA6A09DEE3BF9'H 
+             } 
+           } 
+        }, 
+        { 
+         keyUsageQualifier 'C8'H, 
+         keyAccess '00'H, 
+         keyIdentifier '03'H, 
+         keyVersionNumber '01'H, 
+         keyCompontents {
+            { 
+            keyType '80'H, 
+            keyData 'F75D1211F09D3BD5DEB5C3726C5C71E9'H 
+            } 
+          } 
+       }
+       { 
+           keyUsageQualifier '38'H, 
+           keyAccess '00'H, 
+           keyIdentifier '01'H, 
+           keyVersionNumber '02'H, 
+           keyCompontents {
+             { 
+             keyType '80'H, 
+             keyData '31580DB9C617ED485FD9B309123BA2EC'H 
+             } 
+            } 
+        }, 
+       { 
+        keyUsageQualifier '34'H, 
+          keyAccess '00'H, 
+          keyIdentifier '02'H, 
+          keyVersionNumber '02'H, 
+          keyCompontents {
+             { 
+             keyType '80'H, 
+             keyData 'AEB60E98703B6C8B343DAEFC2EE64099'H 
+             } 
+          } 
+        }, 
+        { 
+          keyUsageQualifier 'C8'H, 
+          keyAccess '00'H, 
+          keyIdentifier '03'H, 
+          keyVersionNumber '02'H, 
+          keyCompontents {
+              { 
+              keyType '80'H, 
+              keyData 'AB1F22EBB0C85708A531BDE6758782F4'H 
+              } 
+          } 
+         },
+        { 
+              keyUsageQualifier '38'H, 
+              keyAccess '00'H, 
+              keyIdentifier '01'H, 
+              keyVersionNumber '03'H, 
+              keyCompontents {
+                { 
+                keyType '80'H, 
+                keyData '5B65D650F410BE5435D26BC7778AA4F1'H 
+                } 
+              } 
+          }, 
+         { 
+           keyUsageQualifier '34'H, 
+           keyAccess '00'H, 
+           keyIdentifier '02'H, 
+           keyVersionNumber '03'H, 
+           keyCompontents {
+               { 
+               keyType '80'H, 
+               keyData 'EF99C2514486B864AE2943DAD7929895'H 
+               } 
+           } 
+        }, 
+        { 
+           keyUsageQualifier 'C8'H, 
+           keyAccess '00'H, 
+           keyIdentifier '03'H, 
+           keyVersionNumber '03'H, 
+           keyCompontents {
+               { 
+               keyType '80'H, 
+               keyData 'C53210DB6B300F790A998C81D2F0B42C'H 
+                } 
+              } 
+          }
+          { 
+           keyUsageQualifier '38'H, 
+           keyAccess '00'H, 
+           keyIdentifier '01'H, 
+           keyVersionNumber '04'H, 
+           keyCompontents {
+               { 
+               keyType '80'H, 
+               keyData 'B4589C2516A245AD77A1226064AC55DE'H 
+               } 
+           } 
+        }, 
+        { 
+           keyUsageQualifier '34'H, 
+           keyAccess '00'H, 
+           keyIdentifier '02'H, 
+           keyVersionNumber '04'H, 
+           keyCompontents {
+               { 
+               keyType '80'H, 
+               keyData 'BF594DEF53715FABF53283546B0AE90F'H 
+               } 
+           } 
+        }, 
+        { 
+           keyUsageQualifier 'C8'H, 
+           keyAccess '00'H, 
+           keyIdentifier '03'H, 
+           keyVersionNumber '04'H, 
+           keyCompontents {
+               { 
+               keyType '80'H, 
+               keyData '3F4C3E7FE147FE15C8F170D7DB8FBFFD'H 
+               } 
+              } 
+          }
+          { 
+           keyUsageQualifier '38'H, 
+           keyAccess '00'H, 
+           keyIdentifier '01'H, 
+           keyVersionNumber '20'H, 
+           keyCompontents {
+               { 
+               keyType '80'H, 
+               keyData 'AEA57E0042780CEBBBD7CA2FE63CFF05'H 
+               } 
+           } 
+        }, 
+        { 
+           keyUsageQualifier '34'H, 
+           keyAccess '00'H, 
+           keyIdentifier '02'H, 
+           keyVersionNumber '20'H, 
+           keyCompontents {
+               { 
+               keyType '80'H, 
+               keyData '888D0508C5AF62E085F7D3FB713DBA33'H 
+               } 
+           } 
+        }, 
+        { 
+           keyUsageQualifier 'C8'H, 
+           keyAccess '00'H, 
+           keyIdentifier '03'H, 
+           keyVersionNumber '20'H, 
+           keyCompontents {
+               { 
+               keyType '80'H, 
+               keyData '42C9F4D5271376425FC49D5C7E697CA0'H 
+               } 
+              } 
+          }
+          { 
+           keyUsageQualifier '38'H, 
+           keyAccess '00'H, 
+           keyIdentifier '01'H, 
+           keyVersionNumber '21'H, 
+           keyCompontents {
+              { 
+               keyType '80'H, 
+               keyData '7DAD857600BB69B4FB06CF5CA4FE54DE'H 
+               } 
+           } 
+        }, 
+        { 
+           keyUsageQualifier '34'H, 
+           keyAccess '00'H, 
+           keyIdentifier '02'H, 
+           keyVersionNumber '21'H, 
+           keyCompontents {
+               { 
+               keyType '80'H, 
+               keyData '9E14F922D048778280CD6D347BE229E1'H 
+               } 
+           } 
+        }, 
+        { 
+           keyUsageQualifier 'C8'H, 
+           keyAccess '00'H, 
+           keyIdentifier '03'H, 
+           keyVersionNumber '21'H, 
+           keyCompontents {
+              { 
+               keyType '80'H, 
+               keyData '8042F9DA6A8E6EACB81689ABEC2E1979'H 
+                } 
+           } 
+       }
+         { 
+           keyUsageQualifier '38'H, 
+           keyAccess '00'H, 
+           keyIdentifier '01'H, 
+           keyVersionNumber '22'H, 
+           keyCompontents {
+               { 
+               keyType '80'H, 
+               keyData '27B02F2D73EE20CCBF4E47D006C85F7B'H 
+               } 
+           } 
+        }, 
+        { 
+           keyUsageQualifier '34'H, 
+           keyAccess '00'H, 
+           keyIdentifier '02'H, 
+           keyVersionNumber '22'H, 
+           keyCompontents {
+               { 
+               keyType '80'H, 
+               keyData '9995ED0E5C8A45EFC8DB05759F12701F'H 
+               } 
+           } 
+        }, 
+        { 
+           keyUsageQualifier 'C8'H, 
+           keyAccess '00'H, 
+           keyIdentifier '03'H, 
+           keyVersionNumber '22'H, 
+           keyCompontents {
+               { 
+               keyType '80'H, 
+               keyData '62ACBF1B43BBD26E40A93782FEDAA08E'H 
+                } 
+              } 
+          },
+         { 
+             keyUsageQualifier '38'H, 
+             keyAccess '00'H, 
+             keyIdentifier '01'H, 
+             keyVersionNumber '23'H, 
+             keyCompontents { 
+             { 
+             keyType '80'H, 
+             keyData 'A8C5D6EF424980B9B0F2E762E22CAD9C'H 
+             } 
+             } 
+             }, 
+             { 
+             keyUsageQualifier '34'H, 
+             keyAccess '00'H, 
+             keyIdentifier '02'H, 
+             keyVersionNumber '23'H, 
+             keyCompontents { 
+             { 
+             keyType '80'H, 
+             keyData '407DB4AEFC58BA7C490097BB60199204'H 
+             } 
+             } 
+             }, 
+             { 
+             keyUsageQualifier 'C8'H, 
+             keyAccess '00'H, 
+             keyIdentifier '03'H, 
+             keyVersionNumber '23'H, 
+             keyCompontents { 
+             { 
+             keyType '80'H, 
+             keyData 'F67B1FB523C6D7FFAD1B8532BAEFBA85'H 
+                  } 
+                } 
+               }
+        { 
+           keyUsageQualifier '38'H, 
+           keyAccess '00'H, 
+           keyIdentifier '01'H, 
+           keyVersionNumber '31'H, 
+           keyCompontents {
+               { 
+               keyType '88'H, 
+               keyData '11010203040506070809101112131415'H 
+               } 
+           } 
+        }, 
+        { 
+           keyUsageQualifier '34'H, 
+           keyAccess '00'H, 
+           keyIdentifier '02'H, 
+           keyVersionNumber '31'H, 
+           keyCompontents {
+               { 
+               keyType '88'H, 
+               keyData '11020304050607080910111213141501'H 
+               } 
+           } 
+        }, 
+         { 
+        keyUsageQualifier 'C8'H, 
+        keyAccess '00'H, 
+        keyIdentifier '03'H, 
+        keyVersionNumber '31'H, 
+        keyCompontents {
+            { 
+            keyType '88'H, 
+            keyData '11030405060708091011121314150102'H 
+            } 
+           } 
+          }
+        { 
+           keyUsageQualifier '38'H, 
+           keyAccess '00'H, 
+           keyIdentifier '01'H, 
+           keyVersionNumber '32'H, 
+           keyCompontents {
+               { 
+               keyType '88'H, 
+               keyData '12010203040506070809101112131415'H 
+               } 
+           } 
+        }, 
+        { 
+           keyUsageQualifier '34'H, 
+           keyAccess '00'H, 
+           keyIdentifier '02'H, 
+           keyVersionNumber '32'H, 
+           keyCompontents {
+               { 
+               keyType '88'H, 
+               keyData '12020304050607080910111213141501'H 
+               } 
+           } 
+        }, 
+         { 
+        keyUsageQualifier 'C8'H, 
+        keyAccess '00'H, 
+        keyIdentifier '03'H, 
+        keyVersionNumber '32'H, 
+        keyCompontents {
+            { 
+            keyType '88'H, 
+            keyData '12030405060708091011121314150102'H 
+            } 
+           } 
+          }
+        { 
+           keyUsageQualifier '38'H, 
+           keyAccess '00'H, 
+           keyIdentifier '01'H, 
+           keyVersionNumber '33'H, 
+           keyCompontents {
+               { 
+               keyType '88'H, 
+               keyData '13010203040506070809101112131415'H 
+               } 
+           } 
+        }, 
+        { 
+           keyUsageQualifier '34'H, 
+           keyAccess '00'H, 
+           keyIdentifier '02'H, 
+           keyVersionNumber '33'H, 
+           keyCompontents {
+               { 
+               keyType '88'H, 
+               keyData '13020304050607080910111213141501'H 
+               } 
+           } 
+        }, 
+         { 
+        keyUsageQualifier 'C8'H, 
+        keyAccess '00'H, 
+        keyIdentifier '03'H, 
+        keyVersionNumber '33'H, 
+        keyCompontents {
+            { 
+            keyType '88'H, 
+            keyData '13030405060708091011121314150102'H 
+            } 
+           } 
+          }
+        { 
+           keyUsageQualifier '38'H, 
+           keyAccess '00'H, 
+           keyIdentifier '01'H, 
+           keyVersionNumber '34'H, 
+           keyCompontents {
+               { 
+               keyType '88'H, 
+               keyData '14010203040506070809101112131415'H 
+               } 
+           } 
+        }, 
+        { 
+           keyUsageQualifier '34'H, 
+           keyAccess '00'H, 
+           keyIdentifier '02'H, 
+           keyVersionNumber '34'H, 
+           keyCompontents {
+               { 
+               keyType '88'H, 
+               keyData '14020304050607080910111213141501'H 
+               } 
+           } 
+        }, 
+         { 
+        keyUsageQualifier 'C8'H, 
+        keyAccess '00'H, 
+        keyIdentifier '03'H, 
+        keyVersionNumber '34'H, 
+        keyCompontents {
+            { 
+            keyType '88'H, 
+            keyData '14030405060708091011121314150102'H 
+            } 
+           } 
+          }
+         } 
+        } 
+      }

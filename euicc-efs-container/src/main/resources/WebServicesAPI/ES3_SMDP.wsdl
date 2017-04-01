@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wsdl:definitions targetNamespace="http://namespaces.gsma.org/esim-messaging/3"
+    xmlns:rps="http://namespaces.gsma.org/esim-messaging/3"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsa="http://www.w3.org/2005/08/addressing"
+    xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+    xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   
+    
+<!-- WSDL TYPES -->
+    <wsdl:types>
+        <xs:schema targetNamespace="http://namespaces.gsma.org/esim-messaging/3" elementFormDefault="qualified" >
+            <xs:include schemaLocation="xsd/euicc.request.ES3.xsd"/>
+        </xs:schema>
+		<xs:schema targetNamespace="http://www.w3.org/2005/08/addressing" elementFormDefault="qualified" >
+            <xs:include schemaLocation="xsd/import/ws-addr.xsd"/>
+        </xs:schema>
+    </wsdl:types>
+
+ <!-- WSA MESSAGES -->
+    <wsdl:message name="SoapHeader">
+        <!-- WSA MANDATORY -->
+        <wsdl:part name="From" element="wsa:From"/>
+        <wsdl:part name="To" element="wsa:To"/>
+        <wsdl:part name="Action" element="wsa:Action"/>
+        <wsdl:part name="MessageID" element="wsa:MessageID"/>
+        <wsdl:part name="RelatesTo" element="wsa:RelatesTo"/>
+        <!-- WSA OPTIONAL -->
+        <wsdl:part name="ReplyTo" element="wsa:ReplyTo"/>      
+    </wsdl:message>
+    
+<!-- ES3 MESSAGES -->
+    <wsdl:message name="ES3-AuditEISResponseMessage">
+        <wsdl:part name="parameters" element="rps:ES3-AuditEISResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ES3-CreateISDResponseMessage">
+        <wsdl:part name="parameters" element="rps:ES3-CreateISDPResponse"/>
+    </wsdl:message>  
+    <wsdl:message name="ES3-DeleteISDPResponseMessage">
+        <wsdl:part name="parameters" element="rps:ES3-DeleteISDPResponse"/>
+    </wsdl:message>  
+    <wsdl:message name="ES3-DisableProfileResponseMessage">
+        <wsdl:part name="parameters" element="rps:ES3-DisableProfileResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ES3-EnableProfileResponseMessage">
+        <wsdl:part name="parameters" element="rps:ES3-EnableProfileResponse"/>
+    </wsdl:message>
+     <wsdl:message name="ES3-UpdateConnectivityParametersResponseMessage">
+        <wsdl:part name="parameters" element="rps:ES3-UpdateConnectivityParametersResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ES3-SendDataResponseMessage">
+        <wsdl:part name="parameters" element="rps:ES3-SendDataResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ES3-HandleProfileDeletedNotificationRequestMessage">
+        <wsdl:part name="parameters" element="rps:ES3-HandleProfileDeletedNotification"/>
+    </wsdl:message>
+    <wsdl:message name="ES3-HandleProfileDisabledNotificationRequestMessage">
+        <wsdl:part name="parameters" element="rps:ES3-HandleProfileDisabledNotification"/>
+    </wsdl:message>
+    <wsdl:message name="ES3-HandleProfileEnabledNotificationRequestMessage">
+        <wsdl:part name="parameters" element="rps:ES3-HandleProfileEnabledNotification"/>
+    </wsdl:message>
+    <wsdl:message name="ES3-HandleSMSRChangeNotificationRequestMessage">
+        <wsdl:part name="parameters" element="rps:ES3-HandleSMSRChangeNotification"/>
+    </wsdl:message>
+    
+<!-- SOAP PORT OPERATIONS -->
+    <wsdl:portType name="ES3SmDp">
+        <wsdl:operation name="ES3-HandleProfileDeletedNotification">
+            <wsdl:input message="rps:ES3-HandleProfileDeletedNotificationRequestMessage"
+                wsa:Action="http://gsma.com/ES3/PlatformManagement/ES3-HandleProfileDeletedNotification"
+                wsam:Action="http://gsma.com/ES3/PlatformManagement/ES3-HandleProfileDeletedNotification"/>
+        </wsdl:operation>
+        <wsdl:operation name="ES3-HandleProfileDisabledNotification">
+            <wsdl:input message="rps:ES3-HandleProfileDisabledNotificationRequestMessage"
+                wsa:Action="http://gsma.com/ES3/PlatformManagement/ES3-HandleProfileDisabledNotification"
+                wsam:Action="http://gsma.com/ES3/PlatformManagement/ES3-HandleProfileDisabledNotification"/>
+        </wsdl:operation>
+        <wsdl:operation name="ES3-HandleProfileEnabledNotification">
+            <wsdl:input message="rps:ES3-HandleProfileEnabledNotificationRequestMessage"
+                wsa:Action="http://gsma.com/ES3/PlatformManagement/ES3-HandleProfileEnabledNotification"
+                wsam:Action="http://gsma.com/ES3/PlatformManagement/ES3-HandleProfileEnabledNotification"/>
+        </wsdl:operation>
+         <wsdl:operation name="ES3-HandleSMSRChangeNotification">
+            <wsdl:input message="rps:ES3-HandleSMSRChangeNotificationRequestMessage"
+                wsa:Action="http://gsma.com/ES3/PlatformManagement/ES3-HandleSMSRChangeNotification"
+                wsam:Action="http://gsma.com/ES3/PlatformManagement/ES3-HandleSMSRChangeNotification"/>
+        </wsdl:operation>
+
+        <!-- Callback operations here -->
+        <wsdl:operation name="ES3-AuditEISCallback">
+            <wsdl:input message="rps:ES3-AuditEISResponseMessage"
+                wsa:Action="http://gsma.com/ES3/ProfileManagementCallBack/ES3-AuditEIS"
+                wsam:Action="http://gsma.com/ES3/ProfileManagementCallBack/ES3-AuditEIS"/>
+        </wsdl:operation>
+        <wsdl:operation name="ES3-CreateISDPCallback">
+            <wsdl:input message="rps:ES3-CreateISDResponseMessage"
+                wsa:Action="http://gsma.com/ES3/ProfileManagementCallBack/ES3-CreateISDP"
+                wsam:Action="http://gsma.com/ES3/ProfileManagementCallBack/ES3-CreateISDP"/>
+        </wsdl:operation>
+        <wsdl:operation name="ES3-DeleteISDPCallback">
+            <wsdl:input message="rps:ES3-DeleteISDPResponseMessage"
+                wsa:Action="http://gsma.com/ES3/PlatformManagementCallBack/ES3-DeleteISDP"
+                wsam:Action="http://gsma.com/ES3/PlatformManagementCallBack/ES3-DeleteISDP"/>
+        </wsdl:operation>
+        <wsdl:operation name="ES3-DisableProfileCallback">
+            <wsdl:input message="rps:ES3-DisableProfileResponseMessage"
+                wsa:Action="http://gsma.com/ES3/PlatformManagementCallBack/ES3-DisableProfile"
+                wsam:Action="http://gsma.com/ES3/PlatformManagementCallBack/ES3-DisableProfile"/>
+        </wsdl:operation>
+        <wsdl:operation name="ES3-EnableProfileCallback">
+            <wsdl:input message="rps:ES3-EnableProfileResponseMessage"
+                wsa:Action="http://gsma.com/ES3/PlatformManagementCallBack/ES3-EnableProfile"
+                wsam:Action="http://gsma.com/ES3/PlatformManagementCallBack/ES3-EnableProfile"/>
+        </wsdl:operation>  
+        <wsdl:operation name="ES3-UpdateConnectivityParametersCallback">
+            <wsdl:input message="rps:ES3-UpdateConnectivityParametersResponseMessage"
+                wsa:Action="http://gsma.com/ES3/PlatformManagementCallBack/ES3-UpdateConnectivityParameters"
+                wsam:Action="http://gsma.com/ES3/PlatformManagementCallBack/ES3-UpdateConnectivityParameters"/>
+        </wsdl:operation>  
+        <wsdl:operation name="ES3-SendDataCallback">
+            <wsdl:input message="rps:ES3-SendDataResponseMessage"
+                wsa:Action="http://gsma.com/ES3/ProfileManagementCallBack/ES3-SendData"
+                wsam:Action="http://gsma.com/ES3/ProfileManagementCallBack/ES3-SendData"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+ <!-- SOAP BINDING -->
+    <wsdl:binding name="ES3SmDpServiceBinding" type="rps:ES3SmDp">
+        <wsoap12:binding transport="http://www.w3.org/2003/05/soap/bindings/HTTP/" style="document"/>
+        <wsdl:operation name="ES3-HandleProfileDeletedNotification">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="ES3-HandleProfileDisabledNotification">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="ES3-HandleProfileEnabledNotification">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="ES3-HandleSMSRChangeNotification">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+        </wsdl:operation>
+        
+        <!-- Callback operations here -->
+        <wsdl:operation name="ES3-AuditEISCallback">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="RelatesTo" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="ES3-CreateISDPCallback">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="RelatesTo" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="ES3-DeleteISDPCallback">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="RelatesTo" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="ES3-DisableProfileCallback">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="RelatesTo" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="ES3-EnableProfileCallback">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="RelatesTo" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+        </wsdl:operation>
+         <wsdl:operation name="ES3-UpdateConnectivityParametersCallback">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="RelatesTo" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="ES3-SendDataCallback">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="RelatesTo" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+
+<!-- SOAP SERVICE -->
+    <wsdl:service name="ES3SmDpService">
+        <wsdl:port binding="rps:ES3SmDpServiceBinding" name="SmDpES3Port">
+            <wsoap12:address location="http://gsma.org/esim-messaging/3/ES3/ES3SmDpService"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

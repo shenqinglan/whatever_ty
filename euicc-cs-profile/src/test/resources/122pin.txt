@@ -1,0 +1,13 @@
+/*sddd*/
+//1233
+csimPin ProfileElement ::= pinCodes : { //222
+  pinCodes pinconfig : {
+  {
+    keyReference secondPINAppl1,
+    pinValue '31323334FFFFFFFF'H,
+    unblockingPINReference secondPUKAppl1,
+    pinAttributes 7,
+    maxNumOfAttemps-retryNumLeft '33'H
+  }
+ }
+}

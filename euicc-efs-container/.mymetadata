@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="euicc-efs-container"
+  id="myeclipse.1467683810833"
+  context-root="/euicc-efs-container"
+  j2ee-spec="6.0"
+  archive="euicc-efs-container.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+

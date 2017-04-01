@@ -1,0 +1,230 @@
+/**
+ * 
+ */
+// form校验
+var FormValidation = function() {
+	// validation using icons
+	var handleValidation2 = function() {
+		// for more info visit the official plugin documentation:
+		// http://docs.jquery.com/Plugins/Validation
+		var form2 = $!{special.jquery}('$!{special.jqJin}$!{bean.varName}Form');
+		var error2 = $!{special.jquery}('.alert-danger', form2);
+		var success2 = $!{special.jquery}('.alert-success', form2);
+
+		return form2.validate({
+			errorElement : 'span', // default input error message
+			// container
+			errorClass : 'help-block help-block-error', // default input
+			// error message
+			// class
+			focusInvalid : false, // do not focus the last invalid
+			// input
+			ignore : "", // validate all fields including form hidden
+			// input
+			rules : {
+				fieldName : {
+					maxlength : 64,
+					required : true
+				}
+			},
+
+			invalidHandler : function(event, validator) { // display
+				// error
+				// alert on
+				// form
+				// submit
+				success2.hide();
+				error2.show();
+				Metronic.scrollTo(error2, -200);
+			},
+
+			errorPlacement : function(error, element) { // render error
+				// placement for
+				// each input
+				// type
+				var icon = Metronic.handValidStyle(element);
+				icon.removeClass('fa-check').addClass("fa-warning");
+				icon.attr("data-original-title", error.text()).tooltip({
+					'container' : '$!{special.jqJin}$!{bean.varName}Form'
+				});
+			},
+
+			highlight : function(element) { // hightlight error inputs
+				$!{special.jquery}(element).closest('.form-group').removeClass("has-success")
+						.addClass('has-error'); // set error class to
+				// the control group
+			},
+
+			unhighlight : function(element) { // revert the change
+				// done by hightlight
+
+			},
+
+			success : function(label, element) {
+				var icon = Metronic.handValidStyle(element);
+				$!{special.jquery}(element).closest('.form-group').removeClass('has-error')
+						.addClass('has-success'); // set success class
+				// to the control
+				// group
+				icon.removeClass("fa-warning").addClass("fa-check");
+			},
+
+			submitHandler : function(form) {
+				success2.show();
+				error2.hide();
+				form[0].submit(); // submit the form
+			}
+		});
+	}
+
+	return {
+		// main function to initiate the module
+		init : function() {
+			return handleValidation2();
+		}
+	};
+}();
+// 页面信息
+var $!{bean.varName}UI = function() {
+	var grid = new Datatable();
+	var validator = FormValidation.init();
+	// 创建表格
+	var createTable = function() {
+		grid
+				.init({
+					src : $!{special.jquery}("$!{special.jqJin}grid"),
+					onSuccess : function(grid) {
+						// execute some code after table records loaded
+					},
+					onError : function(grid) {
+						// execute some code on network or other general error
+					},
+					onDataLoad : function(grid) {
+						
+					},
+					loadingMessage : 'Loading...',
+					dataTable : {
+						'bStateSave' : true,
+						'lengthMenu' : [ [ 10, 20, 30 ], [ 10, 20, 30 ] // change
+																		// per
+																		// page
+																		// values
+																		// here
+						],
+						'pageLength' : 10,
+						'ajax' : {
+							url : ctx + '/$!{bean.varName}/find'
+						},
+						'formSearch' : 'searchForm',
+						"columnDefs" : [],
+						'columns' : [
+								{
+									'title' : '字段名称',
+									'field' : 'fieldName'
+								},
+								{
+									'title' : '操作',
+									'field' : 'fieldId',
+									'fieldRender' : "getPremission"
+								} ],
+						'order' : [ [ 0, "asc" ] ] 
+					}
+				});
+	};
+	// 查询
+	var search = function() {
+		$!{special.jquery}("$!{special.jqJin}search").click(function(e) {
+			e.preventDefault();
+			grid.getDataTable().ajax.reload();
+			grid.clearAjaxParams();
+		});
+	};
+	// 重置
+	var reset = function() {
+		grid.getDataTable().ajax.reload();
+		grid.clearAjaxParams();
+	};
+	
+	// 激活bootstrap控件相关功能
+	var activeBootstrapControls = function() {
+		// 提示控件配置
+		var options = {
+			"closeButton" : true,
+			"debug" : false,
+			"positionClass" : "toast-top-center",
+			"onclick" : null,
+			"showDuration" : "1000",
+			"hideDuration" : "1000",
+			"timeOut" : "3000",
+			"extendedTimeOut" : "1000",
+			"showEasing" : "swing",
+			"hideEasing" : "linear",
+			"showMethod" : "fadeIn",
+			"hideMethod" : "fadeOut"
+		}
+		toastr.options = options;
+	
+		// 打开新增窗口
+		$!{special.jquery}('$!{special.jqJin}create').click(function() {
+			setFormStatus("add");
+			Metronic.handleFixInputPlaceholderForIE();
+			$!{special.jquery}('$!{special.jqJin}$!{bean.varName}Form')[0].reset();
+			$!{special.jquery}('$!{special.jqJin}createModule').modal('show');
+		});
+		// 保存
+		$!{special.jquery}('$!{special.jqJin}addModule').click(function() {
+			if (!validator.form())
+				return false;
+			$!{special.jquery}.ajax({
+				type : 'POST',
+				url : ctx + '/$!{bean.varName}/save',
+				data : $!{special.jquery}('$!{special.jqJin}$!{bean.varName}Form').serialize(),
+				dataType : 'json',
+				success : function(data) {
+					if (data.success) {
+						toastr['success'](data.msg, "系统提示");
+						$!{special.jquery}('$!{special.jqJin}createModule').modal('hide');
+						$!{bean.varName}UI.callback();
+					} else {
+						toastr['error'](data.msg, "系统提示");
+					}
+				},
+				error : function(data) {
+					toastr['error'](data.msg, "系统提示");
+				}
+			});
+		});
+	};
+	
+	return {
+		init : function() {
+			// 激活bootstrap控件相关功能
+			activeBootstrapControls();
+			// 创建表格
+			createTable();
+			//
+			search();
+		},
+		callback : function() {
+			reset();
+		}
+	};
+}();
+function setFormStatus(type) {
+	// 清除验证css样式
+	$!{special.jquery}('.form-group').removeClass('has-error').removeClass('has-success');
+	$!{special.jquery}('.form-group i').removeClass().addClass('fa');
+	if ("edit" == type) {
+		$!{special.jquery}("$!{special.jqJin}tag").val("update");
+		$!{special.jquery}("$!{special.jqJin}$!{bean.varName}ModalLabel").html("编辑");//请完善编辑内容
+	} else if ("add" == type) {
+		$!{special.jquery}("$!{special.jqJin}tag").val("add");
+		$!{special.jquery}("$!{special.jqJin}$!{bean.varName}ModalLabel").html("新建");//请完善新建内容
+	}
+};
+
+$!{special.jquery}("$!{special.jqJin}resetForm").click(function() {
+	$!{special.jquery}('$!{special.jqJin}searchForm')[0].reset();
+	$!{bean.varName}UI.callback();
+});
+

@@ -1,0 +1,284 @@
+/* here you can put your own css to customize and override the theme */
+
+/***
+Rounded Portlets
+***/
+/*
+.portlet {
+	border-radius: 4px !important;
+}
+
+.portlet .portlet-title {
+	border-radius: 4px 4px 0px 0px !important;
+}
+
+.portlet .portlet-body,
+.portlet .portlet-body .form-actions  {
+	border-radius: 0px 0px 4px 4px !important;
+}
+*/
+
+/*
+Change Quick Sidebar Width
+*/
+
+/*
+.page-quick-sidebar-wrapper {
+  right: -370px;
+  width: 370px;
+}
+
+.page-quick-sidebar-open.page-quick-sidebar-push-content .page-sidebar-wrapper {
+  margin-left: -370px;
+}
+
+.page-quick-sidebar-open.page-quick-sidebar-push-content .page-footer {
+  margin-right: 370px;
+  margin-left: -370px;
+}
+
+.page-sidebar-reversed.page-quick-sidebar-open.page-quick-sidebar-push-content .page-sidebar-wrapper {
+  margin-right: 370px;
+}
+
+.page-quick-sidebar-open.page-quick-sidebar-push-content.page-quick-sidebar-full-height .page-header {
+  margin-left: -370px;
+}
+
+.page-quick-sidebar-wrapper .page-quick-sidebar .page-quick-sidebar-list {
+  width: 370px !important;
+}
+
+.page-quick-sidebar-wrapper .page-quick-sidebar .page-quick-sidebar-item {
+  width: 370px !important;
+  margin-left: 370px;
+}
+
+.page-quick-sidebar-wrapper .page-quick-sidebar .page-quick-sidebar-content-item-shown .page-quick-sidebar-list {
+  margin-left: -370px;
+}
+*/
+/*menu背景艄1�7*/
+
+
+/*sidebar end*/
+.page-header.navbar .top-menu .navbar-nav > li.dropdown > .dropdown-toggle:last-child{
+	padding-right: 8px;
+}
+.page-header.navbar .top-menu .navbar-nav > li.dropdown .dropdown-toggle:hover,
+.page-header.navbar .top-menu .navbar-nav > li.dropdown.open .dropdown-toggle {
+	background-color: #82a3b2;
+}
+/*content start*/
+.portlet.box.green-haze {
+	margin : 0;
+	padding: 0;
+	border: none;
+}
+.portlet.box > .portlet-body{
+	margin : 0;
+	padding: 0;
+}
+
+/*page-bar*/
+.page-content-wrapper .page-content{
+	padding-top: 1px;
+}
+.page-bar {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+/*search start*/
+.portlet.light{
+	border: 1px solid #bfc9d0;
+	padding: 0;
+	margin-bottom: 0;
+}
+.portlet-title{
+	background-color: #82a3b2;
+}
+
+
+.portlet.light .caption{
+	background-color: #82a3b2;
+	line-height: 30px;
+	padding-left: 7px;
+}
+.portlet.light .caption .caption-subject{
+	color: #3b434a;
+	font-size: 12px;
+	font-weight: bold;
+}
+.form .form-body {
+	padding: 21px 30px;
+}
+.form .form-body div {
+	padding: 0;
+	margin: 0;
+}
+.form-body label {
+	font-size: 12px;
+	line-height: 34px;
+	margin: 0;
+	padding: 0 10px;
+}
+.portlet.light .form-group .control-label{
+	text-align: right;
+}
+.portlet.light .form-group .col-md-8,
+.portlet.light .form-group .col-md-9{
+	padding: 0 30px 0 0;
+}
+.portlet.light .form-group .form-control{
+	border-color: #afbdc7;
+	font-size: 12px;
+	height: 28px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin: 3px 0;
+}
+.portlet.light .form-group .form-control:focus{
+	border-color: rgb(153, 153, 153);
+}
+.form .form-body .btn{
+	font-size: 12px;
+	height: 28px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+.form .form-body select.form-control{
+	padding-right: 4px;
+}
+/*1 row search*/
+.form .form-body .btn-set {
+	text-align: right;
+	padding-right: 25px;
+}
+/*2 row search*/
+.form .form-body .mult-row {
+	margin-top: 4px;
+}
+.form .form-body .mult-btn {
+	height: 76px;
+	position: relative;
+}
+.form .form-body .mult-btn div {
+	height: 28px;
+	position: absolute;
+	right: 25px;
+	bottom: 0;
+}
+/*search end*/
+
+/*table start*/
+/*thead*/
+.table-scrollable{
+	border-color: #bfc9d0;
+	margin:10px 0 10px 0 !important;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+	vertical-align: middle;
+}
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_disabled {
+	background-color: #b8cccb;
+	font-size: 12px;
+	color: #3b434a;
+	font-weight: bold;
+	border: none;
+	height : 30px;
+	line-height: 30px;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+/*tbody*/
+.table-striped>tbody>tr td{
+	font-size: 12px;
+	color: #3b434a;
+	border: none;
+	height : 38px;
+	padding-top: 0;
+	padding-bottom: 0;
+	word-break:break-all;
+}
+.table-striped>tbody>tr:nth-of-type(odd){
+	background-color: #fff;
+}
+.table-striped>tbody>tr:nth-of-type(even){
+	background-color: #f5f5f5;                         /* 表里面的渐变颜色 */
+}
+/*page*/
+.dataTables_extended_wrapper div.dataTables_info {
+	color: #8F9AA0;
+	line-height: 35px;
+}
+/*page size*/
+.dataTables_extended_wrapper div.dataTables_length{
+	background-color: #fff;
+	display: inline;
+	margin-right: 10px !important;
+	line-height: 35px;
+}
+.dataTables_extended_wrapper div.dataTables_paginate {
+	position: absolute !important;
+	right: 15px;
+}
+.pagination>li>a:focus,
+.pagination>li>a:hover,
+.pagination>li>span:focus,
+.pagination>li>span:hover {
+	color: #666;
+}
+.pagination>li>a,
+.pagination>li>span {
+	color: #666;
+	margin-left: 5px;
+}
+.pagination .active > a,
+.pagination .active > a:hover {
+	color: #fff;
+	background-color: #69A6E5;
+	border-color: #5D99D7;
+}
+
+/*table end*/
+/*search and table button*/
+.form-body .blue.btn,
+.form-body .blue.btn:hover, .form-body .blue.btn:focus, .form-body .blue.btn:active, .form-body .blue.btn.active{
+	background-color: #6acc96;
+}
+.form-body .green.btn,
+.form-body .green.btn:hover, .form-body .green.btn:focus, .form-body .green.btn:active, .form-body .green.btn.active{
+	background-color: #8fbbe6;
+}
+.form-body .default.btn,
+.form-body .default.btn:hover, .form-body .default.btn:focus, .form-body .default.btn:active, .form-body .default.btn.active{
+	background-color: #aabbcb;
+	color: #fff;
+}
+.dataTable .default.btn{
+	background-color: #69a6e1;
+	color: #fff;
+}
+/*content end*/
+
+.form .form-group .form-groups .col-md-4{
+	margin-top:8px;
+}
+.form .form-group .col-md-3{
+	margin-top:8px;
+}
+
+.form .form-group .col-md-4{
+	margin-top:8px;
+}
+
+.form .form-group .col-md-8{
+	margin-top:8px;
+}
+
+.form .form-group .col-md-9{
+	margin-top:8px;
+}

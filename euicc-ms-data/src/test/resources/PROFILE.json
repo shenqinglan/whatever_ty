@@ -1,0 +1,37 @@
+{
+  "PROFILE_LIST": [
+    {
+      "PROFILE": [
+        {
+          "ICCID": "89019990001234567893", 
+          "EID": "89001012012341234012345678901224", 
+          "ISD_P_AID": "A0000005591010FFFFFFFF8900001000", 
+          "MNO_ID": "1", 
+          "FALLBACK_ATTRIBUTE": "00", 
+          "IMSI": "1",
+          "MSISDN": "2",
+          "STATE": "02", 
+          "SMDP_ID": "1", 
+          "PROFILE_TYPE": " 3G", 
+          "POL2_ID": "1"
+        }
+      ]
+    }, 
+    {
+      "PROFILE": [
+        {
+          "ICCID": "89330100000000000011", 
+          "EID": "89001012012341234012345678901224", 
+          "ISD_P_AID": "A0000005591010FFFFFFFF8900001000", 
+          "MNO_ID": "1", 
+          "FALLBACK_ATTRIBUTE": "01", 
+          "SUBSCRITION_ADDRESS": "1", 
+          "STATE": "01", 
+          "SMDP_ID": "1", 
+          "PROFILE_TYPE": " 3G", 
+          "POL2_ID": "1"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC
+"-//flows.whty.flow.com.cn//DTD Config 1.0//EN"
+"http://whty.flow.com.cn/dtd/flows.dtd">
+
+<flow id="tath.112.001.01" name="应用申请"
+	handler="com.whty.flow.statehandler.EUICCStateHandler">
+	<!--<state id="1" name="判断卡片状态">
+		<param name="job" value="appQuery" />
+		<transition event="0" description="卡片状态异常" to="finish" />
+		<transition event="1" description="卡片类型为SWP-SIM或eSE" to="2" />
+		<transition event="2" description="卡片类型为T-Core" to="2" />
+	</state>
+	-->
+	<state id="1" name="判断应用状态">
+		<param name="job" value="appInit" />
+		<transition event="0" description="应用状态异常" to="finish" />
+		<transition event="1" description="下一步" to="2" flow="tath.016.001.01" />
+		<transition event="2" description="下一步" to="2" />
+	</state>
+	<state id="2" name="应用申请">
+		<param name="job" value="appApply" />
+		<transition event="0" description="应用状态异常" to="finish" />
+		<transition event="1" description="下一步" to="finish" />
+	</state>
+	<state id="finish" name="结束">
+	</state>
+</flow>

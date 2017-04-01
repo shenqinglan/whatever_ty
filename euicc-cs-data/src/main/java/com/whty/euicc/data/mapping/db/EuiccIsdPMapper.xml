@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.euicc.data.dao.EuiccIsdPMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.euicc.data.pojo.EuiccIsdP" >
+    <id column="p_id" property="pId" jdbcType="VARCHAR" />
+    <result column="eid" property="eid" jdbcType="VARCHAR" />
+    <result column="isd_p_state" property="isdPState" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+    <result column="isd_p_loadfile_aid" property="isdPLoadfileAid" jdbcType="VARCHAR" />
+    <result column="isd_p_module_aid" property="isdPModuleAid" jdbcType="VARCHAR" />
+    <result column="allocated_memory" property="allocatedMemory" jdbcType="VARCHAR" />
+    <result column="connectivity_params" property="connectivityParams" jdbcType="VARCHAR" />
+    <result column="isd_p_aid" property="isdPAid" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    p_id, eid, isd_p_state, create_date, update_date, isd_p_loadfile_aid, isd_p_module_aid, 
+    allocated_memory, connectivity_params, isd_p_aid
+  </sql>
+  <sql id="Base_Column_List_Union" >
+    p_id, p.eid, isd_p_state, create_date, update_date, isd_p_loadfile_aid, isd_p_module_aid, 
+    allocated_memory, connectivity_params, isd_p_aid
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from euicc_isd_p
+    where p_id = #{pId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectFirstByEid" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List_Union" />
+    from euicc_isd_p p,euicc_card c
+    where p.eid = c.eid and p.eid = #{eid,jdbcType=VARCHAR} limit 1
+  </select>
+  <select id="selectListByEid" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List_Union" />
+    from euicc_isd_p p,euicc_card c
+    where p.eid = c.eid and p.eid = #{eid,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByEidAndIsdPAid" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List_Union" />
+    from euicc_isd_p p,euicc_card c
+    where p.eid = c.eid and p.eid = #{eid,jdbcType=VARCHAR} and p.isd_p_aid = #{isdPAid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from euicc_isd_p
+    where p_id = #{pId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.whty.euicc.data.pojo.EuiccIsdP" >
+    insert into euicc_isd_p (p_id, eid, isd_p_state, 
+      create_date, update_date, isd_p_loadfile_aid, 
+      isd_p_module_aid, allocated_memory, connectivity_params, 
+      isd_p_aid)
+    values (#{pId,jdbcType=VARCHAR}, #{eid,jdbcType=VARCHAR}, #{isdPState,jdbcType=VARCHAR}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{updateDate,jdbcType=TIMESTAMP}, #{isdPLoadfileAid,jdbcType=VARCHAR}, 
+      #{isdPModuleAid,jdbcType=VARCHAR}, #{allocatedMemory,jdbcType=VARCHAR}, #{connectivityParams,jdbcType=VARCHAR}, 
+      #{isdPAid,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.euicc.data.pojo.EuiccIsdP" >
+    insert into euicc_isd_p
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pId != null" >
+        p_id,
+      </if>
+      <if test="eid != null" >
+        eid,
+      </if>
+      <if test="isdPState != null" >
+        isd_p_state,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="updateDate != null" >
+        update_date,
+      </if>
+      <if test="isdPLoadfileAid != null" >
+        isd_p_loadfile_aid,
+      </if>
+      <if test="isdPModuleAid != null" >
+        isd_p_module_aid,
+      </if>
+      <if test="allocatedMemory != null" >
+        allocated_memory,
+      </if>
+      <if test="connectivityParams != null" >
+        connectivity_params,
+      </if>
+      <if test="isdPAid != null" >
+        isd_p_aid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pId != null" >
+        #{pId,jdbcType=VARCHAR},
+      </if>
+      <if test="eid != null" >
+        #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="isdPState != null" >
+        #{isdPState,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isdPLoadfileAid != null" >
+        #{isdPLoadfileAid,jdbcType=VARCHAR},
+      </if>
+      <if test="isdPModuleAid != null" >
+        #{isdPModuleAid,jdbcType=VARCHAR},
+      </if>
+      <if test="allocatedMemory != null" >
+        #{allocatedMemory,jdbcType=VARCHAR},
+      </if>
+      <if test="connectivityParams != null" >
+        #{connectivityParams,jdbcType=VARCHAR},
+      </if>
+      <if test="isdPAid != null" >
+        #{isdPAid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.euicc.data.pojo.EuiccIsdP" >
+    update euicc_isd_p
+    <set >
+      <if test="eid != null" >
+        eid = #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="isdPState != null" >
+        isd_p_state = #{isdPState,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        update_date = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isdPLoadfileAid != null" >
+        isd_p_loadfile_aid = #{isdPLoadfileAid,jdbcType=VARCHAR},
+      </if>
+      <if test="isdPModuleAid != null" >
+        isd_p_module_aid = #{isdPModuleAid,jdbcType=VARCHAR},
+      </if>
+      <if test="allocatedMemory != null" >
+        allocated_memory = #{allocatedMemory,jdbcType=VARCHAR},
+      </if>
+      <if test="connectivityParams != null" >
+        connectivity_params = #{connectivityParams,jdbcType=VARCHAR},
+      </if>
+      <if test="isdPAid != null" >
+        isd_p_aid = #{isdPAid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where p_id = #{pId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.euicc.data.pojo.EuiccIsdP" >
+    update euicc_isd_p
+    set eid = #{eid,jdbcType=VARCHAR},
+      isd_p_state = #{isdPState,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      update_date = #{updateDate,jdbcType=TIMESTAMP},
+      isd_p_loadfile_aid = #{isdPLoadfileAid,jdbcType=VARCHAR},
+      isd_p_module_aid = #{isdPModuleAid,jdbcType=VARCHAR},
+      allocated_memory = #{allocatedMemory,jdbcType=VARCHAR},
+      connectivity_params = #{connectivityParams,jdbcType=VARCHAR},
+      isd_p_aid = #{isdPAid,jdbcType=VARCHAR}
+    where p_id = #{pId,jdbcType=VARCHAR}
+  </update>
+  
+    <update id="updateByEidAndIsdPAid" parameterType="com.whty.euicc.data.pojo.EuiccIsdP" >
+    update euicc_isd_p set 
+      isd_p_state = #{isdPState,jdbcType=VARCHAR},
+      update_date = #{updateDate,jdbcType=TIMESTAMP}
+    where isd_p_aid = #{isdPAid,jdbcType=VARCHAR} and eid = #{eid,jdbcType=VARCHAR}
+  </update>
+  
+  <delete id="deleteByEid" parameterType="java.lang.String">
+    delete from euicc_isd_p where eid = #{eid}
+  </delete>
+  
+  <delete id="deleteByEidAndIsdPAid" parameterType="com.whty.euicc.data.pojo.EuiccIsdP">
+    delete from euicc_isd_p 
+    where isd_p_aid = #{isdPAid,jdbcType=VARCHAR} and eid = #{eid,jdbcType=VARCHAR}
+  </delete>
+  
+  <insert id="insertIsdps" parameterType="java.util.List">
+    insert into euicc_isd_p
+    values
+    <foreach collection="list" item="item" index="index" separator="," >  
+        (#{item.pId},#{item.eid},#{item.isdPState},#{item.createDate},#{item.updateDate},#{item.isdPLoadfileAid},
+        #{item.isdPModuleAid},#{item.allocatedMemory},#{item.connectivityParams},#{item.isdPAid})  
+    </foreach> 
+  </insert>
+</mapper>

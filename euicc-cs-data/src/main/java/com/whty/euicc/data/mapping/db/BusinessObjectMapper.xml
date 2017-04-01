@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.euicc.data.dao.base.BusinessObjectMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.euicc.data.pojo.BusinessObject" >
+    <result column="MODEL_ID" property="modelId" jdbcType="DECIMAL" />
+    <result column="XML" property="xml" jdbcType="VARCHAR" />
+    <result column="STEP" property="step" jdbcType="DECIMAL" />
+    <result column="IS_COMPLETE" property="isComplete" jdbcType="VARCHAR" />
+    <result column="LAST_DATE" property="lastDate" jdbcType="TIMESTAMP" />
+    <result column="SESSION_ID" property="sessionId" jdbcType="VARCHAR" />
+    <result column="CARD_NO" property="cardNO" jdbcType="VARCHAR" />
+    <result column="STATUS" property="status" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.whty.euicc.data.pojo.BusinessObject" extends="BaseResultMap" >
+	<id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="PARAM" jdbcType="BLOB" property="param"  typeHandler="org.apache.ibatis.type.BlobTypeHandler"/>
+  </resultMap>
+  
+
+  <sql id="Example_Where_Clause" >
+    <trim prefix="where" prefixOverrides="and|or" >
+      <if test="condition.modelId != null" >
+         and MODEL_ID = #{condition.modelId}
+      </if>
+      <if test="condition.xml != null" >
+         and XML = #{condition.xml}
+      </if>
+      <if test="condition.step != null" >
+         and STEP = #{condition.step}
+      </if>
+      <if test="condition.isComplete != null" >
+         and IS_COMPLETE = #{condition.isComplete}
+      </if>
+      <if test="condition.lastDate != null" >
+         and LAST_DATE = #{condition.lastDate}
+      </if>
+      <if test="condition.sessionId != null" >
+         and SESSION_ID = #{condition.sessionId}
+      </if>
+      <if test="condition.cardNO != null" >
+         and CARD_NO = #{condition.cardNO}
+      </if>
+      <if test="condition.seStatus != null" >
+         and STATUS = #{condition.status}
+      </if>
+    </trim>
+  </sql>
+  <sql id="Base_Column_List" >
+    MODEL_ID, XML, STEP, IS_COMPLETE, LAST_DATE, SESSION_ID, CARD_NO, STATUS, PARAM
+  </sql>
+  <select id="selectByExample" resultMap="ResultMapWithBLOBs" parameterType="com.whty.euicc.data.dto.Criteria" >
+    
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from BUSINESS_OBJECT
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    
+  </select>
+
+
+  <insert id="insertSelective" parameterType="com.whty.euicc.data.pojo.BusinessObject" >
+    insert into BUSINESS_OBJECT
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="modelId != null" >
+        MODEL_ID,
+      </if>
+      <if test="xml != null" >
+        XML,
+      </if>
+      <if test="step != null" >
+        STEP,
+      </if>
+      <if test="isComplete != null" >
+        IS_COMPLETE,
+      </if>
+      <if test="lastDate != null" >
+        LAST_DATE,
+      </if>
+      <if test="sessionId != null" >
+        SESSION_ID,
+      </if>
+      <if test="cardNO != null" >
+        CARD_NO,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+       <if test="param != null" >
+        PARAM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="modelId != null" >
+        #{modelId},
+      </if>
+      <if test="xml != null" >
+        #{xml},
+      </if>
+      <if test="step != null" >
+        #{step},
+      </if>
+      <if test="isComplete != null" >
+        #{isComplete},
+      </if>
+      <if test="lastDate != null" >
+        #{lastDate},
+      </if>
+      <if test="sessionId != null" >
+        #{sessionId},
+      </if>
+      <if test="cardNO != null" >
+        #{cardNO},
+      </if>
+      <if test="status != null" >
+        #{status},
+      </if>
+      <if test="param != null" >
+        #{param},
+      </if>
+    </trim>
+  </insert>
+
+  <select id="countByExample" parameterType="com.whty.euicc.data.dto.Criteria" resultType="java.lang.Integer" >
+    select count(*) from BUSINESS_OBJECT
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  
+  <update id="updateByExampleSelective" parameterType="map" >
+    update BUSINESS_OBJECT
+    <set >
+      <if test="record.modelId != null" >
+        MODEL_ID = #{record.modelId},
+      </if>
+      <if test="record.xml != null" >
+        XML = #{record.xml},
+      </if>
+      <if test="record.step != null" >
+        STEP = #{record.step},
+      </if>
+      <if test="record.isComplete != null" >
+        IS_COMPLETE = #{record.isComplete},
+      </if>
+      <if test="record.lastDate != null" >
+        LAST_DATE = #{record.lastDate},
+      </if>
+      <if test="record.sessionId != null" >
+        SESSION_ID = #{record.sessionId},
+      </if>
+      <if test="record.cardNO != null" >
+        CARD_NO = #{record.cardNO},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status},
+      </if>
+      <if test="record.param != null" >
+        PARAM = #{record.param},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </update>
+
+</mapper>

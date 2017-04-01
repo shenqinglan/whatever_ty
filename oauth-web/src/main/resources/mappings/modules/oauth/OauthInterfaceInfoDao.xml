@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.jeesite.modules.oauth.dao.OauthInterfaceInfoDao">
+    
+	<sql id="oauthInterfaceInfoColumns">
+		a.record_id AS "recordId",
+		a.eid AS "eid",
+		a.interface_type AS "interfaceType",
+		a.msisdn AS "msisdn",
+		a.operator_time AS "operatorTime",
+		a.ret_result AS "retResult",
+		a.transaction_id AS "transactionId",
+		a.finish_time as "finishTime" 
+	</sql>
+	
+	<sql id="oauthInterfaceInfoJoins">
+	</sql>
+    
+	<select id="get" resultType="OauthInterfaceInfo">
+		SELECT 
+			<include refid="oauthInterfaceInfoColumns"/>
+		FROM oauth_interface_info a
+		<include refid="oauthInterfaceInfoJoins"/>
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="OauthInterfaceInfo">
+		SELECT 
+			<include refid="oauthInterfaceInfoColumns"/>
+		FROM oauth_interface_info a
+		<include refid="oauthInterfaceInfoJoins"/>
+		<where>
+			a.cardmanufacturerid in 
+            <foreach collection="currentUser.roleList" index="index" item="role" open="(" separator="," close=")">
+                #{role.name}
+            </foreach>
+			<if test="recordId != null and recordId != ''">
+				AND a.record_id = #{recordId}
+			</if>
+			<if test="eid != null and eid != ''">
+				AND a.eid = #{eid}
+			</if>
+			<if test="interfaceType != null and interfaceType != ''">
+				AND a.interface_type = #{interfaceType}
+			</if>
+			<if test="msisdn != null and msisdn != ''">
+				AND a.msisdn = #{msisdn}
+			</if>
+			<if test="operatorTime != null and operatorTime != ''">
+				AND a.operator_time = #{operatorTime}
+			</if>
+			<if test="retResult != null and retResult != ''">
+				AND a.ret_result = #{retResult}
+			</if>
+			<if test="transactionId != null and transactionId != ''">
+				AND a.transaction_id = #{transactionId}
+			</if>
+		</where>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findAllList" resultType="OauthInterfaceInfo">
+		SELECT 
+			<include refid="oauthInterfaceInfoColumns"/>
+		FROM oauth_interface_info a
+		<include refid="oauthInterfaceInfoJoins"/>
+		<where>
+			a.cardmanufacturerid in 
+            <foreach collection="currentUser.roleList" index="index" item="role" open="(" separator="," close=")">
+                #{role.name}
+            </foreach>
+		</where>		
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO oauth_interface_info(
+			record_id,
+			eid,
+			interface_type,
+			msisdn,
+			operator_time,
+			ret_result,
+			transaction_id
+		) VALUES (
+			#{recordId},
+			#{eid},
+			#{interfaceType},
+			#{msisdn},
+			#{operatorTime},
+			#{retResult},
+			#{transactionId}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE oauth_interface_info SET 	
+			record_id = #{recordId},
+			eid = #{eid},
+			interface_type = #{interfaceType},
+			msisdn = #{msisdn},
+			operator_time = #{operatorTime},
+			ret_result = #{retResult},
+			transaction_id = #{transactionId}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		DELETE FROM oauth_interface_info
+		WHERE id = #{id}
+	</update>
+	
+</mapper>

@@ -1,0 +1,1059 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.euicc.data.dao.EuiccCardMapper" >
+  <resultMap id="CardResultMap" type="com.whty.euicc.data.pojo.EuiccCard" >
+    <id column="EID" property="eid" jdbcType="VARCHAR" />
+    <result column="EUM_ID" property="eumId" jdbcType="VARCHAR" />
+    <result column="PRODUCTION_DATE" property="productiondate" jdbcType="VARCHAR" />
+    <result column="PLATFORM_TYPE" property="platformtype" jdbcType="VARCHAR" />
+    <result column="PLATFORM_VERSION" property="platformversion" jdbcType="VARCHAR" />
+    <result column="REMAINING_MEMORY" property="remainingmemory" jdbcType="INTEGER" />
+    <result column="AVAILABLEMEMORYFORPROFILES" property="availablememoryforprofiles" jdbcType="INTEGER" />
+    <result column="SMSR_ID" property="smsrId" jdbcType="VARCHAR" />
+    <result column="ECASD_ID" property="ecasdId" jdbcType="VARCHAR" />
+    <result column="CAPABILITIE_ID" property="capabilityId" jdbcType="VARCHAR" />
+    <result column="CAT_TP_SUPPORT" property="catTpSupport" jdbcType="VARCHAR" />
+    <result column="CAT_TP_VERSION" property="catTpVersion" jdbcType="VARCHAR" />
+    <result column="HTTP_SUPPORT" property="httpSupport" jdbcType="VARCHAR" />
+    <result column="HTTP_VERSION" property="httpVersion" jdbcType="VARCHAR" />
+    <result column="SECURE_PACKET_VERSION" property="securePacketVersion" jdbcType="VARCHAR" />
+    <result column="REMOTE_PROVISIONING_VERSION" property="remoteProvisioningVersion" jdbcType="VARCHAR" />
+    <result column="ISD_R_AID" property="isdRAid" jdbcType="VARCHAR" />
+    <result column="POL1_ID" property="pol1Id" jdbcType="VARCHAR" />
+    <result column="CERT_ECASD_ECKA" property="certEcasdEcka" jdbcType="LONGVARCHAR" />
+    <result column="PHONE_NO" property="phoneNo" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <resultMap id="Scp03ResultMap" type="com.whty.euicc.data.pojo.Scp03Info" >
+    <id column="SCP03_ID" property="scp03Id" jdbcType="VARCHAR" />
+    <result column="EID" property="eid" jdbcType="VARCHAR" />
+    <result column="ISD_P_AID" property="isdPAid" jdbcType="VARCHAR" />
+    <result column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="VERSION" property="version" jdbcType="VARCHAR" />
+    <result column="DATA" property="data" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <resultMap id="Scp80ResultMap" type="com.whty.euicc.data.pojo.Scp80Info" >
+    <id column="SCP80_ID" property="scp80Id" jdbcType="VARCHAR" />
+    <result column="EID" property="eid" jdbcType="VARCHAR" />
+    <result column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="VERSION" property="version" jdbcType="VARCHAR" />
+    <result column="DATA" property="data" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <resultMap id="Scp81ResultMap" type="com.whty.euicc.data.pojo.Scp81Info" >
+    <id column="SCP81_ID" property="scp81Id" jdbcType="VARCHAR" />
+    <result column="EID" property="eid" jdbcType="VARCHAR" />
+    <result column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="VERSION" property="version" jdbcType="VARCHAR" />
+    <result column="DATA" property="data" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <resultMap id="IsdpResultMap" type="com.whty.euicc.data.pojo.IsdPInfo" >
+    <id column="P_ID" property="pId" jdbcType="VARCHAR" />
+    <result column="EID" property="eid" jdbcType="VARCHAR" />
+    <result column="ISD_P_AID" property="isdPAid" jdbcType="VARCHAR" />
+    <result column="ISD_P_STATE" property="isdPState" jdbcType="VARCHAR" />
+    <result column="CREATE_DATE" property="createDt" jdbcType="VARCHAR" />
+    <result column="UPDATE_DATE" property="updateDt" jdbcType="VARCHAR" />
+    <result column="ISD_P_LOADFILE_AID" property="isdPLoadfileAid" jdbcType="VARCHAR" />
+    <result column="ISD_P_MODULE_AID" property="isdPModuleAid" jdbcType="VARCHAR" />
+    <result column="ALLOCATED_MEMORY" property="allocatedMemory" jdbcType="VARCHAR" />
+    <result column="CONNECTIVITY_PARAMS" property="connectivityParam" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+
+  <sql id="Base_Column_List" >
+    A.EID as EID, EUM_ID, PRODUCTION_DATE, PLATFORM_TYPE, PLATFORM_VERSION, REMAINING_MEMORY, AVAILABLEMEMORYFORPROFILES,
+    SMSR_ID,A.ECASD_ID as ECASD_ID,CAPABILITIE_ID,CAT_TP_SUPPORT,CAT_TP_VERSION,HTTP_SUPPORT,HTTP_VERSION,SECURE_PACKET_VERSION,REMOTE_PROVISIONING_VERSION,
+    ISD_R_AID,POL1_ID,CERT_ECASD_ECKA,PHONE_NO
+  </sql>
+  
+  <sql id="Scp03_Column_List" >
+    SCP03_ID, EID, ISD_P_AID, ID, VERSION, DATA
+  </sql>
+  
+  <sql id="Scp80_Column_List" >
+    SCP80_ID, EID, ID, VERSION, DATA
+  </sql>
+  
+  <sql id="Scp81_Column_List" >
+    SCP81_ID, EID, ID, VERSION, DATA
+  </sql>
+  
+  <sql id="Isdp_Column_List" >
+    P_ID, EID, ISD_P_AID, ISD_P_STATE, CREATE_DATE, UPDATE_DATE, ISD_P_LOADFILE_AID, ISD_P_MODULE_AID, ALLOCATED_MEMORY, CONNECTIVITY_PARAMS
+  </sql>
+    
+  <select id="selectByExample" resultMap="CardResultMap" parameterType="com.whty.euicc.data.pojo.EuiccCardExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from euicc_card A
+    left join euicc_capabilities B on A.EID = B.EID
+    left join euicc_isd_r C on A.EID = C.EID
+    left join euicc_ecasd D on A.ECASD_ID = D.ECASD_ID
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+      order by EID;
+  </select>
+  
+  <select id="selectScp03ByExample" resultMap="Scp03ResultMap" parameterType="com.whty.euicc.data.pojo.EuiccCardExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Scp03_Column_List" />
+    from euicc_scp03
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+      order by SCP03_ID;
+  </select>
+  
+  <select id="selectScp80ByExample" resultMap="Scp80ResultMap" parameterType="com.whty.euicc.data.pojo.EuiccCardExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Scp80_Column_List" />
+    from euicc_scp80
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+      order by SCP80_ID;
+  </select>
+  
+  <select id="selectScp81ByExample" resultMap="Scp81ResultMap" parameterType="com.whty.euicc.data.pojo.EuiccCardExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Scp81_Column_List" />
+    from euicc_scp81
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+      order by SCP81_ID;
+  </select>
+  
+  <select id="selectIsdPByExample" resultMap="IsdpResultMap" parameterType="com.whty.euicc.data.pojo.EuiccCardExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Isdp_Column_List" />
+    from euicc_isd_p
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+      order by P_ID;
+  </select>
+  
+  <select id="selectScp03ByEid" resultMap="Scp03ResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Scp03_Column_List" />
+    from euicc_scp03
+    where EID = #{eid,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectScp80ByEid" resultMap="Scp80ResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Scp80_Column_List" />
+    from euicc_scp80
+    where EID = #{eid,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectScp81ByEid" resultMap="Scp81ResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Scp81_Column_List" />
+    from euicc_scp81
+    where EID = #{eid,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectIsdpByEid" resultMap="IsdpResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Isdp_Column_List" />
+    from euicc_isd_p
+    where EID = #{eid,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectByPrimaryKey" resultMap="CardResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from euicc_card A
+    left join euicc_capabilities B on A.EID = B.EID
+    left join euicc_isd_r C on A.EID = C.EID
+    left join euicc_ecasd D on A.ECASD_ID = D.ECASD_ID
+    where A.EID = #{eid,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectScp03ByPrimaryKey" resultMap="Scp03ResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Scp03_Column_List" />
+    from euicc_scp03
+    where SCP03_ID = #{scp03Id,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectScp80ByPrimaryKey" resultMap="Scp80ResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Scp80_Column_List" />
+    from euicc_scp80
+    where SCP80_ID = #{scp80Id,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectScp81ByPrimaryKey" resultMap="Scp81ResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Scp81_Column_List" />
+    from euicc_scp81
+    where SCP81_ID = #{scp81Id,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectIsdPByPrimaryKey" resultMap="IsdpResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Isdp_Column_List" />
+    from euicc_isd_p
+    where P_ID = #{pId,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectCardInfoCount" resultType="java.lang.Integer" parameterType="java.lang.String" >
+    select count(*) from  euicc_card
+    where eid = #{eid,jdbcType=VARCHAR}
+  </select>
+  <select id="selectCapabilitiesInfoCount" resultType="java.lang.Integer" parameterType="java.lang.String" >
+    select count(*) from  euicc_capabilities
+    where eid = #{eid,jdbcType=VARCHAR}
+  </select>
+  <select id="selectIsdRInfoCount" resultType="java.lang.Integer" parameterType="java.lang.String" >
+    select count(*) from  euicc_isd_r
+    where eid = #{eid,jdbcType=VARCHAR}
+  </select>
+  <select id="selectEcasdInfoCount" resultType="java.lang.Integer" parameterType="java.lang.String" >
+    select count(*) from  euicc_ecasd
+    where ECASD_ID = #{ecasdId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectIsdPInfoCount" resultType="java.lang.Integer" parameterType="java.lang.String" >
+    select count(*) from  euicc_isd_p
+    where eid = #{eid,jdbcType=VARCHAR}
+  </select>
+  <select id="selectScp03InfoCount" resultType="java.lang.Integer" parameterType="java.lang.String" >
+    select count(*) from  euicc_scp03
+    where eid = #{eid,jdbcType=VARCHAR}
+  </select>
+  <select id="selectScp80InfoCount" resultType="java.lang.Integer" parameterType="java.lang.String" >
+    select count(*) from  euicc_scp80
+    where eid = #{eid,jdbcType=VARCHAR}
+  </select>
+  <select id="selectScp81InfoCount" resultType="java.lang.Integer" parameterType="java.lang.String" >
+    select count(*) from  euicc_scp81
+    where eid = #{eid,jdbcType=VARCHAR}
+  </select>
+
+  <delete id="deleteCardInfoByPrimaryKey" parameterType="java.lang.String" >
+    delete from euicc_card
+    where EID = #{eid,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteCapabilitiesInfoByPrimaryKey" parameterType="java.lang.String" >
+    delete from euicc_capabilities
+    where EID = #{eid,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteEcasdInfoByPrimaryKey" parameterType="java.lang.String" >
+    delete from euicc_ecasd
+    where ECASD_ID = #{ecasdId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteIsdRInfoByEid" parameterType="java.lang.String" >
+    delete from euicc_isd_r
+    where EID = #{eid,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteIsdPInfoByEid" parameterType="java.lang.String" >
+    delete from euicc_isd_p
+    where EID = #{eid,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteScp03InfoByEid" parameterType="java.lang.String" >
+    delete from euicc_scp03
+    where EID = #{eid,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteScp80InfoByEid" parameterType="java.lang.String" >
+    delete from euicc_scp80
+    where EID = #{eid,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteScp81InfoByEid" parameterType="java.lang.String" >
+    delete from euicc_scp81
+    where EID = #{eid,jdbcType=VARCHAR}
+  </delete>
+  
+  <delete id="deleteAllByEid" parameterType="java.lang.String">
+  	delete from euicc_card where EID = #{eid,jdbcType=VARCHAR};
+  	delete from euicc_capabilities where EID = #{eid,jdbcType=VARCHAR};
+  	delete from euicc_isd_r where EID = #{eid,jdbcType=VARCHAR};
+  	delete from euicc_isd_p  where EID = #{eid,jdbcType=VARCHAR};
+  	delete from euicc_scp03 where EID = #{eid,jdbcType=VARCHAR};
+  	delete from euicc_scp80 where EID = #{eid,jdbcType=VARCHAR};
+  	delete from euicc_scp81 where EID = #{eid,jdbcType=VARCHAR}
+  </delete>
+  
+  <delete id="batchDeleteSCP80" parameterType="java.util.List">
+        delete from euicc_scp80 where EID in
+        <foreach item="EID" collection="list" open="(" separator="," close=")">
+            #{EID}
+        </foreach>
+   </delete>
+   
+    <delete id="batchDeleteSCP81" parameterType="java.util.List">
+        delete from euicc_scp81 where EID in
+        <foreach item="EID" collection="list" open="(" separator="," close=")">
+            #{EID}
+        </foreach>
+   </delete>
+   
+   <delete id="batchDeleteSCP03" parameterType="java.util.List">
+        delete from euicc_scp03 where EID in
+        <foreach item="EID" collection="list" open="(" separator="," close=")">
+            #{EID}
+        </foreach>
+   </delete>
+   
+   <delete id="batchDeleteIsdP" parameterType="java.util.List">
+        delete from euicc_isd_p where EID in
+        <foreach item="EID" collection="list" open="(" separator="," close=")">
+            #{EID}
+        </foreach>
+   </delete>
+   
+  
+  <delete id="batchDeleteCard" parameterType="java.util.List">
+        delete from  euicc_card where EID in
+        <foreach item="empnoItem" collection="list" open="(" separator="," close=")">
+            #{empnoItem}
+        </foreach>
+   </delete>
+   
+     <delete id="batchDeleteCapabilities" parameterType="int">
+        delete from  euicc_capabilities where EID in
+        <foreach item="empnoItem" collection="list" open="(" separator="," close=")">
+            #{empnoItem}
+        </foreach>
+   </delete>
+     <delete id="batchDeleteIsdR" parameterType="int">
+        delete from  euicc_isd_r where EID in
+        <foreach item="empnoItem" collection="list" open="(" separator="," close=")">
+            #{empnoItem}
+        </foreach>
+   </delete>
+     <delete id="batchDeleteEcasd" parameterType="int">
+        delete from  euicc_ecasd where ECASD_ID in
+        <foreach item="empnoItem" collection="list" open="(" separator="," close=")">
+            #{empnoItem}
+        </foreach>
+   </delete>
+  
+  <insert id="insertCardByBatch" parameterType="java.util.List">
+        insert into  euicc_card (EID,EUM_ID,PRODUCTION_DATE,PLATFORM_TYPE,PLATFORM_VERSION,REMAINING_MEMORY,
+                     AVAILABLEMEMORYFORPROFILES,SMSR_ID,ECASD_ID,PHONE_NO)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.eid,jdbcType=VARCHAR},#{item.eumId,jdbcType=VARCHAR} ,
+             #{item.productiondate,jdbcType=VARCHAR},#{item.platformtype,jdbcType=VARCHAR},
+             #{item.platformversion,jdbcType=VARCHAR},#{item.remainingmemory,jdbcType=INTEGER},
+             #{item.availablememoryforprofiles,jdbcType=INTEGER},#{item.smsrId,jdbcType=VARCHAR},
+             #{item.ecasdId,jdbcType=VARCHAR},#{item.phoneNo,jdbcType=VARCHAR})
+        </foreach>
+  </insert> 
+   	 
+  <insert id="insertCapabilitiesByBatch" parameterType="java.util.List">
+         insert into  euicc_capabilities (CAPABILITIE_ID,EID,CAT_TP_SUPPORT,CAT_TP_VERSION,HTTP_SUPPORT,HTTP_VERSION,SECURE_PACKET_VERSION,
+                     REMOTE_PROVISIONING_VERSION)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.capabilityId,jdbcType=VARCHAR}, #{item.eid,jdbcType=VARCHAR},
+             #{item.catTpSupport,jdbcType=VARCHAR},#{item.catTpVersion,jdbcType=VARCHAR},
+             #{item.httpSupport,jdbcType=VARCHAR},#{item.httpVersion,jdbcType=VARCHAR},
+             #{item.securePacketVersion,jdbcType=VARCHAR},#{item.remoteProvisioningVersion,jdbcType=VARCHAR})
+        </foreach> 
+  </insert> 
+   	 
+  <insert id="insertIsdRByBatch" parameterType="java.util.List">
+         insert into  euicc_isd_r (R_ID,ISD_R_AID,EID,POL1_ID)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.rId,jdbcType=VARCHAR}, #{item.isdRAid,jdbcType=VARCHAR},
+             #{item.eid,jdbcType=VARCHAR},#{item.pol1Id,jdbcType=VARCHAR})
+        </foreach> 
+  </insert> 
+   	 
+  <insert id="insertEcasdByBatch" parameterType="java.util.List">
+         insert ignore into  euicc_ecasd (ECASD_ID,CERT_ECASD_ECKA)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.ecasdId,jdbcType=VARCHAR}, #{item.certEcasdEcka,jdbcType=VARCHAR})
+        </foreach> 
+  </insert> 
+   	 
+  <insert id="insertIsdPByBatch" parameterType="java.util.List">
+        insert into euicc_isd_p (P_ID,ISD_P_AID,EID,ISD_P_STATE,CREATE_DATE,UPDATE_DATE,
+                     ISD_P_LOADFILE_AID,ISD_P_MODULE_AID,ALLOCATED_MEMORY,CONNECTIVITY_PARAMS)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.pId,jdbcType=VARCHAR},#{item.isdPAid,jdbcType=VARCHAR} ,
+             #{item.eid,jdbcType=VARCHAR},#{item.isdPState,jdbcType=VARCHAR},
+             #{item.createDt,jdbcType=TIMESTAMP},#{item.updateDt,jdbcType=TIMESTAMP},
+             #{item.isdPLoadfileAid,jdbcType=INTEGER},#{item.isdPModuleAid,jdbcType=VARCHAR},
+             #{item.allocatedMemory,jdbcType=VARCHAR},#{item.connectivityParam,jdbcType=VARCHAR})
+        </foreach>
+  </insert> 
+   	 
+  <insert id="insertScp80ByBatch" parameterType="java.util.List">
+	insert into euicc_scp80 (SCP80_ID,EID,ID,VERSION,DATA)
+	values
+	<foreach collection="list" item="item" index="index" separator=",">
+		(#{item.scp80Id,jdbcType=VARCHAR}, #{item.eid,jdbcType=VARCHAR},
+		#{item.id,jdbcType=VARCHAR}, #{item.version,jdbcType=VARCHAR},
+		#{item.data,jdbcType=VARCHAR})
+	</foreach>
+ </insert> 
+   	 
+  <insert id="insertScp03ByBatch" parameterType="java.util.List">
+	insert into euicc_scp03 (SCP03_ID,EID,ISD_P_AID,ID,VERSION,DATA)
+	values
+	<foreach collection="list" item="item" index="index" separator=",">
+		(#{item.scp03Id,jdbcType=VARCHAR}, #{item.eid,jdbcType=VARCHAR},
+		#{item.isdPAid,jdbcType=VARCHAR}, #{item.id,jdbcType=VARCHAR},
+		#{item.version,jdbcType=VARCHAR}, #{item.data,jdbcType=VARCHAR})
+	</foreach>
+  </insert> 
+   	 
+  <insert id="insertScp81ByBatch" parameterType="java.util.List">
+         insert into  euicc_scp81 (SCP81_ID,EID,ID,VERSION,DATA)
+         values
+         <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.scp81Id,jdbcType=VARCHAR}, #{item.eid,jdbcType=VARCHAR},
+             #{item.id,jdbcType=VARCHAR}, #{item.version,jdbcType=VARCHAR},
+             #{item.data,jdbcType=VARCHAR})
+         </foreach> 
+  </insert> 
+    
+  <insert id="insertEuiccCardSelective" parameterType="com.whty.euicc.data.pojo.CardInfo" >
+    insert into euicc_card
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="eid != null" >
+        EID,
+      </if>
+      <if test="eumId != null" >
+        EUM_ID,
+      </if>
+      <if test="productiondate != null" >
+        PRODUCTION_DATE,
+      </if>
+      <if test="platformtype != null" >
+        PLATFORM_TYPE,
+      </if>
+      <if test="platformversion != null" >
+        PLATFORM_VERSION,
+      </if>
+      <if test="remainingmemory != null" >
+        REMAINING_MEMORY,
+      </if>
+      <if test="availablememoryforprofiles != null" >
+        AVAILABLEMEMORYFORPROFILES,
+      </if>
+      <if test="smsrId != null" >
+        SMSR_ID,
+      </if>
+      <if test="ecasdId != null" >
+        ECASD_ID,
+      </if>
+      <if test="phoneNo != null" >
+        PHONE_NO,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="eid != null" >
+        #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="eumId != null" >
+        #{eumId,jdbcType=VARCHAR},
+      </if>
+      <if test="productiondate != null" >
+       #{productiondate,jdbcType=VARCHAR},
+      </if>
+      <if test="platformtype != null" >
+        #{platformtype,jdbcType=VARCHAR},
+      </if>
+      <if test="platformversion != null" >
+        #{platformversion,jdbcType=VARCHAR},
+      </if>
+      <if test="remainingmemory != null" >
+        #{remainingmemory,jdbcType=INTEGER},
+      </if>
+      <if test="availablememoryforprofiles != null" >
+        #{availablememoryforprofiles,jdbcType=INTEGER},
+      </if>
+      <if test="smsrId != null" >
+        #{smsrId,jdbcType=VARCHAR},
+      </if>
+      <if test="ecasdId != null" >
+        #{ecasdId,jdbcType=VARCHAR},
+      </if>
+       <if test="phoneNo != null" >
+        #{phoneNo,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+    <insert id="insertEuiccCapabilitiesSelective" parameterType="com.whty.euicc.data.pojo.CapabilitiesInfo" >
+    insert into euicc_capabilities
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="capabilityId != null" >
+        CAPABILITIE_ID,
+      </if>
+      <if test="eid != null" >
+        EID,
+      </if>
+      <if test="catTpSupport != null" >
+        CAT_TP_SUPPORT,
+      </if>
+      <if test="catTpVersion != null" >
+        CAT_TP_VERSION,
+      </if>
+      <if test="httpSupport != null" >
+        HTTP_SUPPORT,
+      </if>
+      <if test="httpVersion != null" >
+        HTTP_VERSION,
+      </if>
+      <if test="securePacketVersion != null" >
+        SECURE_PACKET_VERSION,
+      </if>
+      <if test="remoteProvisioningVersion != null" >
+        REMOTE_PROVISIONING_VERSION,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="capabilityId != null" >
+         #{capabilityId,jdbcType=VARCHAR},
+      </if>
+      <if test="eid != null" >
+         #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="catTpSupport != null" >
+        #{catTpSupport,jdbcType=VARCHAR},
+      </if>
+      <if test="catTpVersion != null" >
+        #{catTpVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="httpSupport != null" >
+        #{httpSupport,jdbcType=VARCHAR},
+      </if>
+      <if test="httpVersion != null" >
+        #{httpVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="securePacketVersion != null" >
+        #{securePacketVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="remoteProvisioningVersion != null" >
+        #{remoteProvisioningVersion,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  
+  <insert id="insertIsdRSelective" parameterType="com.whty.euicc.data.pojo.IsdRInfo" >
+    insert into euicc_isd_r
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="rId != null" >
+        R_ID,
+      </if>
+      <if test="isdRAid != null" >
+        ISD_R_AID,
+      </if>
+      <if test="eid != null" >
+        EID,
+      </if>
+      <if test="pol1Id != null" >
+        POL1_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="rId != null" >
+         #{rId,jdbcType=VARCHAR},
+      </if>
+      <if test="isdRAid != null" >
+         #{isdRAid,jdbcType=VARCHAR},
+      </if>
+      <if test="eid != null" >
+         #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="pol1Id != null" >
+        #{pol1Id,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  
+  <insert id="insertEcasdSelective" parameterType="com.whty.euicc.data.pojo.EcasdInfo" >
+    insert into euicc_ecasd
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ecasdId != null" >
+        ECASD_ID,
+      </if>
+      <if test="certEcasdEcka != null" >
+        CERT_ECASD_ECKA,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ecasdId != null" >
+         #{ecasdId,jdbcType=VARCHAR},
+      </if>
+      <if test="certEcasdEcka != null" >
+         #{certEcasdEcka,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+  <insert id="insertIsdPSelective" parameterType="com.whty.euicc.data.pojo.IsdPInfo" >
+    insert into euicc_isd_p
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pId != null" >
+        P_ID,
+      </if>
+      <if test="isdPAid != null" >
+        ISD_P_AID,
+      </if>
+      <if test="eid != null" >
+        EID,
+      </if>
+      <if test="isdPState != null" >
+        ISD_P_STATE,
+      </if>
+      <if test="createDt != null" >
+        CREATE_DATE,
+      </if>
+      <if test="updateDt != null" >
+        UPDATE_DATE,
+      </if>
+      <if test="isdPLoadfileAid != null" >
+        ISD_P_LOADFILE_AID,
+      </if>
+      <if test="isdPModuleAid != null" >
+        ISD_P_MODULE_AID,
+      </if>
+      <if test="allocatedMemory != null" >
+        ALLOCATED_MEMORY,
+      </if>
+      <if test="connectivityParam != null" >
+        CONNECTIVITY_PARAMS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pId != null" >
+         #{pId,jdbcType=VARCHAR},
+      </if>
+      <if test="isdPAid != null" >
+         #{isdPAid,jdbcType=VARCHAR},
+      </if>
+      <if test="eid != null" >
+         #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="isdPState != null" >
+        #{isdPState,jdbcType=VARCHAR},
+      </if>
+      <if test="createDt != null" >
+        #{createDt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDt != null" >
+        #{updateDt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isdPLoadfileAid != null" >
+        #{isdPLoadfileAid,jdbcType=VARCHAR},
+      </if>
+      <if test="isdPModuleAid != null" >
+        #{isdPModuleAid,jdbcType=VARCHAR},
+      </if>
+      <if test="allocatedMemory != null" >
+        #{allocatedMemory,jdbcType=VARCHAR},
+      </if>
+      <if test="connectivityParam != null" >
+        #{connectivityParam,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  
+  <insert id="insertScp03Selective" parameterType="com.whty.euicc.data.pojo.Scp03Info" >
+    insert into euicc_scp03
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="scp03Id != null" >
+        SCP03_ID,
+      </if>
+      <if test="eid != null" >
+        EID,
+      </if>
+      <if test="isdPAid != null" >
+        ISD_P_AID,
+      </if>
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="version != null" >
+        VERSION,
+      </if>
+      <if test="data != null" >
+        DATA,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="scp03Id != null" >
+         #{scp03Id,jdbcType=VARCHAR},
+      </if>
+      <if test="eid != null" >
+         #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="isdPAid != null" >
+        #{isdPAid,jdbcType=VARCHAR},
+      </if>
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null" >
+        #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="data != null" >
+        #{data,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  
+  <insert id="insertScp80Selective" parameterType="com.whty.euicc.data.pojo.Scp80Info" >
+    insert into euicc_scp80
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="scp80Id != null" >
+        SCP80_ID,
+      </if>
+      <if test="eid != null" >
+        EID,
+      </if>
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="version != null" >
+        VERSION,
+      </if>
+      <if test="data != null" >
+        DATA,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="scp80Id != null" >
+         #{scp80Id,jdbcType=VARCHAR},
+      </if>
+      <if test="eid != null" >
+         #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null" >
+        #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="data != null" >
+        #{data,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  
+  <insert id="insertScp81Selective" parameterType="com.whty.euicc.data.pojo.Scp81Info" >
+    insert into euicc_scp81
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="scp81Id != null" >
+        SCP81_ID,
+      </if>
+      <if test="eid != null" >
+        EID,
+      </if>
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="version != null" >
+        VERSION,
+      </if>
+      <if test="data != null" >
+        DATA,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="scp81Id != null" >
+         #{scp81Id,jdbcType=VARCHAR},
+      </if>
+      <if test="eid != null" >
+         #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null" >
+        #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="data != null" >
+        #{data,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  
+  <update id="updateEuiccCardSelective" parameterType="com.whty.euicc.data.pojo.CardInfo" >
+    update euicc_card
+    <set >
+      <if test="eid != null" >
+        EID = #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="eumId != null" >
+        EUM_ID = #{eumId,jdbcType=VARCHAR},
+      </if>
+      <if test="productiondate != null" >
+       PRODUCTION_DATE = #{productiondate,jdbcType=VARCHAR},
+      </if>
+      <if test="platformtype != null" >
+        PLATFORM_TYPE = #{platformtype,jdbcType=VARCHAR},
+      </if>
+      <if test="platformversion != null" >
+        PLATFORM_VERSION = #{platformversion,jdbcType=VARCHAR},
+      </if>
+      <if test="remainingmemory != null" >
+        REMAINING_MEMORY = #{remainingmemory,jdbcType=INTEGER},
+      </if>
+      <if test="availablememoryforprofiles != null" >
+        AVAILABLEMEMORYFORPROFILES = #{availablememoryforprofiles,jdbcType=INTEGER},
+      </if>
+      <if test="smsrId != null" >
+        SMSR_ID = #{smsrId,jdbcType=VARCHAR},
+      </if>
+      <if test="ecasdId != null" >
+        ECASD_ID = #{ecasdId,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNo != null" >
+        PHONE_NO = #{phoneNo,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where EID = #{eid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateEuiccCapabilitiesSelective" parameterType="com.whty.euicc.data.pojo.CapabilitiesInfo" >
+    update euicc_capabilities
+    <set>
+      <if test="capabilityId != null" >
+         CAPABILITIE_ID = #{capabilityId,jdbcType=VARCHAR},
+      </if>
+      <if test="eid != null" >
+         EID = #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="catTpSupport != null" >
+        CAT_TP_SUPPORT = #{catTpSupport,jdbcType=VARCHAR},
+      </if>
+      <if test="catTpVersion != null" >
+        CAT_TP_VERSION = #{catTpVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="httpSupport != null" >
+        HTTP_SUPPORT = #{httpSupport,jdbcType=VARCHAR},
+      </if>
+      <if test="httpVersion != null" >
+        HTTP_VERSION = #{httpVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="securePacketVersion != null" >
+        SECURE_PACKET_VERSION = #{securePacketVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="remoteProvisioningVersion != null" >
+        REMOTE_PROVISIONING_VERSION = #{remoteProvisioningVersion,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where CAPABILITIE_ID = #{capabilityId,jdbcType=VARCHAR}
+  </update>
+  
+ <update id="updateIsdRSelective" parameterType="com.whty.euicc.data.pojo.IsdRInfo" >
+    update euicc_isd_r
+    <set>
+      <if test="isdRAid != null" >
+         ISD_R_AID = #{isdRAid,jdbcType=VARCHAR},
+      </if>
+      <if test="eid != null" >
+         EID = #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="pol1Id != null" >
+        POL1_ID = #{pol1Id,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where R_ID = #{rId,jdbcType=VARCHAR}
+  </update>
+  
+ <update id="updateEcasdSelective" parameterType="com.whty.euicc.data.pojo.EcasdInfo" >
+    update euicc_ecasd
+    <set>
+      <if test="ecasdId != null" >
+         ECASD_ID = #{ecasdId,jdbcType=VARCHAR},
+      </if>
+      <if test="certEcasdEcka != null" >
+         CERT_ECASD_ECKA = #{certEcasdEcka,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ECASD_ID = #{ecasdId,jdbcType=VARCHAR}
+  </update>
+  
+  <update id="updateIsdPSelective" parameterType="com.whty.euicc.data.pojo.IsdPInfo" >
+    update euicc_isd_p
+    <set>
+      <if test="isdPAid != null" >
+         ISD_P_AID = #{isdPAid,jdbcType=VARCHAR},
+      </if>
+      <if test="eid != null" >
+         EID = #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="isdPState != null" >
+        ISD_P_STATE = #{isdPState,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDt != null" >
+        UPDATE_DATE = #{updateDt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isdPLoadfileAid != null" >
+        ISD_P_LOADFILE_AID = #{isdPLoadfileAid,jdbcType=VARCHAR},
+      </if>
+      <if test="isdPModuleAid != null" >
+        ISD_P_MODULE_AID = #{isdPModuleAid,jdbcType=VARCHAR},
+      </if>
+      <if test="allocatedMemory != null" >
+        ALLOCATED_MEMORY = #{allocatedMemory,jdbcType=VARCHAR},
+      </if>
+      <if test="connectivityParam != null" >
+        CONNECTIVITY_PARAMS = #{connectivityParam,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where P_ID = #{pId,jdbcType=VARCHAR}
+  </update>
+  
+  <update id="updateScp03Selective" parameterType="com.whty.euicc.data.pojo.Scp03Info" >
+    update euicc_scp03
+    <set>
+      <if test="scp03Id != null" >
+         SCP03_ID = #{scp03Id,jdbcType=VARCHAR},
+      </if>
+      <if test="eid != null" >
+         EID = #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="isdPAid != null" >
+        ISD_P_AID = #{isdPAid,jdbcType=VARCHAR},
+      </if>
+      <if test="id != null" >
+        ID = #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null" >
+        VERSION = #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="data != null" >
+        DATA = #{data,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where SCP03_ID = #{scp03Id,jdbcType=VARCHAR}
+  </update>
+  
+  <update id="updateScp80Selective" parameterType="com.whty.euicc.data.pojo.Scp80Info" >
+    update euicc_scp80
+    <set>
+      <if test="scp80Id != null" >
+         SCP80_ID = #{scp80Id,jdbcType=VARCHAR},
+      </if>
+      <if test="eid != null" >
+         EID = #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="id != null" >
+        ID = #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null" >
+        VERSION = #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="data != null" >
+        DATA = #{data,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where SCP80_ID = #{scp80Id,jdbcType=VARCHAR}
+  </update>
+  
+  <update id="updateScp81Selective" parameterType="com.whty.euicc.data.pojo.Scp81Info" >
+    update euicc_scp81
+    <set>
+      <if test="scp81Id != null" >
+         SCP81_ID = #{scp81Id,jdbcType=VARCHAR},
+      </if>
+      <if test="eid != null" >
+         EID = #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="id != null" >
+        ID = #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null" >
+        VERSION = #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="data != null" >
+        DATA = #{data,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where SCP81_ID = #{scp81Id,jdbcType=VARCHAR}
+  </update>
+</mapper>

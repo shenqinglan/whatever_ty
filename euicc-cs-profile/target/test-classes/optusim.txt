@@ -1,0 +1,308 @@
+ pe-opt-usim ProfileElement ::= genericFileManagement : {
+  OPT-USIM-header {
+    mandated NULL,
+    identification 5
+  },
+fileManagementCMD {
+  {
+  createFCP :{
+      fileDescriptor '4121'H,     
+      fileID '6f05'H,
+      securityAttributesReferenced '07'H,
+      efFileSize '04'H,  
+      shortEFID '10'H
+    },
+       fillFileContent : '7A68656E'H,
+  createFCP :{
+      fileDescriptor '4121'H,     
+      fileID '6f60'H,
+      securityAttributesReferenced '05'H,
+      efFileSize '28'H,  
+      shortEFID '50'H
+    },
+    fillFileContent : '64F010400064F090400064F010800064F0908000FFFFFF0000FFFFFF0000FFFFFF0000FFFFFF0000'H,
+  createFCP :{
+      fileDescriptor '4121'H,     
+      fileID '6f37'H,
+      securityAttributesReferenced '04'H,
+      efFileSize '03'H  
+      },
+      fillFileContent : '000000'H,
+ createFCP :{
+      fileDescriptor '46210003'H,     
+      fileID '6f39'H,
+      securityAttributesReferenced '0a'H,
+      efFileSize '3c'H,  
+      shortEFID 'e0'H,
+      proprietaryEFInfo { 
+      fillPattern '00'H
+      	 }
+    },
+   createFCP :{
+      fileDescriptor '4121'H,     
+      fileID '6f3e'H,
+      securityAttributesReferenced '06'H,
+      efFileSize '01'H  
+      },
+   createFCP :{
+     	fileDescriptor '4121'H,
+      fileID '6f3f'H,
+      securityAttributesReferenced '06'H,
+      efFileSize '01'H  
+      },
+   createFCP :{
+     	fileDescriptor '4121'H,     
+      fileID '6f41'H,
+      securityAttributesReferenced '04'H,
+      efFileSize '05'H     
+    },
+    fillFileContent : 'ffffff0000'H
+    createFCP :{
+      fileDescriptor '4121'H,     
+      fileID '6f45'H,
+      securityAttributesReferenced '05'H,
+      efFileSize '14'H        
+    },
+    createFCP :{
+     	fileDescriptor '4121'H,     
+      fileID '6f48'H,
+      securityAttributesReferenced '06'H,
+      efFileSize '14'H,  
+      shortEFID '70'H
+    },
+    createFCP :{
+      fileDescriptor '4121'H,     
+      fileID '6f50'H,
+      securityAttributesReferenced '05'H,
+      efFileSize '20'H
+    },
+   createFCP :{
+      fileDescriptor '4221001c'H,
+      fileID '6f40'H,
+      securityAttributesReferenced '05'H,
+      efFileSize '38'H
+    },   
+   createFCP :{
+     	fileDescriptor '42210018'H,     
+      fileID '6f49'H,
+      securityAttributesReferenced '06'H,
+      efFileSize 'f0'H
+    },
+    createFCP :{
+      fileDescriptor '4221000d'H,     
+      fileID '6f4b'H,
+      securityAttributesReferenced '04'H,
+      efFileSize '27'H,
+     proprietaryEFInfo {
+       fillPattern '00FF'H
+      	 }
+    },
+    createFCP :{
+      fileDescriptor '4221000d'H,     
+      fileID '6f4c'H,
+      securityAttributesReferenced '06'H,
+      efFileSize '41'H
+      proprietaryEFInfo {
+        fillPattern '00FF'H
+       	 }
+    },
+   createFCP :{
+      fileDescriptor '42210014'H,     
+      fileID '6f47'H,
+      securityAttributesReferenced '05'H,
+      efFileSize '05dc'H
+       proprietaryEFInfo {
+       fillPattern '00FF'H
+      	 }
+    },
+    createFCP :{
+      	fileDescriptor '46210028'H,    
+      fileID '6f80'H,
+      securityAttributesReferenced '05'H,
+      efFileSize '0320'H,        
+      shortEFID 'a0'H
+        proprietaryEFInfo {
+       fillPattern 'FF'H
+      	 }
+    },
+    fillFileOffset : 21, 
+    fillFileContent : '0000000000'H,
+     createFCP :{
+      fileDescriptor '46210027'H,      
+      fileID '6f81'H,
+      securityAttributesReferenced '05'H,
+      efFileSize '030c'H,  
+      shortEFID 'a8'H
+       proprietaryEFInfo { 
+      fillPattern 'FF'H
+      	 }
+    },
+    fillFileOffset : 21,     
+    fillFileContent : '00000000'H,
+     createFCP :{
+     	fileDescriptor '46210003'H,     
+      fileID '6f82'H,
+      securityAttributesReferenced '0a'H,
+      efFileSize '03'H
+    },
+    fillFileContent : '000000'H,
+  createFCP :{
+      fileDescriptor '46210003'H,     
+      fileID '6f83'H,
+      securityAttributesReferenced '0a'H,
+      efFileSize '03'H
+    },
+    fillFileContent : '000000'H,
+    createFCP :{
+      fileDescriptor '4221000d'H,     
+      fileID '6f4e'H,
+      securityAttributesReferenced '05'H,
+      efFileSize '41'H
+      proprietaryEFInfo {
+          fillPattern '00FF'H
+      	 }
+    },
+    createFCP :{
+      fileDescriptor '4221000f'H,     
+      fileID '6f4f'H,
+      securityAttributesReferenced '05'H,
+      efFileSize '4b'H,  
+      shortEFID 'b0'H
+      },
+     createFCP :{
+      	fileDescriptor '4121'H,
+      fileID '6fb6'H,
+      securityAttributesReferenced '05'H,
+      efFileSize '01'H
+    },
+    fillFileContent : '00'H,
+    createFCP :{
+      fileDescriptor '4121'H,     
+      fileID '6fc3'H,
+      securityAttributesReferenced '05'H,
+      efFileSize '04'H
+    },
+    createFCP :{
+     	fileDescriptor '4121'H,     
+      fileID '6f57'H,
+      securityAttributesReferenced '04'H,
+      efFileSize 'c8'H,
+      proprietaryEFInfo { 
+       fillPattern '00ff'H 
+       }
+    },
+    createFCP :{
+     	fileDescriptor '4121'H,     
+      fileID '6f2c'H,
+      securityAttributesReferenced '05'H,
+      efFileSize '10'H
+    },
+   createFCP :{
+      fileDescriptor '4121'H,     
+      fileID '6f32'H,
+      securityAttributesReferenced '06'H,
+      efFileSize '06'H
+     },
+    createFCP :{
+      fileDescriptor '4121'H,     
+      fileID '6f61'H,
+      securityAttributesReferenced '06'H,
+      efFileSize '01f4'H,  
+      shortEFID '88'H,
+      proprietaryEFInfo {
+      repeatPattern 'FFFFFF0000'H 
+      }
+    },
+    fillFileContent : '64F010400064F090400064F010800064F0908000'H,
+    createFCP :{
+      fileDescriptor '4121'H,     
+      fileID '6f62'H,
+      securityAttributesReferenced '06'H,
+      efFileSize '28'H,  
+      shortEFID '98'H
+    },
+    fillFileContent : '64F010400064F090400064F010800064F0908000FFFFFF0000FFFFFF0000FFFFFF0000FFFFFF0000'H,
+    createFCP :{
+     	fileDescriptor '4221000e'H,      
+      fileID '6fc5'H,
+      securityAttributesReferenced '08'H,
+      efFileSize '70'H,  
+      shortEFID 'c8'H
+    },   
+    createFCP :{
+      fileDescriptor '42210008'H,     
+      fileID '6fc6'H,
+      securityAttributesReferenced '08'H,
+      efFileSize '40'H,  
+      shortEFID 'd0'H
+    },    
+    createFCP :{
+      fileDescriptor '42210004'H,     
+      fileID '6fce'H,
+      securityAttributesReferenced '05'H,
+      efFileSize '04'H
+    },
+    fillFileContent : '000000ff'H,
+  createFCP :{
+      fileDescriptor '4121'H,     
+      fileID '6fd0'H,
+      securityAttributesReferenced '06'H,
+      efFileSize '17'H
+    },    
+   createFCP :{
+      fileDescriptor '4221000d'H,     
+      fileID '6fd1'H,
+      securityAttributesReferenced '05'H,
+      efFileSize '0d'H
+    },
+   createFCP :{
+      fileDescriptor '4121'H,     
+      fileID '6fd2'H,
+      securityAttributesReferenced '04'H,
+      efFileSize '17'H
+   }, 
+   createFCP :{
+      fileDescriptor '42210011'H,     
+      fileID '6fd3'H,
+      securityAttributesReferenced '06'H,
+      efFileSize '4b'H
+    },
+   createFCP :{
+      fileDescriptor '4121'H,     
+      fileID '6fb3'H,
+      securityAttributesReferenced '06'H,
+      efFileSize '04'H
+     }, 
+   createFCP :{
+      fileDescriptor '4121'H,     
+      fileID '6fb4'H,
+      securityAttributesReferenced '06'H,
+      efFileSize '07'H
+    },
+    fillFileContent : '000000000000fc'H, 
+   createFCP :{
+      fileDescriptor '4121'H,     
+      fileID '6fb5'H,
+      securityAttributesReferenced '06'H,
+      efFileSize '02'H
+    },
+    fillFileContent : '0000'H, 
+   createFCP :{
+      fileDescriptor '4121'H,     
+      fileID '6fd9'H,
+      securityAttributesReferenced '06'H,
+      efFileSize '0c'H,
+      proprietaryEFInfo {
+       fillPattern '64f010ff'H 
+       }
+     },
+   createFCP :{
+      fileDescriptor '4121'H,     
+      fileID '6fdb'H,
+      securityAttributesReferenced '06'H,
+      efFileSize '01'H
+    },
+    fillFileContent : '02'H
+  }
+  }
+  } 

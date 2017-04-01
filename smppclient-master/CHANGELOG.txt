@@ -1,0 +1,29 @@
+Changelog 0.6
+
+22.06.2011 0.6
+
+[new features]
+* session autoreconnect
+* session state listener
+
+01.02.2011 0.5
+
+[new features]
+* library refactored from the ground to be very flexible, a lot of features was removed,
+  but library became more simple
+* only asynchronous session implemented
+* all tests designed to run in parallel, so build should not take much time
+
+04.04.2009 0.4beta2
+
+[new features]
+* using SMPPClient proper message encoding choosed automatically
+
+[bug fixes]
+* SMPPByteBuffer accepted only Latin or UTF-8 strings 
+* a lot of other refactorings
+
+02.06.2009 0.4beta
+
+[new features]
+* library just imported to sourceforge

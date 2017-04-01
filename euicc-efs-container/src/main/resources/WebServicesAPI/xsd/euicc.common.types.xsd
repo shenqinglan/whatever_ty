@@ -1,0 +1,760 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+    elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xs:annotation>
+        <xs:documentation>
+            This schema is not carrying any version on its own, as it is not a stand alone schema (it is designed to be included in another one).
+            This schema is explicitly having no name space in order to enable the possibility to apply the "chameleon" approach 
+            (the name space will be the one of the including schema)
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:import namespace="http://www.w3.org/2000/09/xmldsig#"
+        schemaLocation="import/xmldsig-core-schema.xsd"/>
+
+    <!--============================================================================================================================-->
+    <xs:complexType name="EISType">
+        <xs:annotation>
+            <xs:documentation>eUICC Information Set. The content may be only partial information depending of the function where it is used. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="EumSignedInfo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Eid" type="EIDType">
+                            <xs:annotation>
+                                <xs:documentation>The identifier of the eUICC</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Eum-id" type="ObjectIdentifierType">
+                            <xs:annotation>
+                                <xs:documentation>The identifier of the eUICC Manufacturer (i.e. Card Vendor) that has manufactured the eUICC.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ProductionDate" type="xs:dateTime">
+                            <xs:annotation>
+                                <xs:documentation>The date/time where the eUICC has been manufactured by the card vendor.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="PlatformType" type="String100">
+                            <xs:annotation>
+                                <xs:documentation>Indication of the eUICC platform/OS type.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="PlatformVersion" type="ThreeDigitVersion">
+                            <xs:annotation>
+                                <xs:documentation>Indication of the version of the eUICC platform/OS type</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Isd-p-loadfile-aid" type="AIDType">
+                            <xs:annotation>
+                                <xs:documentation>AID of the Executable Load File to be used for instantiation of an ISD-P.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Isd-p-module-aid" type="AIDType">
+                            <xs:annotation>
+                                <xs:documentation>AID of the Executable Module to be used for instantiation of an ISD-P.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Ecasd" type="SecurityDomainType"/>
+                        <xs:element name="EuiccCapabilities">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="CattpSupport" type="xs:boolean"/>
+                                    <xs:element name="CattpVersion" type="ThreeDigitVersion"
+                                        minOccurs="0"/>
+                                    <xs:element name="HttpSupport" type="xs:boolean"/>
+                                    <xs:element name="HttpVersion" type="ThreeDigitVersion"
+                                        minOccurs="0"/>
+                                    <xs:element name="SecurePacketVersion" type="ThreeDigitVersion"/>
+                                    <xs:element name="RemoteProvisioningVersion"
+                                        type="ThreeDigitVersion"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="EumSignature" type="ds:SignatureType">
+                <xs:annotation>
+                    <xs:documentation>Signature value of the EUM. See Annex 8 9 to have details of the data included in the computation of the signature.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="RemainingMemory" type="xs:nonNegativeInteger">
+                <xs:annotation>
+                    <xs:documentation>Indicates the current total available memory (whatever the underlying technology, flash or eeprom) for Profile download and installation.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AvailableMemoryForProfiles" type="xs:nonNegativeInteger">
+                <xs:annotation>
+                    <xs:documentation>Indicates the free memory (whatever the underlying technology, flash, eeprom) without any Profile, available for Profile(s) download and installation.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="LastAuditDate" type="xs:dateTime" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Some information part of the EIS can be refreshed by requesting directly the information to the eUICC to have the list of information that can be retrieved. This indicates the last date where such operation has been performed, and so indicating the freshness of the information stored at SM-SR level.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Smsr-id" type="ObjectIdentifierType">
+                <xs:annotation>
+                    <xs:documentation>Identification of the SM-SR currently in charge of eUICC management. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ProfileInfo" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Type for a Profile in the EIS as the representation a profile loaded on the eUICC</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element name="Iccid" type="ICCIDType">
+                            <xs:annotation>
+                                <xs:documentation>Identification of the Profile.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Isd-p-aid" type="AIDType">
+                            <xs:annotation>
+                                <xs:documentation>The ISD-P-AID of the ISD-P containing the Profile. This is the AID that has been allocated at ISD-P creation time by the SM-SR. The TAR of the ISD-P is included in the ISD-P-AID. </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Mno-id" type="ObjectIdentifierType">
+                            <xs:annotation>
+                                <xs:documentation>Identification of the MNO owner of the Profile. Once this information is associated to the Profile, it remains unchanged during the Profile’s life-time.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="FallbackAttribute" type="xs:boolean">
+                            <xs:annotation>
+                                <xs:documentation>Boolean value to indicate the Profile having the Fall-back Attribute set.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="SubscriptionAddress" type="SubscriptionAddressType">
+                            <xs:annotation>
+                                <xs:documentation>The address of the Subscription associated to this Profile.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="State" type="ProfileStateType">
+                            <xs:annotation>
+                                <xs:documentation>The current state of the ISD-P containing the Profile as per defined in GSMA Remote Provisioning Architecture for Embedded UICC [1]. The ‘Deleted’ state is not defined as a possible state; a ‘Deleted’ ISD-P will simply not appear in the list of eUICC Profiles.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Smdp-id" type="ObjectIdentifierType" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Identification of the SM-DP that has initially downloaded and installed the Profile. This value can be missing in case the Profile has been loaded during issuance of the eUICC, else the value is mandatory.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ProfileType" type="String100" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Indicates, through an SM-DP reference, the type of Profile generated by the SM-DP (e.g. 3G_16K)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="AllocatedMemory" type="xs:nonNegativeInteger">
+                            <xs:annotation>
+                                <xs:documentation>Indicates the amount of memory allocated to the ISD-P to contain the Profile.  Note that the allocated memory is different from the real required memory space for Profile installation; most of the time the allocated memory will be greater than the strict required memory space value. The value is expressed in bytes.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="FreeMemory" type="xs:nonNegativeInteger" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Indicates the amount of memory free within Profile allocated space. This information is provided in case of using the quota management mechanism.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="pol2" type="POL2Type">
+                            <xs:annotation>
+                                <xs:documentation>Contains the POL2 rules defined for this Profile.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Isd-r" type="SecurityDomainType">
+                <xs:annotation>
+                    <xs:documentation>Contains the information related to the ISD-R</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AuditTrail" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>This element contains the list of AuditTrail records related to the operations performed on the eUICC. The Audit Trail can be missing.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Record" type="AuditTrailRecordType" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="AdditionalProperties" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>This element provides a simple extensibility mechanism based on a list of additional properties.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Property" type="PropertyType" minOccurs="1"
+                            maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <!--============================================================================================================================-->
+    <xs:complexType name="AuditTrailRecordType">
+        <xs:annotation>
+            <xs:documentation>This type contains the description of a platform or profile management operations performed by SM-SR or a notification received by SM-SR from the given eUICC.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Eid" type="EIDType">
+                <xs:annotation>
+                    <xs:documentation>The identifier of the eUICC on whitch the operaiotn has been performed.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Smsr-id" type="ObjectIdentifierType">
+                <xs:annotation>
+                    <xs:documentation>The identifier of the SM6SR that has been performed the operation.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="OperationDate" type="xs:dateTime">
+                <xs:annotation>
+                    <xs:documentation>The date and time of the operation</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="OperationType">
+                <xs:annotation>
+                    <xs:documentation>The operation type code on two bytes represented as an hexadecimal string. See Annex 1 of "Remote Provisioning Architecture for Embedded UICC Technical Specification"
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:hexBinary">
+                        <xs:length value="2"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="RequesterId" type="ObjectIdentifierType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Identification of the entity that has requested the operation to be performed on the eUICC. This element is missing in case operation is a notification.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="OperationExecutionStatus" type="ExecutionStatusType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Identification of the entity that has requested the operation to be performed on the eUICC. This element is missing in case operation is a notification.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Isd-p-aid" type="AIDType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The ISD-P-AID of the ISD-P containing the Profile. Empty in case it is not applicable for given operation type.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Iccid" type="ICCIDType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The ICCID of the Profile. Empty in case it is not applicable for given operation type.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Imei" type="xs:hexBinary" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The IMEI of the device containning the eUICC as it is received from eUICC. Coding follows ETSI TS 102 223 [4], clause 8.20. This elment can be missing if not sent by eUICC.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Meid" type="xs:hexBinary" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The MEID of the device containning the eUICC as it is received from eUICC. Coding follows ETSI TS 102 223 [4], clause 8.81. This elment can be missing if not sent by eUICC.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!--============================================================================================================================-->
+    <xs:complexType name="SubscriptionAddressType">
+        <xs:annotation>
+            <xs:documentation>Defines the information representing a subscription address</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Imsi" type="IMSIType" minOccurs="0"/>
+            <xs:element name="Msisdn" type="MSISDNType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!--============================================================================================================================-->
+    <xs:complexType name="POL2Type">
+        <xs:annotation>
+            <xs:documentation>Defines the POL2 for a Profile. POL2 can be empty by having no rule defined</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Rule" type="POL2RuleType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!--============================================================================================================================-->
+    <xs:complexType name="POL2RuleType">
+        <xs:annotation>
+            <xs:documentation>Defines the POL2 rule for a Profile</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Subject" type="POL2RuleSubjectType"/>
+            <xs:element name="Action" type="POL2RuleActionType"/>
+            <xs:element name="Qualification" type="POL2RuleQualificationType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!--============================================================================================================================-->
+    <xs:simpleType name="POL2RuleSubjectType">
+        <xs:annotation>
+            <xs:documentation>List all the possible subjects that can be defined in a POL2 rule</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="PROFILE"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--============================================================================================================================-->
+    <xs:simpleType name="POL2RuleActionType">
+        <xs:annotation>
+            <xs:documentation>List all the possible actions that can be defined in a POL2 rule</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ENABLE"/>
+            <xs:enumeration value="DISABLE"/>
+            <xs:enumeration value="DELETE"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--============================================================================================================================-->
+    <xs:simpleType name="POL2RuleQualificationType">
+        <xs:annotation>
+            <xs:documentation>List all the possible qualifications that can be defined in a POL2 rule</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Not-Allowed"/>
+            <xs:enumeration value="Auto-Delete"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--============================================================================================================================-->
+    <xs:simpleType name="ObjectIdentifierType">
+        <xs:annotation>
+            <xs:documentation>String representation of an OID, i.e. of integers separated with dots (e.g.: '1.2', '3.4.5')</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([\d]+[.])*[\d]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--============================================================================================================================-->
+    <xs:complexType name="SecurityDomainType">
+        <xs:annotation>
+            <xs:documentation>This Type provides the description of a Security Domain.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Aid" type="AIDType">
+                <xs:annotation>
+                    <xs:documentation>AID of the SD</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Tar" type="TARType" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>The list of TARs allocated to security domain, as an SD may have several TARs. If no TAR is provided, the implicit TAR is defined by the byte 13, 14, 15 of the AID.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Sin" type="hexBinary16">
+                <xs:annotation>
+                    <xs:documentation>Element representing SIN as defined in GPCS. With explicit llimitation to 16 bytes</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Sdin" type="hexBinary16">
+                <xs:annotation>
+                    <xs:documentation>Element representing SDIN as defined in GPCS. With explicit llimitation to 16 bytes</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Role" type="SDRoleType">
+                <xs:annotation>
+                    <xs:documentation>The Label indicates the entity role allocated to the SD.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Keyset" minOccurs="1" maxOccurs="127">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Version" type="KeysetVersionType">
+                            <xs:annotation>
+                                <xs:documentation>The version of the key set (as an integer value). The version value of a key set shall be unique within SD definition. Example: 48 stands for a SCP03 version 30h</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Type" type="KeysetUsageType" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Generally key set usage  (SCP02, SCP03...) can be fully deduced from the key set version. If version information should not be used, this element shall be present indicating the real usage of this key set.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Cntr" type="xs:nonNegativeInteger" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>The counter value linked to the key set. This element is optional: value '0' as to be considered if missing.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:choice minOccurs="0" maxOccurs="128">
+                            <xs:annotation>
+                                <xs:documentation>Each key part of the key set is provided individually. It is also possible to provide a certificate (as defined in Global Platform context) as a counter part of secret key loaded in the key set.</xs:documentation>
+                            </xs:annotation>
+                            <xs:element name="Key" type="KeyType"/>
+                            <xs:element name="Certificate" type="GPCertificateType"/>
+                        </xs:choice>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!--============================================================================================================================-->
+    <xs:simpleType name="SDRoleType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ISD-R">
+                <xs:annotation>
+                    <xs:documentation>Type defined for ISD-R. Indicates a SD allocated to SM-SR role</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ECASD">
+                <xs:annotation>
+                    <xs:documentation>Type defined for a eSIM Certificate Authority Security Domain. Indicates ta SD allocated to a ECA role</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--============================================================================================================================-->
+    <xs:simpleType name="KeysetUsageType">
+        <xs:annotation>
+            <xs:documentation>Definition of the possible keyset usages when defined within a Security Domain.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="SCP03">
+                <xs:annotation>
+                    <xs:documentation>For identifying a keyset for SCP03, as defined in Global Platform Card Specifications.</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SCP80">
+                <xs:annotation>
+                    <xs:documentation>For identifying a keyset for SCP80, as defined in Global Platform and ETSI 102.225.</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SCP81">
+                <xs:annotation>
+                    <xs:documentation>For identifying a keyset for SCP81, as defined in Global Platform Card Specifications.</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="TokenGeneration">
+                <xs:annotation>
+                    <xs:documentation>For identifying a keyset for Token generation used in Delegated Management, as defined in Global Platform Card Specifications.</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ReceiptVerification">
+                <xs:annotation>
+                    <xs:documentation>For identifying a keyset for Receipt verification used in Delegated Management, as defined in Global Platform Card Specifications.</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="CA">
+                <xs:annotation>
+                    <xs:documentation>For identifying a keyset for Controlling Authority (CA) usage, as defined in Global Platform card - UICC configuration.</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--============================================================================================================================-->
+    <xs:simpleType name="KeysetVersionType">
+        <xs:annotation>
+            <xs:documentation>The KeySet version number as an integer value between 1 and 127 (as defined in Global Platform Card Specifications)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="127"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--============================================================================================================================-->
+    <xs:simpleType name="KeyIndexType">
+        <xs:annotation>
+            <xs:documentation>The Key index as an integer value between 0 and 127 (as defined in Global Platform Card Specifications)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="127"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--============================================================================================================================-->
+    <xs:complexType name="KeyType">
+        <xs:sequence>
+            <xs:element name="Index" type="KeyIndexType">
+                <xs:annotation>
+                    <xs:documentation>The Index of the key in the key set</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="KeyComponents" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>A simple key is defined using only one "rps:KeyComponent" element, but the format support the definition of keys with multiple key components</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:attribute name="type" type="KeyTypeCodingType" use="required">
+                        <xs:annotation>
+                            <xs:documentation>Definition of the key type coding. This defines the algorithm associated with the key, coded on 1 byte.
+                            Meaning of the byte value follows Global Platform Card Specifications, chapter 11.1.8</xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute name="value" type="xs:hexBinary" use="required">
+                        <xs:annotation>
+                            <xs:documentation>The value as a RAW data. This element shall be encrypted with the transport key when provided to SM-SR at initial registration time.</xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="kcv" type="xs:hexBinary" use="required">
+            <xs:annotation>
+                <xs:documentation>The KCV stands for "Key Check Value". It provides the material for receiving entity to ensure that is uses the same key value than the sending entity.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+    <!--============================================================================================================================-->
+    <xs:complexType name="GPCertificateType">
+        <xs:sequence>
+            <xs:element name="Index" type="KeyIndexType">
+                <xs:annotation>
+                    <xs:documentation>Indicates the Index of the private key, being the private counter part of the certificate</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="CaId" type="ObjectIdentifierType">
+                <xs:annotation>
+                    <xs:documentation>Identifier of the CA that has issued the certificate. This shall match the CA identifier included in the certificate itself.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Value" type="xs:hexBinary">
+                <xs:annotation>
+                    <xs:documentation>Value of the certificate as an hexadecimal binary presentation. The certificate shall be coded according to Global Platform card UICC configuration 1.0.1, chapter 9.2.1</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!--============================================================================================================================-->
+    <xs:simpleType name="KeyTypeCodingType">
+        <xs:annotation>
+            <xs:documentation>Definition of the key type coding. This defines the algorythm associated with the key, coded on 1 byte.
+                Meaning of the byte value follows Global Platform Card Specifications, chapter 11.1.8</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:hexBinary">
+            <xs:length value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--============================================================================================================================-->
+    <xs:simpleType name="EIDType">
+        <xs:annotation>
+            <xs:documentation>Type for EID as defined in eSIM Remote Provisioning and Subscription Management context</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:hexBinary">
+            <xs:maxLength value="32"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--============================================================================================================================-->
+    <xs:simpleType name="ICCIDType">
+        <xs:annotation>
+            <xs:documentation>The ICCID (Integrated Circuit Card IDentifier) used to identify a SIM card or an UICC or a profile in an eUICC.
+                Format: String - String representation (fixed length of 19 characters), non-swapped as per ITU E.118 representation, including:
+                - Issuer identification number (IIN): up to 7 digits, starting with Major industry identifier (MII), 2 fixed digits, 89 for telecommunication purpose
+                - Individual account identification: its length is variable
+                - Check digit: Single digit calculated from the other digits using the Luhn algorithm
+                Note: Even if,  for backward compatibility, the type accepts from 6 to 20  digits and padding characters ‘F’,  it is recommended to use the 19 digits length, including only decimal digits not padded with F.			
+                Note that this type is not the representation of the ICCID as stored in card EF (BCD encoding).
+                Example: 8933010000000000010</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="89[0-9fF]{4,18}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--============================================================================================================================-->
+    <xs:simpleType name="MSISDNType">
+        <xs:annotation>
+            <xs:documentation>The MSISDN (Mobile Station ISDN Number) used to identify a Mobile Subscription. 
+                Format: String representation of up to 15 decimal digits as defined in ITU E.164, including Country code, National Destination Code (optional) and Subscriber Number.
+                Example: 380561234567</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{3,15}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--============================================================================================================================-->
+    <xs:simpleType name="IMSIType">
+        <xs:annotation>
+            <xs:documentation>The IMSI (International Mobile Subscriber Identity) used to identify a Mobile Subscription.
+                Format: String - String representation of up to 15 decimal digits including MCC (3 digits) and MNC (2 or 3 digits), as defined in ITU E.212.
+                Note: Even if the type accepts less than the 15 expected digits for backward compatibility, it is recommended to use the 15 digits length.
+                Note that this type is not the representation of the IMSI as stored in card EF (BCD encoding).
+                Example: 242011234567890</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{0,15}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--============================================================================================================================-->
+    <xs:simpleType name="AIDType">
+        <xs:annotation>
+            <xs:documentation>The AID (Application IDentifier) of an Executable Load File, an Executable Module, a Security Domain, or an Application.
+                Format: Hexadecimal string representation of 5 to 16 bytes.
+                Example: 41394644363445313243</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:hexBinary">
+            <xs:minLength value="5"/>
+            <xs:maxLength value="16"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--============================================================================================================================-->
+    <xs:simpleType name="TARType">
+        <xs:annotation>
+            <xs:documentation>The TAR (Toolkit Application Reference) of a Security Domain or an Application.
+                Format: Hexadecimal string representation of exactly 3 bytes.
+                Example: 363443</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:hexBinary">
+            <xs:length value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--============================================================================================================================-->
+    <xs:simpleType name="ProfileStateType">
+        <xs:annotation>
+            <xs:documentation>list of states for a profile in the EIS</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Created"/>
+            <xs:enumeration value="Disabled"/>
+            <xs:enumeration value="Enabled"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--============================================================================================================================-->
+    <xs:simpleType name="ThreeDigitVersion">
+        <xs:annotation>
+            <xs:documentation>Version type for indicated with a major, a minor and a revision number. 
+                Format: string representation of exactly 3 integers separated by a '.'.
+                Example: 1.15.9</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d+[.]\d+[.]\d+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--============================================================================================================================-->
+    <xs:simpleType name="hexBinary16">
+        <xs:annotation>
+            <xs:documentation>A simple hexadecimal string limited to 16 bytes length (32 characters)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:hexBinary">
+            <xs:maxLength value="16"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--============================================================================================================================-->
+    <xs:simpleType name="String100">
+        <xs:annotation>
+            <xs:documentation>A simple string that can be empty and limited to 100 cars.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--============================================================================================================================-->
+    <xs:complexType name="PropertyType">
+        <xs:annotation>
+            <xs:documentation>Definition of a Property, being defined as a simple (key-value)</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="key" use="required">
+            <xs:annotation>
+                <xs:documentation>The key shall not be empty, max key length is not fixed to match any type of application. The receiving entity should check if length is acceptable.</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="value" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>No constraint is set on the value, could either be empty</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <!--============================================================================================================================-->
+    <xs:complexType name="ExecutionStatusType">
+        <xs:annotation>
+            <xs:documentation>Indicates whether the execution of a processing has been completed correctly or not and provides information to give details on the processing result (status code, status data, status message)</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Status" type="StatusType">
+                <xs:annotation>
+                    <xs:documentation>It indicates whether the processing has been completed correctly or not.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="StatusCodeData" type="StatusCodeDataType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>It provides the reason of the Status value.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!--============================================================================================================================-->
+    <xs:complexType name="StatusCodeDataType">
+        <xs:annotation>
+            <xs:documentation>It provides the reason of the Status value. Present only if the "Status" is 'Execute-WithWarning', 'Failed', or 'Expired'. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Subject" type="ObjectIdentifierType">
+                <xs:annotation>
+                    <xs:documentation>Represents the system element concerned by the exception.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Reason" type="ObjectIdentifierType">
+                <xs:annotation>
+                    <xs:documentation>Represents the reason of the exception.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="SubjectIdentifier" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The identifier of the subject or any identification data of the subject that caused the exception (e.g. AID of the instance when the Subject is an "Application instance"). The possible values of the Subject Identifier depend on the function and may be implementation dependant.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Message" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>It provides a textual and human readable explanation of the exception. The Message value is implementation dependant.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!--============================================================================================================================-->
+    <xs:simpleType name="StatusType">
+        <xs:annotation>
+            <xs:documentation>It indicates whether the processing has been completed correctly or not.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="EXECUTED_SUCCESS"/>
+            <xs:enumeration value="EXECUTED_WITHWARNING"/>
+            <xs:enumeration value="FAILED"/>
+            <xs:enumeration value="EXPIRED"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <!--============================================================-->
+    <xs:simpleType name="ECCKeyLengthType">
+        <xs:annotation>
+            <xs:documentation>The possible length of the Elliptic Curve Cryptography keys.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ECC-256"/>
+            <xs:enumeration value="ECC-384"/>
+            <xs:enumeration value="ECC-512"/>
+            <xs:enumeration value="ECC-521"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE configuration  
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">  
+<configuration>  
+    <!-- 对事务的管理和连接池的配置 -->  
+    <environments default="development">  
+        <environment id="development">  
+            <transactionManager type="JDBC" />  
+            <dataSource type="POOLED">  
+                <property name="driver" value="com.mysql.jdbc.Driver" />  
+                <property name="url" value="jdbc:mysql://10.8.40.116:3306/ga" />  
+                <property name="username" value="root" />  
+                <property name="password" value="root" />  
+            </dataSource>  
+        </environment>  
+    </environments>  
+      
+    <!-- mapping 文件路径配置 -->  
+    <mappers>  
+        <mapper resource="com/thinkgem/ga/dao/GaDeviceApDao.xml" /> 
+        <mapper resource="com/thinkgem/ga/dao/GaDeviceMoteDao.xml" /> 
+        <mapper resource="com/thinkgem/ga/dao/GaDeviceMsDao.xml" />  
+        <mapper resource="com/thinkgem/ga/dao/GaEntranceInfoDao.xml" />
+        <mapper resource="com/thinkgem/ga/dao/IdNoInfoDao.xml" />
+    </mappers>  
+</configuration>

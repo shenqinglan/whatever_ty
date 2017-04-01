@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whty.efs.data.dao.AccessSenderDao">
+   
+    <resultMap id="BaseAccessResultMap" type="com.whty.efs.data.pojo.AccessSender">
+        <result property="senderName" column="sender_name"/>
+        <result property="isEnable" column="is_enable"/>
+		<result property="exprieTime" column="exprie_time"/>
+	</resultMap>
+	
+	
+     <sql id="Access_Example_Where_Clause" >
+	    <trim prefix="where" prefixOverrides="and|or" > 
+	      <if test="condition.sender_name != null" >
+	         and sender_name = #{condition.sender_name}
+	      </if>
+	      <if test="condition.is_enable != null" >
+	         and is_enable = #{condition.is_enable}
+	      </if>
+	      <if test="condition.exprie_time != null" >
+	         and exprie_time >= #{condition.exprie_time}
+	      </if>	      
+	    </trim>
+  </sql>
+  <sql id="Base_Column_List" >
+    sender_name,is_enable,exprie_time
+  </sql>
+  
+  <select id="getSender" resultMap="BaseAccessResultMap" parameterType="com.whty.efs.data.dto.Criteria" > 
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from TB_FRONT_ACCESS_SENDER
+    <if test="_parameter != null" >
+      <include refid="Access_Example_Where_Clause" />
+    </if>
+   
+  </select>
+	
+</mapper>

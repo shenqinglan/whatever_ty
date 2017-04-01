@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	targetNamespace="http://www.tathing.com" xmlns:tsm="http://www.tathing.com"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	name="EnterFrontService">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://www.tathing.com">
+			<xsd:include schemaLocation="schema/enterfront.xsd" />
+		</xsd:schema>
+	</wsdl:types>
+
+	<wsdl:message name="Header">
+		<wsdl:part element="tsm:version" name="version"></wsdl:part>
+		<wsdl:part element="tsm:sender" name="sender"></wsdl:part>
+		<wsdl:part element="tsm:receiver" name="receiver"></wsdl:part>
+		<wsdl:part element="tsm:sendTime" name="sendTime"></wsdl:part>
+		<wsdl:part element="tsm:msgType" name="msgType"></wsdl:part>
+		<wsdl:part element="tsm:tradeNO" name="tradeNO"></wsdl:part>
+		<wsdl:part element="tsm:tradeRefNO" name="tradeRefNO"></wsdl:part>
+		<wsdl:part element="tsm:sessionID" name="sessionID"></wsdl:part>
+		<wsdl:part element="tsm:deviceType" name="deviceType"></wsdl:part>
+	</wsdl:message>
+
+    
+    <!--  appQuery -->
+	<wsdl:message name="AppQueryRequest">
+        <wsdl:part element="tsm:AppQueryRequest" name="AppQueryRequest" />
+    </wsdl:message>
+    <wsdl:message name="AppQueryResponse">
+        <wsdl:part element="tsm:AppQueryResponse" name="AppQueryResponse" />
+    </wsdl:message>            
+	
+	<!-- 8. AppPersonial start -->
+	<wsdl:message name="AppPersonialRequest">
+		<wsdl:part element="tsm:AppPersonialRequest" name="AppPersonialRequest" />
+	</wsdl:message>
+	<wsdl:message name="AppPersonialResponse">
+		<wsdl:part element="tsm:AppPersonialResponse" name="AppPersonialResponse" />
+	</wsdl:message>
+	<!-- 8. AppPersonial end -->
+	
+	<wsdl:portType name="IEnterFrontService">
+		<!-- 8. AppPersonial start -->
+		<wsdl:operation name="AppPersonial">
+			<wsdl:input message="tsm:AppPersonialRequest" />
+			<wsdl:output message="tsm:AppPersonialResponse" />
+		</wsdl:operation>
+		<!-- 8. AppPersonial end -->
+
+        
+        <!-- 16. AppQuery start -->
+        <wsdl:operation name="AppQuery">
+            <wsdl:input message="tsm:AppQueryRequest" />
+            <wsdl:output message="tsm:AppQueryResponse" />
+        </wsdl:operation> 
+        <!-- 16. AppQuery end -->
+
+        
+	</wsdl:portType>
+
+	<wsdl:binding name="EnterFrontServiceSOAP" type="tsm:IEnterFrontService">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+
+		<!-- 8. AppPersonial start -->
+		<wsdl:operation name="AppPersonial">
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header use="literal" part="version" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sender" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="receiver" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sendTime" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="msgType" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="tradeNO" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="tradeRefNO" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sessionID" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="deviceType" message="tsm:Header"></soap:header>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<!-- 8. AppPersonial end -->
+
+        <!-- 16. AppQuery start -->
+        <wsdl:operation name="AppQuery">
+            <wsdl:input>
+                <soap:body use="literal" />
+                <soap:header use="literal" part="version" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="sender" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="receiver" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="sendTime" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="msgType" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="tradeNO" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="tradeRefNO" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="sessionID" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="deviceType" message="tsm:Header"></soap:header>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation> 
+
+	</wsdl:binding>
+	
+	<wsdl:service name="EnterFrontService">
+		<wsdl:port binding="tsm:EnterFrontServiceSOAP" name="EnterFrontServicePort">
+			<soap:address
+				location="http://localhost:8080/euicc-efs-container/webservice/EnterFrontService" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

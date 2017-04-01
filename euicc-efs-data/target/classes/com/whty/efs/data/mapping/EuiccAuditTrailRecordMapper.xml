@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.efs.data.dao.EuiccAuditTrailRecordMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.efs.data.pojo.EuiccAuditTrailRecord" >
+    <id column="audit_id" property="auditId" jdbcType="VARCHAR" />
+    <result column="eid" property="eid" jdbcType="VARCHAR" />
+    <result column="iccid" property="iccid" jdbcType="VARCHAR" />
+    <result column="isd_p_aid" property="isdPAid" jdbcType="VARCHAR" />
+    <result column="operation_date" property="operationDate" jdbcType="TIMESTAMP" />
+    <result column="operation_type" property="operationType" jdbcType="VARCHAR" />
+    <result column="requester_id" property="requesterId" jdbcType="VARCHAR" />
+    <result column="imei" property="imei" jdbcType="VARCHAR" />
+    <result column="meid" property="meid" jdbcType="VARCHAR" />
+    <result column="smsr_id" property="smsrId" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    audit_id, eid, iccid, isd_p_aid, operation_date, operation_type, requester_id, imei, 
+    meid, smsr_id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.whty.efs.data.pojo.EuiccAuditTrailRecordExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from euicc_audit_trail_record
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from euicc_audit_trail_record
+    where audit_id = #{auditId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from euicc_audit_trail_record
+    where audit_id = #{auditId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByEid" parameterType="java.lang.String" >
+    delete from euicc_audit_trail_record
+    where eid = #{eid,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whty.efs.data.pojo.EuiccAuditTrailRecordExample" >
+    delete from euicc_audit_trail_record
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whty.efs.data.pojo.EuiccAuditTrailRecord" >
+    insert into euicc_audit_trail_record (audit_id, eid, iccid, 
+      isd_p_aid, operation_date, operation_type, 
+      requester_id, imei, meid, 
+      smsr_id)
+    values (#{auditId,jdbcType=VARCHAR}, #{eid,jdbcType=VARCHAR}, #{iccid,jdbcType=VARCHAR}, 
+      #{isdPAid,jdbcType=VARCHAR}, #{operationDate,jdbcType=TIMESTAMP}, #{operationType,jdbcType=VARCHAR}, 
+      #{requesterId,jdbcType=VARCHAR}, #{imei,jdbcType=VARCHAR}, #{meid,jdbcType=VARCHAR}, 
+      #{smsrId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.efs.data.pojo.EuiccAuditTrailRecord" >
+    insert into euicc_audit_trail_record
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="auditId != null" >
+        audit_id,
+      </if>
+      <if test="eid != null" >
+        eid,
+      </if>
+      <if test="iccid != null" >
+        iccid,
+      </if>
+      <if test="isdPAid != null" >
+        isd_p_aid,
+      </if>
+      <if test="operationDate != null" >
+        operation_date,
+      </if>
+      <if test="operationType != null" >
+        operation_type,
+      </if>
+      <if test="requesterId != null" >
+        requester_id,
+      </if>
+      <if test="imei != null" >
+        imei,
+      </if>
+      <if test="meid != null" >
+        meid,
+      </if>
+      <if test="smsrId != null" >
+        smsr_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="auditId != null" >
+        #{auditId,jdbcType=VARCHAR},
+      </if>
+      <if test="eid != null" >
+        #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="iccid != null" >
+        #{iccid,jdbcType=VARCHAR},
+      </if>
+      <if test="isdPAid != null" >
+        #{isdPAid,jdbcType=VARCHAR},
+      </if>
+      <if test="operationDate != null" >
+        #{operationDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operationType != null" >
+        #{operationType,jdbcType=VARCHAR},
+      </if>
+      <if test="requesterId != null" >
+        #{requesterId,jdbcType=VARCHAR},
+      </if>
+      <if test="imei != null" >
+        #{imei,jdbcType=VARCHAR},
+      </if>
+      <if test="meid != null" >
+        #{meid,jdbcType=VARCHAR},
+      </if>
+      <if test="smsrId != null" >
+        #{smsrId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whty.efs.data.pojo.EuiccAuditTrailRecordExample" resultType="java.lang.Integer" >
+    select count(*) from euicc_audit_trail_record
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update euicc_audit_trail_record
+    <set >
+      <if test="record.auditId != null" >
+        audit_id = #{record.auditId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.eid != null" >
+        eid = #{record.eid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.iccid != null" >
+        iccid = #{record.iccid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isdPAid != null" >
+        isd_p_aid = #{record.isdPAid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.operationDate != null" >
+        operation_date = #{record.operationDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.operationType != null" >
+        operation_type = #{record.operationType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.requesterId != null" >
+        requester_id = #{record.requesterId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.imei != null" >
+        imei = #{record.imei,jdbcType=VARCHAR},
+      </if>
+      <if test="record.meid != null" >
+        meid = #{record.meid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.smsrId != null" >
+        smsr_id = #{record.smsrId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update euicc_audit_trail_record
+    set audit_id = #{record.auditId,jdbcType=VARCHAR},
+      eid = #{record.eid,jdbcType=VARCHAR},
+      iccid = #{record.iccid,jdbcType=VARCHAR},
+      isd_p_aid = #{record.isdPAid,jdbcType=VARCHAR},
+      operation_date = #{record.operationDate,jdbcType=TIMESTAMP},
+      operation_type = #{record.operationType,jdbcType=VARCHAR},
+      requester_id = #{record.requesterId,jdbcType=VARCHAR},
+      imei = #{record.imei,jdbcType=VARCHAR},
+      meid = #{record.meid,jdbcType=VARCHAR},
+      smsr_id = #{record.smsrId,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.efs.data.pojo.EuiccAuditTrailRecord" >
+    update euicc_audit_trail_record
+    <set >
+      <if test="eid != null" >
+        eid = #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="iccid != null" >
+        iccid = #{iccid,jdbcType=VARCHAR},
+      </if>
+      <if test="isdPAid != null" >
+        isd_p_aid = #{isdPAid,jdbcType=VARCHAR},
+      </if>
+      <if test="operationDate != null" >
+        operation_date = #{operationDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operationType != null" >
+        operation_type = #{operationType,jdbcType=VARCHAR},
+      </if>
+      <if test="requesterId != null" >
+        requester_id = #{requesterId,jdbcType=VARCHAR},
+      </if>
+      <if test="imei != null" >
+        imei = #{imei,jdbcType=VARCHAR},
+      </if>
+      <if test="meid != null" >
+        meid = #{meid,jdbcType=VARCHAR},
+      </if>
+      <if test="smsrId != null" >
+        smsr_id = #{smsrId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where audit_id = #{auditId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.efs.data.pojo.EuiccAuditTrailRecord" >
+    update euicc_audit_trail_record
+    set eid = #{eid,jdbcType=VARCHAR},
+      iccid = #{iccid,jdbcType=VARCHAR},
+      isd_p_aid = #{isdPAid,jdbcType=VARCHAR},
+      operation_date = #{operationDate,jdbcType=TIMESTAMP},
+      operation_type = #{operationType,jdbcType=VARCHAR},
+      requester_id = #{requesterId,jdbcType=VARCHAR},
+      imei = #{imei,jdbcType=VARCHAR},
+      meid = #{meid,jdbcType=VARCHAR},
+      smsr_id = #{smsrId,jdbcType=VARCHAR}
+    where audit_id = #{auditId,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.jeesite.modules.person.dao.GaCardInfoDao">
+    
+	<sql id="gaCardInfoColumns">
+		a.id AS "id",
+		a.card_no AS "cardNo",
+		a.person_id AS "personId",
+		a.house_id AS "houseId",
+		a.card_type_code AS "cardTypeCode",
+		a.expiry_time AS "expiryTime",
+		a.black_list_flag AS "blackListFlag",
+		a.face_info_flag AS "faceInfoFlag",
+		a.issuer AS "issuer",
+		a.issue_date AS "issueDate",
+		a.in_limit_count AS "inLimitCount",
+		a.out_limit_count AS "outLimitCount",
+		a.relation AS "relation",
+		a.create_date AS "createDate",
+		a.update_date AS "updateDate",
+		a.remarks AS "remarks",
+		a.del_flag AS "delFlag"
+	</sql>
+	
+	<sql id="gaCardInfoJoins">
+	</sql>
+    
+	<select id="get" resultType="GaCardInfo">
+		SELECT 
+			<include refid="gaCardInfoColumns"/>
+		FROM ga_card_info a
+		<include refid="gaCardInfoJoins"/>
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="GaCardInfo">
+        SELECT 
+            a.id AS "id",
+        a.card_no AS "cardNo",
+        a.person_id AS "personId",
+        a.house_id AS "houseId",
+        b.name as "person", 
+        b.id_card_no as "idCardNo", 
+        d.area_name as "area", 
+        concat_ws('-', c.building_no, c.unit_no, c.room_no) as "house", 
+        a.card_type_code AS "cardTypeCode",
+        a.expiry_time AS "expiryTime",
+        a.issuer AS "issuer",
+        a.issue_date AS "issueDate",
+        a.black_list_flag AS "blackListFlag",
+        a.create_date AS "createDate",
+        a.face_info_flag AS "faceInfoFlag",
+        a.update_date AS "updateDate",
+        a.remarks AS "remarks",
+        a.del_flag AS "delFlag",
+        a.in_limit_count AS "inLimitCount",
+        a.out_limit_count AS "outLimitCount",
+        a.relation as "relation" 
+        FROM ga_card_info a 
+        left join ga_person_info b on a.person_id = b.id 
+        left join ga_house_info c on a.house_id = c.id 
+        left join ga_area_info d on c.area_id = d.id
+        <include refid="gaCardInfoJoins"/>
+        <where>
+            a.del_flag = #{DEL_FLAG_NORMAL}
+            <if test="cardNo != null and cardNo != ''">
+                AND a.card_no = #{cardNo}
+            </if>
+            <if test="personId != null and personId != ''">
+                AND a.person_id = #{personId}
+            </if>
+            <if test="houseId != null and houseId != ''">
+                AND a.house_id = #{houseId}
+            </if>
+            <if test="cardTypeCode != null and cardTypeCode != ''">
+                AND a.card_type_code = #{cardTypeCode}
+            </if>
+            <if test="issuer != null and issuer != ''">
+                AND a.issuer LIKE 
+                    <if test="dbName == 'oracle'">'%'||#{issuer}||'%'</if>
+                    <if test="dbName == 'mssql'">'%'+#{issuer}+'%'</if>
+                    <if test="dbName == 'mysql'">concat('%',#{issuer},'%')</if>
+            </if>
+            <if test="blackListFlag != null and blackListFlag != ''">
+                AND a.black_list_flag = #{blackListFlag}
+            </if>
+            <if test="faceInfoFlag != null and faceInfoFlag != ''">
+                AND a.face_info_flag = #{faceInfoFlag}
+            </if>
+        </where>
+        <choose>
+            <when test="page !=null and page.orderBy != null and page.orderBy != ''">
+                ORDER BY ${page.orderBy}
+            </when>
+            <otherwise>
+                ORDER BY a.update_date DESC
+            </otherwise>
+        </choose>
+    </select>
+	
+	<select id="findAllList" resultType="GaCardInfo">
+		SELECT 
+			<include refid="gaCardInfoColumns"/>
+		FROM ga_card_info a
+		<include refid="gaCardInfoJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+		</where>		
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO ga_card_info(
+			id,
+			card_no,
+			person_id,
+			house_id,
+			card_type_code,
+			expiry_time,
+			black_list_flag,
+			face_info_flag,
+			issuer,
+			issue_date,
+			in_limit_count,
+			out_limit_count,
+			relation,
+			create_date,
+			update_date,
+			remarks,
+			del_flag
+		) VALUES (
+			#{id},
+			#{cardNo},
+			#{personId},
+			#{houseId},
+			#{cardTypeCode},
+			#{expiryTime},
+			#{blackListFlag},
+			#{faceInfoFlag},
+			#{issuer},
+			#{issueDate},
+			#{inLimitCount},
+			#{outLimitCount},
+			#{relation},
+			#{createDate},
+			#{updateDate},
+			#{remarks},
+			#{delFlag}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE ga_card_info SET 	
+			card_no = #{cardNo},
+			person_id = #{personId},
+			house_id = #{houseId},
+			card_type_code = #{cardTypeCode},
+			expiry_time = #{expiryTime},
+			black_list_flag = #{blackListFlag},
+			face_info_flag = #{faceInfoFlag},
+			issuer = #{issuer},
+			issue_date = #{issueDate},
+			in_limit_count = #{inLimitCount},
+			out_limit_count = #{outLimitCount},
+			relation = #{relation},
+			update_date = #{updateDate},
+			remarks = #{remarks}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		UPDATE ga_card_info SET 
+			del_flag = #{DEL_FLAG_DELETE}
+		WHERE id = #{id}
+	</update>
+	
+</mapper>

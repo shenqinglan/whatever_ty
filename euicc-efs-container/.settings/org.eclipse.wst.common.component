@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="euicc-efs-container">
+        <wb-resource deploy-path="/WEB-INF/web.xml" source-path="/src/main/webapp/WEB-INF/web.xml"/>
+        <wb-resource deploy-path="/WEB-INF/web.xml" source-path="/src/main/webapp/WEB-INF/web.xml"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
+        <dependent-module archiveName="euicc-efs-webservice-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/euicc-efs-webservice/euicc-efs-webservice">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="euicc-efs-plugin-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/euicc-efs-plugin/euicc-efs-plugin">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="euicc-efs-packet-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/euicc-efs-packet/euicc-efs-packet">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="euicc-efs-data-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/euicc-efs-data/euicc-efs-data">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="euicc-efs-common-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/euicc-efs-common/euicc-efs-common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="/euicc-efs-container"/>
+        <property name="java-output-path" value="/euicc-efs-container/src/main/webapp/WEB-INF/classes"/>
+    </wb-module>
+</project-modules>

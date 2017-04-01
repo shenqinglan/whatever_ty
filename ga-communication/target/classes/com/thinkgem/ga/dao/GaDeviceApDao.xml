@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.ga.entity.GaDeviceAp">
+    
+	<select id="select" resultType="com.thinkgem.ga.entity.GaDeviceAp">
+        SELECT 
+            a.id as "id" 
+        FROM ga_device_ap a
+        WHERE a.device_id = #{deviceId}
+    </select>
+	
+	<update id="update">
+        UPDATE ga_device_ap SET     
+            status = #{status} 
+        <if test="id != null and id != ''">
+            where id = #{id}
+        </if>
+    </update>
+	
+	<update id="updateToFail">
+        UPDATE ga_device_ap SET     
+            status = #{status} 
+            where status = '3'
+    </update>
+	
+	<insert id="insert">
+		INSERT INTO ga_device_ap(
+			id,
+			device_id,
+			longitude,
+			latitude,
+			address,
+			status,
+			remarks
+		) VALUES (
+			#{id},
+			#{deviceId},
+			#{longitude},
+			#{latitude},
+			#{address},
+			#{status},
+			#{remarks}
+		)
+	</insert>
+	
+	
+</mapper>

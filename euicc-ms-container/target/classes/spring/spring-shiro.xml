@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   http://www.springframework.org/schema/beans/spring-beans-4.1.xsd"
+	default-lazy-init="true">
+ 
+<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+	<property name="securityManager" ref="securityManager" />
+	<property name="loginUrl" value="/login.jsp" />
+	<property name="successUrl" value="/index.jsp" />
+	<property name="unauthorizedUrl" value="/login.jsp" />
+	<property name="filterChainDefinitions">
+		<value>
+			/js/** = anon
+			/theme/** = anon
+			/login.jsp = anon
+			/login.do = anon
+			/*.jsp* = authc
+			/*.do* = authc
+		</value>
+	</property>
+</bean>
+ 
+<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+	<property name="cacheManager" ref="shiroEhcacheManager" />
+	<!-- sessionMode参数设置为native时，那么shrio就将用户的基本认证信息保存到缺省名称为shiro-activeSessionCache 的Cache中 -->
+    <property name="sessionMode" value="native" />
+	<!--设置自定义realm -->
+	<property name="realm" ref="euiccRealm" />
+</bean>
+ 
+ <!-- 自定义Realm By SHI CHANGGEN -->
+<bean id="euiccRealm" class="com.whty.euicc.base.shiro.BaseRealm">
+	<!-- <property name="credentialsMatcher">
+		<bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+			<property name="hashAlgorithmName" value="MD5" />
+			true means hex encoded, false means base64 encoded
+			<property name="storedCredentialsHexEncoded" value="true" />
+			迭代次数
+			<property name="hashIterations" value="1" />
+		</bean>
+	</property> -->
+</bean>
+ 
+<!--用户授权/认证信息Cache, 采用EhCache 缓存 -->
+<bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+	<property name="cacheManager" ref="ehCacheManager"/>
+</bean>
+ 
+ <!-- 开启基于注解的缓存配置 by SHI CHANGGEN-->
+    <!-- <cache:annotation-driven cache-manager="ehCacheManager"/> -->
+    <!-- EhCacheManager bean -->
+	<bean id="ehCacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+		<property name="shared" value="true" />
+	</bean>
+ 
+ 
+<!--保证实现了Shiro内部lifecycle函数的bean执行 -->
+<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
+ 
+ 
+<!--AOP式方法级权限检查 -->
+<!--Enable Shiro Annotations for Spring-configured beans. Only run after -->
+<!--the lifecycleBeanProcessor has run: -->
+<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor">
+	<property name="proxyTargetClass" value="true" />
+</bean>
+
+<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+	<property name="securityManager" ref="securityManager" />
+</bean>
+ 
+</beans>

@@ -1,0 +1,74 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="scan_bottom_btn">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:contentDescription">contentDescription</item>
+    </style>
+    
+    <style name="scan_bottom_torch" parent="scan_bottom_btn">
+         <item name="android:src">@drawable/qb_scan_btn_flash_nor</item>
+        
+    </style>
+    
+     <style name="scan_bottom_loger" parent="scan_bottom_btn">
+        <item name="android:src">@drawable/qb_scan_btn_myqrcode_nor</item>
+    </style>
+    
+     
+     <style name="titlebar">
+         <item name="android:layout_width">match_parent</item>
+         <item name="android:layout_height">50dp</item>
+         <item name="android:layout_alignParentLeft">true</item>
+         <item name="android:layout_alignParentRight">true</item>
+         <item name="android:layout_alignParentTop">true</item>
+         <item name="android:background">@color/viewfinder_mask</item>
+     </style>
+     
+     <style name="titletext">
+         <item name="android:layout_width">wrap_content</item>
+         <item name="android:layout_height">wrap_content</item>
+         <item name="android:layout_centerHorizontal">true</item>
+         <item name="android:layout_centerVertical">true</item>
+         <item name="android:textColor">@android:color/white</item>
+         <item name="android:textSize">20sp</item>
+     </style>
+
+     <style name="titleback">
+         <item name="android:layout_width">70dp</item>
+         <item name="android:layout_height">match_parent</item>
+         <item name="android:layout_alignParentLeft">true</item>
+         <item name="android:layout_centerVertical">true</item>
+         <item name="android:background">@drawable/def_selector</item>
+         <item name="android:onClick">back</item>
+         <item name="android:src">@drawable/base_action_bar_back_normal</item>
+     </style>
+
+     <style name="res_bottom_btn">
+         <item name="android:layout_width">wrap_content</item>
+         <item name="android:layout_height">match_parent</item>
+         <item name="android:layout_weight">1</item>
+         <item name="android:background">@drawable/def_selector</item>
+         <item name="android:scaleType">centerInside</item>
+     </style>
+</resources>

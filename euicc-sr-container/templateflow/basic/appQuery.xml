@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC
+"-//flows.whty.flow.com.cn//DTD Config 1.0//EN"
+"http://whty.flow.com.cn/dtd/flows.dtd">
+
+<flow id="tath.016.001.01" name="应用查询" handler="com.whty.flow.statehandler.EUICCStateHandler">
+	<state id="1" name="应用查询">
+		<param name="job" value="appQuery" />
+		<transition event="0" description="出错" to="finish" />
+		<transition event="1"  description="下一步" to="2" />
+		<transition event="2" description="出错" to="101" />
+	</state>
+    <state id="2" name="应用处理" suspand="true">
+        <param name="job" value="appQuerySupend" />
+        <transition event="0" description="出错" to="finish" />
+        <transition event="1"  description="完成" to="3" />
+        <transition event="2" description="出错" to="101" />
+    </state>
+    <state id="3" name="应用处理">
+        <param name="job" value="appProcess" />
+        <transition event="0" description="出错" to="finish" />
+        <transition event="1"  description="完成" to="finish" />
+        <transition event="2" description="出错" to="101" />
+    </state>
+	<state id="101" name="设置错误码,退出流程处理">
+		<param name="job" value="breakErrorCode" />
+		<transition event="0" description="结束" to="finish" />
+	</state>
+	<state id="finish" name="结束">
+	</state>
+</flow>

@@ -1,0 +1,33 @@
+value1 ProfileElement ::= header : {
+  major-version 1,
+  minor-version 0,
+  profileType "GSMA Profile Package",
+  iccid '89019990001234567893'H,
+  eUICC-Mandatory-services {
+    usim NULL,
+    milenage NULL,
+    javacard NULL
+  },
+  eUICC-Mandatory-GFSTEList {
+    { 2 23 143 1 2 1 },
+    { 2 23 143 1 2 4 }
+  }
+}
+value10 ProfileElement ::= rfm : {
+  rfm-header {
+    identification 9
+  },
+  securityDomainAID 'A000000151000000'H,
+  tarList {
+    'B00010'H
+  },
+  minimumSecurityLevel '12'H,
+  uiccAccessDomain '00'H,
+  uiccAdminAccessDomain '00'H
+}
+value11 ProfileElement ::= end : {
+  end-header {
+    mandated NULL,
+    identification 99
+  }
+}

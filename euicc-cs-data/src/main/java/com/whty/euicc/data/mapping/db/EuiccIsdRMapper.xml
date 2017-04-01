@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.euicc.data.dao.EuiccIsdRMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.euicc.data.pojo.EuiccIsdR" >
+    <id column="r_id" property="rId" jdbcType="VARCHAR" />
+    <result column="eid" property="eid" jdbcType="VARCHAR" />
+    <result column="pol1_id" property="pol1Id" jdbcType="VARCHAR" />
+    <result column="isd_r_aid" property="isdRAid" jdbcType="VARCHAR" />
+    <result column="sr_address_para" property="srAddressPara" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    r_id, eid, pol1_id, isd_r_aid ,sr_address_para
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from euicc_isd_r
+    where r_id = #{rId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from euicc_isd_r
+    where r_id = #{rId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.whty.euicc.data.pojo.EuiccIsdR" >
+    insert into euicc_isd_r (r_id, eid, pol1_id, 
+      isd_r_aid, sr_address_para)
+    values (#{rId,jdbcType=VARCHAR}, #{eid,jdbcType=VARCHAR}, #{pol1Id,jdbcType=VARCHAR}, 
+      #{isdRAid,jdbcType=VARCHAR}, #{srAddressPara,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.euicc.data.pojo.EuiccIsdR" >
+    insert into euicc_isd_r
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="rId != null" >
+        r_id,
+      </if>
+      <if test="eid != null" >
+        eid,
+      </if>
+      <if test="pol1Id != null" >
+        pol1_id,
+      </if>
+      <if test="isdRAid != null" >
+        isd_r_aid,
+      </if>
+      <if test="srAddressPara != null" >
+        sr_address_para,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="rId != null" >
+        #{rId,jdbcType=VARCHAR},
+      </if>
+      <if test="eid != null" >
+        #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="pol1Id != null" >
+        #{pol1Id,jdbcType=VARCHAR},
+      </if>
+      <if test="isdRAid != null" >
+        #{isdRAid,jdbcType=VARCHAR},
+      </if>
+      <if test="srAddressPara != null" >
+        #{srAddressPara,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.euicc.data.pojo.EuiccIsdR" >
+    update euicc_isd_r
+    <set >
+      <if test="eid != null" >
+        eid = #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="pol1Id != null" >
+        pol1_id = #{pol1Id,jdbcType=VARCHAR},
+      </if>
+      <if test="isdRAid != null" >
+        isd_r_aid = #{isdRAid,jdbcType=VARCHAR},
+      </if>
+      <if test="srAddressPara != null" >
+        sr_address_para = #{srAddressPara,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where r_id = #{rId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.euicc.data.pojo.EuiccIsdR" >
+    update euicc_isd_r
+    set eid = #{eid,jdbcType=VARCHAR},
+      pol1_id = #{pol1Id,jdbcType=VARCHAR},
+      isd_r_aid = #{isdRAid,jdbcType=VARCHAR},
+      sr_address_para = #{srAddressPara,jdbcType=VARCHAR}
+    where r_id = #{rId,jdbcType=VARCHAR}
+  </update>
+  
+  <select id="selectByEid" parameterType="java.lang.String" resultMap="BaseResultMap">
+  select 
+  <include refid="Base_Column_List" />
+  from euicc_isd_r 
+  where eid = #{eid,jdbcType=VARCHAR}
+  </select>
+  
+  <delete id="deleteByEid" parameterType="java.lang.String">
+  delete from euicc_isd_r where eid = #{eid}
+  </delete>
+  
+  <select id="selectByIsdRAid" parameterType="java.lang.String" resultMap="BaseResultMap">
+  select 
+  <include refid="Base_Column_List" />
+  from euicc_isd_r 
+  where isd_r_aid = #{isdRAid,jdbcType=VARCHAR}
+  </select>
+  
+</mapper>

@@ -1,0 +1,10 @@
+pe-sd ProfileElement ::= securityDomain : {  a6 0A
+  keyList {    A2  08
+       { 30 06
+         keyAccess '00'H, 96
+         keyIdentifier '01'H, 82 0101
+         keyVersionNumber '01'H, 83 0101
+       }, 
+    }
+    
+    A60AA2083006820101830101

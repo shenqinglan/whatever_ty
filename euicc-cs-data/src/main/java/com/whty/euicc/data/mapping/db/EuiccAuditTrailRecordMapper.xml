@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.euicc.data.dao.EuiccAuditTrailRecordMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.euicc.data.pojo.EuiccAuditTrailRecord" >
+    <id column="audit_id" property="auditId" jdbcType="VARCHAR" />
+    <result column="eid" property="eid" jdbcType="VARCHAR" />
+    <result column="iccid" property="iccid" jdbcType="VARCHAR" />
+    <result column="isd_p_aid" property="isdPAid" jdbcType="VARCHAR" />
+    <result column="operation_date" property="operationDate" jdbcType="TIMESTAMP" />
+    <result column="operation_type" property="operationType" jdbcType="VARCHAR" />
+    <result column="requester_id" property="requesterId" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="imei" property="imei" jdbcType="VARCHAR" />
+    <result column="meid" property="meid" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    audit_id, eid, iccid, isd_p_aid, operation_date, operation_type, requester_id, status, 
+    imei, meid
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from euicc_audit_trail_record
+    where audit_id = #{auditId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from euicc_audit_trail_record
+    where audit_id = #{auditId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.whty.euicc.data.pojo.EuiccAuditTrailRecord" >
+    insert into euicc_audit_trail_record (audit_id, eid, iccid, 
+      isd_p_aid, operation_date, operation_type, 
+      requester_id, status, imei, 
+      meid)
+    values (#{auditId,jdbcType=VARCHAR}, #{eid,jdbcType=VARCHAR}, #{iccid,jdbcType=VARCHAR}, 
+      #{isdPAid,jdbcType=VARCHAR}, #{operationDate,jdbcType=TIMESTAMP}, #{operationType,jdbcType=VARCHAR}, 
+      #{requesterId,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{imei,jdbcType=VARCHAR}, 
+      #{meid,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.euicc.data.pojo.EuiccAuditTrailRecord" >
+    insert into euicc_audit_trail_record
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="auditId != null" >
+        audit_id,
+      </if>
+      <if test="eid != null" >
+        eid,
+      </if>
+      <if test="iccid != null" >
+        iccid,
+      </if>
+      <if test="isdPAid != null" >
+        isd_p_aid,
+      </if>
+      <if test="operationDate != null" >
+        operation_date,
+      </if>
+      <if test="operationType != null" >
+        operation_type,
+      </if>
+      <if test="requesterId != null" >
+        requester_id,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="imei != null" >
+        imei,
+      </if>
+      <if test="meid != null" >
+        meid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="auditId != null" >
+        #{auditId,jdbcType=VARCHAR},
+      </if>
+      <if test="eid != null" >
+        #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="iccid != null" >
+        #{iccid,jdbcType=VARCHAR},
+      </if>
+      <if test="isdPAid != null" >
+        #{isdPAid,jdbcType=VARCHAR},
+      </if>
+      <if test="operationDate != null" >
+        #{operationDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operationType != null" >
+        #{operationType,jdbcType=VARCHAR},
+      </if>
+      <if test="requesterId != null" >
+        #{requesterId,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="imei != null" >
+        #{imei,jdbcType=VARCHAR},
+      </if>
+      <if test="meid != null" >
+        #{meid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.euicc.data.pojo.EuiccAuditTrailRecord" >
+    update euicc_audit_trail_record
+    <set >
+      <if test="eid != null" >
+        eid = #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="iccid != null" >
+        iccid = #{iccid,jdbcType=VARCHAR},
+      </if>
+      <if test="isdPAid != null" >
+        isd_p_aid = #{isdPAid,jdbcType=VARCHAR},
+      </if>
+      <if test="operationDate != null" >
+        operation_date = #{operationDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operationType != null" >
+        operation_type = #{operationType,jdbcType=VARCHAR},
+      </if>
+      <if test="requesterId != null" >
+        requester_id = #{requesterId,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="imei != null" >
+        imei = #{imei,jdbcType=VARCHAR},
+      </if>
+      <if test="meid != null" >
+        meid = #{meid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where audit_id = #{auditId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.euicc.data.pojo.EuiccAuditTrailRecord" >
+    update euicc_audit_trail_record
+    set eid = #{eid,jdbcType=VARCHAR},
+      iccid = #{iccid,jdbcType=VARCHAR},
+      isd_p_aid = #{isdPAid,jdbcType=VARCHAR},
+      operation_date = #{operationDate,jdbcType=TIMESTAMP},
+      operation_type = #{operationType,jdbcType=VARCHAR},
+      requester_id = #{requesterId,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      imei = #{imei,jdbcType=VARCHAR},
+      meid = #{meid,jdbcType=VARCHAR}
+    where audit_id = #{auditId,jdbcType=VARCHAR}
+  </update>
+</mapper>

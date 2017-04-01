@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wsdl:definitions targetNamespace="http://namespaces.gsma.org/esim-messaging/3"
+    xmlns:rps="http://namespaces.gsma.org/esim-messaging/3"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsa="http://www.w3.org/2005/08/addressing"
+    xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+    xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ 
+    
+<!-- WSDL TYPES -->
+    <wsdl:types>
+        <xs:schema targetNamespace="http://namespaces.gsma.org/esim-messaging/3" elementFormDefault="qualified" >
+            <xs:include schemaLocation="xsd/euicc.request.ES2.xsd"/>
+        </xs:schema>
+		<xs:schema targetNamespace="http://www.w3.org/2005/08/addressing" elementFormDefault="qualified" >
+            <xs:include schemaLocation="xsd/import/ws-addr.xsd"/>
+        </xs:schema>
+    </wsdl:types>
+
+ <!-- WSA MESSAGES -->
+    <wsdl:message name="SoapHeader">
+        <!-- WSA MANDATORY -->
+        <wsdl:part name="From" element="wsa:From"/>
+        <wsdl:part name="To" element="wsa:To"/>
+        <wsdl:part name="Action" element="wsa:Action"/>
+        <wsdl:part name="MessageID" element="wsa:MessageID"/>
+        <wsdl:part name="RelatesTo" element="wsa:RelatesTo"/>
+        <!-- WSA OPTIONAL -->
+        <wsdl:part name="ReplyTo" element="wsa:ReplyTo"/>      
+    </wsdl:message>
+    
+<!-- ES2 MESSAGES -->
+    <wsdl:message name="ES2-HandleProfileDeletedNotificationRequestMessage">
+        <wsdl:part name="parameters" element="rps:ES2-HandleProfileDeletedNotification"/>
+    </wsdl:message>
+    <wsdl:message name="ES2-HandleProfileDisabledNotificationRequestMessage">
+        <wsdl:part name="parameters" element="rps:ES2-HandleProfileDisabledNotification"/>
+    </wsdl:message>
+    <wsdl:message name="ES2-HandleProfileEnabledNotificationRequestMessage">
+        <wsdl:part name="parameters" element="rps:ES2-HandleProfileEnabledNotification"/>
+    </wsdl:message>
+     <wsdl:message name="ES2-HandleSMSRChangeNotificationRequestMessage">
+        <wsdl:part name="parameters" element="rps:ES2-HandleSMSRChangeNotification"/>
+    </wsdl:message>
+    
+<!-- SOAP PORT OPERATIONS -->
+    <wsdl:portType name="ES2Mno">
+        <wsdl:operation name="ES2-HandleProfileDeletedNotification">
+            <wsdl:input message="rps:ES2-HandleProfileDeletedNotificationRequestMessage"
+                wsa:Action="http://gsma.com/ES2/PlatformManagement/ES2-HandleProfileDeletedNotification"
+                wsam:Action="http://gsma.com/ES2/PlatformManagement/ES2-HandleProfileDeletedNotification"/>
+        </wsdl:operation>
+        <wsdl:operation name="ES2-HandleProfileDisabledNotification">
+            <wsdl:input message="rps:ES2-HandleProfileDisabledNotificationRequestMessage"
+                wsa:Action="http://gsma.com/ES2/PlatformManagement/ES2-HandleProfileDisabledNotification"
+                wsam:Action="http://gsma.com/ES2/PlatformManagement/ES2-HandleProfileDisabledNotification"/>
+        </wsdl:operation>
+        <wsdl:operation name="ES2-HandleProfileEnabledNotification">
+            <wsdl:input message="rps:ES2-HandleProfileEnabledNotificationRequestMessage"
+                wsa:Action="http://gsma.com/ES2/PlatformManagement/ES2-HandleProfileEnabledNotification"
+                wsam:Action="http://gsma.com/ES2/PlatformManagement/ES2-HandleProfileEnabledNotification"/>
+        </wsdl:operation>
+        <wsdl:operation name="ES2-HandleSMSRChangeNotification">
+            <wsdl:input message="rps:ES2-HandleSMSRChangeNotificationRequestMessage"
+                wsa:Action="http://gsma.com/ES2/eUICCManagement/ES2-HandleSMSRChangeNotification"
+                wsam:Action="http://gsma.com/ES2/eUICCManagement/ES2-HandleSMSRChangeNotification"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+ <!-- SOAP BINDING -->
+    <wsdl:binding name="ES2MnoServiceBinding" type="rps:ES2Mno">
+        <wsoap12:binding transport="http://www.w3.org/2003/05/soap/bindings/HTTP/" style="document"/>
+       <wsdl:operation name="ES2-HandleProfileDeletedNotification">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="ES2-HandleProfileDisabledNotification">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="ES2-HandleProfileEnabledNotification">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="ES2-HandleSMSRChangeNotification">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+
+<!-- SOAP SERVICE -->
+    <wsdl:service name="ES2MnoService">
+        <wsdl:port binding="rps:ES2MnoServiceBinding" name="MnoES2Port">
+            <wsoap12:address location="http://gsma.org/esim-messaging/3/ES2/ES2MnoService"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

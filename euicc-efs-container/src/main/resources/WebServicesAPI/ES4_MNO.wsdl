@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wsdl:definitions targetNamespace="http://namespaces.gsma.org/esim-messaging/3"
+    xmlns:rps="http://namespaces.gsma.org/esim-messaging/3"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsa="http://www.w3.org/2005/08/addressing"
+    xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+    xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ 
+    
+<!-- WSDL TYPES -->
+    <wsdl:types>
+        <xs:schema targetNamespace="http://namespaces.gsma.org/esim-messaging/3" elementFormDefault="qualified" >
+            <xs:include schemaLocation="xsd/euicc.request.ES4.xsd"/>
+        </xs:schema>
+		<xs:schema targetNamespace="http://www.w3.org/2005/08/addressing" elementFormDefault="qualified" >
+            <xs:include schemaLocation="xsd/import/ws-addr.xsd"/>
+        </xs:schema>
+    </wsdl:types>
+
+ <!-- WSA MESSAGES -->
+    <wsdl:message name="SoapHeader">
+        <!-- WSA MANDATORY -->
+        <wsdl:part name="From" element="wsa:From"/>
+        <wsdl:part name="To" element="wsa:To"/>
+        <wsdl:part name="Action" element="wsa:Action"/>
+        <wsdl:part name="MessageID" element="wsa:MessageID"/>
+        <wsdl:part name="RelatesTo" element="wsa:RelatesTo"/>
+        <!-- WSA OPTIONAL -->
+        <wsdl:part name="ReplyTo" element="wsa:ReplyTo"/>      
+    </wsdl:message>
+    
+<!-- ES4 MESSAGES -->
+    <wsdl:message name="ES4-GetEISRequestMessage">
+        <wsdl:part name="parameters" element="rps:ES4-GetEISRequest"/>
+    </wsdl:message>
+     <wsdl:message name="ES4-GetEISResponseMessage">
+        <wsdl:part name="parameters" element="rps:ES4-GetEISResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ES4-AuditEISRequestMessage">
+        <wsdl:part name="parameters" element="rps:ES4-AuditEISRequest"/>
+    </wsdl:message>
+     <wsdl:message name="ES4-AuditEISResponseMessage">
+        <wsdl:part name="parameters" element="rps:ES4-AuditEISResponse"/>
+    </wsdl:message>
+    
+    <wsdl:message name="ES4-UpdatePolicyRulesRequestMessage">
+        <wsdl:part name="parameters" element="rps:ES4-UpdatePolicyRulesRequest"/>
+    </wsdl:message>
+     <wsdl:message name="ES4-UpdatePolicyRulesResponseMessage">
+        <wsdl:part name="parameters" element="rps:ES4-UpdatePolicyRulesResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ES4-UpdateSubscriptionAddressRequestMessage">
+        <wsdl:part name="parameters" element="rps:ES4-UpdateSubscriptionAddressRequest"/>
+    </wsdl:message>
+     <wsdl:message name="ES4-UpdateSubscriptionAddressResponseMessage">
+        <wsdl:part name="parameters" element="rps:ES4-UpdateSubscriptionAddressResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ES4-EnableProfileRequestMessage">
+        <wsdl:part name="parameters" element="rps:ES4-EnableProfileRequest"/>
+    </wsdl:message>
+     <wsdl:message name="ES4-EnableProfileResponseMessage">
+        <wsdl:part name="parameters" element="rps:ES4-EnableProfileResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ES4-DisableProfileRequestMessage">
+        <wsdl:part name="parameters" element="rps:ES4-DisableProfileRequest"/>
+    </wsdl:message>
+     <wsdl:message name="ES4-DisableProfileResponseMessage">
+        <wsdl:part name="parameters" element="rps:ES4-DisableProfileResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ES4-DeleteProfileRequestMessage">
+        <wsdl:part name="parameters" element="rps:ES4-DeleteProfileRequest"/>
+    </wsdl:message>
+     <wsdl:message name="ES4-DeleteProfileResponseMessage">
+        <wsdl:part name="parameters" element="rps:ES4-DeleteProfileResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ES4-PrepareSMSRChangeRequestMessage">
+        <wsdl:part name="parameters" element="rps:ES4-PrepareSMSRChangeRequest"/>
+    </wsdl:message>
+     <wsdl:message name="ES4-PrepareSMSRChangeResponseMessage">
+        <wsdl:part name="parameters" element="rps:ES4-PrepareSMSRChangeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ES4-SMSRChangeRequestMessage">
+        <wsdl:part name="parameters" element="rps:ES4-SMSRChangeRequest"/>
+    </wsdl:message>
+     <wsdl:message name="ES4-SMSRChangeResponseMessage">
+        <wsdl:part name="parameters" element="rps:ES4-SMSRChangeResponse"/>
+    </wsdl:message>
+   
+   
+    
+<!-- SOAP PORT OPERATIONS -->
+    <wsdl:portType name="ES4Mno">
+        <wsdl:operation name="ES4-GetEIS">
+            <wsdl:input message="rps:ES4-GetEISRequestMessage"
+                wsa:Action="http://gsma.com/ES4/PlatformManagement/ES4-GetEISRequest"
+                wsam:Action="http://gsma.com/ES4/PlatformManagement/ES4-GetEISRequest"/>
+            <wsdl:output message="rps:ES4-GetEISResponseMessage"
+                wsa:Action="http://gsma.com/ES4/eUICCManagement/ES4-GetEISResponse"
+                wsam:Action="http://gsma.com/ES4/eUICCManagement/ES4-GetEISResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="ES4-AuditEIS">
+            <wsdl:input message="rps:ES4-AuditEISRequestMessage"
+                wsa:Action="http://gsma.com/ES4/PlatformManagement/ES4-AuditEISRequest"
+                wsam:Action="http://gsma.com/ES4/PlatformManagement/ES4-AuditEISRequest"/>
+            <wsdl:output message="rps:ES4-AuditEISResponseMessage"
+                wsa:Action="http://gsma.com/ES4/eUICCManagement/ES4-AuditEISResponse"
+                wsam:Action="http://gsma.com/ES4/eUICCManagement/ES4-AuditEISResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="ES4-UpdatePolicyRules">
+            <wsdl:input message="rps:ES4-UpdatePolicyRulesRequestMessage"
+                wsa:Action="http://gsma.com/ES4/PlatformManagement/ES4-UpdatePolicyRulesRequest"
+                wsam:Action="http://gsma.com/ES4/PlatformManagement/ES4-UpdatePolicyRulesRequest"/>
+            <wsdl:output message="rps:ES4-UpdatePolicyRulesResponseMessage"
+                wsa:Action="http://gsma.com/ES4/eUICCManagement/ES4-UpdatePolicyRulesResponse"
+                wsam:Action="http://gsma.com/ES4/eUICCManagement/ES4-UpdatePolicyRulesResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="ES4-UpdateSubscriptionAddress">
+            <wsdl:input message="rps:ES4-UpdateSubscriptionAddressRequestMessage"
+                wsa:Action="http://gsma.com/ES4/PlatformManagement/ES4-UpdateSubscriptionAddressRequest"
+                wsam:Action="http://gsma.com/ES4/PlatformManagement/ES4-UpdateSubscriptionAddressRequest"/>
+            <wsdl:output message="rps:ES4-UpdateSubscriptionAddressResponseMessage"
+                wsa:Action="http://gsma.com/ES4/eUICCManagement/ES4-UpdateSubscriptionAddressResponse"
+                wsam:Action="http://gsma.com/ES4/eUICCManagement/ES4-UpdateSubscriptionAddressResponse"/>
+        </wsdl:operation>
+         <wsdl:operation name="ES4-EnableProfile">
+            <wsdl:input message="rps:ES4-EnableProfileRequestMessage"
+                wsa:Action="http://gsma.com/ES4/PlatformManagement/ES4-EnableProfileRequest"
+                wsam:Action="http://gsma.com/ES4/PlatformManagement/ES4-EnableProfileRequest"/>
+            <wsdl:output message="rps:ES4-EnableProfileResponseMessage"
+                wsa:Action="http://gsma.com/ES4/eUICCManagement/ES4-EnableProfileResponse"
+                wsam:Action="http://gsma.com/ES4/eUICCManagement/ES4-EnableProfileResponse"/>
+        </wsdl:operation>
+         <wsdl:operation name="ES4-DisableProfile">
+            <wsdl:input message="rps:ES4-DisableProfileRequestMessage"
+                wsa:Action="http://gsma.com/ES4/PlatformManagement/ES4-DisableProfileRequest"
+                wsam:Action="http://gsma.com/ES4/PlatformManagement/ES4-DisableProfileRequest"/>
+            <wsdl:output message="rps:ES4-DisableProfileResponseMessage"
+                wsa:Action="http://gsma.com/ES4/eUICCManagement/ES4-DisableProfileResponse"
+                wsam:Action="http://gsma.com/ES4/eUICCManagement/ES4-DisableProfileResponse"/>
+        </wsdl:operation>
+         <wsdl:operation name="ES4-DeleteProfile">
+            <wsdl:input message="rps:ES4-DeleteProfileRequestMessage"
+                wsa:Action="http://gsma.com/ES4/PlatformManagement/ES4-DeleteProfileRequest"
+                wsam:Action="http://gsma.com/ES4/PlatformManagement/ES4-DeleteProfileRequest"/>
+            <wsdl:output message="rps:ES4-DeleteProfileResponseMessage"
+                wsa:Action="http://gsma.com/ES4/eUICCManagement/ES4-DeleteProfileResponse"
+                wsam:Action="http://gsma.com/ES4/eUICCManagement/ES4-DeleteProfileResponse"/>
+        </wsdl:operation>
+         <wsdl:operation name="ES4-PrepareSMSRChange">
+            <wsdl:input message="rps:ES4-PrepareSMSRChangeRequestMessage"
+                wsa:Action="http://gsma.com/ES4/PlatformManagement/ES4-PrepareSMSRChangeRequest"
+                wsam:Action="http://gsma.com/ES4/PlatformManagement/ES4-PrepareSMSRChangeRequest"/>
+            <wsdl:output message="rps:ES4-PrepareSMSRChangeResponseMessage"
+                wsa:Action="http://gsma.com/ES4/eUICCManagement/ES4-PrepareSMSRChangeResponse"
+                wsam:Action="http://gsma.com/ES4/eUICCManagement/ES4-PrepareSMSRChangeResponse"/>
+        </wsdl:operation>
+         <wsdl:operation name="ES4-SMSRChange">
+            <wsdl:input message="rps:ES4-SMSRChangeRequestMessage"
+                wsa:Action="http://gsma.com/ES4/PlatformManagement/ES4-SMSRChangeRequest"
+                wsam:Action="http://gsma.com/ES4/PlatformManagement/ES4-SMSRChangeRequest"/>
+            <wsdl:output message="rps:ES4-SMSRChangeResponseMessage"
+                wsa:Action="http://gsma.com/ES4/eUICCManagement/ES4-SMSRChangeResponse"
+                wsam:Action="http://gsma.com/ES4/eUICCManagement/ES4-SMSRChangeResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+ <!-- SOAP BINDING -->
+    <wsdl:binding name="ES4MnoServiceBinding" type="rps:ES4Mno">
+        <wsoap12:binding transport="http://www.w3.org/2003/05/soap/bindings/HTTP/" style="document"/>
+         <wsdl:operation name="ES4-GetEIS">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+            <wsdl:output>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="RelatesTo" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:output>
+        </wsdl:operation>  
+        
+        <wsdl:operation name="ES4-AuditEIS">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+            <wsdl:output>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="RelatesTo" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ES4-UpdatePolicyRules">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+            <wsdl:output>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="RelatesTo" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:output>
+        </wsdl:operation>  
+        <wsdl:operation name="ES4-UpdateSubscriptionAddress">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+            <wsdl:output>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="RelatesTo" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ES4-EnableProfile">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+            <wsdl:output>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="RelatesTo" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:output>
+        </wsdl:operation>  
+        <wsdl:operation name="ES4-DisableProfile">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+            <wsdl:output>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="RelatesTo" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:output>
+        </wsdl:operation>   
+        <wsdl:operation name="ES4-DeleteProfile">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+            <wsdl:output>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="RelatesTo" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:output>
+        </wsdl:operation>  
+        <wsdl:operation name="ES4-PrepareSMSRChange">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+            <wsdl:output>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="RelatesTo" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:output>
+        </wsdl:operation>  
+        <wsdl:operation name="ES4-SMSRChange">
+            <wsoap12:operation style="document"/>
+            <wsdl:input>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:input>
+            <wsdl:output>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="From" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="To" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="MessageID" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="Action" wsdl:required="true"/>
+                <wsoap12:header message="rps:SoapHeader" use="literal" part="RelatesTo" wsdl:required="true"/>
+                <wsoap12:body use="literal" wsdl:required="true"/>
+            </wsdl:output>
+        </wsdl:operation>      
+    </wsdl:binding>
+
+<!-- SOAP SERVICE -->
+    <wsdl:service name="ES4MnoService">
+        <wsdl:port binding="rps:ES4MnoServiceBinding" name="MnoES4Port">
+            <wsoap12:address location="http://gsma.org/esim-messaging/3/ES4/ES4MnoService"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

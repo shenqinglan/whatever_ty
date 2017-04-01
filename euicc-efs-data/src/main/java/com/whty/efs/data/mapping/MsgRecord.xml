@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whty.efs.data.dao.MsgRecordDao">
+    
+    <resultMap id="msgRecordMap" type="com.whty.efs.data.pojo.MsgRecord">
+        <result property="channel_code" column="channel_code"/>
+        <result property="tag_code" column="tag_code"/>
+		<result property="mac_value" column="mac_value"/>
+		<result property="request_data" column="request_data"/>
+		<result property="response_date" column="response_date"/>
+		<result property="transkey" column="transkey"/>
+		<result property="opt_date" column="opt_date"/>
+	</resultMap>
+	
+	<!-- 厦门和洪城：圈存写卡确认，支付，圈存订单创建 -->
+	<insert id="saveMsgRecord" parameterType="com.whty.efs.data.pojo.MsgRecord">
+		INSERT INTO TB_FRONT_MSG_RECORD (channel_code,tag_code,mac_value,request_data,response_date,transkey,opt_date)
+		VALUES ( #{channel_code},#{tag_code},#{mac_value}, #{request_data}, #{response_date},#{transkey} ,#{opt_date})
+	</insert>
+	
+</mapper>

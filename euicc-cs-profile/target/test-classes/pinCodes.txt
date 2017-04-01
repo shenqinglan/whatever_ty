@@ -1,0 +1,23 @@
+value4 ProfileElement ::= pinCodes : {
+  pin-Header {
+    mandated NULL,
+    identification 4
+  },
+  pinCodes pinconfig : {
+    {
+      keyReference pinAppl1,
+      pinValue '31323334FFFFFFFF'H,
+      unblockingPINReference pukAppl1
+    },
+    {
+      keyReference pinAppl2,
+      pinValue '30303030FFFFFFFF'H,
+      unblockingPINReference pukAppl2
+    },
+    {
+      keyReference adm1,
+      pinValue '35363738FFFFFFFF'H,
+      pinAttributes 7
+    }
+  }
+}

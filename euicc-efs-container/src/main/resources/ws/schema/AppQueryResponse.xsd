@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    targetNamespace="http://www.tathing.com"
+    xmlns:tsm="http://www.tathing.com" 
+    elementFormDefault="qualified">
+    
+    <xsd:include schemaLocation="RspnMsg.xsd" />
+   
+    <xsd:complexType name="AppQueryResponse">
+       
+       <xsd:sequence>
+           <xsd:element name="rspnMsg" type="tsm:RspnMsg"/>
+           <xsd:element name="appAID" type="xsd:string"/>
+           <xsd:element name="appVersion" type="xsd:string"/>
+           <xsd:element name="seID" type="xsd:string"/>
+           <xsd:element name="appName" type="xsd:string"/>
+           <xsd:element name="appType" type="xsd:string"/>
+           <xsd:element name="appDesc" type="xsd:string"/>
+           <xsd:element name="providerID" type="xsd:string"/>
+           <xsd:element name="providerName" type="xsd:string"/>
+           <xsd:element name="onlineDate" type="xsd:date"/>
+           <xsd:element name="icoUrl" type="xsd:string"/>
+           <xsd:element name="logoUrl" type="xsd:string"/>    
+       </xsd:sequence>
+       
+    </xsd:complexType>
+    
+</xsd:schema>
+

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.euicc.data.dao.EuiccEumMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.euicc.data.pojo.EuiccEum" >
+    <id column="eum_id" property="eumId" jdbcType="VARCHAR" />
+    <result column="eum_name" property="eumName" jdbcType="VARCHAR" />
+    <result column="eum_code" property="eumCode" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.whty.euicc.data.pojo.EuiccEum" extends="BaseResultMap" >
+    <result column="cert" property="cert" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    eum_id, eum_name, eum_code
+  </sql>
+  <sql id="Blob_Column_List" >
+    cert
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from euicc_eum
+    where eum_id = #{eumId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from euicc_eum
+    where eum_id = #{eumId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.whty.euicc.data.pojo.EuiccEum" >
+    insert into euicc_eum (eum_id, eum_name, eum_code, 
+      cert)
+    values (#{eumId,jdbcType=VARCHAR}, #{eumName,jdbcType=VARCHAR}, #{eumCode,jdbcType=VARCHAR}, 
+      #{cert,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.euicc.data.pojo.EuiccEum" >
+    insert into euicc_eum
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="eumId != null" >
+        eum_id,
+      </if>
+      <if test="eumName != null" >
+        eum_name,
+      </if>
+      <if test="eumCode != null" >
+        eum_code,
+      </if>
+      <if test="cert != null" >
+        cert,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="eumId != null" >
+        #{eumId,jdbcType=VARCHAR},
+      </if>
+      <if test="eumName != null" >
+        #{eumName,jdbcType=VARCHAR},
+      </if>
+      <if test="eumCode != null" >
+        #{eumCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cert != null" >
+        #{cert,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.euicc.data.pojo.EuiccEum" >
+    update euicc_eum
+    <set >
+      <if test="eumName != null" >
+        eum_name = #{eumName,jdbcType=VARCHAR},
+      </if>
+      <if test="eumCode != null" >
+        eum_code = #{eumCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cert != null" >
+        cert = #{cert,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where eum_id = #{eumId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.whty.euicc.data.pojo.EuiccEum" >
+    update euicc_eum
+    set eum_name = #{eumName,jdbcType=VARCHAR},
+      eum_code = #{eumCode,jdbcType=VARCHAR},
+      cert = #{cert,jdbcType=LONGVARCHAR}
+    where eum_id = #{eumId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.euicc.data.pojo.EuiccEum" >
+    update euicc_eum
+    set eum_name = #{eumName,jdbcType=VARCHAR},
+      eum_code = #{eumCode,jdbcType=VARCHAR}
+    where eum_id = #{eumId,jdbcType=VARCHAR}
+  </update>
+</mapper>

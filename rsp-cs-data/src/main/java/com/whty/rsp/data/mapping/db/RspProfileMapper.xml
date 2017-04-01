@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.rsp.data.dao.RspProfileMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.rsp.data.pojo.RspProfile" >
+    <id column="iccid" property="iccid" jdbcType="VARCHAR" />
+    <result column="isd_p_aid" property="isdPAid" jdbcType="VARCHAR" />
+    <result column="eid" property="eid" jdbcType="VARCHAR" />
+    <result column="profile_state" property="profileState" jdbcType="VARCHAR" />
+    <result column="profile_nick_name" property="profileNickName" jdbcType="VARCHAR" />
+    <result column="service_provider_name" property="serviceProviderName" jdbcType="VARCHAR" />
+    <result column="profile_name" property="profileName" jdbcType="VARCHAR" />
+    <result column="icon_type" property="iconType" jdbcType="VARCHAR" />
+    <result column="profile_class" property="profileClass" jdbcType="VARCHAR" />
+    <result column="notif_event" property="notifEvent" jdbcType="VARCHAR" />
+    <result column="notif_address" property="notifAddress" jdbcType="VARCHAR" />
+    <result column="profile_owner" property="profileOwner" jdbcType="VARCHAR" />
+    <result column="smdp_proprietary_data" property="smdpProprietaryData" jdbcType="VARCHAR" />
+    <result column="PPR" property="ppr" jdbcType="VARCHAR" />
+    <result column="profile_type" property="profileType" jdbcType="VARCHAR" />
+    <result column="hash_cc" property="hashCc" jdbcType="VARCHAR" />
+    <result column="matching_id" property="matchingId" jdbcType="VARCHAR" />
+    <result column="msisdn" property="msisdn" jdbcType="VARCHAR" />
+    <result column="lock_version" property="lockVersion" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.whty.rsp.data.pojo.RspProfileWithBLOBs" extends="BaseResultMap" >
+    <result column="icon" property="icon" jdbcType="LONGVARCHAR" />
+    <result column="asn_file" property="asnFile" jdbcType="LONGVARCHAR" />
+    <result column="der_file" property="derFile" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    iccid, isd_p_aid, eid, profile_state, profile_nick_name, service_provider_name, profile_name, 
+    icon_type, profile_class, notif_event, notif_address, profile_owner, smdp_proprietary_data, 
+    PPR, profile_type, hash_cc, matching_id, msisdn, lock_version
+  </sql>
+  <sql id="Blob_Column_List" >
+    icon, asn_file, der_file
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.whty.rsp.data.pojo.RspProfileExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from rsp_profile
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.whty.rsp.data.pojo.RspProfileExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from rsp_profile
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from rsp_profile
+    where iccid = #{iccid,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectByProfileType" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from rsp_profile
+    where profile_type = #{profileType,jdbcType=VARCHAR} LIMIT 1 
+  </select>
+  
+  <select id="selectByMatchingId" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from rsp_profile
+    where matching_id = #{matchingId,jdbcType=VARCHAR} LIMIT 1
+  </select>
+  
+  <select id="selectByEid" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from rsp_profile
+    where eid = #{eid,jdbcType=VARCHAR} LIMIT 1
+  </select>
+  
+  <select id="selectByMsisdn" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from rsp_profile
+    where msisdn = #{msisdn,jdbcType=VARCHAR}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from rsp_profile
+    where iccid = #{iccid,jdbcType=VARCHAR} and lock_version = #{lockVersion,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whty.rsp.data.pojo.RspProfileExample" >
+    delete from rsp_profile
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whty.rsp.data.pojo.RspProfileWithBLOBs" >
+    insert into rsp_profile (iccid, isd_p_aid, eid, 
+      profile_state, profile_nick_name, service_provider_name, 
+      profile_name, icon_type, profile_class, 
+      notif_event, notif_address, profile_owner, 
+      smdp_proprietary_data, PPR, profile_type, 
+      hash_cc, matching_id, msisdn, 
+      lock_version, icon, asn_file, 
+      der_file)
+    values (#{iccid,jdbcType=VARCHAR}, #{isdPAid,jdbcType=VARCHAR}, #{eid,jdbcType=VARCHAR}, 
+      #{profileState,jdbcType=VARCHAR}, #{profileNickName,jdbcType=VARCHAR}, #{serviceProviderName,jdbcType=VARCHAR}, 
+      #{profileName,jdbcType=VARCHAR}, #{iconType,jdbcType=VARCHAR}, #{profileClass,jdbcType=VARCHAR}, 
+      #{notifEvent,jdbcType=VARCHAR}, #{notifAddress,jdbcType=VARCHAR}, #{profileOwner,jdbcType=VARCHAR}, 
+      #{smdpProprietaryData,jdbcType=VARCHAR}, #{ppr,jdbcType=VARCHAR}, #{profileType,jdbcType=VARCHAR}, 
+      #{hashCc,jdbcType=VARCHAR}, #{matchingId,jdbcType=VARCHAR}, #{msisdn,jdbcType=VARCHAR}, 
+      #{lockVersion,jdbcType=VARCHAR}, #{icon,jdbcType=LONGVARCHAR}, #{asnFile,jdbcType=LONGVARCHAR}, 
+      #{derFile,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.rsp.data.pojo.RspProfileWithBLOBs" >
+    insert into rsp_profile
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="iccid != null" >
+        iccid,
+      </if>
+      <if test="isdPAid != null" >
+        isd_p_aid,
+      </if>
+      <if test="eid != null" >
+        eid,
+      </if>
+      <if test="profileState != null" >
+        profile_state,
+      </if>
+      <if test="profileNickName != null" >
+        profile_nick_name,
+      </if>
+      <if test="serviceProviderName != null" >
+        service_provider_name,
+      </if>
+      <if test="profileName != null" >
+        profile_name,
+      </if>
+      <if test="iconType != null" >
+        icon_type,
+      </if>
+      <if test="profileClass != null" >
+        profile_class,
+      </if>
+      <if test="notifEvent != null" >
+        notif_event,
+      </if>
+      <if test="notifAddress != null" >
+        notif_address,
+      </if>
+      <if test="profileOwner != null" >
+        profile_owner,
+      </if>
+      <if test="smdpProprietaryData != null" >
+        smdp_proprietary_data,
+      </if>
+      <if test="ppr != null" >
+        PPR,
+      </if>
+      <if test="profileType != null" >
+        profile_type,
+      </if>
+      <if test="hashCc != null" >
+        hash_cc,
+      </if>
+      <if test="matchingId != null" >
+        matching_id,
+      </if>
+      <if test="msisdn != null" >
+        msisdn,
+      </if>
+      <if test="lockVersion != null" >
+        lock_version,
+      </if>
+      <if test="icon != null" >
+        icon,
+      </if>
+      <if test="asnFile != null" >
+        asn_file,
+      </if>
+      <if test="derFile != null" >
+        der_file,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="iccid != null" >
+        #{iccid,jdbcType=VARCHAR},
+      </if>
+      <if test="isdPAid != null" >
+        #{isdPAid,jdbcType=VARCHAR},
+      </if>
+      <if test="eid != null" >
+        #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="profileState != null" >
+        #{profileState,jdbcType=VARCHAR},
+      </if>
+      <if test="profileNickName != null" >
+        #{profileNickName,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceProviderName != null" >
+        #{serviceProviderName,jdbcType=VARCHAR},
+      </if>
+      <if test="profileName != null" >
+        #{profileName,jdbcType=VARCHAR},
+      </if>
+      <if test="iconType != null" >
+        #{iconType,jdbcType=VARCHAR},
+      </if>
+      <if test="profileClass != null" >
+        #{profileClass,jdbcType=VARCHAR},
+      </if>
+      <if test="notifEvent != null" >
+        #{notifEvent,jdbcType=VARCHAR},
+      </if>
+      <if test="notifAddress != null" >
+        #{notifAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="profileOwner != null" >
+        #{profileOwner,jdbcType=VARCHAR},
+      </if>
+      <if test="smdpProprietaryData != null" >
+        #{smdpProprietaryData,jdbcType=VARCHAR},
+      </if>
+      <if test="ppr != null" >
+        #{ppr,jdbcType=VARCHAR},
+      </if>
+      <if test="profileType != null" >
+        #{profileType,jdbcType=VARCHAR},
+      </if>
+      <if test="hashCc != null" >
+        #{hashCc,jdbcType=VARCHAR},
+      </if>
+      <if test="matchingId != null" >
+        #{matchingId,jdbcType=VARCHAR},
+      </if>
+      <if test="msisdn != null" >
+        #{msisdn,jdbcType=VARCHAR},
+      </if>
+      <if test="lockVersion != null" >
+        #{lockVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="icon != null" >
+        #{icon,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="asnFile != null" >
+        #{asnFile,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="derFile != null" >
+        #{derFile,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whty.rsp.data.pojo.RspProfileExample" resultType="java.lang.Integer" >
+    select count(*) from rsp_profile
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update rsp_profile
+    <set >
+      <if test="record.iccid != null" >
+        iccid = #{record.iccid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isdPAid != null" >
+        isd_p_aid = #{record.isdPAid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.eid != null" >
+        eid = #{record.eid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.profileState != null" >
+        profile_state = #{record.profileState,jdbcType=VARCHAR},
+      </if>
+      <if test="record.profileNickName != null" >
+        profile_nick_name = #{record.profileNickName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.serviceProviderName != null" >
+        service_provider_name = #{record.serviceProviderName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.profileName != null" >
+        profile_name = #{record.profileName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.iconType != null" >
+        icon_type = #{record.iconType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.profileClass != null" >
+        profile_class = #{record.profileClass,jdbcType=VARCHAR},
+      </if>
+      <if test="record.notifEvent != null" >
+        notif_event = #{record.notifEvent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.notifAddress != null" >
+        notif_address = #{record.notifAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.profileOwner != null" >
+        profile_owner = #{record.profileOwner,jdbcType=VARCHAR},
+      </if>
+      <if test="record.smdpProprietaryData != null" >
+        smdp_proprietary_data = #{record.smdpProprietaryData,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ppr != null" >
+        PPR = #{record.ppr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.profileType != null" >
+        profile_type = #{record.profileType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hashCc != null" >
+        hash_cc = #{record.hashCc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.matchingId != null" >
+        matching_id = #{record.matchingId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.msisdn != null" >
+        msisdn = #{record.msisdn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lockVersion != null" >
+        lock_version = #{record.lockVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="record.icon != null" >
+        icon = #{record.icon,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.asnFile != null" >
+        asn_file = #{record.asnFile,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.derFile != null" >
+        der_file = #{record.derFile,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update rsp_profile
+    set iccid = #{record.iccid,jdbcType=VARCHAR},
+      isd_p_aid = #{record.isdPAid,jdbcType=VARCHAR},
+      eid = #{record.eid,jdbcType=VARCHAR},
+      profile_state = #{record.profileState,jdbcType=VARCHAR},
+      profile_nick_name = #{record.profileNickName,jdbcType=VARCHAR},
+      service_provider_name = #{record.serviceProviderName,jdbcType=VARCHAR},
+      profile_name = #{record.profileName,jdbcType=VARCHAR},
+      icon_type = #{record.iconType,jdbcType=VARCHAR},
+      profile_class = #{record.profileClass,jdbcType=VARCHAR},
+      notif_event = #{record.notifEvent,jdbcType=VARCHAR},
+      notif_address = #{record.notifAddress,jdbcType=VARCHAR},
+      profile_owner = #{record.profileOwner,jdbcType=VARCHAR},
+      smdp_proprietary_data = #{record.smdpProprietaryData,jdbcType=VARCHAR},
+      PPR = #{record.ppr,jdbcType=VARCHAR},
+      profile_type = #{record.profileType,jdbcType=VARCHAR},
+      hash_cc = #{record.hashCc,jdbcType=VARCHAR},
+      matching_id = #{record.matchingId,jdbcType=VARCHAR},
+      msisdn = #{record.msisdn,jdbcType=VARCHAR},
+      lock_version = #{record.lockVersion,jdbcType=VARCHAR},
+      icon = #{record.icon,jdbcType=LONGVARCHAR},
+      asn_file = #{record.asnFile,jdbcType=LONGVARCHAR},
+      der_file = #{record.derFile,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update rsp_profile
+    set iccid = #{record.iccid,jdbcType=VARCHAR},
+      isd_p_aid = #{record.isdPAid,jdbcType=VARCHAR},
+      eid = #{record.eid,jdbcType=VARCHAR},
+      profile_state = #{record.profileState,jdbcType=VARCHAR},
+      profile_nick_name = #{record.profileNickName,jdbcType=VARCHAR},
+      service_provider_name = #{record.serviceProviderName,jdbcType=VARCHAR},
+      profile_name = #{record.profileName,jdbcType=VARCHAR},
+      icon_type = #{record.iconType,jdbcType=VARCHAR},
+      profile_class = #{record.profileClass,jdbcType=VARCHAR},
+      notif_event = #{record.notifEvent,jdbcType=VARCHAR},
+      notif_address = #{record.notifAddress,jdbcType=VARCHAR},
+      profile_owner = #{record.profileOwner,jdbcType=VARCHAR},
+      smdp_proprietary_data = #{record.smdpProprietaryData,jdbcType=VARCHAR},
+      PPR = #{record.ppr,jdbcType=VARCHAR},
+      profile_type = #{record.profileType,jdbcType=VARCHAR},
+      hash_cc = #{record.hashCc,jdbcType=VARCHAR},
+      matching_id = #{record.matchingId,jdbcType=VARCHAR},
+      msisdn = #{record.msisdn,jdbcType=VARCHAR},
+      lock_version = #{record.lockVersion,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.rsp.data.pojo.RspProfileWithBLOBs" >
+    update rsp_profile
+    <set >
+      <if test="isdPAid != null" >
+        isd_p_aid = #{isdPAid,jdbcType=VARCHAR},
+      </if>
+      <if test="eid != null" >
+        eid = #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="profileState != null" >
+        profile_state = #{profileState,jdbcType=VARCHAR},
+      </if>
+      <if test="profileNickName != null" >
+        profile_nick_name = #{profileNickName,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceProviderName != null" >
+        service_provider_name = #{serviceProviderName,jdbcType=VARCHAR},
+      </if>
+      <if test="profileName != null" >
+        profile_name = #{profileName,jdbcType=VARCHAR},
+      </if>
+      <if test="iconType != null" >
+        icon_type = #{iconType,jdbcType=VARCHAR},
+      </if>
+      <if test="profileClass != null" >
+        profile_class = #{profileClass,jdbcType=VARCHAR},
+      </if>
+      <if test="notifEvent != null" >
+        notif_event = #{notifEvent,jdbcType=VARCHAR},
+      </if>
+      <if test="notifAddress != null" >
+        notif_address = #{notifAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="profileOwner != null" >
+        profile_owner = #{profileOwner,jdbcType=VARCHAR},
+      </if>
+      <if test="smdpProprietaryData != null" >
+        smdp_proprietary_data = #{smdpProprietaryData,jdbcType=VARCHAR},
+      </if>
+      <if test="ppr != null" >
+        PPR = #{ppr,jdbcType=VARCHAR},
+      </if>
+      <if test="profileType != null" >
+        profile_type = #{profileType,jdbcType=VARCHAR},
+      </if>
+      <if test="hashCc != null" >
+        hash_cc = #{hashCc,jdbcType=VARCHAR},
+      </if>
+      <if test="matchingId != null" >
+        matching_id = #{matchingId,jdbcType=VARCHAR},
+      </if>
+      <if test="msisdn != null" >
+        msisdn = #{msisdn,jdbcType=VARCHAR},
+      </if>
+      <if test="lockVersion != null" >
+        lock_version = #{lockVersion,jdbcType=VARCHAR} + 1,
+      </if>
+      <if test="icon != null" >
+        icon = #{icon,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="asnFile != null" >
+        asn_file = #{asnFile,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="derFile != null" >
+        der_file = #{derFile,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where iccid = #{iccid,jdbcType=VARCHAR} and lock_version = #{lockVersion,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.whty.rsp.data.pojo.RspProfileWithBLOBs" >
+    update rsp_profile
+    set isd_p_aid = #{isdPAid,jdbcType=VARCHAR},
+      eid = #{eid,jdbcType=VARCHAR},
+      profile_state = #{profileState,jdbcType=VARCHAR},
+      profile_nick_name = #{profileNickName,jdbcType=VARCHAR},
+      service_provider_name = #{serviceProviderName,jdbcType=VARCHAR},
+      profile_name = #{profileName,jdbcType=VARCHAR},
+      icon_type = #{iconType,jdbcType=VARCHAR},
+      profile_class = #{profileClass,jdbcType=VARCHAR},
+      notif_event = #{notifEvent,jdbcType=VARCHAR},
+      notif_address = #{notifAddress,jdbcType=VARCHAR},
+      profile_owner = #{profileOwner,jdbcType=VARCHAR},
+      smdp_proprietary_data = #{smdpProprietaryData,jdbcType=VARCHAR},
+      PPR = #{ppr,jdbcType=VARCHAR},
+      profile_type = #{profileType,jdbcType=VARCHAR},
+      hash_cc = #{hashCc,jdbcType=VARCHAR},
+      matching_id = #{matchingId,jdbcType=VARCHAR},
+      msisdn = #{msisdn,jdbcType=VARCHAR},
+      lock_version = #{lockVersion,jdbcType=VARCHAR} + 1,
+      icon = #{icon,jdbcType=LONGVARCHAR},
+      asn_file = #{asnFile,jdbcType=LONGVARCHAR},
+      der_file = #{derFile,jdbcType=LONGVARCHAR}
+    where iccid = #{iccid,jdbcType=VARCHAR} and lock_version = #{lockVersion,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.rsp.data.pojo.RspProfile" >
+    update rsp_profile
+    set isd_p_aid = #{isdPAid,jdbcType=VARCHAR},
+      eid = #{eid,jdbcType=VARCHAR},
+      profile_state = #{profileState,jdbcType=VARCHAR},
+      profile_nick_name = #{profileNickName,jdbcType=VARCHAR},
+      service_provider_name = #{serviceProviderName,jdbcType=VARCHAR},
+      profile_name = #{profileName,jdbcType=VARCHAR},
+      icon_type = #{iconType,jdbcType=VARCHAR},
+      profile_class = #{profileClass,jdbcType=VARCHAR},
+      notif_event = #{notifEvent,jdbcType=VARCHAR},
+      notif_address = #{notifAddress,jdbcType=VARCHAR},
+      profile_owner = #{profileOwner,jdbcType=VARCHAR},
+      smdp_proprietary_data = #{smdpProprietaryData,jdbcType=VARCHAR},
+      PPR = #{ppr,jdbcType=VARCHAR},
+      profile_type = #{profileType,jdbcType=VARCHAR},
+      hash_cc = #{hashCc,jdbcType=VARCHAR},
+      matching_id = #{matchingId,jdbcType=VARCHAR},
+      msisdn = #{msisdn,jdbcType=VARCHAR},
+      lock_version = #{lockVersion,jdbcType=VARCHAR} + 1
+    where iccid = #{iccid,jdbcType=VARCHAR} and lock_version = #{lockVersion,jdbcType=VARCHAR}
+  </update>
+</mapper>

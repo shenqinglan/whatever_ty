@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="euicc-webservice-mock"
+  id="myeclipse.1483592954918"
+  context-root="/euicc-webservice-mock"
+  j2ee-spec="6.0"
+  archive="euicc-webservice-mock.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+

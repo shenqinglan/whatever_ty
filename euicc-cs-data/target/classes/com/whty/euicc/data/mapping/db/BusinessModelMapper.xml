@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.euicc.data.dao.base.BusinessModelMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.euicc.data.pojo.BusinessModel" >
+    <result column="CODE" property="code" jdbcType="VARCHAR" />
+    <result column="PLATFORM_CODE" property="platformCode" jdbcType="VARCHAR" />
+    <result column="STATUS" property="status" jdbcType="VARCHAR" />
+    <result column="XML" property="xml" jdbcType="VARCHAR" />
+    <result column="TYPE" property="type" jdbcType="VARCHAR" />
+    <result column="DESCRIPTION" property="description" jdbcType="VARCHAR" />
+    <result column="STEPS" property="steps" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <trim prefix="where" prefixOverrides="and|or" >
+      <if test="condition.code != null" >
+         and CODE = #{condition.code}
+      </if>
+      <if test="condition.platformCode != null" >
+         and PLATFORM_CODE = #{condition.platformCode}
+      </if>
+      <if test="condition.status != null" >
+         and STATUS = #{condition.status}
+      </if>
+      <if test="condition.xml != null" >
+         and XML = #{condition.xml}
+      </if>
+      <if test="condition.type != null" >
+         and TYPE = #{condition.type}
+      </if>
+      <if test="condition.description != null" >
+         and DESCRIPTION = #{condition.description}
+      </if>
+      <if test="condition.steps != null" >
+         and STEPS = #{condition.steps}
+      </if>
+    </trim>
+  </sql>
+  <sql id="Base_Column_List" >
+   CODE, PLATFORM_CODE, STATUS, XML, TYPE,DESCRIPTION,STEPS
+  </sql>
+  
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.whty.euicc.data.dto.Criteria" >
+    
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from BUSINESS_MODEL
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    
+  </select>
+</mapper>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.efs.data.dao.EuiccCanonicalizationMethodTypeMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.efs.data.pojo.EuiccCanonicalizationMethodType" >
+    <id column="type_id" property="typeId" jdbcType="VARCHAR" />
+    <result column="signed_info_id" property="signedInfoId" jdbcType="VARCHAR" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+    <result column="algorithm" property="algorithm" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    type_id, signed_info_id, content, algorithm
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.whty.efs.data.pojo.EuiccCanonicalizationMethodTypeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from euicc_canonicalization_method_type
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from euicc_canonicalization_method_type
+    where type_id = #{typeId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from euicc_canonicalization_method_type
+    where type_id = #{typeId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteBySingedInfoId" parameterType="java.lang.String" >
+    delete from euicc_canonicalization_method_type
+    where signed_info_id = #{signedInfoId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whty.efs.data.pojo.EuiccCanonicalizationMethodTypeExample" >
+    delete from euicc_canonicalization_method_type
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whty.efs.data.pojo.EuiccCanonicalizationMethodType" >
+    insert into euicc_canonicalization_method_type (type_id, signed_info_id, content, 
+      algorithm)
+    values (#{typeId,jdbcType=VARCHAR}, #{signedInfoId,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{algorithm,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.efs.data.pojo.EuiccCanonicalizationMethodType" >
+    insert into euicc_canonicalization_method_type
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="typeId != null" >
+        type_id,
+      </if>
+      <if test="signedInfoId != null" >
+        signed_info_id,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+      <if test="algorithm != null" >
+        algorithm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="typeId != null" >
+        #{typeId,jdbcType=VARCHAR},
+      </if>
+      <if test="signedInfoId != null" >
+        #{signedInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="algorithm != null" >
+        #{algorithm,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whty.efs.data.pojo.EuiccCanonicalizationMethodTypeExample" resultType="java.lang.Integer" >
+    select count(*) from euicc_canonicalization_method_type
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update euicc_canonicalization_method_type
+    <set >
+      <if test="record.typeId != null" >
+        type_id = #{record.typeId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.signedInfoId != null" >
+        signed_info_id = #{record.signedInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.content != null" >
+        content = #{record.content,jdbcType=VARCHAR},
+      </if>
+      <if test="record.algorithm != null" >
+        algorithm = #{record.algorithm,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update euicc_canonicalization_method_type
+    set type_id = #{record.typeId,jdbcType=VARCHAR},
+      signed_info_id = #{record.signedInfoId,jdbcType=VARCHAR},
+      content = #{record.content,jdbcType=VARCHAR},
+      algorithm = #{record.algorithm,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.efs.data.pojo.EuiccCanonicalizationMethodType" >
+    update euicc_canonicalization_method_type
+    <set >
+      <if test="signedInfoId != null" >
+        signed_info_id = #{signedInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="algorithm != null" >
+        algorithm = #{algorithm,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where type_id = #{typeId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.efs.data.pojo.EuiccCanonicalizationMethodType" >
+    update euicc_canonicalization_method_type
+    set signed_info_id = #{signedInfoId,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      algorithm = #{algorithm,jdbcType=VARCHAR}
+    where type_id = #{typeId,jdbcType=VARCHAR}
+  </update>
+</mapper>

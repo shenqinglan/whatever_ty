@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.jeesite.modules.person.dao.GaHouseInfoDao">
+    
+	<sql id="gaHouseInfoColumns">
+		a.id AS "id",
+		a.area_id AS "areaId",
+		a.standard_address AS "standardAddress",
+		a.common_address AS "commonAddress",
+		a.gate_id AS "gateId",
+		a.room_no AS "roomNo",
+		a.house_type_code AS "houseTypeCode",
+		a.size AS "size",
+		a.issue_date AS "issueDate",
+		a.create_date AS "createDate",
+		a.update_date AS "updateDate",
+		a.remarks AS "remarks",
+		a.del_flag AS "delFlag"
+	</sql>
+	
+	<sql id="gaHouseInfoJoins">
+		LEFT JOIN sys_area a2 ON a2.id = a.area_id
+	</sql>
+    
+	<select id="get" resultType="GaHouseInfo">
+		SELECT 
+			<include refid="gaHouseInfoColumns"/>
+		FROM ga_house_info a
+		<include refid="gaHouseInfoJoins"/>
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="GaHouseInfo">
+		SELECT 
+			a.id AS "id",
+        a.area_id AS "areaId",
+        b.area_name as "areaName", 
+        a.standard_address AS "standardAddress",
+        a.common_address AS "commonAddress",
+        a.gate_id AS "gateId",
+        a.building_no AS "buildingNo",
+        a.unit_no AS "unitNo",
+        a.room_no AS "roomNo",
+        a.house_type_code AS "houseTypeCode",
+        a.size AS "size",
+        a.issue_date AS "issueDate",
+        a.create_date AS "createDate",
+        a.update_date AS "updateDate",
+        a.remarks AS "remarks",
+        a.del_flag AS "delFlag"
+		FROM ga_house_info a
+		left join ga_area_info b on a.area_id = b.id 
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+			<if test="areaId != null and areaId != ''">
+				AND a.area_id = #{areaId}
+			</if>
+			<if test="buildingNo != null and buildingNo != ''">
+				AND a.building_no = #{buildingNo}
+			</if>
+			<if test="unitNo != null and unitNo != ''">
+				AND a.unit_no = #{unitNo}
+			</if>
+			<if test="roomNo != null and roomNo != ''">
+				AND a.room_no = #{roomNo}
+			</if>
+		</where>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findAllList" resultType="GaHouseInfo">
+		SELECT 
+			<include refid="gaHouseInfoColumns"/>
+		FROM ga_house_info a
+		<include refid="gaHouseInfoJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+		</where>		
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO ga_house_info(
+			id,
+			area_id,
+			standard_address,
+			common_address,
+			gate_id,
+			building_no,
+            unit_no,
+			room_no,
+			house_type_code,
+			size,
+			issue_date,
+			create_date,
+			update_date,
+			remarks,
+			del_flag
+		) VALUES (
+			#{id},
+			#{areaId},
+			#{standardAddress},
+			#{commonAddress},
+			#{gateId},
+			#{buildingNo},
+            #{unitNo},
+			#{roomNo},
+			#{houseTypeCode},
+			#{size},
+			#{issueDate},
+			#{createDate},
+			#{updateDate},
+			#{remarks},
+			#{delFlag}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE ga_house_info SET 	
+			area_id = #{areaId},
+			standard_address = #{standardAddress},
+			common_address = #{commonAddress},
+			gate_id = #{gateId},
+			building_no = #{buildingNo},
+            unit_no = #{unitNo},
+			room_no = #{roomNo},
+			house_type_code = #{houseTypeCode},
+			size = #{size},
+			issue_date = #{issueDate},
+			update_date = #{updateDate},
+			remarks = #{remarks}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		UPDATE ga_house_info SET 
+			del_flag = #{DEL_FLAG_DELETE}
+		WHERE id = #{id}
+	</update>
+	
+</mapper>

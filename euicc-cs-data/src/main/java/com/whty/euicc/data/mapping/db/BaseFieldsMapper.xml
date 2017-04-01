@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.euicc.data.dao.base.BaseFieldsMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.euicc.data.pojo.BaseFields" >
+    <id column="FIELD_ID" property="fieldId" jdbcType="VARCHAR" />
+    <result column="FIELD" property="field" jdbcType="VARCHAR" />
+    <result column="FIELD_NAME" property="fieldName" jdbcType="VARCHAR" />
+    <result column="VALUE_FIELD" property="valueField" jdbcType="VARCHAR" />
+    <result column="DISPLAY_FIELD" property="displayField" jdbcType="VARCHAR" />
+    <result column="ENABLED" property="enabled" jdbcType="DECIMAL" />
+    <result column="SORT" property="sort" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <trim prefix="where" prefixOverrides="and|or" >
+      <if test="condition.field != null" >
+         and FIELD = #{condition.field}
+      </if>
+      <!-- <if test="condition.fieldName != null" >
+         and FIELD_NAME = #{condition.fieldName}
+      </if> -->
+      <if test="condition.valueField != null" >
+         and VALUE_FIELD = #{condition.valueField}
+      </if>
+      <if test="condition.displayField != null" >
+         and DISPLAY_FIELD = #{condition.displayField}
+      </if>
+      <if test="condition.enabled != null" >
+         and ENABLED = #{condition.enabled}
+      </if>
+      <if test="condition.sort != null" >
+         and SORT = #{condition.sort}
+      </if>
+    </trim>
+  </sql>
+  <sql id="Base_Column_List" >
+    FIELD_ID, FIELD, FIELD_NAME, VALUE_FIELD, DISPLAY_FIELD, ENABLED, SORT
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.whty.euicc.data.dto.Criteria" >
+    
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from BASE_FIELDS
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from BASE_FIELDS
+    where FIELD_ID = #{fieldId}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from BASE_FIELDS
+    where FIELD_ID = #{fieldId}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whty.euicc.data.dto.Criteria" >
+    delete from BASE_FIELDS
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="com.whty.euicc.data.dto.Criteria" resultType="java.lang.Integer" >
+    select count(*) from BASE_FIELDS
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update BASE_FIELDS
+    <set >
+      <if test="record.fieldId != null" >
+        FIELD_ID = #{record.fieldId},
+      </if>
+      <if test="record.field != null" >
+        FIELD = #{record.field},
+      </if>
+      <if test="record.fieldName != null" >
+        FIELD_NAME = #{record.fieldName},
+      </if>
+      <if test="record.valueField != null" >
+        VALUE_FIELD = #{record.valueField},
+      </if>
+      <if test="record.displayField != null" >
+        DISPLAY_FIELD = #{record.displayField},
+      </if>
+      <if test="record.enabled != null" >
+        ENABLED = #{record.enabled},
+      </if>
+      <if test="record.sort != null" >
+        SORT = #{record.sort},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update BASE_FIELDS
+    set FIELD_ID = #{record.fieldId},
+      FIELD = #{record.field},
+      FIELD_NAME = #{record.fieldName},
+      VALUE_FIELD = #{record.valueField},
+      DISPLAY_FIELD = #{record.displayField},
+      ENABLED = #{record.enabled},
+      SORT = #{record.sort}
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.euicc.data.pojo.BaseFields" >
+    update BASE_FIELDS
+    <set >
+      <if test="field != null" >
+        FIELD = #{field},
+      </if>
+      <if test="fieldName != null" >
+        FIELD_NAME = #{fieldName},
+      </if>
+      <if test="valueField != null" >
+        VALUE_FIELD = #{valueField},
+      </if>
+      <if test="displayField != null" >
+        DISPLAY_FIELD = #{displayField},
+      </if>
+      <if test="enabled != null" >
+        ENABLED = #{enabled},
+      </if>
+      <if test="sort != null" >
+        SORT = #{sort},
+      </if>
+    </set>
+    where FIELD_ID = #{fieldId}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.euicc.data.pojo.BaseFields" >
+    update BASE_FIELDS
+    set FIELD = #{field},
+      FIELD_NAME = #{fieldName},
+      VALUE_FIELD = #{valueField},
+      DISPLAY_FIELD = #{displayField},
+      ENABLED = #{enabled},
+      SORT = #{sort}
+    where FIELD_ID = #{fieldId}
+  </update>
+</mapper>

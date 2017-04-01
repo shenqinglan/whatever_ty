@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.efs.data.dao.EuiccKeyInfoTypeMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.efs.data.pojo.EuiccKeyInfoType" >
+    <id column="key_info_id" property="keyInfoId" jdbcType="VARCHAR" />
+    <result column="retrieval_id" property="retrievalId" jdbcType="VARCHAR" />
+    <result column="key_name" property="keyName" jdbcType="VARCHAR" />
+    <result column="p" property="p" jdbcType="VARCHAR" />
+    <result column="q" property="q" jdbcType="VARCHAR" />
+    <result column="g" property="g" jdbcType="VARCHAR" />
+    <result column="y" property="y" jdbcType="VARCHAR" />
+    <result column="j" property="j" jdbcType="VARCHAR" />
+    <result column="seed" property="seed" jdbcType="VARCHAR" />
+    <result column="pgen_counter" property="pgenCounter" jdbcType="VARCHAR" />
+    <result column="modulus" property="modulus" jdbcType="VARCHAR" />
+    <result column="exponent" property="exponent" jdbcType="VARCHAR" />
+    <result column="x509_subject_name" property="x509SubjectName" jdbcType="VARCHAR" />
+    <result column="x509_certificate" property="x509Certificate" jdbcType="VARCHAR" />
+    <result column="x509_issuer_name" property="x509IssuerName" jdbcType="VARCHAR" />
+    <result column="x509_serial_number" property="x509SerialNumber" jdbcType="VARCHAR" />
+    <result column="x509_ski" property="x509Ski" jdbcType="VARCHAR" />
+    <result column="x509_crl" property="x509Crl" jdbcType="VARCHAR" />
+    <result column="id" property="id" jdbcType="VARCHAR" />
+    <result column="p_gp_key_id" property="pGpKeyId" jdbcType="VARCHAR" />
+    <result column="s_pki_sexp" property="sPkiSexp" jdbcType="VARCHAR" />
+    <result column="mgmt_data" property="mgmtData" jdbcType="VARCHAR" />
+    <result column="p_gp_key_packet" property="pGpKeyPacket" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    key_info_id, retrieval_id, key_name, p, q, g, y, j, seed, pgen_counter, modulus, 
+    exponent, x509_subject_name, x509_certificate, x509_issuer_name, x509_serial_number, 
+    x509_ski, x509_crl, id, p_gp_key_id, s_pki_sexp, mgmt_data, p_gp_key_packet
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.whty.efs.data.pojo.EuiccKeyInfoTypeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from euicc_key_info_type
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from euicc_key_info_type
+    where key_info_id = #{keyInfoId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from euicc_key_info_type
+    where key_info_id = #{keyInfoId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whty.efs.data.pojo.EuiccKeyInfoTypeExample" >
+    delete from euicc_key_info_type
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whty.efs.data.pojo.EuiccKeyInfoType" >
+    insert into euicc_key_info_type (key_info_id, retrieval_id, key_name, 
+      p, q, g, y, 
+      j, seed, pgen_counter, 
+      modulus, exponent, x509_subject_name, 
+      x509_certificate, x509_issuer_name, x509_serial_number, 
+      x509_ski, x509_crl, id, 
+      p_gp_key_id, s_pki_sexp, mgmt_data, 
+      p_gp_key_packet)
+    values (#{keyInfoId,jdbcType=VARCHAR}, #{retrievalId,jdbcType=VARCHAR}, #{keyName,jdbcType=VARCHAR}, 
+      #{p,jdbcType=VARCHAR}, #{q,jdbcType=VARCHAR}, #{g,jdbcType=VARCHAR}, #{y,jdbcType=VARCHAR}, 
+      #{j,jdbcType=VARCHAR}, #{seed,jdbcType=VARCHAR}, #{pgenCounter,jdbcType=VARCHAR}, 
+      #{modulus,jdbcType=VARCHAR}, #{exponent,jdbcType=VARCHAR}, #{x509SubjectName,jdbcType=VARCHAR}, 
+      #{x509Certificate,jdbcType=VARCHAR}, #{x509IssuerName,jdbcType=VARCHAR}, #{x509SerialNumber,jdbcType=VARCHAR}, 
+      #{x509Ski,jdbcType=VARCHAR}, #{x509Crl,jdbcType=VARCHAR}, #{id,jdbcType=VARCHAR}, 
+      #{pGpKeyId,jdbcType=VARCHAR}, #{sPkiSexp,jdbcType=VARCHAR}, #{mgmtData,jdbcType=VARCHAR}, 
+      #{pGpKeyPacket,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.efs.data.pojo.EuiccKeyInfoType" >
+    insert into euicc_key_info_type
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="keyInfoId != null" >
+        key_info_id,
+      </if>
+      <if test="retrievalId != null" >
+        retrieval_id,
+      </if>
+      <if test="keyName != null" >
+        key_name,
+      </if>
+      <if test="p != null" >
+        p,
+      </if>
+      <if test="q != null" >
+        q,
+      </if>
+      <if test="g != null" >
+        g,
+      </if>
+      <if test="y != null" >
+        y,
+      </if>
+      <if test="j != null" >
+        j,
+      </if>
+      <if test="seed != null" >
+        seed,
+      </if>
+      <if test="pgenCounter != null" >
+        pgen_counter,
+      </if>
+      <if test="modulus != null" >
+        modulus,
+      </if>
+      <if test="exponent != null" >
+        exponent,
+      </if>
+      <if test="x509SubjectName != null" >
+        x509_subject_name,
+      </if>
+      <if test="x509Certificate != null" >
+        x509_certificate,
+      </if>
+      <if test="x509IssuerName != null" >
+        x509_issuer_name,
+      </if>
+      <if test="x509SerialNumber != null" >
+        x509_serial_number,
+      </if>
+      <if test="x509Ski != null" >
+        x509_ski,
+      </if>
+      <if test="x509Crl != null" >
+        x509_crl,
+      </if>
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="pGpKeyId != null" >
+        p_gp_key_id,
+      </if>
+      <if test="sPkiSexp != null" >
+        s_pki_sexp,
+      </if>
+      <if test="mgmtData != null" >
+        mgmt_data,
+      </if>
+      <if test="pGpKeyPacket != null" >
+        p_gp_key_packet,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="keyInfoId != null" >
+        #{keyInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="retrievalId != null" >
+        #{retrievalId,jdbcType=VARCHAR},
+      </if>
+      <if test="keyName != null" >
+        #{keyName,jdbcType=VARCHAR},
+      </if>
+      <if test="p != null" >
+        #{p,jdbcType=VARCHAR},
+      </if>
+      <if test="q != null" >
+        #{q,jdbcType=VARCHAR},
+      </if>
+      <if test="g != null" >
+        #{g,jdbcType=VARCHAR},
+      </if>
+      <if test="y != null" >
+        #{y,jdbcType=VARCHAR},
+      </if>
+      <if test="j != null" >
+        #{j,jdbcType=VARCHAR},
+      </if>
+      <if test="seed != null" >
+        #{seed,jdbcType=VARCHAR},
+      </if>
+      <if test="pgenCounter != null" >
+        #{pgenCounter,jdbcType=VARCHAR},
+      </if>
+      <if test="modulus != null" >
+        #{modulus,jdbcType=VARCHAR},
+      </if>
+      <if test="exponent != null" >
+        #{exponent,jdbcType=VARCHAR},
+      </if>
+      <if test="x509SubjectName != null" >
+        #{x509SubjectName,jdbcType=VARCHAR},
+      </if>
+      <if test="x509Certificate != null" >
+        #{x509Certificate,jdbcType=VARCHAR},
+      </if>
+      <if test="x509IssuerName != null" >
+        #{x509IssuerName,jdbcType=VARCHAR},
+      </if>
+      <if test="x509SerialNumber != null" >
+        #{x509SerialNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="x509Ski != null" >
+        #{x509Ski,jdbcType=VARCHAR},
+      </if>
+      <if test="x509Crl != null" >
+        #{x509Crl,jdbcType=VARCHAR},
+      </if>
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="pGpKeyId != null" >
+        #{pGpKeyId,jdbcType=VARCHAR},
+      </if>
+      <if test="sPkiSexp != null" >
+        #{sPkiSexp,jdbcType=VARCHAR},
+      </if>
+      <if test="mgmtData != null" >
+        #{mgmtData,jdbcType=VARCHAR},
+      </if>
+      <if test="pGpKeyPacket != null" >
+        #{pGpKeyPacket,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whty.efs.data.pojo.EuiccKeyInfoTypeExample" resultType="java.lang.Integer" >
+    select count(*) from euicc_key_info_type
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update euicc_key_info_type
+    <set >
+      <if test="record.keyInfoId != null" >
+        key_info_id = #{record.keyInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.retrievalId != null" >
+        retrieval_id = #{record.retrievalId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.keyName != null" >
+        key_name = #{record.keyName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.p != null" >
+        p = #{record.p,jdbcType=VARCHAR},
+      </if>
+      <if test="record.q != null" >
+        q = #{record.q,jdbcType=VARCHAR},
+      </if>
+      <if test="record.g != null" >
+        g = #{record.g,jdbcType=VARCHAR},
+      </if>
+      <if test="record.y != null" >
+        y = #{record.y,jdbcType=VARCHAR},
+      </if>
+      <if test="record.j != null" >
+        j = #{record.j,jdbcType=VARCHAR},
+      </if>
+      <if test="record.seed != null" >
+        seed = #{record.seed,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pgenCounter != null" >
+        pgen_counter = #{record.pgenCounter,jdbcType=VARCHAR},
+      </if>
+      <if test="record.modulus != null" >
+        modulus = #{record.modulus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.exponent != null" >
+        exponent = #{record.exponent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.x509SubjectName != null" >
+        x509_subject_name = #{record.x509SubjectName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.x509Certificate != null" >
+        x509_certificate = #{record.x509Certificate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.x509IssuerName != null" >
+        x509_issuer_name = #{record.x509IssuerName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.x509SerialNumber != null" >
+        x509_serial_number = #{record.x509SerialNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.x509Ski != null" >
+        x509_ski = #{record.x509Ski,jdbcType=VARCHAR},
+      </if>
+      <if test="record.x509Crl != null" >
+        x509_crl = #{record.x509Crl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pGpKeyId != null" >
+        p_gp_key_id = #{record.pGpKeyId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sPkiSexp != null" >
+        s_pki_sexp = #{record.sPkiSexp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mgmtData != null" >
+        mgmt_data = #{record.mgmtData,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pGpKeyPacket != null" >
+        p_gp_key_packet = #{record.pGpKeyPacket,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update euicc_key_info_type
+    set key_info_id = #{record.keyInfoId,jdbcType=VARCHAR},
+      retrieval_id = #{record.retrievalId,jdbcType=VARCHAR},
+      key_name = #{record.keyName,jdbcType=VARCHAR},
+      p = #{record.p,jdbcType=VARCHAR},
+      q = #{record.q,jdbcType=VARCHAR},
+      g = #{record.g,jdbcType=VARCHAR},
+      y = #{record.y,jdbcType=VARCHAR},
+      j = #{record.j,jdbcType=VARCHAR},
+      seed = #{record.seed,jdbcType=VARCHAR},
+      pgen_counter = #{record.pgenCounter,jdbcType=VARCHAR},
+      modulus = #{record.modulus,jdbcType=VARCHAR},
+      exponent = #{record.exponent,jdbcType=VARCHAR},
+      x509_subject_name = #{record.x509SubjectName,jdbcType=VARCHAR},
+      x509_certificate = #{record.x509Certificate,jdbcType=VARCHAR},
+      x509_issuer_name = #{record.x509IssuerName,jdbcType=VARCHAR},
+      x509_serial_number = #{record.x509SerialNumber,jdbcType=VARCHAR},
+      x509_ski = #{record.x509Ski,jdbcType=VARCHAR},
+      x509_crl = #{record.x509Crl,jdbcType=VARCHAR},
+      id = #{record.id,jdbcType=VARCHAR},
+      p_gp_key_id = #{record.pGpKeyId,jdbcType=VARCHAR},
+      s_pki_sexp = #{record.sPkiSexp,jdbcType=VARCHAR},
+      mgmt_data = #{record.mgmtData,jdbcType=VARCHAR},
+      p_gp_key_packet = #{record.pGpKeyPacket,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.efs.data.pojo.EuiccKeyInfoType" >
+    update euicc_key_info_type
+    <set >
+      <if test="retrievalId != null" >
+        retrieval_id = #{retrievalId,jdbcType=VARCHAR},
+      </if>
+      <if test="keyName != null" >
+        key_name = #{keyName,jdbcType=VARCHAR},
+      </if>
+      <if test="p != null" >
+        p = #{p,jdbcType=VARCHAR},
+      </if>
+      <if test="q != null" >
+        q = #{q,jdbcType=VARCHAR},
+      </if>
+      <if test="g != null" >
+        g = #{g,jdbcType=VARCHAR},
+      </if>
+      <if test="y != null" >
+        y = #{y,jdbcType=VARCHAR},
+      </if>
+      <if test="j != null" >
+        j = #{j,jdbcType=VARCHAR},
+      </if>
+      <if test="seed != null" >
+        seed = #{seed,jdbcType=VARCHAR},
+      </if>
+      <if test="pgenCounter != null" >
+        pgen_counter = #{pgenCounter,jdbcType=VARCHAR},
+      </if>
+      <if test="modulus != null" >
+        modulus = #{modulus,jdbcType=VARCHAR},
+      </if>
+      <if test="exponent != null" >
+        exponent = #{exponent,jdbcType=VARCHAR},
+      </if>
+      <if test="x509SubjectName != null" >
+        x509_subject_name = #{x509SubjectName,jdbcType=VARCHAR},
+      </if>
+      <if test="x509Certificate != null" >
+        x509_certificate = #{x509Certificate,jdbcType=VARCHAR},
+      </if>
+      <if test="x509IssuerName != null" >
+        x509_issuer_name = #{x509IssuerName,jdbcType=VARCHAR},
+      </if>
+      <if test="x509SerialNumber != null" >
+        x509_serial_number = #{x509SerialNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="x509Ski != null" >
+        x509_ski = #{x509Ski,jdbcType=VARCHAR},
+      </if>
+      <if test="x509Crl != null" >
+        x509_crl = #{x509Crl,jdbcType=VARCHAR},
+      </if>
+      <if test="id != null" >
+        id = #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="pGpKeyId != null" >
+        p_gp_key_id = #{pGpKeyId,jdbcType=VARCHAR},
+      </if>
+      <if test="sPkiSexp != null" >
+        s_pki_sexp = #{sPkiSexp,jdbcType=VARCHAR},
+      </if>
+      <if test="mgmtData != null" >
+        mgmt_data = #{mgmtData,jdbcType=VARCHAR},
+      </if>
+      <if test="pGpKeyPacket != null" >
+        p_gp_key_packet = #{pGpKeyPacket,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where key_info_id = #{keyInfoId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.efs.data.pojo.EuiccKeyInfoType" >
+    update euicc_key_info_type
+    set retrieval_id = #{retrievalId,jdbcType=VARCHAR},
+      key_name = #{keyName,jdbcType=VARCHAR},
+      p = #{p,jdbcType=VARCHAR},
+      q = #{q,jdbcType=VARCHAR},
+      g = #{g,jdbcType=VARCHAR},
+      y = #{y,jdbcType=VARCHAR},
+      j = #{j,jdbcType=VARCHAR},
+      seed = #{seed,jdbcType=VARCHAR},
+      pgen_counter = #{pgenCounter,jdbcType=VARCHAR},
+      modulus = #{modulus,jdbcType=VARCHAR},
+      exponent = #{exponent,jdbcType=VARCHAR},
+      x509_subject_name = #{x509SubjectName,jdbcType=VARCHAR},
+      x509_certificate = #{x509Certificate,jdbcType=VARCHAR},
+      x509_issuer_name = #{x509IssuerName,jdbcType=VARCHAR},
+      x509_serial_number = #{x509SerialNumber,jdbcType=VARCHAR},
+      x509_ski = #{x509Ski,jdbcType=VARCHAR},
+      x509_crl = #{x509Crl,jdbcType=VARCHAR},
+      id = #{id,jdbcType=VARCHAR},
+      p_gp_key_id = #{pGpKeyId,jdbcType=VARCHAR},
+      s_pki_sexp = #{sPkiSexp,jdbcType=VARCHAR},
+      mgmt_data = #{mgmtData,jdbcType=VARCHAR},
+      p_gp_key_packet = #{pGpKeyPacket,jdbcType=VARCHAR}
+    where key_info_id = #{keyInfoId,jdbcType=VARCHAR}
+  </update>
+</mapper>

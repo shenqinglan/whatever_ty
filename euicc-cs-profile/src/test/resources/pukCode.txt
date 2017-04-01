@@ -1,0 +1,17 @@
+pukVal ProfileElement ::= pukCodes : { 
+  puk-Header { 
+    mandated NULL, 
+    identification 2 
+  }, 
+  pukCodes { 
+		{ 
+			keyReference pukAppl1, 
+			pukValue '3238353634333833'H, 
+			maxNumOfAttemps-retryNumLeft 153 
+		}, 
+		{ 
+			keyReference pukAppl2, 
+			pukValue '3437383937383736'H 
+		}
+	} 
+} 

@@ -1,0 +1,92 @@
+package $!{bean.basePackage}.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import java.util.List;
+import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
+import com.github.miemiedev.mybatis.paginator.domain.PageList;
+import $!{bean.basePackage}.pojo.$!{bean.name};
+import $!{bean.basePackage}.pojo.$!{bean.name}Example;
+import $!{bean.basePackage}.dao.$!{bean.name}Mapper;
+import $!{bean.basePackage}.service.$!{bean.name}Service;
+/**
+ * @author $!{annotation.authorName}
+ * @date $!{annotation.date}
+ *
+ * @version $!{annotation.version}
+ */
+@Service
+@Transactional
+public class $!{bean.name}ServiceImpl implements $!{bean.name}Service{
+
+	@Autowired
+	private $!{bean.name}Mapper $!{bean.varName}Mapper;
+
+	/**
+     * 根据条件插入记录
+     * @dzmsoftgenerated $!{annotation.date}
+     */
+	public int insertSelective($!{bean.name} record){
+		return $!{bean.varName}Mapper.insertSelective(record);
+	}
+	
+	/**
+     * 根据主键查询记录
+     * @dzmsoftgenerated $!{annotation.date}
+     */
+	public $!{bean.name} selectByPrimaryKey(String id){
+		return $!{bean.varName}Mapper.selectByPrimaryKey(id);
+	}
+	
+	/**
+     * 分页查询记录
+     * @dzmsoftgenerated $!{annotation.date}
+     */
+	public PageList<$!{bean.name}> selectByExample($!{bean.name}Example example,PageBounds pageBounds){
+		return $!{bean.varName}Mapper.selectByExample(example, pageBounds);
+	}
+	
+	/**
+     * 根据条件查询记录
+     * @dzmsoftgenerated $!{annotation.date}
+     */
+	public List<$!{bean.name}> selectByExample($!{bean.name}Example example){
+		return $!{bean.varName}Mapper.selectByExample(example);
+	}
+	
+	/**
+     * 根据主键更新记录
+     * @dzmsoftgenerated $!{annotation.date}
+     */
+	public int updateByPrimaryKeySelective($!{bean.name} record){
+		return $!{bean.varName}Mapper.updateByPrimaryKeySelective(record);
+	}
+	
+	/**
+     * 根据查询条件更新记录
+     * @dzmsoftgenerated $!{annotation.date}
+     */
+	public int updateByExampleSelective($!{bean.name} record,
+			$!{bean.name}Example example){
+		return $!{bean.varName}Mapper.updateByExampleSelective(record, example);
+	}
+	
+	/**
+     * 根据主键生成记录
+     * @dzmsoftgenerated $!{annotation.date}
+     */
+	public int deleteByPrimaryKey(String id){
+		return $!{bean.varName}Mapper.deleteByPrimaryKey(id);
+	}
+	
+	/**
+	 * 根据条件删除字段信息
+	 * @dzmsoftgenerated $!{annotation.date}
+	 * @param example
+	 * @return
+	 */
+	public int deleteByExample($!{bean.name}Example example){
+		return $!{bean.varName}Mapper.deleteByExample(example);
+	}
+}

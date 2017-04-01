@@ -1,0 +1,16 @@
+usim-val ProfileElement ::= genericFileManagement : {
+usim-header {
+    mandated NULL,
+    identification 4
+  },
+createFCP :{
+      fileDescriptor '4121'H,     
+      fileID '6f08'H,
+      securityAttributesReferenced '05'H,
+      efFileSize '21'H,  
+      shortEFID '40'H,
+      proprietaryEFInfo {  
+      fillPattern '07FF'H 
+      } 
+    },
+  }

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.efs.data.dao.EuiccPropertyTypeMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.efs.data.pojo.EuiccPropertyType" >
+    <id column="property_id" property="propertyId" jdbcType="VARCHAR" />
+    <result column="eid" property="eid" jdbcType="VARCHAR" />
+    <result column="property_key" property="propertyKey" jdbcType="VARCHAR" />
+    <result column="property_value" property="propertyValue" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    property_id, eid, property_key, property_value
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.whty.efs.data.pojo.EuiccPropertyTypeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from euicc_property_type
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from euicc_property_type
+    where property_id = #{propertyId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from euicc_property_type
+    where property_id = #{propertyId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByEid" parameterType="java.lang.String" >
+    delete from euicc_property_type
+    where eid = #{eid,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whty.efs.data.pojo.EuiccPropertyTypeExample" >
+    delete from euicc_property_type
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whty.efs.data.pojo.EuiccPropertyType" >
+    insert into euicc_property_type (property_id, eid, property_key, 
+      property_value)
+    values (#{propertyId,jdbcType=VARCHAR}, #{eid,jdbcType=VARCHAR}, #{propertyKey,jdbcType=VARCHAR}, 
+      #{propertyValue,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.efs.data.pojo.EuiccPropertyType" >
+    insert into euicc_property_type
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="propertyId != null" >
+        property_id,
+      </if>
+      <if test="eid != null" >
+        eid,
+      </if>
+      <if test="propertyKey != null" >
+        property_key,
+      </if>
+      <if test="propertyValue != null" >
+        property_value,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="propertyId != null" >
+        #{propertyId,jdbcType=VARCHAR},
+      </if>
+      <if test="eid != null" >
+        #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyKey != null" >
+        #{propertyKey,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyValue != null" >
+        #{propertyValue,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whty.efs.data.pojo.EuiccPropertyTypeExample" resultType="java.lang.Integer" >
+    select count(*) from euicc_property_type
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update euicc_property_type
+    <set >
+      <if test="record.propertyId != null" >
+        property_id = #{record.propertyId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.eid != null" >
+        eid = #{record.eid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.propertyKey != null" >
+        property_key = #{record.propertyKey,jdbcType=VARCHAR},
+      </if>
+      <if test="record.propertyValue != null" >
+        property_value = #{record.propertyValue,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update euicc_property_type
+    set property_id = #{record.propertyId,jdbcType=VARCHAR},
+      eid = #{record.eid,jdbcType=VARCHAR},
+      property_key = #{record.propertyKey,jdbcType=VARCHAR},
+      property_value = #{record.propertyValue,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.efs.data.pojo.EuiccPropertyType" >
+    update euicc_property_type
+    <set >
+      <if test="eid != null" >
+        eid = #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyKey != null" >
+        property_key = #{propertyKey,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyValue != null" >
+        property_value = #{propertyValue,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where property_id = #{propertyId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.efs.data.pojo.EuiccPropertyType" >
+    update euicc_property_type
+    set eid = #{eid,jdbcType=VARCHAR},
+      property_key = #{propertyKey,jdbcType=VARCHAR},
+      property_value = #{propertyValue,jdbcType=VARCHAR}
+    where property_id = #{propertyId,jdbcType=VARCHAR}
+  </update>
+</mapper>

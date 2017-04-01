@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LPA</string>
+    <string name="title_scan">扫描</string>
+    <string name="title_res">结果</string>
+    <string name="title_log">记录</string>
+	<string name="scan_tip">请将条形码/二维码置于取景框内</string>
+	<string name="copy_right">QR二维码扫描\n\nBy:limengwei\n892642257@qq.com</string>
+	<string name="def_text">当你不能够再拥有的时候,你唯一能做的就是令自己不要忘记.</string>
+	<string name="def_time">00:00 30&#8211;09&#8211;1990 </string>
+	<string name="contentDescription">图片描述</string>
+	<string name="download_install_title">下载安装</string>
+	<string name="local_manager_title">本地管理</string>
+
+</resources>

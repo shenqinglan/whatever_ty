@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whty.efs.data.dao.BaseInfoDao">
+   
+    <resultMap id="BaseResultMap" type="com.whty.efs.data.pojo.BaseInfo">
+        <result property="channel_code" column="channel_code"/>
+        <result property="channel_name" column="channel_name"/>
+		<result property="tag_code" column="tag_code"/>
+		<result property="tag_name" column="tag_name"/>
+		<result property="enable_flag" column="enable_flag"/>
+	</resultMap>
+	
+	
+     <sql id="Example_Where_Clause" >
+	    <trim prefix="where" prefixOverrides="and|or" > 
+	      <if test="condition.channel_code != null" >
+	         and channel_code = #{condition.channel_code}
+	      </if>
+	      <if test="condition.channel_name != null" >
+	         and channel_name = #{condition.channel_name}
+	      </if>
+	      <if test="condition.tag_code != null" >
+	         and tag_code = #{condition.tag_code}
+	      </if>
+	      <if test="condition.tag_name != null" >
+	         and tag_name = #{condition.tag_name}
+	      </if>
+	      <if test="condition.enable_flag != null" >
+	         and enable_flag = #{condition.enable_flag}
+	      </if>
+	    </trim>
+  </sql>
+  <sql id="Base_Column_List" >
+    channel_code,channel_name,tag_code,tag_name,enable_flag
+  </sql>
+  
+  <select id="getBaseInfos" resultMap="BaseResultMap" parameterType="com.whty.efs.data.dto.Criteria" > 
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from TB_FRONT_BASE_INFO
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+   
+  </select>
+	
+</mapper>

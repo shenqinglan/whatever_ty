@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:add="http://www.w3.org/2005/08/addressing" xmlns:ns="http://namespaces.gsma.org/esim-messaging/3">
+   <soap:Header>
+      <add:Action>1</add:Action>
+      <add:MessageID>5</add:MessageID>
+      <add:To>3</add:To>
+      <add:From>
+         <add:Address>4</add:Address>
+         <!--Optional:-->
+         <add:ReferenceParameters>
+            <!--You may enter ANY elements at this point-->
+         </add:ReferenceParameters>
+         <!--Optional:-->
+         <add:Metadata>
+            <!--You may enter ANY elements at this point-->
+         </add:Metadata>
+         <!--You may enter ANY elements at this point-->
+      </add:From>
+   </soap:Header>
+   <soap:Body>
+      <ns:ES2-HandleProfileDeletedNotification>
+         <ns:Eid>89001012012341234012345678901224</ns:Eid>
+         <ns:Iccid>00</ns:Iccid>
+         <ns:CompletionTimestamp>2017-01-09T16:15:15.448+08:00</ns:CompletionTimestamp>
+      </ns:ES2-HandleProfileDeletedNotification>
+   </soap:Body>
+</soap:Envelope>

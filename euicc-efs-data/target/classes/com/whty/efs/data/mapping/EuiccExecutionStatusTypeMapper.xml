@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.efs.data.dao.EuiccExecutionStatusTypeMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.efs.data.pojo.EuiccExecutionStatusType" >
+    <id column="status_id" property="statusId" jdbcType="VARCHAR" />
+    <result column="audit_id" property="auditId" jdbcType="VARCHAR" />
+    <result column="status_type" property="statusType" jdbcType="VARCHAR" />
+    <result column="subject" property="subject" jdbcType="VARCHAR" />
+    <result column="reason" property="reason" jdbcType="VARCHAR" />
+    <result column="subject_identifier" property="subjectIdentifier" jdbcType="VARCHAR" />
+    <result column="message" property="message" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    status_id, audit_id, status_type, subject, reason, subject_identifier, message
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.whty.efs.data.pojo.EuiccExecutionStatusTypeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from euicc_execution_status_type
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from euicc_execution_status_type
+    where status_id = #{statusId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from euicc_execution_status_type
+    where status_id = #{statusId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByAuditId" parameterType="java.lang.String" >
+    delete from euicc_execution_status_type
+    where audit_id = #{auditId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whty.efs.data.pojo.EuiccExecutionStatusTypeExample" >
+    delete from euicc_execution_status_type
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whty.efs.data.pojo.EuiccExecutionStatusType" >
+    insert into euicc_execution_status_type (status_id, audit_id, status_type, 
+      subject, reason, subject_identifier, 
+      message)
+    values (#{statusId,jdbcType=VARCHAR}, #{auditId,jdbcType=VARCHAR}, #{statusType,jdbcType=VARCHAR}, 
+      #{subject,jdbcType=VARCHAR}, #{reason,jdbcType=VARCHAR}, #{subjectIdentifier,jdbcType=VARCHAR}, 
+      #{message,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.efs.data.pojo.EuiccExecutionStatusType" >
+    insert into euicc_execution_status_type
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="statusId != null" >
+        status_id,
+      </if>
+      <if test="auditId != null" >
+        audit_id,
+      </if>
+      <if test="statusType != null" >
+        status_type,
+      </if>
+      <if test="subject != null" >
+        subject,
+      </if>
+      <if test="reason != null" >
+        reason,
+      </if>
+      <if test="subjectIdentifier != null" >
+        subject_identifier,
+      </if>
+      <if test="message != null" >
+        message,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="statusId != null" >
+        #{statusId,jdbcType=VARCHAR},
+      </if>
+      <if test="auditId != null" >
+        #{auditId,jdbcType=VARCHAR},
+      </if>
+      <if test="statusType != null" >
+        #{statusType,jdbcType=VARCHAR},
+      </if>
+      <if test="subject != null" >
+        #{subject,jdbcType=VARCHAR},
+      </if>
+      <if test="reason != null" >
+        #{reason,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectIdentifier != null" >
+        #{subjectIdentifier,jdbcType=VARCHAR},
+      </if>
+      <if test="message != null" >
+        #{message,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whty.efs.data.pojo.EuiccExecutionStatusTypeExample" resultType="java.lang.Integer" >
+    select count(*) from euicc_execution_status_type
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update euicc_execution_status_type
+    <set >
+      <if test="record.statusId != null" >
+        status_id = #{record.statusId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.auditId != null" >
+        audit_id = #{record.auditId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.statusType != null" >
+        status_type = #{record.statusType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.subject != null" >
+        subject = #{record.subject,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reason != null" >
+        reason = #{record.reason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.subjectIdentifier != null" >
+        subject_identifier = #{record.subjectIdentifier,jdbcType=VARCHAR},
+      </if>
+      <if test="record.message != null" >
+        message = #{record.message,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update euicc_execution_status_type
+    set status_id = #{record.statusId,jdbcType=VARCHAR},
+      audit_id = #{record.auditId,jdbcType=VARCHAR},
+      status_type = #{record.statusType,jdbcType=VARCHAR},
+      subject = #{record.subject,jdbcType=VARCHAR},
+      reason = #{record.reason,jdbcType=VARCHAR},
+      subject_identifier = #{record.subjectIdentifier,jdbcType=VARCHAR},
+      message = #{record.message,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.efs.data.pojo.EuiccExecutionStatusType" >
+    update euicc_execution_status_type
+    <set >
+      <if test="auditId != null" >
+        audit_id = #{auditId,jdbcType=VARCHAR},
+      </if>
+      <if test="statusType != null" >
+        status_type = #{statusType,jdbcType=VARCHAR},
+      </if>
+      <if test="subject != null" >
+        subject = #{subject,jdbcType=VARCHAR},
+      </if>
+      <if test="reason != null" >
+        reason = #{reason,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectIdentifier != null" >
+        subject_identifier = #{subjectIdentifier,jdbcType=VARCHAR},
+      </if>
+      <if test="message != null" >
+        message = #{message,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where status_id = #{statusId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.efs.data.pojo.EuiccExecutionStatusType" >
+    update euicc_execution_status_type
+    set audit_id = #{auditId,jdbcType=VARCHAR},
+      status_type = #{statusType,jdbcType=VARCHAR},
+      subject = #{subject,jdbcType=VARCHAR},
+      reason = #{reason,jdbcType=VARCHAR},
+      subject_identifier = #{subjectIdentifier,jdbcType=VARCHAR},
+      message = #{message,jdbcType=VARCHAR}
+    where status_id = #{statusId,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:add="http://www.w3.org/2005/08/addressing" xmlns:ns="http://namespaces.gsma.org/esim-messaging/3" xmlns:xd="http://www.w3.org/2000/09/xmldsig#">
+   <soap:Header>
+      <add:Action>?</add:Action>
+      <add:MessageID>?</add:MessageID>
+      <add:To>?</add:To>
+      <add:From>
+         <add:Address>?</add:Address>
+         <!--Optional:-->
+         <add:ReferenceParameters>
+            <!--You may enter ANY elements at this point-->
+         </add:ReferenceParameters>
+         <!--Optional:-->
+         <add:Metadata>
+            <!--You may enter ANY elements at this point-->
+         </add:Metadata>
+         <!--You may enter ANY elements at this point-->
+      </add:From>
+   </soap:Header>
+   <soap:Body>
+      <ns:ES4-HandleSMSRChangeNotification>
+         <ns:Eis>
+            <ns:EumSignedInfo>
+               <ns:Eid>cid:1420483190941</ns:Eid>
+               <ns:Eum-id>?</ns:Eum-id>
+               <ns:ProductionDate>?</ns:ProductionDate>
+               <ns:PlatformType>?</ns:PlatformType>
+               <ns:PlatformVersion>?</ns:PlatformVersion>
+               <ns:Isd-p-loadfile-aid>cid:1019873812592</ns:Isd-p-loadfile-aid>
+               <ns:Isd-p-module-aid>cid:401619109301</ns:Isd-p-module-aid>
+               <ns:Ecasd>
+                  <ns:Aid>cid:302614948161</ns:Aid>
+                  <!--Zero or more repetitions:-->
+                  <ns:Tar>cid:608332677548</ns:Tar>
+                  <ns:Sin>cid:476945062569</ns:Sin>
+                  <ns:Sdin>cid:264111183060</ns:Sdin>
+                  <ns:Role>?</ns:Role>
+                  <!--1 to 127 repetitions:-->
+                  <ns:Keyset>
+                     <ns:Version>?</ns:Version>
+                     <!--Optional:-->
+                     <ns:Type>?</ns:Type>
+                     <!--Optional:-->
+                     <ns:Cntr>?</ns:Cntr>
+                     <!--You have a CHOICE of the next 2 items at this level-->
+                     <ns:Key kcv="cid:212391121566">
+                        <ns:Index>?</ns:Index>
+                        <!--1 or more repetitions:-->
+                        <ns:KeyComponents type="cid:1340294794566" value="cid:1479136166174"/>
+                     </ns:Key>
+                     <ns:Certificate>
+                        <ns:Index>?</ns:Index>
+                        <ns:CaId>?</ns:CaId>
+                        <ns:Value>cid:1242094901443</ns:Value>
+                     </ns:Certificate>
+                  </ns:Keyset>
+               </ns:Ecasd>
+               <ns:EuiccCapabilities>
+                  <ns:CattpSupport>?</ns:CattpSupport>
+                  <!--Optional:-->
+                  <ns:CattpVersion>?</ns:CattpVersion>
+                  <ns:HttpSupport>?</ns:HttpSupport>
+                  <!--Optional:-->
+                  <ns:HttpVersion>?</ns:HttpVersion>
+                  <ns:SecurePacketVersion>?</ns:SecurePacketVersion>
+                  <ns:RemoteProvisioningVersion>?</ns:RemoteProvisioningVersion>
+               </ns:EuiccCapabilities>
+            </ns:EumSignedInfo>
+            <ns:EumSignature Id="?">
+               <xd:SignedInfo Id="?">
+                  <xd:CanonicalizationMethod Algorithm="?">
+                     e
+                     <!--You may enter ANY elements at this point-->
+                     gero
+                  </xd:CanonicalizationMethod>
+                  <xd:SignatureMethod Algorithm="?">
+                     cum
+                     <!--Optional:-->
+                     <xd:HMACOutputLength>?</xd:HMACOutputLength>
+                     sonoras
+                     <!--You may enter ANY elements at this point-->
+                     aeoliam
+                  </xd:SignatureMethod>
+                  <!--1 or more repetitions:-->
+                  <xd:Reference Id="?" URI="?" Type="?">
+                     <!--Optional:-->
+                     <xd:Transforms>
+                        <!--1 or more repetitions:-->
+                        <xd:Transform Algorithm="?">
+                           quae
+                           <!--You have a CHOICE of the next 2 items at this level-->
+                           <!--You may enter ANY elements at this point-->
+                           <xd:XPath>?</xd:XPath>
+                           ventos
+                        </xd:Transform>
+                     </xd:Transforms>
+                     <xd:DigestMethod Algorithm="?">
+                        verrantque
+                        <!--You may enter ANY elements at this point-->
+                        temperat
+                     </xd:DigestMethod>
+                     <xd:DigestValue>cid:38699452374</xd:DigestValue>
+                  </xd:Reference>
+               </xd:SignedInfo>
+               <xd:SignatureValue Id="?">cid:436381488575</xd:SignatureValue>
+               <!--Optional:-->
+               <xd:KeyInfo Id="?">
+                  per
+                  <!--You have a CHOICE of the next 8 items at this level-->
+                  <xd:KeyName>?</xd:KeyName>
+                  <xd:KeyValue>
+                     turbine
+                     <!--You have a CHOICE of the next 3 items at this level-->
+                     <xd:DSAKeyValue>
+                        <xd:P>cid:239914629747</xd:P>
+                        <xd:Q>cid:1233662936021</xd:Q>
+                        <!--Optional:-->
+                        <xd:G>cid:607729461447</xd:G>
+                        <xd:Y>cid:1302433238836</xd:Y>
+                        <!--Optional:-->
+                        <xd:J>cid:1390921865274</xd:J>
+                        <xd:Seed>cid:857221749276</xd:Seed>
+                        <xd:PgenCounter>cid:1274966881617</xd:PgenCounter>
+                     </xd:DSAKeyValue>
+                     <xd:RSAKeyValue>
+                        <xd:Modulus>cid:919628980728</xd:Modulus>
+                        <xd:Exponent>cid:2655691746</xd:Exponent>
+                     </xd:RSAKeyValue>
+                     <!--You may enter ANY elements at this point-->
+                     circum
+                  </xd:KeyValue>
+                  <xd:RetrievalMethod URI="?" Type="?">
+                     <!--Optional:-->
+                     <xd:Transforms>
+                        <!--1 or more repetitions:-->
+                        <xd:Transform Algorithm="?">
+                           regemque
+                           <!--You have a CHOICE of the next 2 items at this level-->
+                           <!--You may enter ANY elements at this point-->
+                           <xd:XPath>?</xd:XPath>
+                           nimborum
+                        </xd:Transform>
+                     </xd:Transforms>
+                  </xd:RetrievalMethod>
+                  <xd:X509Data>
+                     <!--You have a CHOICE of the next 6 items at this level-->
+                     <xd:X509IssuerSerial>
+                        <xd:X509IssuerName>?</xd:X509IssuerName>
+                        <xd:X509SerialNumber>?</xd:X509SerialNumber>
+                     </xd:X509IssuerSerial>
+                     <xd:X509SKI>cid:419684833563</xd:X509SKI>
+                     <xd:X509SubjectName>?</xd:X509SubjectName>
+                     <xd:X509Certificate>cid:549099455886</xd:X509Certificate>
+                     <xd:X509CRL>cid:452702934270</xd:X509CRL>
+                     <!--You may enter ANY elements at this point-->
+                  </xd:X509Data>
+                  <xd:PGPData>
+                     <!--You have a CHOICE of the next 2 items at this level-->
+                     <xd:PGPKeyID>cid:1309129171442</xd:PGPKeyID>
+                     <!--Optional:-->
+                     <xd:PGPKeyPacket>cid:1170192761003</xd:PGPKeyPacket>
+                     <!--You may enter ANY elements at this point-->
+                     <xd:PGPKeyPacket>cid:129286786338</xd:PGPKeyPacket>
+                     <!--You may enter ANY elements at this point-->
+                  </xd:PGPData>
+                  <xd:SPKIData>
+                     <xd:SPKISexp>cid:1016653038644</xd:SPKISexp>
+                     <!--You may enter ANY elements at this point-->
+                  </xd:SPKIData>
+                  <xd:MgmtData>?</xd:MgmtData>
+                  <!--You may enter ANY elements at this point-->
+                  fremunt
+               </xd:KeyInfo>
+               <!--Zero or more repetitions:-->
+               <xd:Object Id="?" MimeType="?" Encoding="?">
+                  foedere
+                  <!--You may enter ANY elements at this point-->
+                  ferant
+               </xd:Object>
+            </ns:EumSignature>
+            <ns:RemainingMemory>?</ns:RemainingMemory>
+            <ns:AvailableMemoryForProfiles>?</ns:AvailableMemoryForProfiles>
+            <!--Optional:-->
+            <ns:LastAuditDate>?</ns:LastAuditDate>
+            <ns:Smsr-id>?</ns:Smsr-id>
+            <!--Zero or more repetitions:-->
+            <ns:ProfileInfo>
+               <ns:Iccid>?</ns:Iccid>
+               <ns:Isd-p-aid>cid:964960686683</ns:Isd-p-aid>
+               <ns:Mno-id>?</ns:Mno-id>
+               <ns:FallbackAttribute>?</ns:FallbackAttribute>
+               <ns:SubscriptionAddress>
+                  <!--Optional:-->
+                  <ns:Imsi>?</ns:Imsi>
+                  <!--Optional:-->
+                  <ns:Msisdn>?</ns:Msisdn>
+               </ns:SubscriptionAddress>
+               <ns:State>?</ns:State>
+               <!--Optional:-->
+               <ns:Smdp-id>?</ns:Smdp-id>
+               <!--Optional:-->
+               <ns:ProfileType>?</ns:ProfileType>
+               <ns:AllocatedMemory>?</ns:AllocatedMemory>
+               <!--Optional:-->
+               <ns:FreeMemory>?</ns:FreeMemory>
+               <ns:pol2>
+                  <!--Zero or more repetitions:-->
+                  <ns:Rule>
+                     <ns:Subject>?</ns:Subject>
+                     <ns:Action>?</ns:Action>
+                     <ns:Qualification>?</ns:Qualification>
+                  </ns:Rule>
+               </ns:pol2>
+            </ns:ProfileInfo>
+            <ns:Isd-r>
+               <ns:Aid>cid:482183801579</ns:Aid>
+               <!--Zero or more repetitions:-->
+               <ns:Tar>cid:90422634578</ns:Tar>
+               <ns:Sin>cid:689952397614</ns:Sin>
+               <ns:Sdin>cid:282814933245</ns:Sdin>
+               <ns:Role>?</ns:Role>
+               <!--1 to 127 repetitions:-->
+               <ns:Keyset>
+                  <ns:Version>?</ns:Version>
+                  <!--Optional:-->
+                  <ns:Type>?</ns:Type>
+                  <!--Optional:-->
+                  <ns:Cntr>?</ns:Cntr>
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <ns:Key kcv="cid:1249349231201">
+                     <ns:Index>?</ns:Index>
+                     <!--1 or more repetitions:-->
+                     <ns:KeyComponents type="cid:683794039287" value="cid:1130951001045"/>
+                  </ns:Key>
+                  <ns:Certificate>
+                     <ns:Index>?</ns:Index>
+                     <ns:CaId>?</ns:CaId>
+                     <ns:Value>cid:985325682511</ns:Value>
+                  </ns:Certificate>
+               </ns:Keyset>
+            </ns:Isd-r>
+            <!--Optional:-->
+            <ns:AuditTrail>
+               <!--Zero or more repetitions:-->
+               <ns:Record>
+                  <ns:Eid>cid:1142931699635</ns:Eid>
+                  <ns:Smsr-id>?</ns:Smsr-id>
+                  <ns:OperationDate>?</ns:OperationDate>
+                  <ns:OperationType>cid:206482032291</ns:OperationType>
+                  <!--Optional:-->
+                  <ns:RequesterId>?</ns:RequesterId>
+                  <!--Optional:-->
+                  <ns:OperationExecutionStatus>
+                     <ns:Status>?</ns:Status>
+                     <!--Optional:-->
+                     <ns:StatusCodeData>
+                        <ns:Subject>?</ns:Subject>
+                        <ns:Reason>?</ns:Reason>
+                        <!--Optional:-->
+                        <ns:SubjectIdentifier>?</ns:SubjectIdentifier>
+                        <!--Optional:-->
+                        <ns:Message>?</ns:Message>
+                     </ns:StatusCodeData>
+                  </ns:OperationExecutionStatus>
+                  <!--Optional:-->
+                  <ns:Isd-p-aid>cid:725993805580</ns:Isd-p-aid>
+                  <!--Optional:-->
+                  <ns:Iccid>?</ns:Iccid>
+                  <!--Optional:-->
+                  <ns:Imei>cid:778337471074</ns:Imei>
+                  <!--Optional:-->
+                  <ns:Meid>cid:1147849762720</ns:Meid>
+               </ns:Record>
+            </ns:AuditTrail>
+            <!--Optional:-->
+            <ns:AdditionalProperties>
+               <!--1 or more repetitions:-->
+               <ns:Property key="?" value="?"/>
+            </ns:AdditionalProperties>
+         </ns:Eis>
+         <ns:CompletionTimestamp>?</ns:CompletionTimestamp>
+      </ns:ES4-HandleSMSRChangeNotification>
+   </soap:Body>
+</soap:Envelope>

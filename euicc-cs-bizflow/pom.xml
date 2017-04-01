@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+	<groupId>com.whty</groupId>
+	<artifactId>euicc-cs-parent</artifactId>
+	<version>0.0.1</version>
+    <relativePath>../euicc-cs-parent/pom.xml</relativePath>
+  </parent>
+  <artifactId>euicc-cs-bizflow</artifactId>
+  <version>0.0.1</version>
+  <packaging>jar</packaging>
+
+  <name>euicc-cs-bizflow</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+      
+      <dependency>
+          <groupId>xpp3</groupId>
+          <artifactId>xpp3</artifactId>
+      </dependency>
+      <dependency>
+          <groupId>com.whty</groupId>
+          <artifactId>flow_core</artifactId>
+          <version>0.0.2</version>
+      </dependency>
+      <dependency>
+          <groupId>com.whty</groupId>
+          <artifactId>flow_builder</artifactId>
+          <version>0.0.2</version>
+      </dependency>
+      <dependency>
+          <groupId>com.whty</groupId>
+          <artifactId>flow_storage</artifactId>
+          <version>0.0.2</version>
+      </dependency>
+      <dependency>
+          <groupId>com.whty</groupId>
+          <artifactId>euicc-cs-task</artifactId>
+          <version>0.0.1</version>
+      </dependency>
+     
+  </dependencies>
+</project>

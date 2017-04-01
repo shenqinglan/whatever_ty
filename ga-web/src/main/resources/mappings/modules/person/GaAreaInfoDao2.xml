@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.jeesite.modules.person.dao.GaAreaInfoDao2">
+    
+	<select id="findList" resultType="GaAreaInfo2">
+		SELECT 
+            d.area_name as "area", 
+            c.person_type_code as "personType", 
+            c.name as "name", 
+            c.id_card_no as "idCardNo", 
+            b.standard_address as "house" 
+        FROM ga_card_info a 
+        inner join ga_house_info b on a.house_id = b.id 
+        inner join ga_person_info c on a.person_id = c.id 
+        inner join ga_area_info d on b.area_id = d.id 
+        <where>
+            a.del_flag = #{DEL_FLAG_NORMAL} 
+            <if test="areaId != null and areaId != ''">
+                AND d.id = #{areaId}
+            </if>
+            <if test="personType != null and personType != ''">
+                AND c.person_type_code = #{personType} 
+            </if>
+        </where>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				
+			</otherwise>
+		</choose>
+	</select>
+	
+</mapper>

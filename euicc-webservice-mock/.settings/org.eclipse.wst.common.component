@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="euicc-webservice-mock">
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
+        <dependent-module archiveName="euicc-efs-common-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/euicc-efs-common/euicc-efs-common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="/euicc-webservice-mock"/>
+        <property name="java-output-path" value="/euicc-webservice-mock/src/main/webapp/WEB-INF/classes"/>
+    </wb-module>
+</project-modules>

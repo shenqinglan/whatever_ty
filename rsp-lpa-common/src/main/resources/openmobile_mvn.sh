@@ -1,0 +1,1 @@
+mvn install:install-file  -Dfile=org.simalliance.openmobileapi.jar  -DgroupId=org.simalliance  -DartifactId=openmobileapi -Dversion=0.1.0 -Dpackaging=jar

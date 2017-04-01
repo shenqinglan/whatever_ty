@@ -1,0 +1,30 @@
+Taken from http://www.smssolutions.net/tutorials/smpp/smppdeliveryreports/
+
+Request delivery reports from the provider
+The best way to check the status of each message sent, is to ask for delivery reports. This can be done by setting the 'registered_delivery' value of the 'submit_sm' packet. This parameter can have one of the following values:
+
+Value	Meaning
+0	Do not send delivery reports
+1	Always send delivery reports
+2	Send delivery report in case of an error
+3	Send delivery report only when message is delivered
+
+By setting this value to '1', the provider will send a delivery report to the client every time the status of this message changes. You can set this value per message.
+The delivery reports are sent to the client using the 'deliver_sm' packet. This is the same packet as used to deliver incoming messages. To detect whether a 'deliver_sm' is a delivery report or a message, you have to check the 'esm_class' field. If bit 2 of this byte is set ( 0x04 ), it is a delivery report. To use delivery reports, you have to setup a transceiver connection to the SMPP provider, because you are going to send and receive messages. The delivery status is encoded in the 'short_message' field as an ASCII text message. This format is product specific, but the following format is used by most SMPP providers:
+
+id:c449ab9744f47b6af1879e49e75e4f40 sub:001 dlvrd:0 submit date:0610191018 done date:0610191018 stat:ACCEPTD err:0 text:This is an Acti
+id:7220bb6bd0be98fa628de66590f80070 sub:001 dlvrd:1 submit date:0610190851 done date:0610190951 stat:DELIVRD err:0 text:This is an Acti
+id:b756c4f97aa2e1e67377dffc5e2f7d9b sub:001 dlvrd:0 submit date:0610191211 done date:0610191211 stat:REJECTD err:1 text:This is an Acti
+id:bd778cd76ae9e79da2ddc8188c68f8c1 sub:001 dlvrd:0 submit date:0610191533 done date:0610191539 stat:UNDELIV err:1 text:This is an Acti
+
+Field	Meaning
+id	The message reference of the message.
+sub	Sub-ID, not used.
+dlvrd	Value '1' when the message has been delivered, if the message is still pending '0'.
+submit date	Submission date and time.
+done date	Date and time the status has changed, or message delivery time when stat is set to 'DELIVRD'.
+stat	Current status of the message.
+err	Additional error code, provider specific.
+text	Part of the original message text.
+
+When using SMPP version 3.4, sometimes the message has some optional parameters (TLV's) attached containing the message state, message reference and a network error code. Please refer to the SMPP version 3.4 documentation on how to use these TLV's.

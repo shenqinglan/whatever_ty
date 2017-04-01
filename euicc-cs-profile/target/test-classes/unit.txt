@@ -1,0 +1,10 @@
+akaParamValue ProfileElement ::= akaParameter : {
+aka-header {
+identification 5
+},
+algorithmID milenage,
+algorithmOptions '00'H,
+algoConfiguration algoParameter : {
+key '465B5CE8B199B49FAA5F0A2EE238A6BC'H,
+opc 'CD63CB71954A9F4E48A5994E37A02BAF'H
+}

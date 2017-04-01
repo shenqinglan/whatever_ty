@@ -1,0 +1,24 @@
+ pe-opt-usim ProfileElement ::= genericFileManagement : {
+ createFCP :{
+      fileDescriptor '46210003'H,     
+      fileID '6f39'H,
+      securityAttributesReferenced '0a'H,
+      efFileSize '3c'H,  
+      shortEFID 'e0'H,
+      proprietaryEFInfo { 
+      fillPattern '00'H
+      	 }
+    },
+   createFCP :{
+      fileDescriptor '4121'H,     
+      fileID '6f3e'H,
+      securityAttributesReferenced '06'H,
+      efFileSize '01'H  
+      },
+   createFCP :{
+     	fileDescriptor '4121'H,
+      fileID '6f3f'H,
+      securityAttributesReferenced '06'H,
+      efFileSize '01'H  
+      },
+    }

@@ -1,0 +1,689 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+
+
+
+<title>ISMS - interactive SMS. SMPP,SMS,WAP,USSD. Технологии, сервисы, советы. ПО для контент-провайдеров.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="article_files/styles.css" type="text/css" rel="stylesheet">
+</head><body> <script type="text/javascript">
+<!-- 
+function ff(){if(typeof document.compatMode!='undefined'&&document.compatMode!='BackCompat'){DOCtp="_top:expression(document.documentElement.scrollTop+document.documentElement.clientHeight-this.clientHeight);left:expression(document.documentElement.scrollLeft + document.documentElement.clientWidth - offsetWidth);}";}else{DOCtp="_top:expression(document.body.scrollTop+document.body.clientHeight-this.clientHeight);left:expression(document.body.scrollLeft + document.body.clientWidth - offsetWidth);}";}var tl_fixedCSS='#beabb{position:fixed;_position:absolute;bottom:0px;right:0px;';var tl_fixedCSS=tl_fixedCSS+DOCtp;document.write('<style type="text/css">'+tl_fixedCSS+'</style>');}ff();
+--></script><style type="text/css">#beabb{position:fixed;_position:absolute;bottom:0px;right:0px;_top:expression(document.documentElement.scrollTop+document.documentElement.clientHeight-this.clientHeight);left:expression(document.documentElement.scrollLeft + document.documentElement.clientWidth - offsetWidth);}</style><div id="beabb"><ul><li><h1 style="margin: 0px; visibility: visible; text-decoration: underline; color: brown; font-size: 9px; line-height: 11px; background-color: rgb(255, 255, 255); font-family: Verdana; text-align: left;"><a style="color: black;" href="http://relaxfan.best-host.ru/" name="relaxfan" title="relaxfan" target="_blank" hreflang="ru" dir="ltr" lang="ru">relaxfan</a></h1></li><table align="left" cellpadding="0" cellspacing="0"><tbody><tr><td width="200"><li><p style="margin: 0px; visibility: visible; text-decoration: underline; color: brown; font-size: 9px; line-height: 11px; background-color: rgb(255, 255, 255); font-family: Verdana; text-align: left;"><!-- 5/07/2007 --><br><!--1cb69--><br></p></li></td></tr></tbody></table></ul></div>
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td width="610">
+<img src="article_files/isms_en.gif" alt="Interactive SMS" align="left" width="600" height="40">
+</td>
+<td class="small">
+&nbsp;
+<!--
+<form style="margin: 0; padding: 0 0 2px;" action="http://money.yandex.ru/donate.xml" method="post">
+<input type="hidden" name="to" value="4100181142341"/>
+<input type="hidden" name="s5" value="1rub"/>
+<input type="submit" value="Дай рубль"/></form>
+ -->
+<div style="font-size: 1px;">
+<a href="http://www.isms.ru/smpp.html" title="SMPP">SMPP</a>
+</div>
+</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- #exec cgi="/cgi-bin/menu.pl?script=articles" -->
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td style="width: 5px;">
+&nbsp;
+</td>
+
+
+<td class="m2_1">&nbsp;</td>
+<td class="m2"><a class="m2a" href="http://www.isms.ru/index.shtml">О проекте</a></td>
+<td class="m2_2">&nbsp;</td>
+
+<td class="m2_1">&nbsp;</td>
+<td class="m2"><a class="m2a" href="http://www.isms.ru/faq.shtml">Вопросы и ответы</a></td>
+<td class="m2_2">&nbsp;</td>
+
+<td class="m2_1">&nbsp;</td>
+<td class="m2"><a class="m2a" href="http://www.isms.ru/articles.shtml">Статьи</a></td>
+<td class="m2_2">&nbsp;</td>
+
+<td class="m2_1">&nbsp;</td>
+<td class="m2"><a class="m2a" href="http://www.isms.ru/archiv.shtml">Архив</a></td>
+<td class="m2_2">&nbsp;</td>
+
+<td class="m2_1">&nbsp;</td>
+<td class="m2"><a class="m2a" href="http://www.isms.ru/util.shtml">Утилиты</a></td>
+<td class="m2_2">&nbsp;</td>
+
+<td class="m2_1">&nbsp;</td>
+<td class="m2"><a class="m2a" href="http://www.isms.ru/prog.shtml">Программы</a></td>
+<td class="m2_2">&nbsp;</td>
+
+<td class="m2_1">&nbsp;</td>
+<td class="m2"><a class="m2a" href="http://www.isms.ru/connection.shtml">Обратная связь</a></td>
+<td class="m2_2">&nbsp;</td>
+
+<td style="width: 5px;">
+&nbsp;
+</td>
+</tr>
+</tbody></table>
+
+
+
+<table class="m4" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="m4_1">
+<br>
+<span class="header"><span class="i">Примеры создания и кодирования EMS</span></span>
+<br>
+<br><span class="header">Пример 1: Форматированный текст.</span>
+<br>Кодирование текста "Example <b>bold</b> text" со словом "bold", выделенным  жирным шрифтом.
+<div style="margin-left: 20px;">
+<samp>
+<br>UDH=050A03090213
+<br>где UDH:
+<br>05 - длина UDH (5 октетов). 
+<br>0A - форматированный текст 
+<br>03 - описание форматирования (3 октета) 
+<br>09 - порядковый номер первого выделенного символа
+<br>04 - длина выделенного фрагмента 
+<br>13 - какое форматирование применять (00010011 = выделение жирным шрифтом)
+</samp>
+</div>
+<br><span class="header">Пример 2: Предопределенная мелодия</span>
+<br>Во многих МТ производителем зашиты т.н. предопределенные мелодии.
+Посредством EMS можно заставить МТ проиграть ту или иную мелодию.
+<br>Для предопределенной мелодии № 3:
+<div style="margin-left: 20px;">
+<samp>
+<br>UDH=040B020003
+<br>где UDH:
+<br>04 - длина UDH (4 октетов). 
+<br>0B - предопределенная мелодия.
+<br>02 - описание предопределенной мелодии (2 октета). 
+<br>00 - когда мелодия должна проигрываться (00 - в начале SMS).
+<br>03 - номер предопределенной мелодии.
+</samp>
+</div>
+<br><span class="header">Пример 3: Загружаемый рисунок 16*16Б</span>
+<br>Для рисунка 16*16 пикселей необходимо 32 байта (16*16 / 8 = 32).
+<div style="margin-left: 20px;">
+<samp>
+<br>UDH=23112100800000000D000F800FC00FE01FF03FF83FF83FC838C838F838F838F800000001
+<br>где UDH:
+<br>23 - длина UDH (35 октетов).
+<br>11 - рисунок  (16*16 = 32 байта) 
+<br>21 - длина байткода рисунка  (33 октета).
+<br>00 - в каком месте SMS расположен рисунок (00 - в начале SMS)
+</samp>
+</div>
+<br>Далее идет байткод рисунка, начиная с верхнего левого угла 8000 0000 0D00 и заканчивая правым нижним углом 0000 0001.
+<div style="margin-left: 20px; letter-spacing: -1px; line-height: 0.7;">
+<samp>
+<br>1000000000000000
+<br>0000000000000000
+<br>0000110100000000
+<br>0000111110000000
+<br>0000111111000000
+<br>0000111111100000
+<br>0001111111110000
+<br>0011111111111000
+<br>0011111111111000
+<br>0011111111001000
+<br>0011100011001000
+<br>0011100011111000
+<br>0011100011111000
+<br>0011100011111000
+<br>0000000000000000
+<br>0000000000000001
+</samp>
+</div>
+<br><span class="header">Пример 4: Загружаемая мелодия</span>
+<br>Длина загружаемой мелодии может быть до 128 байт.
+<div style="margin-left: 20px;">
+<samp>
+<br>UDH=820C8000424547494E3A494D454C4F44590D0A56455253494F4E3A312E30
+<br>0D0A464F524D41543A434C415353312E300D0A4D454C4F44593A2A336633
+<br>663366332363312364332364332364336331723366336633663323633323
+<br>663323663323663366332A342363332363332363332A332361310D0A454E
+<br>443A494D454C4F44590D0A
+<br>где UDH:
+<br>82 - длина UDH (130 октетов).
+<br>0C - загружаемая мелодия.
+<br>80 - длина биткода мелодии (128 октетов).
+<br>00 - когда мелодия должна проигрываться (00 - в начале SMS).
+</samp>
+</div>
+<br>Далее идет байткод мелодии (9-ая симфония Бетховена):
+<div style="margin-left: 20px;">
+<samp>
+<br>BEGIN:IMELODY 
+<br>424547494E3A494D454C4F44590D0A
+<br>VERSION:1.0 
+<br>56455253494F4E3A312E300D0A
+<br>FORMAT:CLASS1.0 
+<br>464F524D41543A434C415353312E300D0A
+<br>MELODY:*3f3f3f3*c1*d3*d3*d3c1r3f3f3f3*c3*f3*f3*f3f3*4*c3*c3*c3*3*a1 
+<br>4D454C4F44593A2A336633663366332363312364332364332364336331723366336633
+<br>663323633323663323663323663366332A342363332363332363332A332361310D0A
+<br>END:IMELODY 
+<br>454E443A494D454C4F44590D0A
+</samp>
+</div>
+<br>
+<br><span class="header">Пример 5: Мультипликация</span>
+<div style="margin-left: 20px;">
+<samp>
+<br>UDH=230F2100000000FF0000000080200401004400101010101010101
+<br>0108142241818244281
+<br>23 - длина UDH (35 октетов)
+<br>0F - мультипликация 
+<br>21 - длина байткода (33 октетов) 
+<br>00 - где находится объект (00 - в начале сообщения)
+<br>000000FF00000000  -  рисунок 1 (горизонтальная линия) 
+<br>8020040100440010 - рисунок 2 (случайные точки) 
+<br>1010101010101010 - рисунок 3 (вертикальная линия) 
+<br>8142241818244281 - рисунок 4 (крест)
+</samp>
+</div>
+<br>
+<br><span class="header">Пример 6: Мультипликация (большие изображения)</span>
+<div style="margin-left: 20px;">
+<samp>
+<br>UDH=830E810000003FFE40014FF9500553E5541555D55555545553955
+<br>0154FE540053FF900013FFF40004FFC500253F2540A55CA552A55AA542A53
+<br>CA500A4F F240023FFC000080009FFCA002A7F2A80AA9CAAA2AAAAAABAAA8
+<br>2AA7CAA00A9FF280027FFC000000003FFC40024FF2500A53CA542A55AA54A
+<br>A53AA502A4FCA400A3FF20002FFFC
+<br>83 - длина UDH (131 октет)
+<br>0E - мультипликация
+<br>81 - длина байткода (33 октетов) 
+<br>00 - где находится объект (00 - в начале сообщения)
+<br>00003FFE40014FF9500553E5541555D555555455539550154FE540053FF90001 - рисунок 1 (вращающаяся улитка)
+<br>3FFF40004FFC500253F2540A55CA552A55AA542A53CA500A4FF240023FFC0000 - рисунок 2 
+<br>80009FFCA002A7F2A80AA9CAAA2AAAAAABAAA82AA7CAA00A9FF280027FFC0000 - рисунок 3 
+<br>00003FFC40024FF2500A53CA542A55AA54AA53AA502A4FCA400A3FF20002FFFC - рисунок 4
+</samp>
+</div>
+<br>
+<br><span class="header">Пример 7: Склеивание сообщений</span>
+<br>
+Первое сообщение: 
+<div style="margin-left: 20px;">
+<samp>
+<br>UDH=050003FF0201 
+<br>Данные = "Это - очень длинный текст - намного больше чем 160 символов ......"
+</samp>
+</div>
+Второе сообщение:
+<div style="margin-left: 20px;">
+<samp>
+<br>UDH=050003FF0202 
+<br>Данные = "А это - вторая часть,  blablabla ..."
+<br>Где UDH:
+<br>05 - UDHL (длина заголовка) 
+<br>00 - IEI (склеенное сообщение) 
+<br>03 - IEIL (количество октетов, описывающих конкатенацию) 
+<br>FF - любое случайное число (использующееся для различия разных склеенных сообщений) 
+<br>02 - сколько сообщений склеиваются
+<br>01 - порядковый номер сообщения 
+</samp>
+</div>
+<br>
+<br><span class="header">Пример 8: ODI - Object Distribution Indicator</span>
+<div style="margin-left: 20px;">
+<samp>
+<br>UDH=2717020101112100800000000D000F800FC00FE01FF03FF83FF83
+<br>FC838C838F838F838F800000001
+<br>27 - длина UDH (39 октетов) 
+<br>17 - ODI 
+<br>02 - длина описания (2 октета) 
+<br>01 
+<br>01 
+<br>11 - рисунок (16*16 = 32 байта) 
+<br>21 - длина байткода рисунка (33 октета)
+<br>00 - месторасположение рисунка
+<br>8000 0000 0D00 0F80 0FC0 0FE0 1FF0 3FF8 3FF8 3FC8 38C8
+<br>38F8 38F8 38F8 0000 0001
+</samp>
+</div>
+<br>
+<br><span class="header">Пример 9: UPI - User Prompt Indicator</span>
+<div style="margin-left: 20px;">
+<samp>
+<br>UDH=49130102112100800000000D000F800FC00FE01FF03FF83FF83FC
+<br>838C838F838F838F800000001112100800000000D000F800FC00FE01F
+<br>F03FF83FF83F C838C838F838F838F800000001
+<br>49 - длина UDH (73 октета) 
+<br>13 - UPI
+<br>01 - длина описания (1 октета) 
+<br>02 
+<br>11 - рисунок (16*16 = 32 байта) 
+<br>21 - длина байткода рисунка (33 октета)
+<br>00 - месторасположение рисунка
+<br>8000 0000 0D00 0F80 0FC0 0FE0 1FF0 3FF8 3FF8 3FC8 38C8
+<br>38F8 38F8 38F8 0000 0001
+<br>11 - рисунок (16*16 = 32 байта) 
+<br>21 - длина байткода рисунка (33 октета)
+<br>00 - месторасположение рисунка
+<br>8000 0000 0D00 0F80 0FC0 0FE0 1FF0 3FF8 3FF8 3FC8 38C8
+<br>38F8 38F8 38F8 0000 0001
+</samp>
+</div>
+<br>
+<br><span class="header">Пример 10: склеивание ODI и UPI </span>
+<br>
+<table class="small" border="0" cellpadding="0" cellspacing="0" width="300">
+<tbody><tr>
+<th class="td1_1" width="100">Значение (Hex)</th>
+<th class="td1_1" width="100">Длина (байт)</th>
+<th class="td1_1" width="100">Описание</th>
+</tr>
+<tr><th class="td1_2">7C</th><td class="td1_2">1</td><td class="td1_2">UDHL</td></tr>
+<tr><th class="td1_1">0003FF0301</th><td class="td1_1">5</td><td class="td1_1">concat</td></tr>
+<tr><th class="td1_2">1702040X</th><td class="td1_2">4</td><td class="td1_2">ODI</td></tr>
+<tr><th class="td1_1">130104</th><td class="td1_1">3</td><td class="td1_1">UPI</td></tr>
+<tr><th class="td1_2">127300041C</th><td class="td1_2">&nbsp;</td><td class="td1_2">IMGheader</td></tr>
+<tr><th class="td1_1">70</th><td class="td1_1">&nbsp;</td><td class="td1_1">IMG (32*28)</td></tr>
+<tr><td colspan="3" class="td1_2">&nbsp;</td></tr>
+</tbody></table>
+<div style="margin-left: 20px;">
+<samp>
+FF - случайное число
+<br>X=0 - возврат разрешен
+<br>X=1 - возврат запрещен
+</samp>
+</div>
+<table class="default" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td width="20">81</td><td width="80">0003FF0301</td><td width="70">17020400</td><td width="60">130103</td><td width="80">127300041C</td><td width="100">(112 октетов)</td></tr>
+<tr><td>7D</td><td>0003FF0302</td><td>&nbsp;</td><td>130103</td><td>127300041C</td><td>(112 октетов)</td></tr>
+<tr><td>29</td><td>0003FF0303</td><td>&nbsp;</td><td>130103</td><td>121F00011C</td><td>(28 октетов)</td></tr>
+</tbody></table>
+<div style="margin-left: 20px;">
+<samp>
+<br>810003FF03011702040X130103127300041C 
+<br>7D0003FF0302130103127300041C 
+<br>290003FF0303130103121F00011C
+<br>
+<br>810003FF030117020400130103127300041C000000000000104000002
+<br>8A0000024A0000015200000174000000A40000038800000EBE30000AA
+<br>120000AB920000B8620000C0C1000021800000000000001040000028A
+<br>0000024A0000015200000174000000A40000038800000EBE30000AA12
+<br>0000AB920000B8620000C0C100002180 
+<br>7D0003FF0302130103127300041C00000000020000000500000005000
+<br>700050008800503F3003D0EAC00ED0AA800AF8AA980A84AA680AF4FC0
+<br>80F144070003421800828210000000000002000000050000000500070
+<br>0050008800503F3003D0EAC00ED0AA800AF8AA980A84AA680AF4FC080
+<br>F14407000342180082821000
+<br>290003FF0303130103121F00011C00000000000000000000000000000
+<br>000000000000000000000000000
+</samp>
+</div>
+<br>
+<br><span class="header">Пример 11: Цветное изображение (6 бит)</span>
+<br>
+Изображение 8*8 пикселей со случайными цветами (64 - пиксела = 64*6 битов == 384 бита =&gt; 48 байтов и 0 битов заливка).
+<div style="margin-left: 20px;">
+<samp>
+<br>3B - общее количество октетов (UDHL) 
+<br>14 - расширенный объект (IEI) 
+<br>39 - IEIDL
+<br>AA - ссылка
+<br>32 - количество октетов в EO
+<br>00 - контрольные данные 
+<br>04 - 6-битовое цветовое изображение 
+<br>0000 - местоположение в EMS
+<br>08 - ширина в пикселах 
+<br>08 - высота в пикселах 
+<br>XXXX - изображение (48 октетов)
+<br>
+<br>3B1439FF0032000400000808232928654932765926AFAFBCD87264192
+<br>8654932765926AF232928654932765926AFAFBCD87264192865493276
+<br>5926AF
+</samp>
+</div>
+<br>
+<br><span class="header">Пример 12: Склеивание мелодий</span>
+<br>МТ должен поддерживать такую возможность.
+<div style="margin-left: 20px;">
+<samp>
+<br>SMS1: <udhl> <concat> <upi> <imelody> 
+<br>SMS2: <udhl> <concat> <imelody> 
+<br>SMS3: <udhl> <concat> <imelody> 
+<br>
+<br>MELODY:*5e0f2e2*d2e2f0*f2g1r2a2b2*6c2d2c2*5b2a2g0r2r2\r\nEND:IMELODY 
+<br>MELODY:*5a3a3a2a3a3a2a3*6c3*5f3g3a1*a3*a3*a3*a3*a3a3a3a4a4*6c3c3*5*a3g3f1\r\nEND:IMELODY 
+<br>MELODY:*5g3a2g3e2*6c2*5a2g1g3a3g3a3g2*6c2*5b0\r\nEND:IMELODY
+</imelody></concat></udhl></imelody></concat></udhl></imelody></upi></concat></udhl></samp>
+</div>
+<br>Описание склеивания (<concat>)
+<div style="margin-left: 20px;">
+<samp>
+<br>0003640301 
+<br>0003640302 
+<br>0003640303
+<br>UPI: 130103
+</samp>
+</div>
+<br>В итоге получаем такие 3 SMS:
+<div style="margin-left: 20px;">
+<samp>
+<br>4D00036403011301030C43004d454c4f44593a2a35653066326532236
+<br>4326532663023663267317232613262322a366332643263322a356232
+<br>61326730723272320d0a454e443a494d454c4f4459
+<br>5E00036403020C57004d454c4f44593a2a35613361336132613361336
+<br>13261332a3663332a3566336733613123613323613323613323613323
+<br>613361336133613461342a36633363332a35236133673366310d0a454
+<br>e443a494d454c4f4459
+<br>4200036403030C3B004d454c4f44593a2a3567336132673365322a366
+<br>3322a3561326731673361336733613367322a3663322a3562300d0a45
+<br>4e443a494d454c4f4459
+
+
+
+</samp></div></concat></td>
+
+<!-- #exec cgi="news.pl" -->
+
+<td style="vertical-align: top;" width="180">
+<table class="m3_1" border="0" cellpadding="0" cellspacing="0">
+
+<tbody><tr>
+<td class="m1_1">&nbsp;</td>
+<td class="m1" style="width: 155px;">wlxml2xml &amp; xml2wlxml</td>
+<td class="m1_2">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="3" class="m3">
+<span class="header">Нужен ли сервис на сайте?</span>
+<form action="/cgi-bin/opros.pl" method="get">
+<input name="REQUEST_URI" value="/article.shtml?art_9_2" type="hidden">
+<input name="id" value="15" type="hidden">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+<tbody><tr>
+<td>
+<input name="opr0" value="" type="checkbox">Да
+</td>
+<td style="text-align: right;">
+(268)38%
+</td>
+</tr>
+
+<tr>
+<td>
+<input name="opr1" value="" type="checkbox">Нет
+</td>
+<td style="text-align: right;">
+(313)44%
+</td>
+</tr>
+
+<tr>
+<td>
+<input name="opr2" value="" type="checkbox">Все равно
+</td>
+<td style="text-align: right;">
+(48)6%
+</td>
+</tr>
+
+<tr>
+<td>
+<input name="opr3" value="" type="checkbox">может и да
+</td>
+<td style="text-align: right;">
+(25)3%
+</td>
+</tr>
+
+<tr>
+<td>
+<input name="opr4" value="" type="checkbox">нетт
+</td>
+<td style="text-align: right;">
+(4)0%
+</td>
+</tr>
+
+<tr>
+<td>
+<input name="opr5" value="" type="checkbox">Obezateljno
+</td>
+<td style="text-align: right;">
+(4)0%
+</td>
+</tr>
+
+<tr>
+<td>
+<input name="opr6" value="" type="checkbox">беркут
+</td>
+<td style="text-align: right;">
+(13)1%
+</td>
+</tr>
+
+<tr>
+<td>
+<input name="opr7" value="" type="checkbox">ha ha
+</td>
+<td style="text-align: right;">
+(5)0%
+</td>
+</tr>
+
+<tr>
+<td>
+<input name="opr8" value="" type="checkbox">апуавц
+</td>
+<td style="text-align: right;">
+(2)0%
+</td>
+</tr>
+
+<tr>
+<td>
+<input name="opr9" value="" type="checkbox">ашмыгамыш
+</td>
+<td style="text-align: right;">
+(1)0%
+</td>
+</tr>
+
+<tr>
+<td>
+<input name="opr10" value="" type="checkbox">ашмыгамыш
+</td>
+<td style="text-align: right;">
+(2)0%
+</td>
+</tr>
+
+<tr>
+<td>
+<input name="opr11" value="" type="checkbox">hehe
+</td>
+<td style="text-align: right;">
+(1)0%
+</td>
+</tr>
+
+<tr>
+<td>
+<input name="opr12" value="" type="checkbox">А чего это
+</td>
+<td style="text-align: right;">
+(11)1%
+</td>
+</tr>
+
+<tr>
+<td>
+<input name="opr13" value="" type="checkbox">пукипук
+</td>
+<td style="text-align: right;">
+(2)0%
+</td>
+</tr>
+
+<tr>
+<td>
+<input name="opr14" value="" type="checkbox">обойдусь
+</td>
+<td style="text-align: right;">
+(1)0%
+</td>
+</tr>
+
+<tr>
+<td>
+Другой
+</td>
+<td style="text-align: right;">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<input class="in100" name="new" type="text">
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<input class="in100" value="Проголосовать" type="submit">
+</td>
+</tr>
+</tbody></table>
+<br>
+<center><a href="http://www.isms.ru/opros.shtml"><b>Предыдущие голосования</b></a></center>
+</form>
+</td>
+</tr>
+<tr><td colspan="3">&nbsp;</td></tr>
+
+<tr>
+<td class="m1_1">&nbsp;</td>
+<td class="m1" style="width: 155px;">Реклама</td>
+<td class="m1_2">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="3" class="m3">
+<center>
+
+<a href="http://www.isms.ru/cgi-bin/reklama.pl?id=2"><img src="article_files/reklama.gif" title="sms2web - легкий путь стать контент-провайдером" alt="sms2web - легкий путь стать контент-провайдером" border="0" width="120" height="60"></a><br>
+<br>
+
+</center>
+</td>
+</tr>
+<tr><td colspan="3">&nbsp;</td></tr>
+
+<tr>
+<td class="m1_1">&nbsp;</td>
+<td class="m1" style="width: 155px;"><a class="m1" href="http://www.isms.ru/news_online.shtml" title="Архив новостей">Новости-OnLine</a></td>
+<td class="m1_2">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="3" class="m3">
+<ul style="margin: 0px 0px 0px 15px; padding: 0px;">
+
+<li><a class="n" href="http://www.isms.ru/news_online.shtml?nameact=view&amp;id=22983"><span class="header">2007-09-12 22:09:31</span><br>Бета-тест "В тылу врага 2: Братья по оружию"</a>
+
+</li><li><a class="n" href="http://www.isms.ru/news_online.shtml?nameact=view&amp;id=22982"><span class="header">2007-09-12 20:34:52</span><br>"Армада": первое поглощение после IPO</a>
+
+</li><li><a class="n" href="http://www.isms.ru/news_online.shtml?nameact=view&amp;id=22977"><span class="header">2007-09-12 19:46:42</span><br>World in Conflict. Российская премьера</a>
+
+</li><li><a class="n" href="http://www.isms.ru/news_online.shtml?nameact=view&amp;id=22978"><span class="header">2007-09-12 19:32:22</span><br>Google запустил сервис голосового поиска: GOOG-411</a>
+
+</li><li><a class="n" href="http://www.isms.ru/news_online.shtml?nameact=view&amp;id=22979"><span class="header">2007-09-12 19:12:48</span><br>"Ситроникс" поднимет микроэлектронику кластером</a>
+
+</li><li><a class="n" href="http://www.isms.ru/news_online.shtml?nameact=view&amp;id=22980"><span class="header">2007-09-12 19:11:27</span><br>"Ашманов и Партнеры" запустили анализатор поисковых машин </a>
+
+</li><li><a class="n" href="http://www.isms.ru/news_online.shtml?nameact=view&amp;id=22981"><span class="header">2007-09-12 19:05:17</span><br>США на пути к принятию единого закона о защите данных</a>
+
+</li><li><a class="n" href="http://www.isms.ru/news_online.shtml?nameact=view&amp;id=22973"><span class="header">2007-09-12 19:04:11</span><br>Издатель для East India Company</a>
+
+</li><li><a class="n" href="http://www.isms.ru/news_online.shtml?nameact=view&amp;id=22974"><span class="header">2007-09-12 18:30:01</span><br>Company of Heroes: Opposing Fronts "на золоте"</a>
+
+</li><li><a class="n" href="http://www.isms.ru/news_online.shtml?nameact=view&amp;id=22975"><span class="header">2007-09-12 18:20:18</span><br>Превью TimeShift. Игровой парадокс</a>
+
+</li></ul>
+<br>
+<center><a href="http://www.isms.ru/news_online.shtml"><b>Архив Новостей</b></a></center>
+<br>
+</td>
+</tr>
+<tr><td colspan="3">&nbsp;</td></tr>
+
+<tr>
+<td class="m1_1">&nbsp;</td>
+<td class="m1" style="width: 155px;">Статьи</td>
+<td class="m1_2">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="3" class="m3">
+<ul style="margin: 0px 0px 0px 15px; padding: 0px;">
+
+<li><a class="n" href="http://www.isms.ru/article.shtml?art_13">Принципы создания информационных систем на базе СМС.</a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?art_18">Служба информации CellBroadcast GSM.</a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?art_17">Определение местоположения абонентов в сетях GSM.</a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?smpp/smpp_2">Спецификация Протокола SMPP v.3.4 (Short Message Peer to Peer Protocol Specification v 3.4)</a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?art_16_2">Японский i-mode по-русски</a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?art_16_1">Немного о i-mode</a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?art_15">USSD в вопросах и ответах.</a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?art_12">Отправка длинных СМС.</a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?art_11_5_2_12">Описание параметра "esm_class"</a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?art_11_4_11">Описание команды "ENQUIRE_LINK"</a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?art_11_4_7">Описание команды "DATA_SM"</a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?art_10_1">SMS и формат PDU.</a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?art_9_2">Примеры создания и кодирования EMS.</a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?art_9_1">EMS - расширенное короткое сообщение.</a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?art_1">Беспроводный Интернет шлюз (WIG)</a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?art_1_1">Беспроводный Интернет браузер (WIB) "SmartTrust  WIB"<sup>tm</sup></a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?art_14">Описание формата RTTTL</a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?art_2">Описание формата iMelody</a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?art_3">Коды ошибок протокола SMPP</a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?art_4">Siemens, OTA-технология для загрузки рисунков и мелодий</a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?art_5">Два слова о протоколе SMPP (Short message Peer to Peer Protocol)</a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?art_5_1">Подключение к СМСЦ (SMSC) оператора</a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?art_7_1">Схемы кодировок СМС (SMS Data Coding Scheme)</a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?art_7">Таблицы символов для SMS/USSD</a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?art_6">Таблица символов Unicode Cirillic (ISBN 0-321-18578-1)</a>
+</li><li><a class="n" href="http://www.isms.ru/article.shtml?art_8_1">TP-USER DATA (TPUD) для передачи настроек WAP сервиса посредством OTA</a>
+
+</li></ul>
+</td>
+</tr>
+<tr><td colspan="3">&nbsp;</td></tr>
+
+<tr>
+<td class="m1_1">&nbsp;</td>
+<td class="m1" style="width: 155px;">Статистика</td>
+<td class="m1_2">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="3" class="m3">
+<ul style="margin: 0px 0px 0px 15px; padding: 0px;">
+<li>Посещений:9934365</li><li>Форумов:13</li><li>Тем:1027</li><li>Сообщений:6070</li><li>Пользователей:3075
+</li></ul>
+</td>
+</tr>
+<tr><td colspan="3">&nbsp;</td></tr>
+
+</tbody></table>
+</td>
+
+
+</tr>
+</tbody></table>
+
+</body></html>

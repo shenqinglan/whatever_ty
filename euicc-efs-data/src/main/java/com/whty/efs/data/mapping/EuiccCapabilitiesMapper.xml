@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.efs.data.dao.EuiccCapabilitiesMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.efs.data.pojo.EuiccCapabilities" >
+    <id column="capabilitie_id" property="capabilitieId" jdbcType="VARCHAR" />
+    <result column="eid" property="eid" jdbcType="VARCHAR" />
+    <result column="cat_tp_support" property="catTpSupport" jdbcType="VARCHAR" />
+    <result column="cat_tp_version" property="catTpVersion" jdbcType="VARCHAR" />
+    <result column="http_support" property="httpSupport" jdbcType="VARCHAR" />
+    <result column="http_version" property="httpVersion" jdbcType="VARCHAR" />
+    <result column="secure_packet_version" property="securePacketVersion" jdbcType="VARCHAR" />
+    <result column="remote_provisioning_version" property="remoteProvisioningVersion" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    capabilitie_id, eid, cat_tp_support, cat_tp_version, http_support, http_version, 
+    secure_packet_version, remote_provisioning_version
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.whty.efs.data.pojo.EuiccCapabilitiesExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from euicc_capabilities
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from euicc_capabilities
+    where capabilitie_id = #{capabilitieId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from euicc_capabilities
+    where capabilitie_id = #{capabilitieId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByEid" parameterType="java.lang.String" >
+    delete from euicc_capabilities
+    where eid = #{eid,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whty.efs.data.pojo.EuiccCapabilitiesExample" >
+    delete from euicc_capabilities
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whty.efs.data.pojo.EuiccCapabilities" >
+    insert into euicc_capabilities (capabilitie_id, eid, cat_tp_support, 
+      cat_tp_version, http_support, http_version, 
+      secure_packet_version, remote_provisioning_version
+      )
+    values (#{capabilitieId,jdbcType=VARCHAR}, #{eid,jdbcType=VARCHAR}, #{catTpSupport,jdbcType=VARCHAR}, 
+      #{catTpVersion,jdbcType=VARCHAR}, #{httpSupport,jdbcType=VARCHAR}, #{httpVersion,jdbcType=VARCHAR}, 
+      #{securePacketVersion,jdbcType=VARCHAR}, #{remoteProvisioningVersion,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.efs.data.pojo.EuiccCapabilities" >
+    insert into euicc_capabilities
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="capabilitieId != null" >
+        capabilitie_id,
+      </if>
+      <if test="eid != null" >
+        eid,
+      </if>
+      <if test="catTpSupport != null" >
+        cat_tp_support,
+      </if>
+      <if test="catTpVersion != null" >
+        cat_tp_version,
+      </if>
+      <if test="httpSupport != null" >
+        http_support,
+      </if>
+      <if test="httpVersion != null" >
+        http_version,
+      </if>
+      <if test="securePacketVersion != null" >
+        secure_packet_version,
+      </if>
+      <if test="remoteProvisioningVersion != null" >
+        remote_provisioning_version,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="capabilitieId != null" >
+        #{capabilitieId,jdbcType=VARCHAR},
+      </if>
+      <if test="eid != null" >
+        #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="catTpSupport != null" >
+        #{catTpSupport,jdbcType=VARCHAR},
+      </if>
+      <if test="catTpVersion != null" >
+        #{catTpVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="httpSupport != null" >
+        #{httpSupport,jdbcType=VARCHAR},
+      </if>
+      <if test="httpVersion != null" >
+        #{httpVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="securePacketVersion != null" >
+        #{securePacketVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="remoteProvisioningVersion != null" >
+        #{remoteProvisioningVersion,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whty.efs.data.pojo.EuiccCapabilitiesExample" resultType="java.lang.Integer" >
+    select count(*) from euicc_capabilities
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update euicc_capabilities
+    <set >
+      <if test="record.capabilitieId != null" >
+        capabilitie_id = #{record.capabilitieId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.eid != null" >
+        eid = #{record.eid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.catTpSupport != null" >
+        cat_tp_support = #{record.catTpSupport,jdbcType=VARCHAR},
+      </if>
+      <if test="record.catTpVersion != null" >
+        cat_tp_version = #{record.catTpVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="record.httpSupport != null" >
+        http_support = #{record.httpSupport,jdbcType=VARCHAR},
+      </if>
+      <if test="record.httpVersion != null" >
+        http_version = #{record.httpVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="record.securePacketVersion != null" >
+        secure_packet_version = #{record.securePacketVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remoteProvisioningVersion != null" >
+        remote_provisioning_version = #{record.remoteProvisioningVersion,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update euicc_capabilities
+    set capabilitie_id = #{record.capabilitieId,jdbcType=VARCHAR},
+      eid = #{record.eid,jdbcType=VARCHAR},
+      cat_tp_support = #{record.catTpSupport,jdbcType=VARCHAR},
+      cat_tp_version = #{record.catTpVersion,jdbcType=VARCHAR},
+      http_support = #{record.httpSupport,jdbcType=VARCHAR},
+      http_version = #{record.httpVersion,jdbcType=VARCHAR},
+      secure_packet_version = #{record.securePacketVersion,jdbcType=VARCHAR},
+      remote_provisioning_version = #{record.remoteProvisioningVersion,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.efs.data.pojo.EuiccCapabilities" >
+    update euicc_capabilities
+    <set >
+      <if test="eid != null" >
+        eid = #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="catTpSupport != null" >
+        cat_tp_support = #{catTpSupport,jdbcType=VARCHAR},
+      </if>
+      <if test="catTpVersion != null" >
+        cat_tp_version = #{catTpVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="httpSupport != null" >
+        http_support = #{httpSupport,jdbcType=VARCHAR},
+      </if>
+      <if test="httpVersion != null" >
+        http_version = #{httpVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="securePacketVersion != null" >
+        secure_packet_version = #{securePacketVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="remoteProvisioningVersion != null" >
+        remote_provisioning_version = #{remoteProvisioningVersion,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where capabilitie_id = #{capabilitieId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.efs.data.pojo.EuiccCapabilities" >
+    update euicc_capabilities
+    set eid = #{eid,jdbcType=VARCHAR},
+      cat_tp_support = #{catTpSupport,jdbcType=VARCHAR},
+      cat_tp_version = #{catTpVersion,jdbcType=VARCHAR},
+      http_support = #{httpSupport,jdbcType=VARCHAR},
+      http_version = #{httpVersion,jdbcType=VARCHAR},
+      secure_packet_version = #{securePacketVersion,jdbcType=VARCHAR},
+      remote_provisioning_version = #{remoteProvisioningVersion,jdbcType=VARCHAR}
+    where capabilitie_id = #{capabilitieId,jdbcType=VARCHAR}
+  </update>
+</mapper>

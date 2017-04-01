@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.euicc.data.dao.ApInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.euicc.data.pojo.ApInfo" >
+    <id column="USER_ID" property="userId" jdbcType="VARCHAR" />
+    <result column="SP_NAME" property="spName" jdbcType="VARCHAR" />
+    <result column="SP_CODE" property="spCode" jdbcType="VARCHAR" />
+    <result column="LINKER" property="linker" jdbcType="VARCHAR" />
+    <result column="PHONE" property="phone" jdbcType="VARCHAR" />
+    <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+    <result column="ZIPCODE" property="zipcode" jdbcType="VARCHAR" />
+    <result column="STATUS" property="status" jdbcType="VARCHAR" />
+    <result column="REG_CODE" property="regCode" jdbcType="VARCHAR" />
+    <result column="REG_CODE_DATE" property="regCodeDate" jdbcType="TIMESTAMP" />
+    <result column="FILE_PATH" property="filePath" jdbcType="VARCHAR" />
+    <result column="CENTER_ADDR" property="centerAddr" jdbcType="VARCHAR" />
+    <result column="FILE_NAME" property="fileName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    USER_ID, SP_NAME, SP_CODE, LINKER, PHONE, ADDRESS, ZIPCODE, STATUS, REG_CODE, REG_CODE_DATE, 
+    FILE_PATH, CENTER_ADDR, FILE_NAME
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from ap_info
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from ap_info
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.whty.euicc.data.pojo.ApInfo" >
+    insert into ap_info (USER_ID, SP_NAME, SP_CODE, 
+      LINKER, PHONE, ADDRESS, 
+      ZIPCODE, STATUS, REG_CODE, 
+      REG_CODE_DATE, FILE_PATH, CENTER_ADDR, 
+      FILE_NAME)
+    values (#{userId,jdbcType=VARCHAR}, #{spName,jdbcType=VARCHAR}, #{spCode,jdbcType=VARCHAR}, 
+      #{linker,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{zipcode,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{regCode,jdbcType=VARCHAR}, 
+      #{regCodeDate,jdbcType=TIMESTAMP}, #{filePath,jdbcType=VARCHAR}, #{centerAddr,jdbcType=VARCHAR}, 
+      #{fileName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.euicc.data.pojo.ApInfo" >
+    insert into ap_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="spName != null" >
+        SP_NAME,
+      </if>
+      <if test="spCode != null" >
+        SP_CODE,
+      </if>
+      <if test="linker != null" >
+        LINKER,
+      </if>
+      <if test="phone != null" >
+        PHONE,
+      </if>
+      <if test="address != null" >
+        ADDRESS,
+      </if>
+      <if test="zipcode != null" >
+        ZIPCODE,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="regCode != null" >
+        REG_CODE,
+      </if>
+      <if test="regCodeDate != null" >
+        REG_CODE_DATE,
+      </if>
+      <if test="filePath != null" >
+        FILE_PATH,
+      </if>
+      <if test="centerAddr != null" >
+        CENTER_ADDR,
+      </if>
+      <if test="fileName != null" >
+        FILE_NAME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="spName != null" >
+        #{spName,jdbcType=VARCHAR},
+      </if>
+      <if test="spCode != null" >
+        #{spCode,jdbcType=VARCHAR},
+      </if>
+      <if test="linker != null" >
+        #{linker,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="zipcode != null" >
+        #{zipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="regCode != null" >
+        #{regCode,jdbcType=VARCHAR},
+      </if>
+      <if test="regCodeDate != null" >
+        #{regCodeDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="filePath != null" >
+        #{filePath,jdbcType=VARCHAR},
+      </if>
+      <if test="centerAddr != null" >
+        #{centerAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="fileName != null" >
+        #{fileName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.euicc.data.pojo.ApInfo" >
+    update ap_info
+    <set >
+      <if test="spName != null" >
+        SP_NAME = #{spName,jdbcType=VARCHAR},
+      </if>
+      <if test="spCode != null" >
+        SP_CODE = #{spCode,jdbcType=VARCHAR},
+      </if>
+      <if test="linker != null" >
+        LINKER = #{linker,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        PHONE = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="zipcode != null" >
+        ZIPCODE = #{zipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="regCode != null" >
+        REG_CODE = #{regCode,jdbcType=VARCHAR},
+      </if>
+      <if test="regCodeDate != null" >
+        REG_CODE_DATE = #{regCodeDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="filePath != null" >
+        FILE_PATH = #{filePath,jdbcType=VARCHAR},
+      </if>
+      <if test="centerAddr != null" >
+        CENTER_ADDR = #{centerAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="fileName != null" >
+        FILE_NAME = #{fileName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.euicc.data.pojo.ApInfo" >
+    update ap_info
+    set SP_NAME = #{spName,jdbcType=VARCHAR},
+      SP_CODE = #{spCode,jdbcType=VARCHAR},
+      LINKER = #{linker,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      ZIPCODE = #{zipcode,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=VARCHAR},
+      REG_CODE = #{regCode,jdbcType=VARCHAR},
+      REG_CODE_DATE = #{regCodeDate,jdbcType=TIMESTAMP},
+      FILE_PATH = #{filePath,jdbcType=VARCHAR},
+      CENTER_ADDR = #{centerAddr,jdbcType=VARCHAR},
+      FILE_NAME = #{fileName,jdbcType=VARCHAR}
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </update>
+</mapper>

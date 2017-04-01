@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:add="http://www.w3.org/2005/08/addressing" xmlns:ns="http://namespaces.gsma.org/esim-messaging/3">
+   <soap:Header>
+      <add:Action>1</add:Action>
+      <add:MessageID>1</add:MessageID>
+      <add:To>1</add:To>
+      <add:From>
+         <add:Address>1</add:Address>
+         <!--Optional:-->
+         <add:ReferenceParameters>
+            <!--You may enter ANY elements at this point-->
+         </add:ReferenceParameters>
+         <!--Optional:-->
+         <add:Metadata>
+            <!--You may enter ANY elements at this point-->
+         </add:Metadata>
+         <!--You may enter ANY elements at this point-->
+      </add:From>
+   </soap:Header>
+   <soap:Body>
+      <ns:ES3-UpdateSubscriptionAddressRequest>
+         <ns:FunctionCallIdentifier>12</ns:FunctionCallIdentifier>
+         <!--Optional:-->
+         <ns:ValidityPeriod>1</ns:ValidityPeriod>
+         <ns:Eid>3839303031303132303132333431323334303132333435363738393031323234</ns:Eid>
+         <ns:Iccid>00</ns:Iccid>
+         <ns:newSubscriptionAddress>
+            <!--Optional:-->
+            <ns:Imsi>1</ns:Imsi>
+            <!--Optional:-->
+            <ns:Msisdn>1</ns:Msisdn>
+         </ns:newSubscriptionAddress>
+      </ns:ES3-UpdateSubscriptionAddressRequest>
+   </soap:Body>
+</soap:Envelope>

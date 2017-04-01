@@ -1,0 +1,2 @@
+info1Request ProfileElement ::= getEuiccInfo1Request : {
+}

@@ -1,0 +1,65 @@
+pe-gfm ProfileElement ::= genericFileManagement : {
+  gfm-header {
+    mandated NULL,
+    identification 1    
+  },
+  fileManagementCMD {
+    {
+      createFCP :{      	   
+      	fileDescriptor '7821'H,
+        fileID '3F00'H,       
+        securityAttributesReferenced '0c'H,
+        pinStatusTemplateDO '01020A'H
+      },
+      createFCP :{
+      	fileDescriptor '4121'H,    
+        fileID '2F05'H,
+        securityAttributesReferenced '07'H,
+        efFileSize '04'H,
+      },
+      createFCP :{
+      	fileDescriptor '4121'H,
+        fileID '2FE2'H,
+        securityAttributesReferenced '08'H,
+        efFileSize '0A'H
+      },
+      fillFileContent : '98681001161180902652'H,
+      createFCP :{
+      	fileDescriptor '42210020'H,
+        fileID '2F00'H,
+        securityAttributesReferenced '08'H,
+        efFileSize '0020'H,
+      },
+      fillFileContent : '611D4F10A0000000871002FF86FFFF89FFFFFFFF5009556E6976657253494DFF'H,
+      createFCP :{
+      	fileDescriptor '4221002f'H,
+        fileID '2F06'H,
+        securityAttributesReferenced '08'H,
+        efFileSize '0234'H
+      },
+    fillFileContent : '80011bA406830101950108'H,
+    fillFileOffset : 36,
+    fillFileContent : '80011bA406830101950108840132A406830101950108'H,   	
+    fillFileOffset : 25
+    fillFileContent : '800103A406830101950108800118A406830102950108'H,
+    fillFileOffset : 25
+    fillFileContent : '800101A406830101950108800102A406830102950108800118A40683010A950108'H,
+    fillFileOffset : 14
+    fillFileContent : '800103A406830101950108800118A40683010A950108'H,
+    fillFileOffset : 25
+    fillFileContent : '800101A40683010195010880011AA40683010A950108'H,
+    fillFileOffset : 25
+    fillFileContent : '8001019000800102A406830101950108800118A40683010A950108'H,
+    fillFileOffset : 20
+    fillFileContent : '800101900080011AA40683010a950108'H,
+    fillFileOffset : 31
+    fillFileContent : '800111A40683010195010880010AA40683010A950108'H,   
+    fillFileOffset : 25    
+    fillFileContent : '800101A406830101950108800102A406830102950108840132A406830101950108800118A40683010A950108'H,
+    fillFileOffset : 3    
+    fillFileContent : '800113A406830101950108800108A40683010A950108'H,   
+    fillFileOffset : 25 
+    fillFileContent : '80011BA40683010A950108'H,    
+      }
+    }
+  }

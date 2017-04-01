@@ -1,0 +1,498 @@
+09:18:36.475 INFO  com.whty.euicc.init.InitLoad - initLog complete.
+09:18:36.536 DEBUG com.whty.cache.helpers.Loader - Trying to find [cache.cfg] using context classloader sun.misc.Launcher$AppClassLoader@61e63e3d.
+09:18:36.536 DEBUG com.whty.cache.CacheManager - Using URL [jar:file:/E:/Repository/com/whty/flow_storage/0.0.2/flow_storage-0.0.2.jar!/cache.cfg] for automatic cache configuration.
+09:18:36.840 INFO  o.s.c.s.FileSystemXmlApplicationContext - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@250d593e: startup date [Fri Sep 30 09:18:36 CST 2016]; root of context hierarchy
+09:18:36.921 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-sr-container/conf/TlsServer.xml]
+09:18:37.110 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-sr-container/conf/spring/spring-properties.xml]
+09:18:37.152 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-sr-container/conf/spring/spring-pool.xml]
+09:18:37.227 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-sr-container/conf/spring/spring-common.xml]
+09:18:43.200 INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:D:/euicc/euicc-sr-container/conf/spring/spring-flow.xml]
+09:18:43.807 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\base\BaseFieldsMapper.class]
+09:18:43.807 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\base\BusinessLogMapper.class]
+09:18:43.807 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\base\BusinessModelMapper.class]
+09:18:43.808 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\base\BusinessObjectMapper.class]
+09:18:43.808 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccAuditTrailRecordMapper.class]
+09:18:43.808 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccCapabilitiesMapper.class]
+09:18:43.808 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccCardMapper.class]
+09:18:43.808 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccEcasdMapper.class]
+09:18:43.809 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccEumMapper.class]
+09:18:43.809 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccIsdPMapper.class]
+09:18:43.809 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccIsdRMapper.class]
+09:18:43.809 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccMnoMapper.class]
+09:18:43.809 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccPol1Mapper.class]
+09:18:43.810 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccPol2Mapper.class]
+09:18:43.810 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccProfileMapper.class]
+09:18:43.810 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccScp03Mapper.class]
+09:18:43.810 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccScp80Mapper.class]
+09:18:43.811 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccScp81Mapper.class]
+09:18:43.811 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccSmDpMapper.class]
+09:18:43.811 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\dao\EuiccSmSrMapper.class]
+09:18:43.813 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'baseFieldsMapper' and 'com.whty.euicc.data.dao.base.BaseFieldsMapper' mapperInterface
+09:18:43.815 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'baseFieldsMapper'.
+09:18:43.815 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'businessLogMapper' and 'com.whty.euicc.data.dao.base.BusinessLogMapper' mapperInterface
+09:18:43.815 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'businessLogMapper'.
+09:18:43.815 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'businessModelMapper' and 'com.whty.euicc.data.dao.base.BusinessModelMapper' mapperInterface
+09:18:43.815 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'businessModelMapper'.
+09:18:43.815 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'businessObjectMapper' and 'com.whty.euicc.data.dao.base.BusinessObjectMapper' mapperInterface
+09:18:43.815 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'businessObjectMapper'.
+09:18:43.815 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccAuditTrailRecordMapper' and 'com.whty.euicc.data.dao.EuiccAuditTrailRecordMapper' mapperInterface
+09:18:43.815 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccAuditTrailRecordMapper'.
+09:18:43.815 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccCapabilitiesMapper' and 'com.whty.euicc.data.dao.EuiccCapabilitiesMapper' mapperInterface
+09:18:43.816 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccCapabilitiesMapper'.
+09:18:43.816 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccCardMapper' and 'com.whty.euicc.data.dao.EuiccCardMapper' mapperInterface
+09:18:43.816 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccCardMapper'.
+09:18:43.816 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccEcasdMapper' and 'com.whty.euicc.data.dao.EuiccEcasdMapper' mapperInterface
+09:18:43.816 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccEcasdMapper'.
+09:18:43.816 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccEumMapper' and 'com.whty.euicc.data.dao.EuiccEumMapper' mapperInterface
+09:18:43.816 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccEumMapper'.
+09:18:43.816 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccIsdPMapper' and 'com.whty.euicc.data.dao.EuiccIsdPMapper' mapperInterface
+09:18:43.816 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccIsdPMapper'.
+09:18:43.816 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccIsdRMapper' and 'com.whty.euicc.data.dao.EuiccIsdRMapper' mapperInterface
+09:18:43.816 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccIsdRMapper'.
+09:18:43.817 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccMnoMapper' and 'com.whty.euicc.data.dao.EuiccMnoMapper' mapperInterface
+09:18:43.817 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccMnoMapper'.
+09:18:43.817 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccPol1Mapper' and 'com.whty.euicc.data.dao.EuiccPol1Mapper' mapperInterface
+09:18:43.817 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccPol1Mapper'.
+09:18:43.817 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccPol2Mapper' and 'com.whty.euicc.data.dao.EuiccPol2Mapper' mapperInterface
+09:18:43.817 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccPol2Mapper'.
+09:18:43.817 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccProfileMapper' and 'com.whty.euicc.data.dao.EuiccProfileMapper' mapperInterface
+09:18:43.817 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccProfileMapper'.
+09:18:43.817 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccScp03Mapper' and 'com.whty.euicc.data.dao.EuiccScp03Mapper' mapperInterface
+09:18:43.817 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccScp03Mapper'.
+09:18:43.817 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccScp80Mapper' and 'com.whty.euicc.data.dao.EuiccScp80Mapper' mapperInterface
+09:18:43.817 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccScp80Mapper'.
+09:18:43.817 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccScp81Mapper' and 'com.whty.euicc.data.dao.EuiccScp81Mapper' mapperInterface
+09:18:43.818 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccScp81Mapper'.
+09:18:43.818 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccSmDpMapper' and 'com.whty.euicc.data.dao.EuiccSmDpMapper' mapperInterface
+09:18:43.818 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccSmDpMapper'.
+09:18:43.818 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'euiccSmSrMapper' and 'com.whty.euicc.data.dao.EuiccSmSrMapper' mapperInterface
+09:18:43.818 DEBUG o.m.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'euiccSmSrMapper'.
+09:18:43.864 INFO  o.s.b.f.config.PropertiesFactoryBean - Loading properties file from file [D:\euicc\euicc-sr-container\conf\properties\config.properties]
+09:18:43.865 INFO  o.s.b.f.config.PropertiesFactoryBean - Loading properties file from file [D:\euicc\euicc-sr-container\conf\properties\euicc.properties]
+09:18:43.868 INFO  o.s.b.f.config.PropertiesFactoryBean - Loading properties file from file [D:\euicc\euicc-sr-container\conf\properties\jdbc.properties]
+09:18:43.933 INFO  o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3b926e90: defining beans [applicationProperties,propertyConfigurer,bonecp,transactionManager,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,com.whty.euicc.common.spring.SpringContextHolder#0,msgBusiTypeSr,ByNameTask,bizObjectCache,bizTemplateManager,businessControl,businessExecutor,msgBusiType01,appInit,appProcess,appQuery,appQuerySupend,tath.112.001.01,tath.016.001.01,ByNameCommand,msgBusiTypeFlow,srChangeKeyExchange,srChangeSend,certSrEcdsaApdu,srChangeForScp80,srChangeReceive,createISDP,deleteProfileByHttps,disableProfileByHttps,enableProfileByHttps,getStatusByHttps,installProfile,personalISDP,profileDownloadCompleted,retrieveEISBySr,disableProfile,enableProfile,getScp03Sequence,profileDeletion,receiveNotificationBySms,scp03,updateConnectivityParameters,updatePolicyRules,smsDisPor,smsEnPor,smsPor,receivePor,msgBusiTypeProfile,keyChangeApdu,secondStoreDataApdu,scp80Apdu,finaliseIsdrHandoverApdu,createISDPApdu,deleteProfileApdu,disableProfileApdu,downloadProfileApdu,enableProfileApdu,getStatusApdu,firstStoreDataforISDPApdu,personalizeService,secondStoreDataForISDPApdu,personalApduHandler,receiveNotificationApdu,scp03Trigger,springContextHolder,sms,smsTriggerUtil,businessObjectServiceImpl,euiccCardServiceImpl,euiccIsdPServiceImpl,euiccPol2,euiccProfileServiceImpl,euiccScp03ServiceImpl,euiccScp81ServiceImpl,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,container,flowStorageService,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,baseFieldsMapper,businessLogMapper,businessModelMapper,businessObjectMapper,euiccAuditTrailRecordMapper,euiccCapabilitiesMapper,euiccCardMapper,euiccEcasdMapper,euiccEumMapper,euiccIsdPMapper,euiccIsdRMapper,euiccMnoMapper,euiccPol1Mapper,euiccPol2Mapper,euiccProfileMapper,euiccScp03Mapper,euiccScp80Mapper,euiccScp81Mapper,euiccSmDpMapper,euiccSmSrMapper]; root of factory hierarchy
+09:18:44.046 DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+09:18:44.057 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Property 'configLocation' not specified, using default MyBatis Configuration
+09:18:44.339 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\BaseFieldsMapper.xml]'
+09:18:44.362 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\BusinessLogMapper.xml]'
+09:18:44.379 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\BusinessModelMapper.xml]'
+09:18:44.412 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\BusinessObjectMapper.xml]'
+09:18:44.435 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccAuditTrailRecordMapper.xml]'
+09:18:44.457 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccCapabilitiesMapper.xml]'
+09:18:44.490 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccCardMapper.xml]'
+09:18:44.512 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccEcasdMapper.xml]'
+09:18:44.531 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccEumMapper.xml]'
+09:18:44.554 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccIsdPMapper.xml]'
+09:18:44.575 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccIsdRMapper.xml]'
+09:18:44.593 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccMnoMapper.xml]'
+09:18:44.606 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccPol1Mapper.xml]'
+09:18:44.623 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccPol2Mapper.xml]'
+09:18:44.656 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccProfileMapper.xml]'
+09:18:44.677 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccScp03Mapper.xml]'
+09:18:44.695 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccScp80Mapper.xml]'
+09:18:44.714 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccScp81Mapper.xml]'
+09:18:44.733 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccSmDpMapper.xml]'
+09:18:44.752 DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\euicc\euicc-cs-data\target\classes\com\whty\euicc\data\mapping\db\EuiccSmSrMapper.xml]'
+09:18:44.855 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build flows from files  [[Ljava.lang.String;@4545f5e3]
+09:18:44.855 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to cache flow from file  [D:\euicc\euicc-sr-container/templateflow/basic/appQuery.xml]
+09:18:44.885 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to cache flow from file  [D:\euicc\euicc-sr-container/templateflow/basic/appApply.xml]
+09:18:44.908 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build Flow from file  [D:\euicc\euicc-sr-container/templateflow/basic/appQuery.xml]
+09:18:44.952 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - init flow id: [tath.016.001.01] name: [应用查询] state_id: [1],state_name: [应用查询]
+09:18:44.978 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse all states
+09:18:44.978 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1]
+09:18:44.978 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2]
+09:18:44.978 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3]
+09:18:44.979 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [101]
+09:18:44.979 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [finish]
+09:18:44.979 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse states handler
+09:18:44.979 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1]
+09:18:44.990 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2]
+09:18:44.990 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3]
+09:18:44.990 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [101]
+09:18:44.990 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [finish]
+09:18:44.990 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse all allTransitions
+09:18:44.991 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [0] target_state [finish]
+09:18:44.992 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [1] target_state [2]
+09:18:44.992 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [2] target_state [101]
+09:18:44.992 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [0] target_state [finish]
+09:18:44.992 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [1] target_state [3]
+09:18:44.992 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [2] target_state [101]
+09:18:44.992 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3] event [0] target_state [finish]
+09:18:44.992 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3] event [1] target_state [finish]
+09:18:44.992 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [3] event [2] target_state [101]
+09:18:44.992 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [101] event [0] target_state [finish]
+09:18:44.993 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build entire flow
+09:18:44.993 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+09:18:44.993 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+09:18:44.993 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [2]
+09:18:44.993 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+09:18:44.993 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+09:18:44.993 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [3]
+09:18:44.993 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+09:18:44.993 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+09:18:44.993 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [finish]
+09:18:44.993 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+09:18:44.993 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [2] target_state: [101]
+09:18:44.993 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+09:18:44.993 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+09:18:44.993 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [2] target_state: [101]
+09:18:44.994 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+09:18:44.994 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+09:18:44.994 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [2] target_state: [101]
+09:18:44.994 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+09:18:44.994 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+09:18:45.006 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build handler
+09:18:45.007 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - build file [D:\euicc\euicc-sr-container/templateflow/basic/appQuery.xml] finished
+09:18:45.007 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build Flow from file  [D:\euicc\euicc-sr-container/templateflow/basic/appApply.xml]
+09:18:45.023 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - init flow id: [tath.112.001.01] name: [应用申请] state_id: [1],state_name: [判断应用状态]
+09:18:45.023 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse all states
+09:18:45.023 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1]
+09:18:45.024 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2]
+09:18:45.024 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [finish]
+09:18:45.024 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse states handler
+09:18:45.024 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1]
+09:18:45.024 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2]
+09:18:45.025 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [finish]
+09:18:45.025 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse all allTransitions
+09:18:45.025 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [0] target_state [finish]
+09:18:45.025 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [1] target_state [2]
+09:18:45.025 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [1] event [2] target_state [2]
+09:18:45.025 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [0] target_state [finish]
+09:18:45.025 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse state [2] event [1] target_state [finish]
+09:18:45.025 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build entire flow
+09:18:45.025 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+09:18:45.026 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+09:18:45.026 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [2]
+09:18:45.026 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+09:18:45.026 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+09:18:45.026 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [finish]
+09:18:45.026 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+09:18:45.026 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [2] target_state: [2]
+09:18:45.026 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [0] target_state: [finish]
+09:18:45.026 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+09:18:45.026 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to parse transion: event: [1] target_state: [finish]
+09:18:45.026 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - the target state  [finish] has no transitions
+09:18:45.026 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - begin to build handler
+09:18:45.026 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - build file [D:\euicc\euicc-sr-container/templateflow/basic/appApply.xml] finished
+09:18:45.027 INFO  com.whty.flow.builder.xml.XMLFlowBuilder - build complete
+09:18:45.716 DEBUG i.n.u.i.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+09:18:45.718 DEBUG i.n.channel.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 200
+09:18:45.740 DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows
+09:18:45.741 DEBUG io.netty.util.internal.PlatformDependent - Java version: 6
+09:18:45.741 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+09:18:45.747 DEBUG i.netty.util.internal.PlatformDependent0 - java.nio.ByteBuffer.cleaner: available
+09:18:45.747 DEBUG i.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+09:18:45.748 DEBUG i.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+09:18:45.748 DEBUG i.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: unavailable
+09:18:45.748 DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: unavailable
+09:18:45.755 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+09:18:45.841 DEBUG io.netty.util.internal.PlatformDependent - Javassist: available
+09:18:45.841 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\ADMINI~1\AppData\Local\Temp (java.io.tmpdir)
+09:18:45.841 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+09:18:45.842 DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: true
+09:18:45.842 INFO  io.netty.util.internal.PlatformDependent - Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system unstability.
+09:18:45.860 DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
+09:18:45.860 DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+09:18:46.333 DEBUG io.netty.util.internal.ThreadLocalRandom - -Dio.netty.initialSeedUniquifier: 0x77aca3de17617f8a
+09:18:46.344 DEBUG io.netty.channel.ChannelOutboundBuffer - -Dio.netty.threadLocalDirectBufferSize: 65536
+09:18:46.364 DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: unpooled
+09:18:46.371 DEBUG io.netty.util.NetUtil - Loopback interface: Software Loopback Interface 1
+09:18:46.371 DEBUG io.netty.util.NetUtil - Loopback address: /0:0:0:0:0:0:0:1 (primary)
+09:18:46.371 DEBUG io.netty.util.NetUtil - Loopback address: /127.0.0.1
+09:21:34.084 DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+09:21:34.164 INFO  com.whty.euicc.handler.NettySrHandler - ==========接收来自非卡端请求消息==========
+09:21:34.164 DEBUG com.whty.euicc.handler.NettySrHandler - 请求消息明文 : {"header":{"version":"01","sendTime":"2016-09-30 09:21:33","msgType":"getScp03Sequence","tradeNO":"20160930092133","tradeRefNO":"0"},"body":{"eid":"89001012012341234012345678901224","iccid":"00","sms":"AA10220E80500000082CB94DF5E30BBAFD00"}}
+09:21:34.164 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2016-09-30 09:21:33","msgType":"getScp03Sequence","tradeNO":"20160930092133","tradeRefNO":"0"},"body":{"eid":"89001012012341234012345678901224","iccid":"00","sms":"AA10220E80500000082CB94DF5E30BBAFD00"}}
+09:21:34.201 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2016-09-30 09:21:33","msgType":"getScp03Sequence","tradeNO":"20160930092133","tradeRefNO":"0"},"body":{"eid":"89001012012341234012345678901224","iccid":"00","sms":"AA10220E80500000082CB94DF5E30BBAFD00"}}
+09:21:34.202 INFO  com.whty.euicc.trigger.SmsTriggerUtil - sms:AA10220E80500000082CB94DF5E30BBAFD00
+09:21:34.202 INFO  com.whty.euicc.trigger.SmsTriggerUtil - plain sms:AA10220E80500000082CB94DF5E30BBAFD00
+09:21:34.311 DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+09:21:34.327 DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7a6bb93c] was not registered for synchronization because synchronization is not active
+09:21:34.394 DEBUG com.jolbox.bonecp.BoneCPDataSource - JDBC URL = jdbc:mysql://127.0.0.1:3306/euicc?useUnicode=true&characterEncoding=utf-8, Username = root, partitions = 2, max (per partition) = 3, min (per partition) = 1, helper threads = 3, idle max age = 60 min, idle test period = 240 min
+09:21:34.843 DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.jolbox.bonecp.ConnectionHandle@67a4076] will not be managed by Spring
+09:21:34.865 DEBUG c.w.e.d.d.E.selectByPrimaryKey - ==>  Preparing: select eid, eum_id, smsr_id, ecasd_id, production_date, platform_type, platform_version, remaining_memory, availablememoryforprofiles, count, phone_no from euicc_card where eid = ? 
+09:21:34.883 DEBUG c.w.e.d.d.E.selectByPrimaryKey - ==> Parameters: 89001012012341234012345678901224(String)
+09:21:34.928 DEBUG c.w.e.d.d.E.selectByPrimaryKey - <==      Total: 1
+09:21:34.929 DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7a6bb93c]
+09:21:34.936 DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+09:21:34.937 DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@255b5c1f] was not registered for synchronization because synchronization is not active
+09:21:34.962 DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.jolbox.bonecp.ConnectionHandle@52f9cbe5] will not be managed by Spring
+09:21:34.963 DEBUG c.w.e.d.d.E.updateByPrimaryKeySelective - ==>  Preparing: update euicc_card SET count = ? where eid = ? 
+09:21:34.963 DEBUG c.w.e.d.d.E.updateByPrimaryKeySelective - ==> Parameters: 45(Integer), 89001012012341234012345678901224(String)
+09:21:35.003 DEBUG c.w.e.d.d.E.updateByPrimaryKeySelective - <==    Updates: 1
+09:21:35.004 DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@255b5c1f]
+09:21:35.057 DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+09:21:35.058 DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@640ce0bb] was not registered for synchronization because synchronization is not active
+09:21:35.058 DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.jolbox.bonecp.ConnectionHandle@976484e] will not be managed by Spring
+09:21:35.058 DEBUG c.w.e.d.dao.EuiccScp80Mapper.selectLists - ==>  Preparing: select scp80_id, eid, id, version, data from euicc_scp80 
+09:21:35.059 DEBUG c.w.e.d.dao.EuiccScp80Mapper.selectLists - ==> Parameters: 
+09:21:35.062 DEBUG c.w.e.d.dao.EuiccScp80Mapper.selectLists - <==      Total: 3
+09:21:35.062 DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@640ce0bb]
+09:21:35.085 INFO  com.whty.euicc.trigger.SmsTriggerUtil - en sms:027000002815160112120000139F5CCE11D83B86F2BA59385FD3250C6684A66EAF0C6455E7818FE21D9882636A
+09:21:35.128 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:35.192 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:35.193 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:35.194 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:36.195 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:36.196 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:37.198 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:37.198 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:38.199 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:38.200 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:39.202 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:39.203 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:40.205 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:40.206 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:41.208 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:41.208 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:42.209 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:42.209 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:43.210 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:43.211 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:43.334 INFO  com.whty.euicc.handler.NettySrHandler - ==========接收来自非卡端请求消息==========
+09:21:43.334 DEBUG com.whty.euicc.handler.NettySrHandler - 请求消息明文 : {"header":{"version":"01","sendTime":"2016-09-30 09:21:42","msgType":"receivePor","tradeNO":"20160930092142","tradeRefNO":"0"},"body":{"tpud":"02710000340A00001300000002D50000AB27800101232200000000000000000000300370BE9E38C3D0E672AAA2951ECA8E7316C500000390009000"}}
+09:21:43.334 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2016-09-30 09:21:42","msgType":"receivePor","tradeNO":"20160930092142","tradeRefNO":"0"},"body":{"tpud":"02710000340A00001300000002D50000AB27800101232200000000000000000000300370BE9E38C3D0E672AAA2951ECA8E7316C500000390009000"}}
+09:21:43.335 INFO  c.w.e.sr.handler.por.ReceivePorHandler - ***********进入PoR流程************
+09:21:43.335 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2016-09-30 09:21:42","msgType":"receivePor","tradeNO":"20160930092142","tradeRefNO":"0"},"body":{"tpud":"02710000340A00001300000002D50000AB27800101232200000000000000000000300370BE9E38C3D0E672AAA2951ECA8E7316C500000390009000"}}
+09:21:43.335 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:43.336 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:43.336 INFO  c.w.e.sr.handler.por.ReceivePorHandler - received por >> 02710000340A00001300000002D50000AB27800101232200000000000000000000300370BE9E38C3D0E672AAA2951ECA8E7316C500000390009000
+09:21:43.337 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:43.337 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:43.338 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:43.338 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:43.338 DEBUG com.whty.euicc.handler.NettySrHandler - 响应消息明文 : {"code":"0000","message":"success"}
+09:21:44.212 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:44.213 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:44.216 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:44.217 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:44.218 INFO  com.whty.euicc.trigger.SmsTriggerUtil - ----------已等待卡片通知处理完成
+09:21:45.218 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:45.219 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:45.220 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:45.221 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:45.222 DEBUG com.whty.euicc.handler.NettySrHandler - 响应消息明文 : {"code":"0000","message":"success","data":"02710000340A00001300000002D50000AB27800101232200000000000000000000300370BE9E38C3D0E672AAA2951ECA8E7316C500000390009000"}
+09:21:45.329 INFO  com.whty.euicc.handler.NettySrHandler - ==========接收来自非卡端请求消息==========
+09:21:45.329 DEBUG com.whty.euicc.handler.NettySrHandler - 请求消息明文 : {"header":{"version":"01","sendTime":"2016-09-30 09:21:45","msgType":"scp03","tradeNO":"20160930092145","tradeRefNO":"0"},"body":{"eid":"89001012012341234012345678901224","iccid":"00","sms":"AA10220E8050000008252875c1468c54d600"}}
+09:21:45.329 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2016-09-30 09:21:45","msgType":"scp03","tradeNO":"20160930092145","tradeRefNO":"0"},"body":{"eid":"89001012012341234012345678901224","iccid":"00","sms":"AA10220E8050000008252875c1468c54d600"}}
+09:21:45.330 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2016-09-30 09:21:45","msgType":"scp03","tradeNO":"20160930092145","tradeRefNO":"0"},"body":{"eid":"89001012012341234012345678901224","iccid":"00","sms":"AA10220E8050000008252875c1468c54d600"}}
+09:21:45.331 INFO  com.whty.euicc.trigger.SmsTriggerUtil - sms:AA10220E8050000008252875c1468c54d600
+09:21:45.331 INFO  com.whty.euicc.trigger.SmsTriggerUtil - plain sms:AA10220E8050000008252875c1468c54d600
+09:21:45.331 DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+09:21:45.331 DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19a8739b] was not registered for synchronization because synchronization is not active
+09:21:45.331 DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.jolbox.bonecp.ConnectionHandle@23dd246] will not be managed by Spring
+09:21:45.331 DEBUG c.w.e.d.d.E.selectByPrimaryKey - ==>  Preparing: select eid, eum_id, smsr_id, ecasd_id, production_date, platform_type, platform_version, remaining_memory, availablememoryforprofiles, count, phone_no from euicc_card where eid = ? 
+09:21:45.332 DEBUG c.w.e.d.d.E.selectByPrimaryKey - ==> Parameters: 89001012012341234012345678901224(String)
+09:21:45.334 DEBUG c.w.e.d.d.E.selectByPrimaryKey - <==      Total: 1
+09:21:45.334 DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19a8739b]
+09:21:45.335 DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+09:21:45.335 DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@71d9d55b] was not registered for synchronization because synchronization is not active
+09:21:45.335 DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.jolbox.bonecp.ConnectionHandle@23dd246] will not be managed by Spring
+09:21:45.335 DEBUG c.w.e.d.d.E.updateByPrimaryKeySelective - ==>  Preparing: update euicc_card SET count = ? where eid = ? 
+09:21:45.336 DEBUG c.w.e.d.d.E.updateByPrimaryKeySelective - ==> Parameters: 46(Integer), 89001012012341234012345678901224(String)
+09:21:45.374 DEBUG c.w.e.d.d.E.updateByPrimaryKeySelective - <==    Updates: 1
+09:21:45.374 DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@71d9d55b]
+09:21:45.375 INFO  com.whty.euicc.trigger.SmsTriggerUtil - en sms:02700000281516011212000013C1FCF2D6D3692C9CA987AD9F36315E0115E34C87A89290CBDD70315F47A28751
+09:21:45.376 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:45.376 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:45.377 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:45.377 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:46.378 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:46.379 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:47.381 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:47.381 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:47.794 INFO  com.whty.euicc.handler.NettySrHandler - ==========接收来自非卡端请求消息==========
+09:21:47.794 DEBUG com.whty.euicc.handler.NettySrHandler - 请求消息明文 : {"header":{"version":"01","sendTime":"2016-09-30 09:21:46","msgType":"receivePor","tradeNO":"20160930092146","tradeRefNO":"0"},"body":{"tpud":"02710000340A00001300000002D50000AB27800101232200000000000000000000300370BE9E38C3D0E672AAA2951ECA8E7316C500000490009000"}}
+09:21:47.796 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2016-09-30 09:21:46","msgType":"receivePor","tradeNO":"20160930092146","tradeRefNO":"0"},"body":{"tpud":"02710000340A00001300000002D50000AB27800101232200000000000000000000300370BE9E38C3D0E672AAA2951ECA8E7316C500000490009000"}}
+09:21:47.797 INFO  c.w.e.sr.handler.por.ReceivePorHandler - ***********进入PoR流程************
+09:21:47.797 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2016-09-30 09:21:46","msgType":"receivePor","tradeNO":"20160930092146","tradeRefNO":"0"},"body":{"tpud":"02710000340A00001300000002D50000AB27800101232200000000000000000000300370BE9E38C3D0E672AAA2951ECA8E7316C500000490009000"}}
+09:21:47.798 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:47.798 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:47.799 INFO  c.w.e.sr.handler.por.ReceivePorHandler - received por >> 02710000340A00001300000002D50000AB27800101232200000000000000000000300370BE9E38C3D0E672AAA2951ECA8E7316C500000490009000
+09:21:47.799 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:47.800 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:47.801 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:47.802 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:47.802 DEBUG com.whty.euicc.handler.NettySrHandler - 响应消息明文 : {"code":"0000","message":"success"}
+09:21:48.382 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:48.383 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:48.386 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:48.387 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:48.387 INFO  com.whty.euicc.trigger.SmsTriggerUtil - ----------已等待卡片通知处理完成
+09:21:49.388 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:49.388 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:49.389 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:49.389 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:49.390 DEBUG com.whty.euicc.handler.NettySrHandler - 响应消息明文 : {"code":"0000","message":"success","data":"02710000340A00001300000002D50000AB27800101232200000000000000000000300370BE9E38C3D0E672AAA2951ECA8E7316C500000490009000"}
+09:21:49.563 INFO  com.whty.euicc.handler.NettySrHandler - ==========接收来自非卡端请求消息==========
+09:21:49.563 DEBUG com.whty.euicc.handler.NettySrHandler - 请求消息明文 : {"header":{"version":"01","sendTime":"2016-09-30 09:21:49","msgType":"scp03","tradeNO":"20160930092149","tradeRefNO":"0"},"body":{"eid":"89001012012341234012345678901224","iccid":"00","sms":"AA1822168482330010B10D23EA5D9CB9C4AEB61325CB4A516F00"}}
+09:21:49.564 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2016-09-30 09:21:49","msgType":"scp03","tradeNO":"20160930092149","tradeRefNO":"0"},"body":{"eid":"89001012012341234012345678901224","iccid":"00","sms":"AA1822168482330010B10D23EA5D9CB9C4AEB61325CB4A516F00"}}
+09:21:49.565 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2016-09-30 09:21:49","msgType":"scp03","tradeNO":"20160930092149","tradeRefNO":"0"},"body":{"eid":"89001012012341234012345678901224","iccid":"00","sms":"AA1822168482330010B10D23EA5D9CB9C4AEB61325CB4A516F00"}}
+09:21:49.567 INFO  com.whty.euicc.trigger.SmsTriggerUtil - sms:AA1822168482330010B10D23EA5D9CB9C4AEB61325CB4A516F00
+09:21:49.567 INFO  com.whty.euicc.trigger.SmsTriggerUtil - plain sms:AA1822168482330010B10D23EA5D9CB9C4AEB61325CB4A516F00
+09:21:49.567 DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+09:21:49.568 DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3aca5e2] was not registered for synchronization because synchronization is not active
+09:21:49.568 DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.jolbox.bonecp.ConnectionHandle@67a4076] will not be managed by Spring
+09:21:49.568 DEBUG c.w.e.d.d.E.selectByPrimaryKey - ==>  Preparing: select eid, eum_id, smsr_id, ecasd_id, production_date, platform_type, platform_version, remaining_memory, availablememoryforprofiles, count, phone_no from euicc_card where eid = ? 
+09:21:49.569 DEBUG c.w.e.d.d.E.selectByPrimaryKey - ==> Parameters: 89001012012341234012345678901224(String)
+09:21:49.573 DEBUG c.w.e.d.d.E.selectByPrimaryKey - <==      Total: 1
+09:21:49.574 DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3aca5e2]
+09:21:49.574 DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+09:21:49.574 DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@ca8e2b8] was not registered for synchronization because synchronization is not active
+09:21:49.575 DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.jolbox.bonecp.ConnectionHandle@52f9cbe5] will not be managed by Spring
+09:21:49.576 DEBUG c.w.e.d.d.E.updateByPrimaryKeySelective - ==>  Preparing: update euicc_card SET count = ? where eid = ? 
+09:21:49.576 DEBUG c.w.e.d.d.E.updateByPrimaryKeySelective - ==> Parameters: 47(Integer), 89001012012341234012345678901224(String)
+09:21:49.617 DEBUG c.w.e.d.d.E.updateByPrimaryKeySelective - <==    Updates: 1
+09:21:49.618 DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@ca8e2b8]
+09:21:49.621 INFO  com.whty.euicc.trigger.SmsTriggerUtil - en sms:027000003815160112120000139012E5BAB474BE9C8A56C8B8F0EB3BF4E794BB862137781B80C668FE644655ADE73D70B071E1517D9819CB8038FAC5D0
+09:21:49.624 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:49.626 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:49.626 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:49.627 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:50.293 DEBUG io.netty.handler.ssl.SslHandler - Swallowing a harmless 'connection reset by peer / broken pipe' error that occurred while writing close_notify in response to the peer's close_notify
+java.io.IOException: 您的主机中的软件中止了一个已建立的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method) ~[na:1.6.0_13]
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:25) ~[na:1.6.0_13]
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:233) ~[na:1.6.0_13]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:206) ~[na:1.6.0_13]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:236) ~[na:1.6.0_13]
+	at io.netty.buffer.UnpooledHeapByteBuf.setBytes(UnpooledHeapByteBuf.java:256) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:871) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:208) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:108) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:494) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:461) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:378) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:350) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:101) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at java.lang.Thread.run(Thread.java:619) [na:1.6.0_13]
+09:21:50.628 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:50.629 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:51.631 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:51.631 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:52.356 INFO  com.whty.euicc.handler.NettySrHandler - ==========接收来自非卡端请求消息==========
+09:21:52.356 DEBUG com.whty.euicc.handler.NettySrHandler - 请求消息明文 : {"header":{"version":"01","sendTime":"2016-09-30 09:21:51","msgType":"receivePor","tradeNO":"20160930092151","tradeRefNO":"0"},"body":{"tpud":"02710000140A00001300000000350000AB0780010123029000"}}
+09:21:52.356 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2016-09-30 09:21:51","msgType":"receivePor","tradeNO":"20160930092151","tradeRefNO":"0"},"body":{"tpud":"02710000140A00001300000000350000AB0780010123029000"}}
+09:21:52.357 INFO  c.w.e.sr.handler.por.ReceivePorHandler - ***********进入PoR流程************
+09:21:52.357 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2016-09-30 09:21:51","msgType":"receivePor","tradeNO":"20160930092151","tradeRefNO":"0"},"body":{"tpud":"02710000140A00001300000000350000AB0780010123029000"}}
+09:21:52.357 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:52.358 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:52.358 INFO  c.w.e.sr.handler.por.ReceivePorHandler - received por >> 02710000140A00001300000000350000AB0780010123029000
+09:21:52.358 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:52.359 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:52.359 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:52.360 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:52.360 DEBUG com.whty.euicc.handler.NettySrHandler - 响应消息明文 : {"code":"0000","message":"success"}
+09:21:52.632 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:52.633 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:52.635 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:52.636 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:52.637 INFO  com.whty.euicc.trigger.SmsTriggerUtil - ----------已等待卡片通知处理完成
+09:21:53.637 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:53.638 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:53.639 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:53.640 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:53.641 DEBUG com.whty.euicc.handler.NettySrHandler - 响应消息明文 : {"code":"0000","message":"success","data":"02710000140A00001300000000350000AB0780010123029000"}
+09:21:53.711 INFO  com.whty.euicc.handler.NettySrHandler - ==========接收来自非卡端请求消息==========
+09:21:53.712 DEBUG com.whty.euicc.handler.NettySrHandler - 请求消息明文 : {"header":{"version":"01","sendTime":"2016-09-30 09:21:53","msgType":"updateConnectivityParameters","tradeNO":"20160930092153","tradeRefNO":"0"},"body":{"eid":"89001012012341234012345678901224","iccid":"00","sms":"AA20221E84E288001844138ADB2FB40331BD25DC51C957E8ACCB527159DA679B3900"}}
+09:21:53.712 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2016-09-30 09:21:53","msgType":"updateConnectivityParameters","tradeNO":"20160930092153","tradeRefNO":"0"},"body":{"eid":"89001012012341234012345678901224","iccid":"00","sms":"AA20221E84E288001844138ADB2FB40331BD25DC51C957E8ACCB527159DA679B3900"}}
+09:21:53.714 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2016-09-30 09:21:53","msgType":"updateConnectivityParameters","tradeNO":"20160930092153","tradeRefNO":"0"},"body":{"eid":"89001012012341234012345678901224","iccid":"00","sms":"AA20221E84E288001844138ADB2FB40331BD25DC51C957E8ACCB527159DA679B3900"}}
+09:21:53.716 INFO  com.whty.euicc.trigger.SmsTriggerUtil - sms:AA20221E84E288001844138ADB2FB40331BD25DC51C957E8ACCB527159DA679B3900
+09:21:53.717 INFO  com.whty.euicc.trigger.SmsTriggerUtil - plain sms:AA20221E84E288001844138ADB2FB40331BD25DC51C957E8ACCB527159DA679B3900
+09:21:53.717 DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+09:21:53.717 DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6ff0239] was not registered for synchronization because synchronization is not active
+09:21:53.717 DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.jolbox.bonecp.ConnectionHandle@976484e] will not be managed by Spring
+09:21:53.718 DEBUG c.w.e.d.d.E.selectByPrimaryKey - ==>  Preparing: select eid, eum_id, smsr_id, ecasd_id, production_date, platform_type, platform_version, remaining_memory, availablememoryforprofiles, count, phone_no from euicc_card where eid = ? 
+09:21:53.718 DEBUG c.w.e.d.d.E.selectByPrimaryKey - ==> Parameters: 89001012012341234012345678901224(String)
+09:21:53.721 DEBUG c.w.e.d.d.E.selectByPrimaryKey - <==      Total: 1
+09:21:53.722 DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6ff0239]
+09:21:53.722 DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+09:21:53.722 DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3faf7a03] was not registered for synchronization because synchronization is not active
+09:21:53.723 DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.jolbox.bonecp.ConnectionHandle@67a4076] will not be managed by Spring
+09:21:53.723 DEBUG c.w.e.d.d.E.updateByPrimaryKeySelective - ==>  Preparing: update euicc_card SET count = ? where eid = ? 
+09:21:53.723 DEBUG c.w.e.d.d.E.updateByPrimaryKeySelective - ==> Parameters: 48(Integer), 89001012012341234012345678901224(String)
+09:21:53.760 DEBUG c.w.e.d.d.E.updateByPrimaryKeySelective - <==    Updates: 1
+09:21:53.760 DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3faf7a03]
+09:21:53.762 INFO  com.whty.euicc.trigger.SmsTriggerUtil - en sms:0270000038151601121200001334FDDF4FC2791C4A10D8CFE3861E57EBA3E9118BB1983AEBEF58EE9E9A8D90A5560E354D53A56E48D0194747AD943703
+09:21:53.763 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:53.764 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:53.764 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:53.764 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:54.765 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:54.766 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:55.239 DEBUG io.netty.handler.ssl.SslHandler - Swallowing a harmless 'connection reset by peer / broken pipe' error that occurred while writing close_notify in response to the peer's close_notify
+java.io.IOException: 您的主机中的软件中止了一个已建立的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method) ~[na:1.6.0_13]
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:25) ~[na:1.6.0_13]
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:233) ~[na:1.6.0_13]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:206) ~[na:1.6.0_13]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:236) ~[na:1.6.0_13]
+	at io.netty.buffer.UnpooledHeapByteBuf.setBytes(UnpooledHeapByteBuf.java:256) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:871) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:208) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:108) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:494) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:461) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:378) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:350) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:101) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at java.lang.Thread.run(Thread.java:619) [na:1.6.0_13]
+09:21:55.768 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:55.768 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:56.762 INFO  com.whty.euicc.handler.NettySrHandler - ==========接收来自非卡端请求消息==========
+09:21:56.763 DEBUG com.whty.euicc.handler.NettySrHandler - 请求消息明文 : {"header":{"version":"01","sendTime":"2016-09-30 09:21:55","msgType":"receivePor","tradeNO":"20160930092155","tradeRefNO":"0"},"body":{"tpud":"027100001C0A00001300000000360000AB0F800101230A701DC3A5BD0EE89C9000"}}
+09:21:56.763 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2016-09-30 09:21:55","msgType":"receivePor","tradeNO":"20160930092155","tradeRefNO":"0"},"body":{"tpud":"027100001C0A00001300000000360000AB0F800101230A701DC3A5BD0EE89C9000"}}
+09:21:56.763 INFO  c.w.e.sr.handler.por.ReceivePorHandler - ***********进入PoR流程************
+09:21:56.763 DEBUG c.whty.euicc.packets.parse.EuiccMsgParse - 请求报文:{"header":{"version":"01","sendTime":"2016-09-30 09:21:55","msgType":"receivePor","tradeNO":"20160930092155","tradeRefNO":"0"},"body":{"tpud":"027100001C0A00001300000000360000AB0F800101230A701DC3A5BD0EE89C9000"}}
+09:21:56.764 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:56.765 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:56.765 INFO  c.w.e.sr.handler.por.ReceivePorHandler - received por >> 027100001C0A00001300000000360000AB0F800101230A701DC3A5BD0EE89C9000
+09:21:56.765 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:56.766 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:56.766 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:56.766 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:56.767 DEBUG com.whty.euicc.handler.NettySrHandler - 响应消息明文 : {"code":"0000","message":"success"}
+09:21:56.769 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:56.769 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:56.770 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:56.770 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:56.770 INFO  com.whty.euicc.trigger.SmsTriggerUtil - ----------已等待卡片通知处理完成
+09:21:57.770 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:57.771 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:57.772 DEBUG c.w.c.redis.core.RedisConnectionUtils - Opening RedisConnection
+09:21:57.773 DEBUG c.w.c.redis.core.RedisConnectionUtils - Closing Redis Connection
+09:21:57.774 DEBUG com.whty.euicc.handler.NettySrHandler - 响应消息明文 : {"code":"0000","message":"success","data":"027100001C0A00001300000000360000AB0F800101230A701DC3A5BD0EE89C9000"}
+09:22:00.242 DEBUG io.netty.handler.ssl.SslHandler - Swallowing a harmless 'connection reset by peer / broken pipe' error that occurred while writing close_notify in response to the peer's close_notify
+java.io.IOException: 您的主机中的软件中止了一个已建立的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method) ~[na:1.6.0_13]
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:25) ~[na:1.6.0_13]
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:233) ~[na:1.6.0_13]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:206) ~[na:1.6.0_13]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:236) ~[na:1.6.0_13]
+	at io.netty.buffer.UnpooledHeapByteBuf.setBytes(UnpooledHeapByteBuf.java:256) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:871) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:208) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:108) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:494) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:461) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:378) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:350) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:101) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at java.lang.Thread.run(Thread.java:619) [na:1.6.0_13]
+09:22:05.245 DEBUG io.netty.handler.ssl.SslHandler - Swallowing a harmless 'connection reset by peer / broken pipe' error that occurred while writing close_notify in response to the peer's close_notify
+java.io.IOException: 您的主机中的软件中止了一个已建立的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method) ~[na:1.6.0_13]
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:25) ~[na:1.6.0_13]
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:233) ~[na:1.6.0_13]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:206) ~[na:1.6.0_13]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:236) ~[na:1.6.0_13]
+	at io.netty.buffer.UnpooledHeapByteBuf.setBytes(UnpooledHeapByteBuf.java:256) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:871) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:208) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:108) ~[netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:494) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:461) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:378) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:350) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:101) [netty-all-4.0.17.Final.jar:4.0.17.Final]
+	at java.lang.Thread.run(Thread.java:619) [na:1.6.0_13]

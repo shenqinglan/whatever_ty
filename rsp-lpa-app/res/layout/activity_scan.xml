@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <SurfaceView
+        android:id="@+id/preview_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+    <com.google.zxing.view.ViewfinderView
+        android:id="@+id/viewfinder_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/titlebar"
+        style="@style/titlebar" >
+
+        <TextView
+            style="@style/titletext"
+            android:text="@string/title_scan" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@color/viewfinder_mask" >
+
+        <ImageButton
+            android:id="@+id/torch"
+            style="@style/scan_bottom_torch"
+            android:contentDescription="@string/contentDescription" />
+
+        <ImageButton
+            android:id="@+id/loger"
+            style="@style/scan_bottom_loger"
+            android:contentDescription="@string/contentDescription" />
+    </LinearLayout>
+
+</RelativeLayout>

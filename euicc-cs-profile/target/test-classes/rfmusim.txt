@@ -1,0 +1,17 @@
+pe-rfmUsim ProfileElement ::= rfm : {
+  rfm-header { 
+identification 11 
+}, 
+instanceAID 'A00000055910100002'H, 
+tarList { 
+'B00020'H 
+}, 
+minimumSecurityLevel '12'H, 
+uiccAccessDomain '00'H, 
+uiccAdminAccessDomain '00'H, 
+adfRFMAccess { 
+adfAID 'A0000000871002FF33FF018900000100'H, 
+adfAccessDomain '02000100'H, 
+adfAdminAccessDomain '02000100'H 
+} 
+} 

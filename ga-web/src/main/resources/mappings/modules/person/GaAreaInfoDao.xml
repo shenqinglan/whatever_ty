@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.jeesite.modules.person.dao.GaAreaInfoDao">
+    
+	<sql id="gaAreaInfoColumns">
+		a.id AS "id",
+		a.area_name AS "areaName",
+		a.city_no AS "cityNo",
+		a.district_no AS "districtNo",
+		a.area_no AS "areaNo",
+		a.area_address AS "areaAddress",
+		a.area_type_code AS "areaTypeCode",
+		a.create_date AS "createDate",
+		a.update_date AS "updateDate",
+		a.remarks AS "remarks",
+		a.del_flag AS "delFlag"
+	</sql>
+	
+	<sql id="gaAreaInfoJoins">
+	</sql>
+    
+	<select id="get" resultType="GaAreaInfo">
+		SELECT 
+			<include refid="gaAreaInfoColumns"/>
+		FROM ga_area_info a
+		<include refid="gaAreaInfoJoins"/>
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="GaAreaInfo">
+		SELECT 
+			<include refid="gaAreaInfoColumns"/>
+		FROM ga_area_info a
+		<include refid="gaAreaInfoJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+			<if test="areaName != null and areaName != ''">
+				AND a.area_name LIKE 
+					<if test="dbName == 'oracle'">'%'||#{areaName}||'%'</if>
+					<if test="dbName == 'mssql'">'%'+#{areaName}+'%'</if>
+					<if test="dbName == 'mysql'">concat('%',#{areaName},'%')</if>
+			</if>
+			<if test="areaNo != null and areaNo != ''">
+				AND a.area_no = #{areaNo}
+			</if>
+		</where>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findAllList" resultType="GaAreaInfo">
+		SELECT 
+			<include refid="gaAreaInfoColumns"/>
+		FROM ga_area_info a
+		<include refid="gaAreaInfoJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+		</where>		
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO ga_area_info(
+			id,
+			area_name,
+			city_no,
+			district_no,
+			area_no,
+			area_address,
+			area_type_code,
+			create_date,
+			update_date,
+			remarks,
+			del_flag
+		) VALUES (
+			#{id},
+			#{areaName},
+			#{cityNo},
+			#{districtNo},
+			#{areaNo},
+			#{areaAddress},
+			#{areaTypeCode},
+			#{createDate},
+			#{updateDate},
+			#{remarks},
+			#{delFlag}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE ga_area_info SET 	
+			area_name = #{areaName},
+			city_no = #{cityNo},
+			district_no = #{districtNo},
+			area_no = #{areaNo},
+			area_address = #{areaAddress},
+			area_type_code = #{areaTypeCode},
+			update_date = #{updateDate},
+			remarks = #{remarks}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		UPDATE ga_area_info SET 
+			del_flag = #{DEL_FLAG_DELETE}
+		WHERE id = #{id}
+	</update>
+	
+</mapper>

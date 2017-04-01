@@ -1,0 +1,286 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:add="http://www.w3.org/2005/08/addressing" xmlns:ns="http://namespaces.gsma.org/esim-messaging/3" xmlns:xd="http://www.w3.org/2000/09/xmldsig#">
+   <soap:Header>
+      <add:Action>1</add:Action>
+      <add:MessageID>1</add:MessageID>
+      <add:To>1</add:To>
+      <add:From>
+         <add:Address>1</add:Address>
+         <!--Optional:-->
+         <add:ReferenceParameters>
+            <!--You may enter ANY elements at this point-->
+         </add:ReferenceParameters>
+         <!--Optional:-->
+         <add:Metadata>
+            <!--You may enter ANY elements at this point-->
+         </add:Metadata>
+         <!--You may enter ANY elements at this point-->
+      </add:From>
+   </soap:Header>
+   <soap:Body>
+      <ns:ES7-AuthenticateSMSRRequest>
+         <ns:FunctionCallIdentifier>01</ns:FunctionCallIdentifier>
+         <!--Optional:-->
+         <ns:ValidityPeriod>01</ns:ValidityPeriod>
+         <ns:Eis>
+            <ns:EumSignedInfo>
+               <ns:Eid>{1}</ns:Eid>
+               <ns:Eum-id>01</ns:Eum-id>
+               <ns:ProductionDate>2016-10-18T11:56:54</ns:ProductionDate>
+               <ns:PlatformType>2</ns:PlatformType>
+               <ns:PlatformVersion>2</ns:PlatformVersion>
+               <ns:Isd-p-loadfile-aid>111111</ns:Isd-p-loadfile-aid>
+               <ns:Isd-p-module-aid>111111</ns:Isd-p-module-aid>
+               <ns:Ecasd>
+                  <ns:Aid>123456</ns:Aid>
+                  <!--Zero or more repetitions:-->
+                  <ns:Tar>123456</ns:Tar>
+                  <ns:Sin>123456</ns:Sin>
+                  <ns:Sdin>123456</ns:Sdin>
+                  <ns:Role>12</ns:Role>
+                  <!--1 to 127 repetitions:-->
+                  <ns:Keyset>
+                     <ns:Version>01</ns:Version>
+                     <!--Optional:-->
+                     <ns:Type>01</ns:Type>
+                     <!--Optional:-->
+                     <ns:Cntr>01</ns:Cntr>
+                     <!--You have a CHOICE of the next 2 items at this level-->
+                     <ns:Key kcv="123456">
+                        <ns:Index>01</ns:Index>
+                        <!--1 or more repetitions:-->
+                        <ns:KeyComponents type="123456" value="654321"/>
+                     </ns:Key>
+                     <ns:Certificate>
+                        <ns:Index>01</ns:Index>
+                        <ns:CaId>2</ns:CaId>
+                        <ns:Value>123456</ns:Value>
+                     </ns:Certificate>
+                  </ns:Keyset>
+               </ns:Ecasd>
+               <ns:EuiccCapabilities>
+                  <ns:CattpSupport>1</ns:CattpSupport>
+                  <!--Optional:-->
+                  <ns:CattpVersion>1</ns:CattpVersion>
+                  <ns:HttpSupport>1</ns:HttpSupport>
+                  <!--Optional:-->
+                  <ns:HttpVersion>1</ns:HttpVersion>
+                  <ns:SecurePacketVersion>1</ns:SecurePacketVersion>
+                  <ns:RemoteProvisioningVersion>1</ns:RemoteProvisioningVersion>
+               </ns:EuiccCapabilities>
+            </ns:EumSignedInfo>
+            <ns:EumSignature Id="01">
+               <xd:SignedInfo Id="01">
+                  <xd:CanonicalizationMethod Algorithm="01">
+                     e
+                     <!--You may enter ANY elements at this point-->
+                     gero
+                  </xd:CanonicalizationMethod>
+                  <xd:SignatureMethod Algorithm="01">
+                     cum
+                     <!--Optional:-->
+                     <xd:HMACOutputLength>01</xd:HMACOutputLength>
+                     sonoras
+                     <!--You may enter ANY elements at this point-->
+                     aeoliam
+                  </xd:SignatureMethod>
+                  <!--1 or more repetitions:-->
+                  <xd:Reference Id="01" URI="01" Type="01">
+                     <!--Optional:-->
+                     <xd:Transforms>
+                        <!--1 or more repetitions:-->
+                        <xd:Transform Algorithm="00">
+                           quae
+                           <!--You have a CHOICE of the next 2 items at this level-->
+                           <!--You may enter ANY elements at this point-->
+                           <xd:XPath>01</xd:XPath>
+                           ventos
+                        </xd:Transform>
+                     </xd:Transforms>
+                     <xd:DigestMethod Algorithm="00">
+                        verrantque
+                        <!--You may enter ANY elements at this point-->
+                        temperat
+                     </xd:DigestMethod>
+                     <xd:DigestValue>123456</xd:DigestValue>
+                  </xd:Reference>
+               </xd:SignedInfo>
+               <xd:SignatureValue Id="01">123456</xd:SignatureValue>
+               <!--Optional:-->
+               <xd:KeyInfo Id="01">
+                  per
+                  <!--You have a CHOICE of the next 8 items at this level-->
+                  <xd:KeyName>01</xd:KeyName>
+                  <xd:KeyValue>
+                     turbine
+                     <!--You have a CHOICE of the next 3 items at this level-->
+                     <xd:DSAKeyValue>
+                        <xd:P>123456</xd:P>
+                        <xd:Q>123456</xd:Q>
+                        <!--Optional:-->
+                        <xd:G>123456</xd:G>
+                        <xd:Y>123456</xd:Y>
+                        <!--Optional:-->
+                        <xd:J>123456</xd:J>
+                        <xd:Seed>123456</xd:Seed>
+                        <xd:PgenCounter>123456</xd:PgenCounter>
+                     </xd:DSAKeyValue>
+                     <xd:RSAKeyValue>
+                        <xd:Modulus>123456</xd:Modulus>
+                        <xd:Exponent>123456</xd:Exponent>
+                     </xd:RSAKeyValue>
+                     <!--You may enter ANY elements at this point-->
+                     circum
+                  </xd:KeyValue>
+                  <xd:RetrievalMethod URI="01" Type="01">
+                     <!--Optional:-->
+                     <xd:Transforms>
+                        <!--1 or more repetitions:-->
+                        <xd:Transform Algorithm="01">
+                           regemque
+                           <!--You have a CHOICE of the next 2 items at this level-->
+                           <!--You may enter ANY elements at this point-->
+                           <xd:XPath>2</xd:XPath>
+                           nimborum
+                        </xd:Transform>
+                     </xd:Transforms>
+                  </xd:RetrievalMethod>
+                  <xd:X509Data>
+                     <!--You have a CHOICE of the next 6 items at this level-->
+                     <xd:X509IssuerSerial>
+                        <xd:X509IssuerName>01</xd:X509IssuerName>
+                        <xd:X509SerialNumber>2</xd:X509SerialNumber>
+                     </xd:X509IssuerSerial>
+                     <xd:X509SKI>123456</xd:X509SKI>
+                     <xd:X509SubjectName>123456</xd:X509SubjectName>
+                     <xd:X509Certificate>123456</xd:X509Certificate>
+                     <xd:X509CRL>123456</xd:X509CRL>
+                     <!--You may enter ANY elements at this point-->
+                  </xd:X509Data>
+                  <xd:PGPData>
+                     <!--You have a CHOICE of the next 2 items at this level-->
+                     <xd:PGPKeyID>123456</xd:PGPKeyID>
+                     <!--Optional:-->
+                     <xd:PGPKeyPacket>123456</xd:PGPKeyPacket>
+                     <!--You may enter ANY elements at this point-->
+                     <xd:PGPKeyPacket>123456</xd:PGPKeyPacket>
+                     <!--You may enter ANY elements at this point-->
+                  </xd:PGPData>
+                  <xd:SPKIData>
+                     <xd:SPKISexp>123456</xd:SPKISexp>
+                     <!--You may enter ANY elements at this point-->
+                  </xd:SPKIData>
+                  <xd:MgmtData>123456</xd:MgmtData>
+                  <!--You may enter ANY elements at this point-->
+                  fremunt
+               </xd:KeyInfo>
+               <!--Zero or more repetitions:-->
+               <xd:Object Id="01" MimeType="01" Encoding="01">
+                  foedere
+                  <!--You may enter ANY elements at this point-->
+                  ferant
+               </xd:Object>
+            </ns:EumSignature>
+            <ns:RemainingMemory>123456</ns:RemainingMemory>
+            <ns:AvailableMemoryForProfiles>123456</ns:AvailableMemoryForProfiles>
+            <!--Optional:-->
+            <ns:LastAuditDate>123456</ns:LastAuditDate>
+            <ns:Smsr-id>11</ns:Smsr-id>
+            <!--Zero or more repetitions:-->
+            <ns:ProfileInfo>
+               <ns:Iccid>00</ns:Iccid>
+               <ns:Isd-p-aid>123456</ns:Isd-p-aid>
+               <ns:Mno-id>11</ns:Mno-id>
+               <ns:FallbackAttribute>01</ns:FallbackAttribute>
+               <ns:SubscriptionAddress>
+                  <!--Optional:-->
+                  <ns:Imsi>01</ns:Imsi>
+                  <!--Optional:-->
+                  <ns:Msisdn>01</ns:Msisdn>
+               </ns:SubscriptionAddress>
+               <ns:State>01</ns:State>
+               <!--Optional:-->
+               <ns:Smdp-id>01</ns:Smdp-id>
+               <!--Optional:-->
+               <ns:ProfileType>01</ns:ProfileType>
+               <ns:AllocatedMemory>01</ns:AllocatedMemory>
+               <!--Optional:-->
+               <ns:FreeMemory>01</ns:FreeMemory>
+               <ns:pol2>
+                  <!--Zero or more repetitions:-->
+                  <ns:Rule>
+                     <ns:Subject>01</ns:Subject>
+                     <ns:Action>01</ns:Action>
+                     <ns:Qualification>01</ns:Qualification>
+                  </ns:Rule>
+               </ns:pol2>
+            </ns:ProfileInfo>
+            <ns:Isd-r>
+               <ns:Aid>123456</ns:Aid>
+               <!--Zero or more repetitions:-->
+               <ns:Tar>123456</ns:Tar>
+               <ns:Sin>123456</ns:Sin>
+               <ns:Sdin>123456</ns:Sdin>
+               <ns:Role>01</ns:Role>
+               <!--1 to 127 repetitions:-->
+               <ns:Keyset>
+                  <ns:Version>01</ns:Version>
+                  <!--Optional:-->
+                  <ns:Type>01</ns:Type>
+                  <!--Optional:-->
+                  <ns:Cntr>01</ns:Cntr>
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <ns:Key kcv="123456">
+                     <ns:Index>01</ns:Index>
+                     <!--1 or more repetitions:-->
+                     <ns:KeyComponents type="123456" value="123456"/>
+                  </ns:Key>
+                  <ns:Certificate>
+                     <ns:Index>01</ns:Index>
+                     <ns:CaId>01</ns:CaId>
+                     <ns:Value>123456</ns:Value>
+                  </ns:Certificate>
+               </ns:Keyset>
+            </ns:Isd-r>
+            <!--Optional:-->
+            <ns:AuditTrail>
+               <!--Zero or more repetitions:-->
+               <ns:Record>
+                  <ns:Eid>3839303031303132303132333431323334303132333435363738393031323234</ns:Eid>
+                  <ns:Smsr-id>11</ns:Smsr-id>
+                  <ns:OperationDate>2016-10-18T11:56:54</ns:OperationDate>
+                  <ns:OperationType>01</ns:OperationType>
+                  <!--Optional:-->
+                  <ns:RequesterId>01</ns:RequesterId>
+                  <!--Optional:-->
+                  <ns:OperationExecutionStatus>
+                     <ns:Status>01</ns:Status>
+                     <!--Optional:-->
+                     <ns:StatusCodeData>
+                        <ns:Subject>01</ns:Subject>
+                        <ns:Reason>01</ns:Reason>
+                        <!--Optional:-->
+                        <ns:SubjectIdentifier>01</ns:SubjectIdentifier>
+                        <!--Optional:-->
+                        <ns:Message>01</ns:Message>
+                     </ns:StatusCodeData>
+                  </ns:OperationExecutionStatus>
+                  <!--Optional:-->
+                  <ns:Isd-p-aid>123456</ns:Isd-p-aid>
+                  <!--Optional:-->
+                  <ns:Iccid>00</ns:Iccid>
+                  <!--Optional:-->
+                  <ns:Imei>123456</ns:Imei>
+                  <!--Optional:-->
+                  <ns:Meid>123456</ns:Meid>
+               </ns:Record>
+            </ns:AuditTrail>
+            <!--Optional:-->
+            <ns:AdditionalProperties>
+               <!--1 or more repetitions:-->
+               <ns:Property key="01" value="01"/>
+            </ns:AdditionalProperties>
+         </ns:Eis>
+         <ns:SmsrCertificate>{0}</ns:SmsrCertificate>
+      </ns:ES7-AuthenticateSMSRRequest>
+   </soap:Body>
+</soap:Envelope>

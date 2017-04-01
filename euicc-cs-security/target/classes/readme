@@ -1,0 +1,3 @@
+EccArth.dll和libeay32.dl放置到C:\Windows\System32目录下面
+
+libEccArth.so放置到Linux /usr/lib 目录下面

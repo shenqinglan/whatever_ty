@@ -1,0 +1,10 @@
+mvn install:install-file  -Dfile=tls.jar  -DgroupId=com.whty  -DartifactId=tls -Dversion=0.0.1 -Dpackaging=jar
+mvn install:install-file  -Dfile=CAT_TP_Tools_API.jar  -DgroupId=com.whty  -DartifactId=CAT_TP_Tools_API -Dversion=0.0.1 -Dpackaging=jar
+mvn install:install-file  -Dfile=csms.jar  -DgroupId=com.whty  -DartifactId=csms -Dversion=0.0.1 -Dpackaging=jar
+mvn install:install-file  -Dfile=javatest.jar  -DgroupId=com.whty  -DartifactId=javatest -Dversion=0.0.1 -Dpackaging=jar
+mvn install:install-file  -Dfile=jh.jar  -DgroupId=com.whty  -DartifactId=jh -Dversion=0.0.1 -Dpackaging=jar
+mvn install:install-file  -Dfile=JTHarnessSuite.jar  -DgroupId=com.whty  -DartifactId=JTHarnessSuite -Dversion=0.0.1 -Dpackaging=jar
+mvn install:install-file  -Dfile=Promotion.jar  -DgroupId=com.whty  -DartifactId=Promotion -Dversion=0.0.1 -Dpackaging=jar
+mvn install:install-file  -Dfile=scdp4j.jar  -DgroupId=com.whty  -DartifactId=scdp4j -Dversion=0.0.1 -Dpackaging=jar
+mvn install:install-file  -Dfile=TelecomHttps.jar  -DgroupId=com.whty  -DartifactId=TelecomHttps -Dversion=0.0.1 -Dpackaging=jar
+mvn install:install-file  -Dfile=UiccStdTestINF.jar  -DgroupId=com.whty  -DartifactId=UiccStdTestINF -Dversion=0.0.1 -Dpackaging=jar

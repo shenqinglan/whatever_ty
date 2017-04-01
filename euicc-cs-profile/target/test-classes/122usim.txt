@@ -1,0 +1,49 @@
+usimValue ProfileElement ::= usim : {
+usim-header {
+mandated NULL,
+identification 2
+},
+templateID { 2 23 143 1 2 4 },
+adf-usim {
+},
+ef-imsi {
+fillFileContent '0832141049737856F6'H,
+fileDescriptor {
+securityAttributesReferenced '2F0602'H
+}
+},
+ef-arr {
+fileDescriptor {
+securityAttributesReferenced '2F060A'H
+}
+},
+ef-ust {
+fileDescriptor {
+securityAttributesReferenced '2F0602'H
+},
+fillFileContent '0A2E178CE73204000000000000'H
+},
+ef-spn {
+fileDescriptor {
+securityAttributesReferenced '2F060A'H
+},
+fillFileContent '0247534D41206555494343FFFFFFFFFFFF'H
+},
+ef-est {
+fileDescriptor {
+securityAttributesReferenced '2F0608'H
+},
+fillFileContent '00'H
+},
+ef-acc {
+fileDescriptor {
+securityAttributesReferenced '2F0602'H
+},
+fillFileContent '0010'H
+},
+ef-ecc {
+fileDescriptor {
+securityAttributesReferenced '2F060A'H
+}
+}
+}

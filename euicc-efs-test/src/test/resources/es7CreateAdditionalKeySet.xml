@@ -1,0 +1,34 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:add="http://www.w3.org/2005/08/addressing" xmlns:ns="http://namespaces.gsma.org/esim-messaging/3">
+   <soap:Header>
+      <add:Action>00</add:Action>
+      <add:MessageID>01</add:MessageID>
+      <add:To>02</add:To>
+      <add:From>
+         <add:Address>03</add:Address>
+         <!--Optional:-->
+         <add:ReferenceParameters>
+            <!--You may enter ANY elements at this point-->
+         </add:ReferenceParameters>
+         <!--Optional:-->
+         <add:Metadata>
+            <!--You may enter ANY elements at this point-->
+         </add:Metadata>
+         <!--You may enter ANY elements at this point-->
+      </add:From>
+   </soap:Header>
+   <soap:Body>
+      <ns:ES7-CreateAdditionalKeySetRequest>
+         <ns:FunctionCallIdentifier>01</ns:FunctionCallIdentifier>
+         <!--Optional:-->
+         <ns:ValidityPeriod>02</ns:ValidityPeriod>
+         <ns:Eid>3839303031303132303132333431323334303132333435363738393031323234</ns:Eid>
+         <ns:KeyVersionNumber>03</ns:KeyVersionNumber>
+         <ns:InitialSequenceCounter>04</ns:InitialSequenceCounter>
+         <ns:ECCKeyLength>20</ns:ECCKeyLength>
+         <ns:ScenarioParameter>05</ns:ScenarioParameter>
+         <ns:HostId>06</ns:HostId>
+         <ns:EphemeralPublicKey>3232383141363830453238393031413133413032313741363135393030323033303939353031313038303031383838313031313038323031303138333031303239313030374634393431303443384131323536354337364236344241383433303544343337303730344245424341343739394444414346303335343032463146443835453138304131383031414536344243434339363836333238313933373345334341413438353539393330463741394333344330464445393932324646323236384130374345354635373546333734304141353539343632453032333841353744443631353643424636323646333336463132453744453043384145313734454443443441304634434341353838434143413241353133453237353231363843324346413841424542444438343445413936333539453333303831453139373642333031444431414138364242414243</ns:EphemeralPublicKey>
+         <ns:Signature>00</ns:Signature>
+      </ns:ES7-CreateAdditionalKeySetRequest>
+   </soap:Body>
+</soap:Envelope>

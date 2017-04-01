@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.euicc.data.dao.CheckLogsMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.euicc.data.pojo.CheckLogs" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="USER_ID" property="userId" jdbcType="VARCHAR" />
+    <result column="OP_TYPE" property="opType" jdbcType="VARCHAR" />
+    <result column="OP_DATE" property="opDate" jdbcType="TIMESTAMP" />
+    <result column="OBJECT_ID" property="objectId" jdbcType="VARCHAR" />
+    <result column="TYPE" property="type" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.whty.euicc.data.pojo.CheckLogs" extends="BaseResultMap" >
+    <result column="REMARK" property="remark" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, USER_ID, OP_TYPE, OP_DATE, OBJECT_ID, TYPE
+  </sql>
+  <sql id="Blob_Column_List" >
+    REMARK
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.whty.euicc.data.pojo.CheckLogsExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from CHECK_LOGS
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.whty.euicc.data.pojo.CheckLogsExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from CHECK_LOGS
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from CHECK_LOGS
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from CHECK_LOGS
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whty.euicc.data.pojo.CheckLogsExample" >
+    delete from CHECK_LOGS
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whty.euicc.data.pojo.CheckLogs" >
+    insert into CHECK_LOGS (ID, USER_ID, OP_TYPE, 
+      OP_DATE, OBJECT_ID, TYPE, 
+      REMARK)
+    values (#{id,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{opType,jdbcType=VARCHAR}, 
+      #{opDate,jdbcType=TIMESTAMP}, #{objectId,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.euicc.data.pojo.CheckLogs" >
+    insert into CHECK_LOGS
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="opType != null" >
+        OP_TYPE,
+      </if>
+      <if test="opDate != null" >
+        OP_DATE,
+      </if>
+      <if test="objectId != null" >
+        OBJECT_ID,
+      </if>
+      <if test="type != null" >
+        TYPE,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="opType != null" >
+        #{opType,jdbcType=VARCHAR},
+      </if>
+      <if test="opDate != null" >
+        #{opDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="objectId != null" >
+        #{objectId,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whty.euicc.data.pojo.CheckLogsExample" resultType="java.lang.Integer" >
+    select count(*) from CHECK_LOGS
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update CHECK_LOGS
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null" >
+        USER_ID = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.opType != null" >
+        OP_TYPE = #{record.opType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.opDate != null" >
+        OP_DATE = #{record.opDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.objectId != null" >
+        OBJECT_ID = #{record.objectId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null" >
+        TYPE = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null" >
+        REMARK = #{record.remark,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update CHECK_LOGS
+    set ID = #{record.id,jdbcType=VARCHAR},
+      USER_ID = #{record.userId,jdbcType=VARCHAR},
+      OP_TYPE = #{record.opType,jdbcType=VARCHAR},
+      OP_DATE = #{record.opDate,jdbcType=TIMESTAMP},
+      OBJECT_ID = #{record.objectId,jdbcType=VARCHAR},
+      TYPE = #{record.type,jdbcType=VARCHAR},
+      REMARK = #{record.remark,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update CHECK_LOGS
+    set ID = #{record.id,jdbcType=VARCHAR},
+      USER_ID = #{record.userId,jdbcType=VARCHAR},
+      OP_TYPE = #{record.opType,jdbcType=VARCHAR},
+      OP_DATE = #{record.opDate,jdbcType=TIMESTAMP},
+      OBJECT_ID = #{record.objectId,jdbcType=VARCHAR},
+      TYPE = #{record.type,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.euicc.data.pojo.CheckLogs" >
+    update CHECK_LOGS
+    <set >
+      <if test="userId != null" >
+        USER_ID = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="opType != null" >
+        OP_TYPE = #{opType,jdbcType=VARCHAR},
+      </if>
+      <if test="opDate != null" >
+        OP_DATE = #{opDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="objectId != null" >
+        OBJECT_ID = #{objectId,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        TYPE = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        REMARK = #{remark,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.whty.euicc.data.pojo.CheckLogs" >
+    update CHECK_LOGS
+    set USER_ID = #{userId,jdbcType=VARCHAR},
+      OP_TYPE = #{opType,jdbcType=VARCHAR},
+      OP_DATE = #{opDate,jdbcType=TIMESTAMP},
+      OBJECT_ID = #{objectId,jdbcType=VARCHAR},
+      TYPE = #{type,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=LONGVARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.euicc.data.pojo.CheckLogs" >
+    update CHECK_LOGS
+    set USER_ID = #{userId,jdbcType=VARCHAR},
+      OP_TYPE = #{opType,jdbcType=VARCHAR},
+      OP_DATE = #{opDate,jdbcType=TIMESTAMP},
+      OBJECT_ID = #{objectId,jdbcType=VARCHAR},
+      TYPE = #{type,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  
+  <resultMap id="logsUser" type="com.whty.euicc.data.pojo.LogsUser" >
+    <result column="USER_ACCOUNT" property="account" jdbcType="VARCHAR" />
+    <result column="DISPLAY_FIELD" property="opType" jdbcType="VARCHAR" />
+    <result column="OP_DATE" property="opDate" jdbcType="TIMESTAMP" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="TYPE" property="type" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <sql id="Log_Example_Where_Clause" >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+        	WHERE
+        <trim prefix="(" suffix=")" prefixOverrides="and" >	
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and l.${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and l.${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and l.${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and l.${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+        	</trim>
+        </if>
+      </foreach>
+  </sql>
+   
+     <!-- 审批历史记录 -->
+  <select id="selectByObjectId" resultMap="logsUser" parameterType="com.whty.euicc.data.pojo.CheckLogsExample" >
+      select
+   <if test="distinct" >
+      distinct 
+    </if>
+    	DATE_FORMAT(l.OP_DATE, '%Y-%m-%d %H:%i:%s')OP_DATE, u.USER_ACCOUNT, l.REMARK, f.DISPLAY_FIELD
+    	from CHECK_LOGS l
+    	inner join BASE_USERS u on l.USER_ID = u.USER_ID
+	    inner join BASE_FIELDS f on l.TYPE = f.FIELD  AND l.OP_TYPE = f.VALUE_FIELD  and f.ENABLED = '1'
+    <if test="_parameter != null" >
+      <include refid="Log_Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>  
+  </select>
+  
+   	
+  <select id="selectApByObjectId" resultMap="logsUser" parameterType="com.whty.euicc.data.pojo.CheckLogsExample" >
+      select
+   <if test="distinct" >
+      distinct 
+    </if>
+    	DATE_FORMAT(l.OP_DATE, '%Y-%m-%d %H:%i:%s')OP_DATE, u.USER_ACCOUNT, l.REMARK, f.DISPLAY_FIELD
+    	from CHECK_LOGS l
+    	inner join BASE_USERS u on l.OBJECT_ID = u.USER_ID
+	    inner join BASE_FIELDS f on l.TYPE = f.FIELD  AND l.OP_TYPE = f.VALUE_FIELD  and f.ENABLED = '1'
+    <if test="_parameter != null" >
+      <include refid="Log_Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>  
+  </select>
+</mapper>

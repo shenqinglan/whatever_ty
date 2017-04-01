@@ -1,0 +1,60 @@
+value9 ProfileElement ::= securityDomain : {
+  sd-Header {
+    mandated NULL,
+    identification 7
+  },
+  instance {
+    applicationLoadPackageAID 'A0000001515350'H,
+    classAID 'A000000151535041'H,
+    instanceAID 'A00000055910100102736456616C7565'H,
+    extraditeSecurityDomainAID 'A000000151000000'H,
+    applicationPrivileges '808000'H,
+    lifeCycleState '0F'H,
+    applicationSpecificParametersC9 '81028000'H,
+    applicationParameters {
+      uiccToolkitApplicationSpecificParametersField '01000001000000020112036C756500'H
+    }
+  },
+  keyList {
+    {
+      keyUsageQualifier '38'H,
+      keyAccess '00'H,
+      keyIdentifier '01'H,
+      keyVersionNumber '01'H,
+      keyCheckValue '6FB23E'H,
+      scp80SeqCounter '00'H,
+      keyCompontents {
+        {
+          keyType '80'H,
+          keyData '11223344556677881122334455667788'H
+        }
+      }
+    },
+    {
+      keyUsageQualifier '34'H,
+      keyAccess '00'H,
+      keyIdentifier '02'H,
+      keyVersionNumber '01'H,
+      keyCheckValue '6FB23E'H,
+      keyCompontents {
+        {
+          keyType '80'H,
+          keyData '11223344556677881122334455667788'H
+        }
+      }
+    },
+    {
+      keyUsageQualifier 'C8'H,
+      keyAccess '00'H,
+      keyIdentifier '03'H,
+      keyVersionNumber '01'H,
+      keyCheckValue '6FB23E'H,
+      keyCompontents {
+        {
+          keyType '80'H,
+          keyData '11223344556677881122334455667788'H
+        }
+      }
+    }
+  }
+}

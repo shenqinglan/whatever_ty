@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>euicc-cs-parent</artifactId>
+		<groupId>com.whty</groupId>
+		<version>0.0.1</version>
+	</parent>
+	<groupId>com.whty</groupId>
+	<artifactId>euicc-cs-sr</artifactId>
+	<version>0.0.1</version>
+	<name>euicc-cs-sr</name>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>com.whty</groupId>
+			<artifactId>euicc-cs-packet</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.whty</groupId>
+			<artifactId>euicc-cs-profile</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.whty</groupId>
+			<artifactId>euicc-cs-sms</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+	</dependencies>
+</project>

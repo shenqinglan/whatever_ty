@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:add="http://www.w3.org/2005/08/addressing" xmlns:ns="http://namespaces.gsma.org/esim-messaging/3">
+   <soap:Header>
+      <add:ReplyTo>
+         <add:Address>1</add:Address>
+         <!--Optional:-->
+         <add:ReferenceParameters>
+            <!--You may enter ANY elements at this point-->
+         </add:ReferenceParameters>
+         <!--Optional:-->
+         <add:Metadata>
+            <!--You may enter ANY elements at this point-->
+         </add:Metadata>
+         <!--You may enter ANY elements at this point-->
+      </add:ReplyTo>
+      <add:Action>1</add:Action>
+      <add:MessageID>1</add:MessageID>
+      <add:To>1</add:To>
+      <add:From>
+         <add:Address>1</add:Address>
+         <!--Optional:-->
+         <add:ReferenceParameters>
+            <!--You may enter ANY elements at this point-->
+         </add:ReferenceParameters>
+         <!--Optional:-->
+         <add:Metadata>
+            <!--You may enter ANY elements at this point-->
+         </add:Metadata>
+         <!--You may enter ANY elements at this point-->
+      </add:From>
+   </soap:Header>
+   <soap:Body>
+      <ns:ES3-CreateISDPRequest>
+         <ns:FunctionCallIdentifier>01</ns:FunctionCallIdentifier>
+         <!--Optional:-->
+         <ns:ValidityPeriod>1</ns:ValidityPeriod>
+         <ns:Eid>3839303031303132303132333431323334303132333435363738393031323234</ns:Eid>
+         <ns:Iccid>00</ns:Iccid>
+         <ns:Mno-id>1</ns:Mno-id>
+         <ns:RequiredMemory>1</ns:RequiredMemory>
+         <!--Optional:-->
+         <ns:MoreToDo>1</ns:MoreToDo>
+      </ns:ES3-CreateISDPRequest>
+   </soap:Body>
+</soap:Envelope>

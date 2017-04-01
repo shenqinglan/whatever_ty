@@ -1,0 +1,426 @@
+value1 ProfileElement ::= header : {
+  major-version 1,
+  minor-version 0,
+  profileType "GSMA Profile Package",
+  iccid '89019990001234567893'H,
+  eUICC-Mandatory-services {
+    usim NULL,
+    milenage NULL,
+    javacard NULL
+  },
+  eUICC-Mandatory-GFSTEList {
+    { 2 23 143 1 2 1 },
+    { 2 23 143 1 2 4 }
+  }
+}
+value2 ProfileElement ::= mf : {
+  mf-header {
+    mandated NULL,
+    identification 1
+  },
+  templateID { 2 23 143 1 2 1 },
+  mf {
+  },
+  ef-iccid {
+    fileDescriptor : {
+      lcsi '05'H,
+      securityAttributesReferenced '2F060B'H
+    },
+    fillFileContent : '98109909002143658739'H
+  },
+  ef-dir {
+    fileDescriptor : {
+      fileDescriptor '4221002604'H,
+      lcsi '05'H,
+      securityAttributesReferenced '2F060A'H
+    },
+    fillFileContent : '61184F10A0000000871002FF33FF01890000010050045553494D'H
+  },
+  ef-arr {
+    fileDescriptor : {
+      fileDescriptor '4221002F0F'H,
+      lcsi '05'H,
+      securityAttributesReferenced '2F060A'H
+    },
+    fillFileContent : '800102A4068301019501088001049700800118A40683010A950108'H,
+    fillFileOffset : 20,
+    fillFileContent : '800101A40683010195010880011AA40683010A9501088001049700'H,
+    fillFileOffset : 20,
+    fillFileContent : '80011BA40683010A9501088001049700'H,
+    fillFileOffset : 31,
+    fillFileContent : '800101900080011E9700'H,
+    fillFileOffset : 37,
+    fillFileContent : '800103A4068301019501088001049700800118A40683010A950108'H,
+    fillFileOffset : 20,
+    fillFileContent : '800111A406830101950108800104970080010AA40683010A950108'H,
+    fillFileOffset : 20,
+    fillFileContent : '800107A406830101950108800118A40683010A950108'H,
+    fillFileOffset : 25,
+    fillFileContent : '800101A406830101950108800102A4068301029501088001049700'H,
+    fillFileOffset : 20,
+    fillFileContent : '8001019000800104970080011AA406830101950108'H,
+    fillFileOffset : 26,
+    fillFileContent : '800101900080011AA40683010A9501088001049700'H,
+    fillFileOffset : 26,
+    fillFileContent : '8001019000800118A40683010A9501088001069700'H,
+    fillFileOffset : 26,
+    fillFileContent : '800101A40683010195010880011E9700'H
+  }
+}
+value3 ProfileElement ::= pukCodes : {
+  puk-Header {
+    mandated NULL,
+    identification 3
+  },
+  pukCodes {
+    {
+      keyReference pukAppl1,
+      pukValue '0000000000000000'H,
+      maxNumOfAttemps-retryNumLeft 153
+    },
+    {
+      keyReference pukAppl2,
+      pukValue '0101010101010101'H,
+      maxNumOfAttemps-retryNumLeft 170
+    },
+    {
+      keyReference secondPUKAppl1,
+      pukValue '0303030303030303'H,
+      maxNumOfAttemps-retryNumLeft 136
+    }
+  }
+}
+value4 ProfileElement ::= pinCodes : {
+  pin-Header {
+    mandated NULL,
+    identification 4
+  },
+  pinCodes pinconfig : {
+    {
+      keyReference pinAppl1,
+      pinValue '0000000000000000'H,
+      unblockingPINReference pukAppl1,
+      pinAttributes 7,
+      maxNumOfAttemps-retryNumLeft 51
+    },
+    {
+      keyReference pinAppl2,
+      pinValue '0000000000000000'H,
+      pinAttributes 7,
+      maxNumOfAttemps-retryNumLeft 51
+    },
+    {
+      keyReference adm1,
+      pinValue '0000000000000000'H,
+      pinAttributes 7,
+      maxNumOfAttemps-retryNumLeft 51
+    }
+  }
+}
+value5 ProfileElement ::= usim : {
+  usim-header {
+    mandated NULL,
+    identification 2
+  },
+  templateID { 2 23 143 1 2 4 },
+  adf-usim {
+    fileDescriptor : {
+      fileID '7FF1'H,
+      dfName 'A0000000871002FF33FF018900000100'H,
+      lcsi '05'H,
+      securityAttributesReferenced '2F0603'H
+    }
+  },
+  ef-imsi {
+    fileDescriptor : {
+      lcsi '05'H,
+      securityAttributesReferenced '6F0602'H
+    },
+    fillFileContent : '0832141049737856F6'H
+  },
+  ef-arr {
+    fileDescriptor : {
+      fileDescriptor '4221002F0F'H,
+      lcsi '05'H,
+      securityAttributesReferenced '6F060A'H
+    },
+    fillFileContent : '800102A4068301019501088001049700800118A40683010A950108'H,
+    fillFileOffset : 20,
+    fillFileContent : '800101A40683010195010880011AA40683010A9501088001049700'H,
+    fillFileOffset : 20,
+    fillFileContent : '80011BA40683010A9501088001049700'H,
+    fillFileOffset : 31,
+    fillFileContent : '800101900080011E9700'H,
+    fillFileOffset : 37,
+    fillFileContent : '800103A4068301019501088001049700800118A40683010A950108'H,
+    fillFileOffset : 20,
+    fillFileContent : '800111A406830101950108800104970080010AA40683010A950108'H,
+    fillFileOffset : 20,
+    fillFileContent : '800107A406830101950108800118A40683010A950108'H,
+    fillFileOffset : 25,
+    fillFileContent : '800101A406830101950108800102A4068301029501088001049700'H,
+    fillFileOffset : 20,
+    fillFileContent : '8001019000800104970080011AA406830101950108'H,
+    fillFileOffset : 26,
+    fillFileContent : '800101900080011AA40683010A9501088001049700'H,
+    fillFileOffset : 26,
+    fillFileContent : '8001019000800118A40683010A9501088001069700'H,
+    fillFileOffset : 26,
+    fillFileContent : '800101A40683010195010880011E9700'H
+  },
+  ef-ust {
+    fileDescriptor : {
+      lcsi '05'H,
+      securityAttributesReferenced '6F0602'H
+    },
+    fillFileContent : '0A2E178CE73204000000000000'H
+  },
+  ef-spn {
+    fileDescriptor : {
+      lcsi '05'H,
+      securityAttributesReferenced '6F060A'H
+    },
+    fillFileContent : '0247534D41206555494343FFFFFFFFFFFF'H
+  },
+  ef-est {
+    fileDescriptor : {
+      lcsi '05'H,
+      securityAttributesReferenced '6F0608'H
+    },
+    fillFileContent : '00'H
+  },
+  ef-acc {
+    fileDescriptor : {
+      lcsi '05'H,
+      securityAttributesReferenced '6F0602'H
+    },
+    fillFileContent : '0010'H
+  },
+  ef-ecc {
+    fileDescriptor : {
+      lcsi '05'H,
+      securityAttributesReferenced '6F060A'H
+    }
+  }
+}
+value6 ProfileElement ::= pinCodes : {
+  pin-Header {
+    mandated NULL,
+    identification 40
+  },
+  pinCodes pinconfig : {
+    {
+      keyReference secondPINAppl1,
+      pinValue '0101010101010101'H,
+      pinAttributes 1,
+      maxNumOfAttemps-retryNumLeft 34
+    }
+  }
+}
+value7 ProfileElement ::= akaParameter : {
+  aka-header {
+    identification 5
+  },
+  algorithmID milenage,
+  algorithmOptions '00'H,
+  algoConfiguration algoParameter : {
+    key '465B5CE8B199B49FAA5F0A2EE238A6BC'H,
+    opc 'CD63CB71954A9F4E48A5994E37A02BAF'H,
+    rotationConstants '4000204060'H,
+    xoringConstants '0000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000020000000000000000000000000000000400000000000000000000000000000008'H,
+    sqnInit {
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H,
+      '000000000000'H
+    }
+  },
+  sqnOptions '02'H,
+  sqnDelta '000010000000'H,
+  sqnAgeLimit '000010000000'H
+}
+value8 ProfileElement ::= securityDomain : {
+  sd-Header {
+    mandated NULL,
+    identification 6
+  },
+  instance {
+    applicationLoadPackageAID 'A0000001515350'H,
+    classAID 'A000000151535041'H,
+    instanceAID 'A000000151000000'H,
+    applicationPrivileges '82FC80'H,
+    lifeCycleState '0F'H,
+    applicationSpecificParametersC9 '81028000'H,
+    applicationParameters {
+      uiccToolkitApplicationSpecificParametersField '0100000100000002011203B2010000'H
+    }
+  },
+  keyList {
+    {
+      keyUsageQualifier '38'H,
+      keyAccess '00'H,
+      keyIdentifier '01'H,
+      keyVersionNumber '01'H,
+      keyCheckValue '0E585B'H,
+      scp80SeqCounter '00'H,
+      keyCompontents {
+        {
+          keyType '88'H,
+          keyData '11223344556677889910111213141516'H
+        }
+      }
+    },
+    {
+      keyUsageQualifier '34'H,
+      keyAccess '00'H,
+      keyIdentifier '02'H,
+      keyVersionNumber '01'H,
+      keyCheckValue '0E585B'H,
+      keyCompontents {
+        {
+          keyType '88'H,
+          keyData '11223344556677889910111213141516'H
+        }
+      }
+    },
+    {
+      keyUsageQualifier 'C8'H,
+      keyAccess '00'H,
+      keyIdentifier '03'H,
+      keyVersionNumber '01'H,
+      keyCheckValue '0E585B'H,
+      keyCompontents {
+        {
+          keyType '88'H,
+          keyData '11223344556677889910111213141516'H
+        }
+      }
+    }
+  }
+}
+value9 ProfileElement ::= securityDomain : {
+  sd-Header {
+    mandated NULL,
+    identification 7
+  },
+  instance {
+    applicationLoadPackageAID 'A0000001515350'H,
+    classAID 'A000000151535041'H,
+    instanceAID 'A00000055910100102736456616C7565'H,
+    extraditeSecurityDomainAID 'A000000151000000'H,
+    applicationPrivileges '808000'H,
+    lifeCycleState '0F'H,
+    applicationSpecificParametersC9 '81028000'H,
+    applicationParameters {
+      uiccToolkitApplicationSpecificParametersField '01000001000000020112036C756500'H
+    }
+  },
+  keyList {
+    {
+      keyUsageQualifier '38'H,
+      keyAccess '00'H,
+      keyIdentifier '01'H,
+      keyVersionNumber '01'H,
+      keyCheckValue '6FB23E'H,
+      scp80SeqCounter '00'H,
+      keyCompontents {
+        {
+          keyType '80'H,
+          keyData '11223344556677881122334455667788'H
+        }
+      }
+    },
+    {
+      keyUsageQualifier '34'H,
+      keyAccess '00'H,
+      keyIdentifier '02'H,
+      keyVersionNumber '01'H,
+      keyCheckValue '6FB23E'H,
+      keyCompontents {
+        {
+          keyType '80'H,
+          keyData '11223344556677881122334455667788'H
+        }
+      }
+    },
+    {
+      keyUsageQualifier 'C8'H,
+      keyAccess '00'H,
+      keyIdentifier '03'H,
+      keyVersionNumber '01'H,
+      keyCheckValue '6FB23E'H,
+      keyCompontents {
+        {
+          keyType '80'H,
+          keyData '11223344556677881122334455667788'H
+        }
+      }
+    }
+  }
+}
+value10 ProfileElement ::= rfm : {
+  rfm-header {
+    identification 9
+  },
+  securityDomainAID 'A000000151000000'H,
+  tarList {
+    'B00010'H
+  },
+  minimumSecurityLevel '12'H,
+  uiccAccessDomain '00'H,
+  uiccAdminAccessDomain '00'H
+}
+applet3 ProfileElement ::= application : {
+  app-Header {
+    mandated NULL,
+    identification 21
+  },
+  loadBlock {
+    loadPackageAID 'A000000559101003'H,
+    loadBlockObject '01002EDECAFFED020204000108A0000005591010031B636F6D2F67736D612F65756963632F746573742F6170706C657433020021002E0021000F00150016000E002F000A00090000004301F400000000000002010004001502030107A0000000620101000107A000000062000103000F010BA000000559101003445566000806000E000000800300FF0007010000002C07002F000110188C00007A04328F00013D8C00022E181D252904160461081B8B0003700C1B181D044116048B00047A00207A08000A0000000000000000000005001600050680030001000200060000010380030103800302090009000000050506040E0C'H
+  },
+  instanceList {
+    {     
+      applicationLoadPackageAID 'A000000559101003'H, 
+      classAID 'A000000559101003445566'H, 
+      instanceAID 'A00000055910100344556601'H, 
+      applicationPrivileges '000000'H,
+      lifeCycleState '07'H, 
+      applicationSpecificParametersC9 '00'H
+    }
+  }
+}
+value11 ProfileElement ::= end : {
+  end-header {
+    mandated NULL,
+    identification 99
+  }
+}

@@ -1,0 +1,1 @@
+mvn install:install-file  -Dfile=jna-min.jar  -DgroupId=org.android  -DartifactId=jna -Dversion=0.1.0 -Dpackaging=jar

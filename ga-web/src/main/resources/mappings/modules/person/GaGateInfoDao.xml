@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.jeesite.modules.person.dao.GaGateInfoDao">
+    
+	<sql id="gaGateInfoColumns">
+		a.id AS "id",
+		a.gate_code AS "gateCode",
+		a.gate_type AS "gateType",
+		a.brand AS "brand",
+		a.area_id AS "areaId",
+		a.building_no AS "buildingNo",
+		a.unit_no as "unitNo",
+		a.install_date AS "installDate",
+		a.last_maintain_date AS "lastMaintainDate",
+		a.create_date AS "createDate",
+		a.update_date AS "updateDate",
+		a.remarks AS "remarks",
+		a.del_flag AS "delFlag"
+	</sql>
+	
+	<sql id="gaGateInfoJoins">
+	</sql>
+    
+	<select id="get" resultType="GaGateInfo">
+		SELECT 
+			<include refid="gaGateInfoColumns"/>
+		FROM ga_gate_info a
+		<include refid="gaGateInfoJoins"/>
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="GaGateInfo">
+		SELECT 
+			a.id AS "id",
+        a.gate_code AS "gateCode",
+        a.gate_type AS "gateType",
+        a.brand AS "brand",
+        a.area_id AS "areaId",
+        b.area_name as "areaName", 
+        a.building_no AS "buildingNo",
+        a.unit_no as "unitNo",
+        a.install_date AS "installDate",
+        a.last_maintain_date AS "lastMaintainDate",
+        a.create_date AS "createDate",
+        a.update_date AS "updateDate",
+        a.remarks AS "remarks",
+        a.del_flag AS "delFlag"
+		FROM ga_gate_info a 
+		left join ga_area_info b on a.area_id = b.id 
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+			<if test="gateCode != null and gateCode != ''">
+				AND a.gate_code = #{gateCode}
+			</if>
+			<if test="areaId != null and areaId != ''">
+				AND a.area_id = #{areaId}
+			</if>
+		</where>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findAllList" resultType="GaGateInfo">
+		SELECT 
+			<include refid="gaGateInfoColumns"/>
+		FROM ga_gate_info a
+		<include refid="gaGateInfoJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+		</where>		
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO ga_gate_info(
+			id,
+			gate_code,
+			gate_type,
+			brand,
+			area_id,
+			building_no,
+			unit_no,
+			install_date,
+			last_maintain_date,
+			create_date,
+			update_date,
+			remarks,
+			del_flag
+		) VALUES (
+			#{id},
+			#{gateCode},
+			#{gateType},
+			#{brand},
+			#{areaId},
+			#{buildingNo},
+			#{unitNo},
+			#{installDate},
+			#{lastMaintainDate},
+			#{createDate},
+			#{updateDate},
+			#{remarks},
+			#{delFlag}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE ga_gate_info SET 	
+			gate_code = #{gateCode},
+			gate_type = #{gateType},
+			brand = #{brand},
+			area_id = #{areaId},
+			building_no = #{buildingNo},
+			unit_no = #{unitNo},
+			install_date = #{installDate},
+			last_maintain_date = #{lastMaintainDate},
+			update_date = #{updateDate},
+			remarks = #{remarks}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		UPDATE ga_gate_info SET 
+			del_flag = #{DEL_FLAG_DELETE}
+		WHERE id = #{id}
+	</update>
+	
+</mapper>

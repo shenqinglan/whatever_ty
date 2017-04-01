@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whty.efs.data.dao.RouterDao">
+   
+    <resultMap id="BaseRouterResultMap" type="com.whty.efs.data.pojo.Router">
+        <result property="receiver" column="receiver"/>
+        <result property="receiver_url" column="receiver_url"/>
+		<result property="bean_id" column="bean_id"/>
+	</resultMap>
+	
+	
+     <sql id="Router_Example_Where_Clause" >
+	    <trim prefix="where" prefixOverrides="and|or" > 
+	      <if test="condition.receiver != null" >
+	         and receiver = #{condition.receiver}
+	      </if>
+	      <if test="condition.receiver_url != null" >
+	         and receiver_url = #{condition.receiver_url}
+	      </if>
+	      <if test="condition.bean_id != null" >
+	         and bean_id = #{condition.bean_id}
+	      </if>
+	    </trim>
+  </sql>
+  <sql id="Router_Base_Column_List" >
+    receiver,receiver_url,bean_id
+  </sql>
+  
+  <select id="getRouter" resultMap="BaseRouterResultMap" parameterType="com.whty.efs.data.dto.Criteria" > 
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Router_Base_Column_List" />
+    from TB_FRONT_ROUTER
+    <if test="_parameter != null" >
+      <include refid="Router_Example_Where_Clause" />
+    </if>
+   
+  </select>
+	
+</mapper>

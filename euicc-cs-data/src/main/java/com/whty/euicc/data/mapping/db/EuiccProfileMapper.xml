@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.euicc.data.dao.EuiccProfileMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.euicc.data.pojo.EuiccProfile" >
+    <id column="iccid" property="iccid" jdbcType="VARCHAR" />
+    <result column="isd_p_aid" property="isdPAid" jdbcType="VARCHAR" />
+    <result column="mno_id" property="mnoId" jdbcType="VARCHAR" />
+    <result column="fallback_attribute" property="fallbackAttribute" jdbcType="VARCHAR" />
+    <result column="imsi" property="imsi" jdbcType="VARCHAR" />
+    <result column="msisdn" property="msisdn" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="VARCHAR" />
+    <result column="smdp_id" property="smdpId" jdbcType="VARCHAR" />
+    <result column="profile_type" property="profileType" jdbcType="VARCHAR" />
+    <result column="allocated_memory" property="allocatedMemory" jdbcType="VARCHAR" />
+    <result column="free_memory" property="freeMemory" jdbcType="VARCHAR" />
+    <result column="pol2_id" property="pol2Id" jdbcType="VARCHAR" />
+    <result column="eid" property="eid" jdbcType="VARCHAR" />
+    <result column="phone_no" property="phoneNo" jdbcType="VARCHAR" />
+    <result column="smscenter_no" property="smscenterNo" jdbcType="VARCHAR" />
+    <result column="isd_p_id_no"  property="isdPIdNo" jdbcType="VARCHAR" />
+    <result column="isd_p_image_no" property="isdPImageNo" jdbcType="VARCHAR" />
+    <result column="application_provider_no" property="applicationProviderNo" jdbcType="VARCHAR" />
+    <result column="token_id_no" property="tokenIdNo" jdbcType="VARCHAR" />
+    <result column="delete_token_key" property="deleteTokenKey" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.whty.euicc.data.pojo.EuiccProfileWithBLOBs" extends="BaseResultMap" >
+    <result column="asn_file" property="asnFile" jdbcType="LONGVARCHAR" />
+    <result column="der_file" property="derFile" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    iccid, isd_p_aid, mno_id, fallback_attribute, imsi, msisdn, state, smdp_id, 
+    profile_type, allocated_memory, free_memory, pol2_id, eid, phone_no, smscenter_no,
+    isd_p_id_no, isd_p_image_no, application_provider_no, token_id_no, delete_token_key
+  </sql>
+  <sql id="Blob_Column_List" >
+    asn_file, der_file
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from euicc_profile
+    where iccid = #{iccid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from euicc_profile
+    where iccid = #{iccid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.whty.euicc.data.pojo.EuiccProfileWithBLOBs" >
+    insert into euicc_profile (iccid, isd_p_aid, mno_id, 
+      fallback_attribute, imsi, msisdn, 
+      state, smdp_id, profile_type, 
+      allocated_memory, free_memory, pol2_id, 
+      eid, phone_no, smscenter_no, isd_p_id_no, 
+      isd_p_image_no, application_provider_no, 
+      token_id_no, delete_token_key, asn_file, der_file
+      )
+    values (#{iccid,jdbcType=VARCHAR}, #{isdPAid,jdbcType=VARCHAR}, #{mnoId,jdbcType=VARCHAR}, 
+      #{fallbackAttribute,jdbcType=VARCHAR}, #{imsi,jdbcType=VARCHAR},#{msisdn,jdbcType=VARCHAR}, 
+      #{state,jdbcType=VARCHAR}, #{smdpId,jdbcType=VARCHAR}, #{profileType,jdbcType=VARCHAR}, 
+      #{allocatedMemory,jdbcType=VARCHAR}, #{freeMemory,jdbcType=VARCHAR}, #{pol2Id,jdbcType=VARCHAR}, 
+      #{eid,jdbcType=VARCHAR}, #{phoneNo,jdbcType=VARCHAR}, #{smscenterNo,jdbcType=VARCHAR},
+      #{isdPIdNo,jdbcType=VARCHAR}, #{isdPImageNo,jdbcType=VARCHAR}, #{applicationProviderNo,jdbcType=VARCHAR}, 
+      #{tokenIdNo,jdbcType=VARCHAR}, #{deleteTokenKey,jdbcType=VARCHAR},
+      #{asnFile,jdbcType=LONGVARCHAR}, #{derFile,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.euicc.data.pojo.EuiccProfileWithBLOBs" >
+    insert into euicc_profile
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="iccid != null" >
+        iccid,
+      </if>
+      <if test="isdPAid != null" >
+        isd_p_aid,
+      </if>
+      <if test="mnoId != null" >
+        mno_id,
+      </if>
+      <if test="fallbackAttribute != null" >
+        fallback_attribute,
+      </if>
+      <if test="imsi != null" >
+        imsi,
+      </if>
+      <if test="msisdn != null" >
+        msisdn,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="smdpId != null" >
+        smdp_id,
+      </if>
+      <if test="profileType != null" >
+        profile_type,
+      </if>
+      <if test="allocatedMemory != null" >
+        allocated_memory,
+      </if>
+      <if test="freeMemory != null" >
+        free_memory,
+      </if>
+      <if test="pol2Id != null" >
+        pol2_id,
+      </if>
+      <if test="eid != null" >
+        eid,
+      </if>
+      <if test="phoneNo != null" >
+        phone_no,
+      </if>
+      <if test="smscenterNo != null" >
+        smscenter_no,
+      </if>
+       <if test="isdPIdNo != null" >
+        isd_p_id_no,
+      </if>
+       <if test="isdPImageNo != null" >
+        isd_p_image_no,
+      </if>
+       <if test="applicationProviderNo != null" >
+        application_provider_no,
+      </if>
+       <if test="tokenIdNo != null" >
+        token_id_no,
+      </if>
+       <if test="deleteTokenKey != null" >
+        delete_token_key,
+      </if>
+      <if test="asnFile != null" >
+        asn_file,
+      </if>
+      <if test="derFile != null" >
+        der_file,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="iccid != null" >
+        #{iccid,jdbcType=VARCHAR},
+      </if>
+      <if test="isdPAid != null" >
+        #{isdPAid,jdbcType=VARCHAR},
+      </if>
+      <if test="mnoId != null" >
+        #{mnoId,jdbcType=VARCHAR},
+      </if>
+      <if test="fallbackAttribute != null" >
+        #{fallbackAttribute,jdbcType=VARCHAR},
+      </if>
+      <if test="imsi != null" >
+        #{imsi,jdbcType=VARCHAR},
+      </if>
+      <if test="msisdn != null" >
+        #{msisdn,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="smdpId != null" >
+        #{smdpId,jdbcType=VARCHAR},
+      </if>
+      <if test="profileType != null" >
+        #{profileType,jdbcType=VARCHAR},
+      </if>
+      <if test="allocatedMemory != null" >
+        #{allocatedMemory,jdbcType=VARCHAR},
+      </if>
+      <if test="freeMemory != null" >
+        #{freeMemory,jdbcType=VARCHAR},
+      </if>
+      <if test="pol2Id != null" >
+        #{pol2Id,jdbcType=VARCHAR},
+      </if>
+      <if test="eid != null" >
+        #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNo != null" >
+        #{phoneNo,jdbcType=VARCHAR},
+      </if>
+      <if test="smscenterNo != null" >
+        #{smscenterNo,jdbcType=VARCHAR},
+      </if>
+      <if test="isdPIdNo != null" >
+        #{isdPIdNo,jdbcType=VARCHAR},
+      </if>
+      <if test="isdPImageNo != null" >
+        #{isdPImageNo,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationProviderNo != null" >
+        #{applicationProviderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="tokenIdNo != null" >
+        #{tokenIdNo,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteTokenKey != null" >
+        #{deleteTokenKey,jdbcType=VARCHAR},
+      </if>
+      <if test="asnFile != null" >
+        #{asnFile,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="derFile != null" >
+        #{derFile,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.euicc.data.pojo.EuiccProfileWithBLOBs" >
+    update euicc_profile
+    <set >
+      <if test="isdPAid != null" >
+        isd_p_aid = #{isdPAid,jdbcType=VARCHAR},
+      </if>
+      <if test="mnoId != null" >
+        mno_id = #{mnoId,jdbcType=VARCHAR},
+      </if>
+      <if test="fallbackAttribute != null" >
+        fallback_attribute = #{fallbackAttribute,jdbcType=VARCHAR},
+      </if>
+      <if test="imsi != null" >
+        imsi = #{imsi,jdbcType=VARCHAR},
+      </if>
+       <if test="msisdn != null" >
+        msisdn = #{msisdn,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="smdpId != null" >
+        smdp_id = #{smdpId,jdbcType=VARCHAR},
+      </if>
+      <if test="profileType != null" >
+        profile_type = #{profileType,jdbcType=VARCHAR},
+      </if>
+      <if test="allocatedMemory != null" >
+        allocated_memory = #{allocatedMemory,jdbcType=VARCHAR},
+      </if>
+      <if test="freeMemory != null" >
+        free_memory = #{freeMemory,jdbcType=VARCHAR},
+      </if>
+      <if test="pol2Id != null" >
+        pol2_id = #{pol2Id,jdbcType=VARCHAR},
+      </if>
+      <if test="eid != null" >
+        eid = #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNo != null" >
+        phone_no = #{phoneNo,jdbcType=VARCHAR},
+      </if>
+      <if test="smscenterNo != null" >
+        smscenter_no = #{smscenterNo,jdbcType=VARCHAR},
+      </if>
+      <if test="isdPIdNo != null" >
+        isd_p_id_no = #{isdPIdNo,jdbcType=VARCHAR},
+      </if>
+      <if test="isdPImageNo != null" >
+        isd_p_image_no = #{isdPImageNo,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationProviderNo != null" >
+        application_provider_no = #{applicationProviderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="tokenIdNo != null" >
+        token_id_no = #{tokenIdNo,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteTokenKey != null" >
+        delete_token_key = #{deleteTokenKey,jdbcType=VARCHAR},
+      </if>
+      <if test="asnFile != null" >
+        asn_file = #{asnFile,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="derFile != null" >
+        der_file = #{derFile,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where iccid = #{iccid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.whty.euicc.data.pojo.EuiccProfileWithBLOBs" >
+    update euicc_profile
+    set isd_p_aid = #{isdPAid,jdbcType=VARCHAR},
+      mno_id = #{mnoId,jdbcType=VARCHAR},
+      fallback_attribute = #{fallbackAttribute,jdbcType=VARCHAR},
+      imsi = #{imsi,jdbcType=VARCHAR},
+      msisdn = #{msisdn,jdbcType=VARCHAR},
+      state = #{state,jdbcType=VARCHAR},
+      smdp_id = #{smdpId,jdbcType=VARCHAR},
+      profile_type = #{profileType,jdbcType=VARCHAR},
+      allocated_memory = #{allocatedMemory,jdbcType=VARCHAR},
+      free_memory = #{freeMemory,jdbcType=VARCHAR},
+      pol2_id = #{pol2Id,jdbcType=VARCHAR},
+      eid = #{eid,jdbcType=VARCHAR},
+      phone_no = #{phoneNo,jdbcType=VARCHAR},
+      smscenter_no = #{smscenterNo,jdbcType=VARCHAR},
+      isd_p_id_no = #{isdPIdNo,jdbcType=VARCHAR},
+      isd_p_image_no = #{isdPImageNo,jdbcType=VARCHAR},
+      application_provider_no = #{applicationProviderNo,jdbcType=VARCHAR},
+      token_id_no = #{tokenIdNo,jdbcType=VARCHAR},
+      delete_token_key = #{deleteTokenKey,jdbcType=VARCHAR},
+      asn_file = #{asnFile,jdbcType=LONGVARCHAR},
+      der_file = #{derFile,jdbcType=LONGVARCHAR}
+    where iccid = #{iccid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.euicc.data.pojo.EuiccProfile" >
+    update euicc_profile
+    set isd_p_aid = #{isdPAid,jdbcType=VARCHAR},
+      mno_id = #{mnoId,jdbcType=VARCHAR},
+      fallback_attribute = #{fallbackAttribute,jdbcType=VARCHAR},
+      imsi = #{imsi,jdbcType=VARCHAR},
+      msisdn = #{msisdn,jdbcType=VARCHAR},
+      state = #{state,jdbcType=VARCHAR},
+      smdp_id = #{smdpId,jdbcType=VARCHAR},
+      profile_type = #{profileType,jdbcType=VARCHAR},
+      allocated_memory = #{allocatedMemory,jdbcType=VARCHAR},
+      free_memory = #{freeMemory,jdbcType=VARCHAR},
+      pol2_id = #{pol2Id,jdbcType=VARCHAR},
+      eid = #{eid,jdbcType=VARCHAR},
+      phone_no = #{phoneNo,jdbcType=VARCHAR},
+      smscenter_no = #{smscenterNo,jdbcType=VARCHAR},
+      isd_p_id_no = #{isdPIdNo,jdbcType=VARCHAR},
+      isd_p_image_no = #{isdPImageNo,jdbcType=VARCHAR},
+      application_provider_no = #{applicationProviderNo,jdbcType=VARCHAR},
+      token_id_no = #{tokenIdNo,jdbcType=VARCHAR},
+      delete_token_key = #{deleteTokenKey,jdbcType=VARCHAR}
+    where iccid = #{iccid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByEid" parameterType="com.whty.euicc.data.pojo.EuiccProfileWithBLOBs" >
+    update euicc_profile
+    set state = #{state,jdbcType=VARCHAR}
+    where eid = #{eid,jdbcType=VARCHAR}
+  </update>
+  <update id="updataProfileState" parameterType="com.whty.euicc.data.pojo.EuiccProfileWithBLOBs">
+  	update euicc_profile set state =#{state,jdbcType=VARCHAR}
+  	where isd_p_aid = #{isdPAid,jdbcType=VARCHAR} and eid = #{eid,jdbcType=VARCHAR}
+  </update>
+
+  <update id="updateProfileStateByEidAndIsdPAid" parameterType="com.whty.euicc.data.pojo.EuiccProfileWithBLOBs" >
+    update euicc_profile set 
+      isd_p_state = #{isdPState,jdbcType=VARCHAR},
+    where isd_p_aid != #{isdPAid,jdbcType=VARCHAR} and eid = #{eid,jdbcType=VARCHAR}
+  </update>
+ 
+   <select id="selectByEidAndIsdPAid" resultMap="ResultMapWithBLOBs" parameterType="com.whty.euicc.data.pojo.EuiccProfileWithBLOBs" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from euicc_profile
+    where isd_p_aid = #{isdPAid,jdbcType=VARCHAR} and eid = #{eid,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="countByPrimaryKey" resultType="int" parameterType="com.whty.euicc.data.pojo.EuiccProfileWithBLOBs" >
+    select count(*)
+    from euicc_profile
+    where isd_p_aid = #{isdPAid,jdbcType=VARCHAR} and eid = #{eid,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectEuiccProfileByStateAndEid" resultMap="ResultMapWithBLOBs" parameterType="com.whty.euicc.data.pojo.EuiccProfileWithBLOBs" >
+    select 
+	<include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from euicc_profile
+    where state = #{state,jdbcType=VARCHAR} and eid = #{eid,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectByEidAndFallback" resultMap="ResultMapWithBLOBs" parameterType="com.whty.euicc.data.pojo.EuiccProfileWithBLOBs" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from euicc_profile
+    where eid = #{eid,jdbcType=VARCHAR} and fallback_attribute = #{fallbackAttribute,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectByEid" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from euicc_profile
+    where eid = #{eid,jdbcType=VARCHAR}
+  </select>
+  
+  <delete id="deleteByEid" parameterType="java.lang.String" >
+    delete from euicc_profile
+    where eid = #{eid,jdbcType=VARCHAR}
+  </delete>
+  
+  <insert id="insertProfiles" parameterType="java.util.List">
+    insert into euicc_profile
+    values
+    <foreach collection="list" item="item" index="index" separator="," >  
+        (#{item.iccid},#{item.isdPAid},#{item.mnoId},#{item.fallbackAttribute},#{item.imsi},#{item.msisdn},#{item.state},#{item.smdpId},
+        #{item.profileType},#{item.allocatedMemory},#{item.freeMemory},#{item.pol2Id},#{item.asnFile},#{item.derFile},#{item.eid},#{item.smscenterNo},#{item.phoneNo},
+        #{item.isdPIdNo},#{item.isdPImageNo},#{item.applicationProviderNo},#{item.tokenIdNo},#{item.deleteTokenKey})  
+    </foreach> 
+  </insert>
+  
+</mapper>

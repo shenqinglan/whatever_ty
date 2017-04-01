@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.ga.entity.IdNoInfo">
+	
+	<select id="selectCard" resultType="com.thinkgem.ga.entity.IdNoInfo">
+        SELECT 
+            a.id as "id", 
+            a.card_no as "no" 
+        FROM ga_card_info a 
+        <where>
+            a.del_flag = 0 
+            and a.card_no = #{no}
+        </where>        
+    </select>
+	
+	<select id="selectGate" resultType="com.thinkgem.ga.entity.IdNoInfo">
+        SELECT 
+            a.id as "id", 
+            a.gate_code as "no" 
+        FROM ga_gate_info a 
+        <where>
+            a.del_flag = 0 
+            and a.gate_code = #{no}
+        </where>        
+    </select>
+	
+</mapper>

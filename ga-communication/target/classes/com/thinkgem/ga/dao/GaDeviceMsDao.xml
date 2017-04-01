@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.ga.entity.GaDeviceMs">
+    
+    <select id="select" resultType="com.thinkgem.ga.entity.GaDeviceMs">
+        SELECT 
+            a.id as "id" 
+        FROM ga_device_ms a
+        WHERE a.device_id = #{deviceId}
+    </select>
+    
+    <update id="update">
+        UPDATE ga_device_ms SET     
+            last_update_time = now() 
+        <if test="id != null and id != ''">
+            where id = #{id}
+        </if>
+    </update>
+	
+	<insert id="insert">
+		INSERT INTO ga_device_ms(
+			id,
+			mote_id,
+			ap_id, 
+			device_id,
+			longitude,
+			latitude,
+			address,
+			remarks,
+			last_update_time
+		) VALUES (
+			#{id},
+			#{moteId},
+			#{apId}, 
+			#{deviceId},
+			#{longitude},
+			#{latitude},
+			#{address},
+			#{remarks},
+			now()
+		)
+	</insert>
+	
+	
+</mapper>

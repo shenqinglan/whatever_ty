@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.euicc.data.dao.AcInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.euicc.data.pojo.AcInfo" >
+    <id column="ID" property="id" jdbcType="INTEGER" />
+    <result column="HASH" property="hash" jdbcType="VARCHAR" />
+    <result column="APDU" property="apdu" jdbcType="VARCHAR" />
+    <result column="NFC" property="nfc" jdbcType="VARCHAR" />
+    <result column="AC_AID" property="acAid" jdbcType="VARCHAR" />
+    <result column="STATUS" property="status" jdbcType="VARCHAR" />
+    <result column="AC_INDEX" property="acIndex" jdbcType="VARCHAR" />
+    <result column="APP_AID" property="appAid" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, HASH, APDU, NFC, AC_AID, STATUS, AC_INDEX, APP_AID
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.whty.euicc.data.pojo.AcInfoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from ac_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from ac_info
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from ac_info
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whty.euicc.data.pojo.AcInfoExample" >
+    delete from ac_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whty.euicc.data.pojo.AcInfo" >
+    insert into ac_info (ID, HASH, APDU, 
+      NFC, AC_AID, STATUS, 
+      AC_INDEX, APP_AID)
+    values (#{id,jdbcType=INTEGER}, #{hash,jdbcType=VARCHAR}, #{apdu,jdbcType=VARCHAR}, 
+      #{nfc,jdbcType=VARCHAR}, #{acAid,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{acIndex,jdbcType=VARCHAR}, #{appAid,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.euicc.data.pojo.AcInfo" >
+    insert into ac_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="hash != null" >
+        HASH,
+      </if>
+      <if test="apdu != null" >
+        APDU,
+      </if>
+      <if test="nfc != null" >
+        NFC,
+      </if>
+      <if test="acAid != null" >
+        AC_AID,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="acIndex != null" >
+        AC_INDEX,
+      </if>
+      <if test="appAid != null" >
+        APP_AID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="hash != null" >
+        #{hash,jdbcType=VARCHAR},
+      </if>
+      <if test="apdu != null" >
+        #{apdu,jdbcType=VARCHAR},
+      </if>
+      <if test="nfc != null" >
+        #{nfc,jdbcType=VARCHAR},
+      </if>
+      <if test="acAid != null" >
+        #{acAid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="acIndex != null" >
+        #{acIndex,jdbcType=VARCHAR},
+      </if>
+      <if test="appAid != null" >
+        #{appAid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whty.euicc.data.pojo.AcInfoExample" resultType="java.lang.Integer" >
+    select count(*) from ac_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update ac_info
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.hash != null" >
+        HASH = #{record.hash,jdbcType=VARCHAR},
+      </if>
+      <if test="record.apdu != null" >
+        APDU = #{record.apdu,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nfc != null" >
+        NFC = #{record.nfc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.acAid != null" >
+        AC_AID = #{record.acAid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.acIndex != null" >
+        AC_INDEX = #{record.acIndex,jdbcType=VARCHAR},
+      </if>
+      <if test="record.appAid != null" >
+        APP_AID = #{record.appAid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update ac_info
+    set ID = #{record.id,jdbcType=INTEGER},
+      HASH = #{record.hash,jdbcType=VARCHAR},
+      APDU = #{record.apdu,jdbcType=VARCHAR},
+      NFC = #{record.nfc,jdbcType=VARCHAR},
+      AC_AID = #{record.acAid,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=VARCHAR},
+      AC_INDEX = #{record.acIndex,jdbcType=VARCHAR},
+      APP_AID = #{record.appAid,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.euicc.data.pojo.AcInfo" >
+    update ac_info
+    <set >
+      <if test="hash != null" >
+        HASH = #{hash,jdbcType=VARCHAR},
+      </if>
+      <if test="apdu != null" >
+        APDU = #{apdu,jdbcType=VARCHAR},
+      </if>
+      <if test="nfc != null" >
+        NFC = #{nfc,jdbcType=VARCHAR},
+      </if>
+      <if test="acAid != null" >
+        AC_AID = #{acAid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="acIndex != null" >
+        AC_INDEX = #{acIndex,jdbcType=VARCHAR},
+      </if>
+      <if test="appAid != null" >
+        APP_AID = #{appAid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.euicc.data.pojo.AcInfo" >
+    update ac_info
+    set HASH = #{hash,jdbcType=VARCHAR},
+      APDU = #{apdu,jdbcType=VARCHAR},
+      NFC = #{nfc,jdbcType=VARCHAR},
+      AC_AID = #{acAid,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=VARCHAR},
+      AC_INDEX = #{acIndex,jdbcType=VARCHAR},
+      APP_AID = #{appAid,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,69 @@
+package $!{bean.basePackage}.service;
+
+import java.util.List;
+import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
+import com.github.miemiedev.mybatis.paginator.domain.PageList;
+import $!{bean.basePackage}.pojo.$!{bean.name};
+import $!{bean.basePackage}.pojo.$!{bean.name}Example;
+
+/**
+ * @author $!{annotation.authorName}
+ * @date $!{annotation.date}
+ *
+ * @version $!{annotation.version}
+ */
+public interface $!{bean.name}Service {
+	
+	/**
+     * 根据条件插入记录
+     * @dzmsoftgenerated $!{annotation.date}
+     */
+	int insertSelective($!{bean.name} record);
+	
+	/**
+     * 根据主键查询记录
+     * @dzmsoftgenerated $!{annotation.date}
+     */
+	$!{bean.name} selectByPrimaryKey(String id);
+	
+	/**
+     * 分页查询记录
+     * @dzmsoftgenerated $!{annotation.date}
+     */
+	PageList<$!{bean.name}> selectByExample($!{bean.name}Example example,PageBounds pageBounds);
+	
+	/**
+     * 根据条件查询记录
+     * @dzmsoftgenerated $!{annotation.date}
+     */
+	List<$!{bean.name}> selectByExample($!{bean.name}Example example);
+	
+	/**
+     * 根据主键更新记录
+     * @dzmsoftgenerated $!{annotation.date}
+     */
+	int updateByPrimaryKeySelective($!{bean.name} record);
+	
+	/**
+     * 根据查询条件更新记录
+     * @dzmsoftgenerated $!{annotation.date}
+     */
+	int updateByExampleSelective($!{bean.name} record,
+			$!{bean.name}Example example);
+	
+	/**
+     * 根据主键生成记录
+     * @dzmsoftgenerated $!{annotation.date}
+     */
+	int deleteByPrimaryKey(String id);
+	
+	/**
+	 * 根据条件删除字段信息
+	 * @dzmsoftgenerated $!{annotation.date}
+	 * @param example
+	 * @return
+	 */
+	int deleteByExample($!{bean.name}Example example);
+	
+	
+}

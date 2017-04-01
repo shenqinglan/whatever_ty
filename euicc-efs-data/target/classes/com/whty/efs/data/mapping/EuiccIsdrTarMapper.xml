@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.efs.data.dao.EuiccIsdrTarMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.efs.data.pojo.EuiccIsdrTar" >
+    <id column="tar_id" property="tarId" jdbcType="VARCHAR" />
+    <result column="r_id" property="rId" jdbcType="VARCHAR" />
+    <result column="tar" property="tar" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    tar_id, r_id, tar
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.whty.efs.data.pojo.EuiccIsdrTarExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from euicc_isdr_tar
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from euicc_isdr_tar
+    where tar_id = #{tarId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from euicc_isdr_tar
+    where tar_id = #{tarId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByRid" parameterType="java.lang.String" >
+    delete from euicc_isdr_tar
+    where r_id = #{rId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whty.efs.data.pojo.EuiccIsdrTarExample" >
+    delete from euicc_isdr_tar
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whty.efs.data.pojo.EuiccIsdrTar" >
+    insert into euicc_isdr_tar (tar_id, r_id, tar
+      )
+    values (#{tarId,jdbcType=VARCHAR}, #{rId,jdbcType=VARCHAR}, #{tar,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.efs.data.pojo.EuiccIsdrTar" >
+    insert into euicc_isdr_tar
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="tarId != null" >
+        tar_id,
+      </if>
+      <if test="rId != null" >
+        r_id,
+      </if>
+      <if test="tar != null" >
+        tar,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="tarId != null" >
+        #{tarId,jdbcType=VARCHAR},
+      </if>
+      <if test="rId != null" >
+        #{rId,jdbcType=VARCHAR},
+      </if>
+      <if test="tar != null" >
+        #{tar,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whty.efs.data.pojo.EuiccIsdrTarExample" resultType="java.lang.Integer" >
+    select count(*) from euicc_isdr_tar
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update euicc_isdr_tar
+    <set >
+      <if test="record.tarId != null" >
+        tar_id = #{record.tarId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rId != null" >
+        r_id = #{record.rId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tar != null" >
+        tar = #{record.tar,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update euicc_isdr_tar
+    set tar_id = #{record.tarId,jdbcType=VARCHAR},
+      r_id = #{record.rId,jdbcType=VARCHAR},
+      tar = #{record.tar,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.efs.data.pojo.EuiccIsdrTar" >
+    update euicc_isdr_tar
+    <set >
+      <if test="rId != null" >
+        r_id = #{rId,jdbcType=VARCHAR},
+      </if>
+      <if test="tar != null" >
+        tar = #{tar,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where tar_id = #{tarId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.efs.data.pojo.EuiccIsdrTar" >
+    update euicc_isdr_tar
+    set r_id = #{rId,jdbcType=VARCHAR},
+      tar = #{tar,jdbcType=VARCHAR}
+    where tar_id = #{tarId,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.euicc.base.dao.ApInfosMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.euicc.base.pojo.ApInfo" >
+    <id column="USER_ID" property="userId" jdbcType="VARCHAR" />
+    <result column="SP_NAME" property="spName" jdbcType="VARCHAR" />
+    <result column="SP_CODE" property="spCode" jdbcType="VARCHAR" />
+    <result column="LINKER" property="linker" jdbcType="VARCHAR" />
+    <result column="PHONE" property="phone" jdbcType="VARCHAR" />
+    <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+    <result column="ZIPCODE" property="zipcode" jdbcType="VARCHAR" />
+    <result column="STATUS" property="status" jdbcType="VARCHAR" />
+    <result column="REG_CODE" property="regCode" jdbcType="VARCHAR" />
+    <result column="REG_CODE_DATE" property="regCodeDate" jdbcType="TIMESTAMP" />
+    <result column="FILE_PATH" property="filePath" jdbcType="VARCHAR" />
+    <result column="CENTER_ADDR" property="centerAddr" jdbcType="VARCHAR" />
+    <result column="FILE_NAME" property="fileName" jdbcType="VARCHAR" />
+  </resultMap>
+  
+   <resultMap id="UsApInfoResultMap" type="com.whty.euicc.base.pojo.ApInfoUser" >
+  
+    <id column="USER_ID" property="userId" jdbcType="VARCHAR" />
+    <result column="SP_NAME" property="spName" jdbcType="VARCHAR" />
+    <result column="SP_CODE" property="spCode" jdbcType="VARCHAR" />
+    <result column="LINKER" property="linker" jdbcType="VARCHAR" />
+    <result column="PHONE" property="phone" jdbcType="VARCHAR" />
+    <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+    <result column="ZIPCODE" property="zipcode" jdbcType="VARCHAR" />
+    <result column="STATUS" property="status" jdbcType="VARCHAR" />
+    <result column="REG_CODE" property="regCode" jdbcType="VARCHAR" />
+    <result column="REG_CODE_DATE" property="regCodeDate" jdbcType="DATE" />
+    <result column="FILE_PATH" property="filePath" jdbcType="VARCHAR" />
+    <result column="FILE_NAME" property="fileName" jdbcType="VARCHAR" />
+    <result column="USER_ACCOUNT" property="account" jdbcType="VARCHAR" />
+    <result column="CENTER_ADDR" property="centerAddr" jdbcType="VARCHAR" />
+    <!-- <result column="EFFE_DATE" property="effeDate" jdbcType="DATE" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" /> -->
+  </resultMap>
+  
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    USER_ID, SP_NAME, SP_CODE, LINKER, PHONE, ADDRESS, ZIPCODE, STATUS, REG_CODE, REG_CODE_DATE, 
+    FILE_PATH, CENTER_ADDR, FILE_NAME
+  </sql>
+  
+  
+  <sql id="Base_Column_ListS" >
+    <!-- a.ID,  -->a.USER_ID, a.SP_NAME, a.SP_CODE, a.LINKER, a.PHONE, a.ADDRESS, a.ZIPCODE, a.STATUS, a.REG_CODE,
+    a.REG_CODE_DATE, a.FILE_PATH, a.FILE_NAME,b.USER_ACCOUNT,a.CENTER_ADDR<!-- ,a.EFFE_DATE,a.REMARK -->
+  </sql>
+  
+   <sql id="Example_Where_Clause_Complex" >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+        	WHERE
+        <trim prefix="(" suffix=")" prefixOverrides="and" >	
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and a.${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and a.${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and a.${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and a.${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+        	</trim>
+        </if>
+      </foreach>
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.whty.euicc.base.pojo.ApInfoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from AP_INFO
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  
+  <select id="selectByExampleAndBaseUsers" resultMap="UsApInfoResultMap" parameterType="com.whty.euicc.base.pojo.ApInfoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_ListS" />
+    from AP_INFO a left join BASE_USERS b on a.USER_ID=b.USER_ID
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause_Complex" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from AP_INFO
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from AP_INFO
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whty.euicc.base.pojo.ApInfoExample" >
+    delete from AP_INFO
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whty.euicc.base.pojo.ApInfo" >
+    insert into AP_INFO (USER_ID, SP_NAME, SP_CODE, 
+      LINKER, PHONE, ADDRESS, 
+      ZIPCODE, STATUS, REG_CODE, 
+      REG_CODE_DATE, FILE_PATH, CENTER_ADDR, 
+      FILE_NAME)
+    values (#{userId,jdbcType=VARCHAR}, #{spName,jdbcType=VARCHAR}, #{spCode,jdbcType=VARCHAR}, 
+      #{linker,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{zipcode,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{regCode,jdbcType=VARCHAR}, 
+      #{regCodeDate,jdbcType=TIMESTAMP}, #{filePath,jdbcType=VARCHAR}, #{centerAddr,jdbcType=VARCHAR}, 
+      #{fileName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.euicc.base.pojo.ApInfo" >
+    insert into AP_INFO
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="spName != null" >
+        SP_NAME,
+      </if>
+      <if test="spCode != null" >
+        SP_CODE,
+      </if>
+      <if test="linker != null" >
+        LINKER,
+      </if>
+      <if test="phone != null" >
+        PHONE,
+      </if>
+      <if test="address != null" >
+        ADDRESS,
+      </if>
+      <if test="zipcode != null" >
+        ZIPCODE,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="regCode != null" >
+        REG_CODE,
+      </if>
+      <if test="regCodeDate != null" >
+        REG_CODE_DATE,
+      </if>
+      <if test="filePath != null" >
+        FILE_PATH,
+      </if>
+      <if test="centerAddr != null" >
+        CENTER_ADDR,
+      </if>
+      <if test="fileName != null" >
+        FILE_NAME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="spName != null" >
+        #{spName,jdbcType=VARCHAR},
+      </if>
+      <if test="spCode != null" >
+        #{spCode,jdbcType=VARCHAR},
+      </if>
+      <if test="linker != null" >
+        #{linker,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="zipcode != null" >
+        #{zipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="regCode != null" >
+        #{regCode,jdbcType=VARCHAR},
+      </if>
+      <if test="regCodeDate != null" >
+        #{regCodeDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="filePath != null" >
+        #{filePath,jdbcType=VARCHAR},
+      </if>
+      <if test="centerAddr != null" >
+        #{centerAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="fileName != null" >
+        #{fileName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whty.euicc.base.pojo.ApInfoExample" resultType="java.lang.Integer" >
+    select count(*) from AP_INFO
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update AP_INFO
+    <set >
+      <if test="record.userId != null" >
+        USER_ID = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.spName != null" >
+        SP_NAME = #{record.spName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.spCode != null" >
+        SP_CODE = #{record.spCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.linker != null" >
+        LINKER = #{record.linker,jdbcType=VARCHAR},
+      </if>
+      <if test="record.phone != null" >
+        PHONE = #{record.phone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.address != null" >
+        ADDRESS = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.zipcode != null" >
+        ZIPCODE = #{record.zipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.regCode != null" >
+        REG_CODE = #{record.regCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.regCodeDate != null" >
+        REG_CODE_DATE = #{record.regCodeDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.filePath != null" >
+        FILE_PATH = #{record.filePath,jdbcType=VARCHAR},
+      </if>
+      <if test="record.centerAddr != null" >
+        CENTER_ADDR = #{record.centerAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fileName != null" >
+        FILE_NAME = #{record.fileName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update AP_INFO
+    set USER_ID = #{record.userId,jdbcType=VARCHAR},
+      SP_NAME = #{record.spName,jdbcType=VARCHAR},
+      SP_CODE = #{record.spCode,jdbcType=VARCHAR},
+      LINKER = #{record.linker,jdbcType=VARCHAR},
+      PHONE = #{record.phone,jdbcType=VARCHAR},
+      ADDRESS = #{record.address,jdbcType=VARCHAR},
+      ZIPCODE = #{record.zipcode,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=VARCHAR},
+      REG_CODE = #{record.regCode,jdbcType=VARCHAR},
+      REG_CODE_DATE = #{record.regCodeDate,jdbcType=TIMESTAMP},
+      FILE_PATH = #{record.filePath,jdbcType=VARCHAR},
+      CENTER_ADDR = #{record.centerAddr,jdbcType=VARCHAR},
+      FILE_NAME = #{record.fileName,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.euicc.base.pojo.ApInfo" >
+    update AP_INFO
+    <set >
+      <if test="spName != null" >
+        SP_NAME = #{spName,jdbcType=VARCHAR},
+      </if>
+      <if test="spCode != null" >
+        SP_CODE = #{spCode,jdbcType=VARCHAR},
+      </if>
+      <if test="linker != null" >
+        LINKER = #{linker,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        PHONE = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="zipcode != null" >
+        ZIPCODE = #{zipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="regCode != null" >
+        REG_CODE = #{regCode,jdbcType=VARCHAR},
+      </if>
+      <if test="regCodeDate != null" >
+        REG_CODE_DATE = #{regCodeDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="filePath != null" >
+        FILE_PATH = #{filePath,jdbcType=VARCHAR},
+      </if>
+      <if test="centerAddr != null" >
+        CENTER_ADDR = #{centerAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="fileName != null" >
+        FILE_NAME = #{fileName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.euicc.base.pojo.ApInfo" >
+    update AP_INFO
+    set SP_NAME = #{spName,jdbcType=VARCHAR},
+      SP_CODE = #{spCode,jdbcType=VARCHAR},
+      LINKER = #{linker,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      ZIPCODE = #{zipcode,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=VARCHAR},
+      REG_CODE = #{regCode,jdbcType=VARCHAR},
+      REG_CODE_DATE = #{regCodeDate,jdbcType=TIMESTAMP},
+      FILE_PATH = #{filePath,jdbcType=VARCHAR},
+      CENTER_ADDR = #{centerAddr,jdbcType=VARCHAR},
+      FILE_NAME = #{fileName,jdbcType=VARCHAR}
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </update>
+</mapper>

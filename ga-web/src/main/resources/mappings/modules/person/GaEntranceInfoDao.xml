@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.jeesite.modules.person.dao.GaEntranceInfoDao">
+    
+	<select id="findList" resultType="GaEntranceInfo">
+        SELECT 
+            a.id as "id", 
+            c.id AS "areaId",
+            c.area_name as "areaName", 
+            b.building_no as "building",
+            b.unit_no AS "door",
+            concat_ws('-', f.building_no, f.unit_no, f.room_no) as "house", 
+            e.name as "name",
+            e.id_card_no as "idCardNo",
+            a.swipe_time AS "swipeTime",
+            d.id as "cardId", 
+            a.face AS "face",
+            a.in_or_out AS "inOrOut", 
+            a.create_date as "createDate", 
+            a.update_date as "updateDate" 
+        FROM ga_entrance_info a 
+        left join ga_gate_info b on a.gate_id = b.id 
+        left join ga_area_info c on b.area_id = c.id 
+        left join ga_card_info d on a.card_id = d.id 
+        left join ga_person_info e on d.person_id = e.id 
+        left join ga_house_info f on d.house_id = f.id 
+        <where>
+            a.del_flag = #{DEL_FLAG_NORMAL} 
+            <if test="areaId != null and areaId != ''">
+                AND c.id = #{areaId} 
+            </if>
+            <if test="gateId != null and gateId != ''">
+                AND a.gate_id = #{gateId} 
+            </if>
+            <if test="name != null and name != ''">
+                AND e.name = #{name} 
+            </if>
+            <if test="idCardNo != null and idCardNo != ''">
+                AND e.id_card_no = #{idCardNo} 
+            </if>
+            <if test="startTime != null and startTime != ''">
+                AND a.swipe_time >= #{startTime} 
+            </if>
+            <if test="endTime != null and endTime != ''">
+                AND a.swipe_time &lt;= #{endTime} 
+            </if>
+            <if test="cardId != null and cardId != ''">
+                AND a.card_id = #{cardId} 
+            </if>
+            <if test="inOrOut != null and inOrOut != ''">
+                AND a.in_or_out = #{inOrOut} 
+            </if>
+        </where>
+        <choose>
+            <when test="page !=null and page.orderBy != null and page.orderBy != ''">
+                ORDER BY ${page.orderBy}
+            </when>
+            <otherwise>
+                ORDER BY a.swipe_time 
+            </otherwise>
+        </choose>
+    </select>
+	
+</mapper>

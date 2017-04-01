@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.jeesite.modules.device.dao.GaDeviceApDao">
+    
+	<sql id="gaDeviceApColumns">
+		a.id AS "id",
+		a.device_id AS "deviceId",
+		a.longitude AS "longitude",
+		a.latitude AS "latitude",
+		a.address AS "address",
+		a.status AS "status",
+		a.remarks AS "remarks"
+	</sql>
+	
+	<sql id="gaDeviceApJoins">
+	</sql>
+    
+	<select id="get" resultType="GaDeviceAp">
+		SELECT 
+			<include refid="gaDeviceApColumns"/>
+		FROM ga_device_ap a
+		<include refid="gaDeviceApJoins"/>
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="GaDeviceAp">
+		SELECT 
+			<include refid="gaDeviceApColumns"/>
+		FROM ga_device_ap a
+		<include refid="gaDeviceApJoins"/>
+		<where>
+			<if test="deviceId != null and deviceId != ''">
+				AND a.device_id = #{deviceId}
+			</if>
+			<if test="status != null and status != ''">
+                AND a.status = #{status}
+            </if>
+		</where>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findAllList" resultType="GaDeviceAp">
+		SELECT 
+			<include refid="gaDeviceApColumns"/>
+		FROM ga_device_ap a
+		<include refid="gaDeviceApJoins"/>
+		<where>
+			
+		</where>		
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO ga_device_ap(
+			id,
+			device_id,
+			longitude,
+			latitude,
+			address,
+			status,
+			remarks
+		) VALUES (
+			#{id},
+			#{deviceId},
+			#{longitude},
+			#{latitude},
+			#{address},
+			#{status},
+			#{remarks}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE ga_device_ap SET 	
+			device_id = #{deviceId},
+			longitude = #{longitude},
+			latitude = #{latitude},
+			address = #{address},
+			status = #{status},
+			remarks = #{remarks}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		DELETE FROM ga_device_ap
+		WHERE id = #{id}
+	</update>
+	
+</mapper>

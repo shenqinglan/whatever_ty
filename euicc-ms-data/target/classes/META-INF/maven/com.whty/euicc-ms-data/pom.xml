@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>euicc-ms-parent</artifactId>
+        <groupId>com.whty</groupId>
+        <version>0.0.1</version>
+        <relativePath>../euicc-ms-parent/pom.xml</relativePath>
+    </parent>
+    <artifactId>euicc-ms-data</artifactId>
+    <version>1.0.0</version>
+    <name>euicc-ms-data</name>
+    <description>euicc数据业务组件</description>
+    <properties>
+        <commons-io.version>2.4</commons-io.version>
+    </properties>
+
+    <dependencies>
+    	<dependency>
+	   		<groupId>net.sourceforge.jexcelapi</groupId>
+	   		<artifactId>jxl</artifactId>
+	   		<version>2.6.12</version>
+	   		<scope>compile</scope>
+	   		<exclusions>
+	    		<exclusion>
+	     			<groupId>log4j</groupId>
+	     			<artifactId>log4j</artifactId>
+	   			</exclusion>
+	   		</exclusions>
+	  </dependency>
+        <dependency>
+            <groupId>com.dzmsoft</groupId>
+            <artifactId>dzmsoft-plugin-gencode</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.whty</groupId>
+            <artifactId>euicc-ms-base</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.whty</groupId>
+            <artifactId>euicc-cs-profile</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.whty</groupId>
+            <artifactId>atsListener</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
+    
+</project>

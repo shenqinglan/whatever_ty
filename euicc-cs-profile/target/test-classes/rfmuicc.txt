@@ -1,0 +1,12 @@
+pe-rfmUicc ProfileElement ::= rfm : { 
+ 	rfm-header {
+ 	identification 10 
+}, 
+instanceAID 'A00000055910100001'H, 
+tarList { 
+'B00000'H 
+}, 
+minimumSecurityLevel '12'H, 
+uiccAccessDomain '00'H, 
+uiccAdminAccessDomain '00'H 
+} 

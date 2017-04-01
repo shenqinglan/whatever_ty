@@ -1,0 +1,72 @@
+
+;==========================================SMS下的功能函数定义==========================================
+;****************************************
+;函数名:ISDP_SCP03_SMS
+;功能:SMS方式ISDP建立安全通道并执行指令-对应E8
+;变量列表:%sISDP_In等
+;****************************************
+function ISDP_SCP03_SMS(%sISDP_In,%sISDPTar_In,%sCommand_In,%scp03_enc_In,%scp03_mac_In,%scp03_dek_In,%sSequece_scp03_In,%sResult_In=709000)
+	<--! %sISDP_ISDP_SCP03_SMS=%sISDP_In
+	<--! %sISDPTar_ISDP_SCP03_SMS=%sISDPTar_In
+	<--! %sCommand_ISDP_SCP03_SMS=%sCommand_In
+	<--! %scp03_enc_ISDP_SCP03_SMS=%scp03_enc_In
+	<--! %scp03_mac_ISDP_SCP03_SMS=%scp03_mac_In
+	<--! %scp03_dek_ISDP_SCP03_SMS=%scp03_dek_In
+	<--! %sSequece_scp03_ISDP_SCP03_SMS=%sSequece_scp03_In
+	<--! %sResult_ISDP_SCP03_SMS=%sResult_In
+	;KIC的值：
+	<--! %sKic[1] = %scp80_enc_isdr
+	;KID的值：
+	<--! %sKid[1] = %scp80_mac_isdr
+	;KIK的值：
+	<--! %sKik[1] = %scp80_dek_isdr
+	;scp03过程所使用的安全级别
+	<--! %sIccGp_SECURED_LEVEL=33
+	;伪随机数计算需用到的安全域AID
+	<--! %sISDp_AID=%sISDP_ISDP_SCP03_SMS
+	<--! %sIccGp_sqccounter=@itoa(@atoi(%sSequece_scp03_ISDP_SCP03_SMS)+1,3)
+	<--! %sICCGP_KEY_ENC = %scp03_enc_ISDP_SCP03_SMS
+	<--! %sICCGP_KEY_MAC = %scp03_mac_ISDP_SCP03_SMS
+	<--! %sICCGP_KEY_DEK = %scp03_dek_ISDP_SCP03_SMS
+	<--! %sCommand[1] = @ICCGP_initialiseupdate(00)+00
+	<--! %sCommand[2] = @IccGp_OPExternalAuth_SCP03_remote(%sISDp_AID) +00
+	<--! %sCommand[3] = @GP_APDU_SCP03(%sCommand_ISDP_SCP03_SMS,%sIccGp_SECURED_LEVEL,00)+00
+	;<--! %sResponse = %sTokenVer+@right(%sCommand_ISDP_SCP03_SMS,3)
+	<--! %sResponse = %sResult_ISDP_SCP03_SMS
+	<--! %sStatus = 9000
+	<--! %sRCommand[3] = @GP_Resp_SCP03(%sResponse,%sStatus,%sIccGp_SECURED_LEVEL)
+	<--! %star=%sISDPTar_ISDP_SCP03_SMS
+	<--! %spikickid=%spikickidISDR
+	<--! %scounter0348 = @strmidh(%scounter0348,0,1)+@itoa(@atoi(@strmidh(%scounter0348,1,4))+1,4)
+	<--! %sCommand = %sCommand[1]
+	<--! %sCommand = @totlv(AA,@totlv(22,%sCommand))
+	<--! %str = @MakeSecuredPacket(%spikickid, %star, %scounter0348, %sCommand)
+	<--! %sMT_Command = @SMSPP_MT(%str)
+	sendtxt %sMT_Command
+	<--! %sExpectData=@totlv(AB,80 01 01 23 22 00000000000000000000 300370 +%sIccGp_sRandCard+ %sIccGp_sCardcryp+ %sIccGp_sqccounter+ 9000)
+	<--! %sExpectData=02 71 00 00 + @totlv(,0A + %star + %scounter0348+ 00 00 + %sExpectData,0)
+	comptxta %sExpectData 9000
+	<--! %star=%sISDPTar_ISDP_SCP03_SMS
+	<--! %spikickid=%spikickidISDR
+	<--! %scounter0348 = @strmidh(%scounter0348,0,1)+@itoa(@atoi(@strmidh(%scounter0348,1,4))+1,4)
+	<--! %sCommand = %sCommand[2]
+	<--! %sCommand = @totlv(AA,@totlv(22,%sCommand))
+	<--! %str = @MakeSecuredPacket(%spikickid, %star, %scounter0348, %sCommand)
+	<--! %sMT_Command = @SMSPP_MT(%str)
+	sendtxt %sMT_Command
+	<--! %sExpectData=AB 07 80 01 01 23 02 90 00
+	<--! %sExpectData=02 71 00 00 + @totlv(,0A + %star + %scounter0348+ 00 00 + %sExpectData,0)
+	comptxta %sExpectData 9000
+	<--! %star=%sISDPTar_ISDP_SCP03_SMS
+	<--! %spikickid=%spikickidISDR
+	<--! %scounter0348 = @strmidh(%scounter0348,0,1)+@itoa(@atoi(@strmidh(%scounter0348,1,4))+1,4)
+	<--! %sCommand = %sCommand[3]
+	<--! %sCommand = @totlv(AA,@totlv(22,%sCommand))
+	<--! %str = @MakeSecuredPacket(%spikickid, %star, %scounter0348, %sCommand)
+	<--! %sMT_Command = @SMSPP_MT(%str)
+	sendtxt %sMT_Command
+	<--! %sExpectData=@totlv(AB,80 01 01 +@totlv(23,%sRCommand[3]))
+	<--! %sExpectData=02 71 00 00 + @totlv(,0A + %star + %scounter0348+ 00 00 + %sExpectData,0)
+	comptxta %sExpectData 9000
+	<--! return 1
+endfunc

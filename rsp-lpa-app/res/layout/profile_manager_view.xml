@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:paddingLeft="100dp"
+    android:paddingRight="100dp"
+    android:orientation="vertical" >
+    	<Button
+	        android:id="@+id/btn_enable"
+	        android:layout_width="100dp"
+	        android:layout_height="wrap_content"
+	        android:text="启用" />
+
+	    <Button
+	        android:id="@+id/btn_disable"
+	        android:layout_width="100dp"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="30dp"
+	        android:text="禁用" />
+	
+	    <Button
+	        android:id="@+id/btn_delete"
+	        android:layout_width="100dp"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="30dp"
+	        android:text="删除" />
+
+</LinearLayout>

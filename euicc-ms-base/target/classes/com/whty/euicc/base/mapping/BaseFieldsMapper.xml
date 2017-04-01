@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whty.euicc.base.dao.BaseFieldsMapper">
+  <resultMap id="BaseResultMap" type="com.whty.euicc.base.pojo.BaseFields">
+    <id column="FIELD_ID" jdbcType="VARCHAR" property="fieldId" />
+    <result column="FIELD" jdbcType="VARCHAR" property="field" />
+    <result column="FIELD_NAME" jdbcType="VARCHAR" property="fieldName" />
+    <result column="VALUE_FIELD" jdbcType="VARCHAR" property="valueField" />
+    <result column="DISPLAY_FIELD" jdbcType="VARCHAR" property="displayField" />
+    <result column="ENABLED" jdbcType="DECIMAL" property="enabled" />
+    <result column="SORT" jdbcType="DECIMAL" property="sort" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    FIELD_ID, FIELD, FIELD_NAME, VALUE_FIELD, DISPLAY_FIELD, ENABLED, SORT
+  </sql>
+  <select id="selectByExample" parameterType="com.whty.euicc.base.pojo.BaseFieldsExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from BASE_FIELDS
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from BASE_FIELDS
+    where FIELD_ID = #{fieldId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from BASE_FIELDS
+    where FIELD_ID = #{fieldId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whty.euicc.base.pojo.BaseFieldsExample">
+    delete from BASE_FIELDS
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whty.euicc.base.pojo.BaseFields">
+    insert into BASE_FIELDS (FIELD_ID, FIELD, FIELD_NAME, 
+      VALUE_FIELD, DISPLAY_FIELD, ENABLED, 
+      SORT)
+    values (#{fieldId,jdbcType=VARCHAR}, #{field,jdbcType=VARCHAR}, #{fieldName,jdbcType=VARCHAR}, 
+      #{valueField,jdbcType=VARCHAR}, #{displayField,jdbcType=VARCHAR}, #{enabled,jdbcType=DECIMAL}, 
+      #{sort,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.euicc.base.pojo.BaseFields">
+    insert into BASE_FIELDS
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="fieldId != null">
+        FIELD_ID,
+      </if>
+      <if test="field != null">
+        FIELD,
+      </if>
+      <if test="fieldName != null">
+        FIELD_NAME,
+      </if>
+      <if test="valueField != null">
+        VALUE_FIELD,
+      </if>
+      <if test="displayField != null">
+        DISPLAY_FIELD,
+      </if>
+      <if test="enabled != null">
+        ENABLED,
+      </if>
+      <if test="sort != null">
+        SORT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="fieldId != null">
+        #{fieldId,jdbcType=VARCHAR},
+      </if>
+      <if test="field != null">
+        #{field,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldName != null">
+        #{fieldName,jdbcType=VARCHAR},
+      </if>
+      <if test="valueField != null">
+        #{valueField,jdbcType=VARCHAR},
+      </if>
+      <if test="displayField != null">
+        #{displayField,jdbcType=VARCHAR},
+      </if>
+      <if test="enabled != null">
+        #{enabled,jdbcType=DECIMAL},
+      </if>
+      <if test="sort != null">
+        #{sort,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whty.euicc.base.pojo.BaseFieldsExample" resultType="java.lang.Integer">
+    select count(*) from BASE_FIELDS
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update BASE_FIELDS
+    <set>
+      <if test="record.fieldId != null">
+        FIELD_ID = #{record.fieldId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.field != null">
+        FIELD = #{record.field,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fieldName != null">
+        FIELD_NAME = #{record.fieldName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.valueField != null">
+        VALUE_FIELD = #{record.valueField,jdbcType=VARCHAR},
+      </if>
+      <if test="record.displayField != null">
+        DISPLAY_FIELD = #{record.displayField,jdbcType=VARCHAR},
+      </if>
+      <if test="record.enabled != null">
+        ENABLED = #{record.enabled,jdbcType=DECIMAL},
+      </if>
+      <if test="record.sort != null">
+        SORT = #{record.sort,jdbcType=DECIMAL},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update BASE_FIELDS
+    set FIELD_ID = #{record.fieldId,jdbcType=VARCHAR},
+      FIELD = #{record.field,jdbcType=VARCHAR},
+      FIELD_NAME = #{record.fieldName,jdbcType=VARCHAR},
+      VALUE_FIELD = #{record.valueField,jdbcType=VARCHAR},
+      DISPLAY_FIELD = #{record.displayField,jdbcType=VARCHAR},
+      ENABLED = #{record.enabled,jdbcType=DECIMAL},
+      SORT = #{record.sort,jdbcType=DECIMAL}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.euicc.base.pojo.BaseFields">
+    update BASE_FIELDS
+    <set>
+      <if test="field != null">
+        FIELD = #{field,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldName != null">
+        FIELD_NAME = #{fieldName,jdbcType=VARCHAR},
+      </if>
+      <if test="valueField != null">
+        VALUE_FIELD = #{valueField,jdbcType=VARCHAR},
+      </if>
+      <if test="displayField != null">
+        DISPLAY_FIELD = #{displayField,jdbcType=VARCHAR},
+      </if>
+      <if test="enabled != null">
+        ENABLED = #{enabled,jdbcType=DECIMAL},
+      </if>
+      <if test="sort != null">
+        SORT = #{sort,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where FIELD_ID = #{fieldId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.euicc.base.pojo.BaseFields">
+    update BASE_FIELDS
+    set FIELD = #{field,jdbcType=VARCHAR},
+      FIELD_NAME = #{fieldName,jdbcType=VARCHAR},
+      VALUE_FIELD = #{valueField,jdbcType=VARCHAR},
+      DISPLAY_FIELD = #{displayField,jdbcType=VARCHAR},
+      ENABLED = #{enabled,jdbcType=DECIMAL},
+      SORT = #{sort,jdbcType=DECIMAL}
+    where FIELD_ID = #{fieldId,jdbcType=VARCHAR}
+  </update>
+</mapper>

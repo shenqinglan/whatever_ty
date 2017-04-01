@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.efs.data.dao.EuiccSignedInfoTypeMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.efs.data.pojo.EuiccSignedInfoType" >
+    <id column="signed_info_id" property="signedInfoId" jdbcType="VARCHAR" />
+    <result column="signature_h_mac_output_length" property="signatureHMacOutputLength" jdbcType="VARCHAR" />
+    <result column="signature_algorithm" property="signatureAlgorithm" jdbcType="VARCHAR" />
+    <result column="id" property="id" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    signed_info_id, signature_h_mac_output_length, signature_algorithm, id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.whty.efs.data.pojo.EuiccSignedInfoTypeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from euicc_signed_info_type
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from euicc_signed_info_type
+    where signed_info_id = #{signedInfoId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from euicc_signed_info_type
+    where signed_info_id = #{signedInfoId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whty.efs.data.pojo.EuiccSignedInfoTypeExample" >
+    delete from euicc_signed_info_type
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whty.efs.data.pojo.EuiccSignedInfoType" >
+    insert into euicc_signed_info_type (signed_info_id, signature_h_mac_output_length, 
+      signature_algorithm, id)
+    values (#{signedInfoId,jdbcType=VARCHAR}, #{signatureHMacOutputLength,jdbcType=VARCHAR}, 
+      #{signatureAlgorithm,jdbcType=VARCHAR}, #{id,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.efs.data.pojo.EuiccSignedInfoType" >
+    insert into euicc_signed_info_type
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="signedInfoId != null" >
+        signed_info_id,
+      </if>
+      <if test="signatureHMacOutputLength != null" >
+        signature_h_mac_output_length,
+      </if>
+      <if test="signatureAlgorithm != null" >
+        signature_algorithm,
+      </if>
+      <if test="id != null" >
+        id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="signedInfoId != null" >
+        #{signedInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="signatureHMacOutputLength != null" >
+        #{signatureHMacOutputLength,jdbcType=VARCHAR},
+      </if>
+      <if test="signatureAlgorithm != null" >
+        #{signatureAlgorithm,jdbcType=VARCHAR},
+      </if>
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whty.efs.data.pojo.EuiccSignedInfoTypeExample" resultType="java.lang.Integer" >
+    select count(*) from euicc_signed_info_type
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update euicc_signed_info_type
+    <set >
+      <if test="record.signedInfoId != null" >
+        signed_info_id = #{record.signedInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.signatureHMacOutputLength != null" >
+        signature_h_mac_output_length = #{record.signatureHMacOutputLength,jdbcType=VARCHAR},
+      </if>
+      <if test="record.signatureAlgorithm != null" >
+        signature_algorithm = #{record.signatureAlgorithm,jdbcType=VARCHAR},
+      </if>
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update euicc_signed_info_type
+    set signed_info_id = #{record.signedInfoId,jdbcType=VARCHAR},
+      signature_h_mac_output_length = #{record.signatureHMacOutputLength,jdbcType=VARCHAR},
+      signature_algorithm = #{record.signatureAlgorithm,jdbcType=VARCHAR},
+      id = #{record.id,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.efs.data.pojo.EuiccSignedInfoType" >
+    update euicc_signed_info_type
+    <set >
+      <if test="signatureHMacOutputLength != null" >
+        signature_h_mac_output_length = #{signatureHMacOutputLength,jdbcType=VARCHAR},
+      </if>
+      <if test="signatureAlgorithm != null" >
+        signature_algorithm = #{signatureAlgorithm,jdbcType=VARCHAR},
+      </if>
+      <if test="id != null" >
+        id = #{id,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where signed_info_id = #{signedInfoId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.efs.data.pojo.EuiccSignedInfoType" >
+    update euicc_signed_info_type
+    set signature_h_mac_output_length = #{signatureHMacOutputLength,jdbcType=VARCHAR},
+      signature_algorithm = #{signatureAlgorithm,jdbcType=VARCHAR},
+      id = #{id,jdbcType=VARCHAR}
+    where signed_info_id = #{signedInfoId,jdbcType=VARCHAR}
+  </update>
+</mapper>

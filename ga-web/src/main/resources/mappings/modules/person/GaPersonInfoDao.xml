@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.jeesite.modules.person.dao.GaPersonInfoDao">
+    
+	<sql id="gaPersonInfoColumns">
+		a.id AS "id",
+		a.id_card_no AS "idCardNo",
+		a.expiry_time AS "expiryTime",
+		a.issue_organ AS "issueOrgan",
+		a.name AS "name",
+		a.sex AS "sex",
+		a.ethnic AS "ethnic",
+		a.birthday AS "birthday",
+		a.political_status AS "politicalStatus",
+		a.education_degree AS "educationDegree",
+		a.height AS "height",
+		a.marital_status AS "maritalStatus",
+		a.spouse_name AS "spouseName",
+		a.spouse_id_card_no AS "spouseIdCardNo",
+		a.person_type_code AS "personTypeCode",
+		a.hukou_area_no AS "hukouAreaNo",
+		a.hukou_address AS "hukouAddress",
+		a.residence_address AS "residenceAddress",
+		a.former_address AS "formerAddress",
+		a.blood_type AS "bloodType",
+		a.religion AS "religion",
+		a.company AS "company",
+		a.tel AS "tel",
+		a.mobil AS "mobil",
+		a.face AS "face",
+		a.create_date AS "createDate",
+		a.update_date AS "updateDate",
+		a.remarks AS "remarks",
+		a.del_flag AS "delFlag"
+	</sql>
+	
+	<sql id="gaPersonInfoJoins">
+	</sql>
+    
+	<select id="get" resultType="GaPersonInfo">
+		SELECT 
+			<include refid="gaPersonInfoColumns"/>
+		FROM ga_person_info a
+		<include refid="gaPersonInfoJoins"/>
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="GaPersonInfo">
+		SELECT 
+			<include refid="gaPersonInfoColumns"/>
+		FROM ga_person_info a
+		<include refid="gaPersonInfoJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+			<if test="idCardNo != null and idCardNo != ''">
+				AND a.id_card_no = #{idCardNo}
+			</if>
+			<if test="name != null and name != ''">
+				AND a.name LIKE 
+					<if test="dbName == 'oracle'">'%'||#{name}||'%'</if>
+					<if test="dbName == 'mssql'">'%'+#{name}+'%'</if>
+					<if test="dbName == 'mysql'">concat('%',#{name},'%')</if>
+			</if>
+		</where>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findAllList" resultType="GaPersonInfo">
+		SELECT 
+			<include refid="gaPersonInfoColumns"/>
+		FROM ga_person_info a
+		<include refid="gaPersonInfoJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+		</where>		
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO ga_person_info(
+			id,
+			id_card_no,
+			expiry_time,
+			issue_organ,
+			name,
+			sex,
+			ethnic,
+			birthday,
+			political_status,
+			education_degree,
+			height,
+			marital_status,
+			spouse_name,
+			spouse_id_card_no,
+			person_type_code,
+			hukou_area_no,
+			hukou_address,
+			residence_address,
+			former_address,
+			blood_type,
+			religion,
+			company,
+			tel,
+			mobil,
+			face,
+			create_date,
+			update_date,
+			remarks,
+			del_flag
+		) VALUES (
+			#{id},
+			#{idCardNo},
+			#{expiryTime},
+			#{issueOrgan},
+			#{name},
+			#{sex},
+			#{ethnic},
+			#{birthday},
+			#{politicalStatus},
+			#{educationDegree},
+			#{height},
+			#{maritalStatus},
+			#{spouseName},
+			#{spouseIdCardNo},
+			#{personTypeCode},
+			#{hukouAreaNo},
+			#{hukouAddress},
+			#{residenceAddress},
+			#{formerAddress},
+			#{bloodType},
+			#{religion},
+			#{company},
+			#{tel},
+			#{mobil},
+			#{face},
+			#{createDate},
+			#{updateDate},
+			#{remarks},
+			#{delFlag}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE ga_person_info SET 	
+			id_card_no = #{idCardNo},
+			expiry_time = #{expiryTime},
+			issue_organ = #{issueOrgan},
+			name = #{name},
+			sex = #{sex},
+			ethnic = #{ethnic},
+			birthday = #{birthday},
+			political_status = #{politicalStatus},
+			education_degree = #{educationDegree},
+			height = #{height},
+			marital_status = #{maritalStatus},
+			spouse_name = #{spouseName},
+			spouse_id_card_no = #{spouseIdCardNo},
+			person_type_code = #{personTypeCode},
+			hukou_area_no = #{hukouAreaNo},
+			hukou_address = #{hukouAddress},
+			residence_address = #{residenceAddress},
+			former_address = #{formerAddress},
+			blood_type = #{bloodType},
+			religion = #{religion},
+			company = #{company},
+			tel = #{tel},
+			mobil = #{mobil},
+			face = #{face},
+			update_date = #{updateDate},
+			remarks = #{remarks}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		UPDATE ga_person_info SET 
+			del_flag = #{DEL_FLAG_DELETE}
+		WHERE id = #{id}
+	</update>
+	
+</mapper>

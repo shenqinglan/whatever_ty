@@ -1,0 +1,34 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:add="http://www.w3.org/2005/08/addressing" xmlns:ns="http://namespaces.gsma.org/esim-messaging/3">
+   <soap:Header>
+      <add:Action>00</add:Action>
+      <add:MessageID>01</add:MessageID>
+      <add:To>02</add:To>
+      <add:From>
+         <add:Address>03</add:Address>
+         <!--Optional:-->
+         <add:ReferenceParameters>
+            <!--You may enter ANY elements at this point-->
+         </add:ReferenceParameters>
+         <!--Optional:-->
+         <add:Metadata>
+            <!--You may enter ANY elements at this point-->
+         </add:Metadata>
+         <!--You may enter ANY elements at this point-->
+      </add:From>
+   </soap:Header>
+   <soap:Body>
+      <ns:ES7-CreateAdditionalKeySetRequest>
+         <ns:FunctionCallIdentifier>01</ns:FunctionCallIdentifier>
+         <!--Optional:-->
+         <ns:ValidityPeriod>02</ns:ValidityPeriod>
+         <ns:Eid>{1}</ns:Eid>
+         <ns:KeyVersionNumber>03</ns:KeyVersionNumber>
+         <ns:InitialSequenceCounter>04</ns:InitialSequenceCounter>
+         <ns:ECCKeyLength>20</ns:ECCKeyLength>
+         <ns:ScenarioParameter>05</ns:ScenarioParameter>
+         <ns:HostId>06</ns:HostId>
+         <ns:EphemeralPublicKey>{0}</ns:EphemeralPublicKey>
+         <ns:Signature>00</ns:Signature>
+      </ns:ES7-CreateAdditionalKeySetRequest>
+   </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,54 @@
+value2 ProfileElement ::= mf : {
+  mf-header {
+    mandated NULL,
+    identification 1
+  },
+  templateID { 2 23 143 1 2 1 },
+  mf {
+  },
+  ef-iccid {
+    fileDescriptor : {
+      lcsi '05'H,
+      securityAttributesReferenced '2F060B'H
+    },
+    fillFileContent : '98109909002143658739'H
+  },
+  ef-dir {
+    fileDescriptor : {
+      fileDescriptor '4221002604'H,
+      lcsi '05'H,
+      securityAttributesReferenced '2F060A'H
+    },
+    fillFileContent : '61184F10A0000000871002FF33FF01890000010050045553494D'H
+  },
+  ef-arr {
+    fileDescriptor : {
+      fileDescriptor '4221002F0F'H,
+      lcsi '05'H,
+      securityAttributesReferenced '2F060A'H
+    },
+    fillFileContent : '800102A4068301019501088001049700800118A40683010A950108'H,
+    fillFileOffset : 20,
+    fillFileContent : '800101A40683010195010880011AA40683010A9501088001049700'H,
+    fillFileOffset : 20,
+    fillFileContent : '80011BA40683010A9501088001049700'H,
+    fillFileOffset : 31,
+    fillFileContent : '800101900080011E9700'H,
+    fillFileOffset : 37,
+    fillFileContent : '800103A4068301019501088001049700800118A40683010A950108'H,
+    fillFileOffset : 20,
+    fillFileContent : '800111A406830101950108800104970080010AA40683010A950108'H,
+    fillFileOffset : 20,
+    fillFileContent : '800107A406830101950108800118A40683010A950108'H,
+    fillFileOffset : 25,
+    fillFileContent : '800101A406830101950108800102A4068301029501088001049700'H,
+    fillFileOffset : 20,
+    fillFileContent : '8001019000800104970080011AA406830101950108'H,
+    fillFileOffset : 26,
+    fillFileContent : '800101900080011AA40683010A9501088001049700'H,
+    fillFileOffset : 26,
+    fillFileContent : '8001019000800118A40683010A9501088001069700'H,
+    fillFileOffset : 26,
+    fillFileContent : '800101A40683010195010880011E9700'H
+  }
+}

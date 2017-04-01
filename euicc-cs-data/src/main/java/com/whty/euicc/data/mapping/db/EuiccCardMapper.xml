@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whty.euicc.data.dao.EuiccCardMapper" >
+  <resultMap id="BaseResultMap" type="com.whty.euicc.data.pojo.EuiccCard" >
+    <id column="eid" property="eid" jdbcType="VARCHAR" />
+    <result column="eum_id" property="eumId" jdbcType="VARCHAR" />
+    <result column="smsr_id" property="smsrId" jdbcType="VARCHAR" />
+    <result column="ecasd_id" property="ecasdId" jdbcType="VARCHAR" />
+    <result column="production_date" property="productionDate" jdbcType="TIMESTAMP" />
+    <result column="platform_type" property="platformType" jdbcType="VARCHAR" />
+    <result column="platform_version" property="platformVersion" jdbcType="VARCHAR" />
+    <result column="remaining_memory" property="remainingMemory" jdbcType="VARCHAR" />
+    <result column="availablememoryforprofiles" property="availablememoryforprofiles" jdbcType="VARCHAR" />
+    <result column="count" property="count" jdbcType="INTEGER" />
+    <result column="phone_no" property="phoneNo" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    eid, eum_id, smsr_id, ecasd_id, production_date, platform_type, platform_version, 
+    remaining_memory, availablememoryforprofiles, count, phone_no
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.whty.euicc.data.pojo.EuiccCardExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from euicc_card
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from euicc_card
+    where eid = #{eid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from euicc_card
+    where eid = #{eid,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whty.euicc.data.pojo.EuiccCardExample" >
+    delete from euicc_card
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whty.euicc.data.pojo.EuiccCard" >
+    insert into euicc_card (eid, eum_id, smsr_id, 
+      ecasd_id, production_date, platform_type, 
+      platform_version, remaining_memory, availablememoryforprofiles, 
+      count, phone_no)
+    values (#{eid,jdbcType=VARCHAR}, #{eumId,jdbcType=VARCHAR}, #{smsrId,jdbcType=VARCHAR}, 
+      #{ecasdId,jdbcType=VARCHAR}, #{productionDate,jdbcType=TIMESTAMP}, #{platformType,jdbcType=VARCHAR}, 
+      #{platformVersion,jdbcType=VARCHAR}, #{remainingMemory,jdbcType=VARCHAR}, #{availablememoryforprofiles,jdbcType=VARCHAR}, 
+      #{count,jdbcType=INTEGER}, #{phoneNo,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whty.euicc.data.pojo.EuiccCard" >
+    insert into euicc_card
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="eid != null" >
+        eid,
+      </if>
+      <if test="eumId != null" >
+        eum_id,
+      </if>
+      <if test="smsrId != null" >
+        smsr_id,
+      </if>
+      <if test="ecasdId != null" >
+        ecasd_id,
+      </if>
+      <if test="productionDate != null" >
+        production_date,
+      </if>
+      <if test="platformType != null" >
+        platform_type,
+      </if>
+      <if test="platformVersion != null" >
+        platform_version,
+      </if>
+      <if test="remainingMemory != null" >
+        remaining_memory,
+      </if>
+      <if test="availablememoryforprofiles != null" >
+        availablememoryforprofiles,
+      </if>
+      <if test="count != null" >
+        count,
+      </if>
+      <if test="phoneNo != null" >
+        phone_no,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="eid != null" >
+        #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="eumId != null" >
+        #{eumId,jdbcType=VARCHAR},
+      </if>
+      <if test="smsrId != null" >
+        #{smsrId,jdbcType=VARCHAR},
+      </if>
+      <if test="ecasdId != null" >
+        #{ecasdId,jdbcType=VARCHAR},
+      </if>
+      <if test="productionDate != null" >
+        #{productionDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="platformType != null" >
+        #{platformType,jdbcType=VARCHAR},
+      </if>
+      <if test="platformVersion != null" >
+        #{platformVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="remainingMemory != null" >
+        #{remainingMemory,jdbcType=VARCHAR},
+      </if>
+      <if test="availablememoryforprofiles != null" >
+        #{availablememoryforprofiles,jdbcType=VARCHAR},
+      </if>
+      <if test="count != null" >
+        #{count,jdbcType=INTEGER},
+      </if>
+      <if test="phoneNo != null" >
+        #{phoneNo,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whty.euicc.data.pojo.EuiccCardExample" resultType="java.lang.Integer" >
+    select count(*) from euicc_card
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update euicc_card
+    <set >
+      <if test="record.eid != null" >
+        eid = #{record.eid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.eumId != null" >
+        eum_id = #{record.eumId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.smsrId != null" >
+        smsr_id = #{record.smsrId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ecasdId != null" >
+        ecasd_id = #{record.ecasdId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.productionDate != null" >
+        production_date = #{record.productionDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.platformType != null" >
+        platform_type = #{record.platformType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.platformVersion != null" >
+        platform_version = #{record.platformVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remainingMemory != null" >
+        remaining_memory = #{record.remainingMemory,jdbcType=VARCHAR},
+      </if>
+      <if test="record.availablememoryforprofiles != null" >
+        availablememoryforprofiles = #{record.availablememoryforprofiles,jdbcType=VARCHAR},
+      </if>
+      <if test="record.count != null" >
+        count = #{record.count,jdbcType=INTEGER},
+      </if>
+      <if test="record.phoneNo != null" >
+        phone_no = #{record.phoneNo,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update euicc_card
+    set eid = #{record.eid,jdbcType=VARCHAR},
+      eum_id = #{record.eumId,jdbcType=VARCHAR},
+      smsr_id = #{record.smsrId,jdbcType=VARCHAR},
+      ecasd_id = #{record.ecasdId,jdbcType=VARCHAR},
+      production_date = #{record.productionDate,jdbcType=TIMESTAMP},
+      platform_type = #{record.platformType,jdbcType=VARCHAR},
+      platform_version = #{record.platformVersion,jdbcType=VARCHAR},
+      remaining_memory = #{record.remainingMemory,jdbcType=VARCHAR},
+      availablememoryforprofiles = #{record.availablememoryforprofiles,jdbcType=VARCHAR},
+      count = #{record.count,jdbcType=INTEGER},
+      phone_no = #{record.phoneNo,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whty.euicc.data.pojo.EuiccCard" >
+    update euicc_card
+    <set >
+      <if test="eumId != null" >
+        eum_id = #{eumId,jdbcType=VARCHAR},
+      </if>
+      <if test="smsrId != null" >
+        smsr_id = #{smsrId,jdbcType=VARCHAR},
+      </if>
+      <if test="ecasdId != null" >
+        ecasd_id = #{ecasdId,jdbcType=VARCHAR},
+      </if>
+      <if test="productionDate != null" >
+        production_date = #{productionDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="platformType != null" >
+        platform_type = #{platformType,jdbcType=VARCHAR},
+      </if>
+      <if test="platformVersion != null" >
+        platform_version = #{platformVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="remainingMemory != null" >
+        remaining_memory = #{remainingMemory,jdbcType=VARCHAR},
+      </if>
+      <if test="availablememoryforprofiles != null" >
+        availablememoryforprofiles = #{availablememoryforprofiles,jdbcType=VARCHAR},
+      </if>
+      <if test="count != null" >
+        count = #{count,jdbcType=INTEGER},
+      </if>
+      <if test="phoneNo != null" >
+        phone_no = #{phoneNo,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where eid = #{eid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whty.euicc.data.pojo.EuiccCard" >
+    update euicc_card
+    set eum_id = #{eumId,jdbcType=VARCHAR},
+      smsr_id = #{smsrId,jdbcType=VARCHAR},
+      ecasd_id = #{ecasdId,jdbcType=VARCHAR},
+      production_date = #{productionDate,jdbcType=TIMESTAMP},
+      platform_type = #{platformType,jdbcType=VARCHAR},
+      platform_version = #{platformVersion,jdbcType=VARCHAR},
+      remaining_memory = #{remainingMemory,jdbcType=VARCHAR},
+      availablememoryforprofiles = #{availablememoryforprofiles,jdbcType=VARCHAR},
+      count = #{count,jdbcType=INTEGER},
+      phone_no = #{phoneNo,jdbcType=VARCHAR}
+    where eid = #{eid,jdbcType=VARCHAR}
+  </update>
+</mapper>

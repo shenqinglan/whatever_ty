@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    attributeFormDefault="unqualified">
+    <xs:annotation>
+        <xs:documentation>
+            This schema is not carrying any version on its own, as it is not a stand alone schema (it is designed to be included in another one).
+            This schema is explicitly having no name space in order to enable the possibility to apply the "chameleon" approach. (the name space will be the one of the including schema).
+        </xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="euicc.common.request.xsd"/>
+    <xs:include schemaLocation="euicc.common.types.xsd"/>
+
+    <xs:group name="ES1">
+        <xs:annotation>
+            <xs:documentation>Provides the list of all function execution requests and function execution responses defined in ES1 interface</xs:documentation>
+        </xs:annotation>
+        <xs:choice>
+            <xs:element ref="ES1-RegisterEISRequest"/>
+            <xs:element ref="ES1-RegisterEISResponse"/>
+        </xs:choice>
+    </xs:group>
+    
+    
+    <!--============================================================================================================================-->
+    <xs:element name="ES1-RegisterEISRequest"> 
+        <xs:annotation>
+            <xs:documentation>Maps an execution request of the ES1-RegisterEIS function.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="BaseRequestType">
+                    <xs:sequence>
+                        <xs:element name="Eis" type="EISType">
+                            <xs:annotation>
+                                <xs:documentation>Contains the eUICC Information Set of the eUICC to be registered.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>            
+    </xs:element>
+    
+    <xs:element name="ES1-RegisterEISResponse"> 
+        <xs:annotation>
+            <xs:documentation>Maps an execution response of the ES1-RegisterEIS function. This function has no additional output data.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="BaseResponseType">
+                    <xs:sequence>
+                        <!-- No additional output data -->
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
